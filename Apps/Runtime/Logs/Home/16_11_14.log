@@ -1,21 +1,84 @@
-[ 2016-11-14T09:40:36+08:00 ] 127.0.0.1 /Home/Section/static/_js/fn.slide.js?_=1479087636566
+[ 2016-11-14T19:59:02+08:00 ] 127.0.0.1 /Home/Section/static/_js/fn.slide.js?_=1479124742578
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:03+08:00 ] 127.0.0.1 /Home/Exchange/static/_js/fn.slide.js?_=1479124743502
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:04+08:00 ] 127.0.0.1 /Home/Pic/static/_js/fn.slide.js?_=1479124744414
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:05+08:00 ] 127.0.0.1 /Home/Turntable/static/_js/fn.slide.js?_=1479124745733
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:11+08:00 ] 127.0.0.1 /Home/Index/static/_js/fn.slide.js?_=1479124751243
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 ERR: 非法操作:static
 
-[ 2016-11-14T09:40:37+08:00 ] 127.0.0.1 /Home/Exchange/static/_js/fn.slide.js?_=1479087637532
+[ 2016-11-14T19:59:11+08:00 ] 127.0.0.1 /Home/Section/static/_js/fn.slide.js?_=1479124751681
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 ERR: 非法操作:static
 
-[ 2016-11-14T09:40:38+08:00 ] 127.0.0.1 /Home/Turntable/static/_js/fn.slide.js?_=1479087638260
+[ 2016-11-14T19:59:12+08:00 ] 127.0.0.1 /Home/Exchange/static/_js/fn.slide.js?_=1479124752299
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
 ERR: 非法操作:static
 
-[ 2016-11-14T09:40:41+08:00 ] 127.0.0.1 /Home/Turntable/home.php?mod=spacecp&ac=credit
-ERR: 非法操作:home.php
+[ 2016-11-14T19:59:12+08:00 ] 127.0.0.1 /Home/Pic/static/_js/fn.slide.js?_=1479124752725
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:14+08:00 ] 127.0.0.1 /Home/Turntable/static/_js/fn.slide.js?_=1479124753916
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:15+08:00 ] 127.0.0.1 /Home/Pic/static/_js/fn.slide.js?_=1479124755332
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:15+08:00 ] 127.0.0.1 /Home/Section/static/_js/fn.slide.js?_=1479124755885
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:26+08:00 ] 127.0.0.1 /Home/Exchange/static/_js/fn.slide.js?_=1479124766268
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:30+08:00 ] 127.0.0.1 /Home/Exchange/static/_js/fn.slide.js?_=1479124770144
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T19:59:30+08:00 ] 127.0.0.1 /Home/Pic/static/_js/fn.slide.js?_=1479124770548
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:static
 

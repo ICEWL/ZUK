@@ -12,11 +12,10 @@
 <link rel="stylesheet" type="text/css" href="/Public/qwhome/css/style_2_forum_index.css">
 <link rel="stylesheet" type="text/css" href="/Public/qwhome/css/no_login.css">
 <link rel="stylesheet" type="text/css" href="/Public/qwhome/css/style_2_forum_curmodule.css">
+<link rel="stylesheet" type="text/css" href="/Public/qwhome/css/pai.css">
+<link rel="stylesheet" type="text/css" href="/Public/qwhome/css/style_8_common.css" /> 
+<link rel="stylesheet" type="text/css" href="/Public/qwhome/css/style_8_forum_forumdisplay.css" /> 
 
-<link rel="stylesheet" type="text/css" href="/Public/timothy/css/style_8_common.css" /> 
-<link rel="stylesheet" type="text/css" href="/Public/timothy/css/style_8_forum_forumdisplay.css" /> 
-<link rel="stylesheet" type="text/css" href="/Public/timothy/css/style.css" />
-<link rel="stylesheet" type="text/css" href="/Public/timothy/css/lightbox.css" />
 
 <script type="text/javascript">
 	var discuz_uid = '0', 
@@ -48,7 +47,7 @@
 				<li  class="current"><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
 				<li ><a href="<?php echo U('Home/Section/index');?>">版块</a></li>
 				<li ><a href="<?php echo U('Home/Exchange/index');?>">兑金堂</a></li>
-				<li><a href="<?php echo U('Home/Pic/index');?>" >相册</a></li>
+				<li><a href="<?php echo U('Home/Pic/index');?>" >趣摄</a></li>
 				<li ><a href="<?php echo U('Home/Turntable/index');?>">转盘</a></li>
 			</ul>
 		</div>
@@ -309,8 +308,8 @@
 <!-- _______________________________________________________ -->
 
 <!-- 广告推荐 -->
-<div class="fullbg" style="background-image:url(/Public/qwhome/images/235646yp35xycweuyxuanc.jpg)"></div>
-<div class="fullbg_link">
+<!-- <div class="fullbg" style="background-image:url(/Public/qwhome/images/235646yp35xycweuyxuanc.jpg)"></div>
+ --><div class="fullbg_link">
 	<a href="#" title="1" style="position: absolute; left:0; top:60px; height:300px; width:100px;display:block;"></a>
 	<a href="#" title="1" style="position: absolute; right:0; top:60px; height:300px; width:100px;display:block;"></a>
 </div>

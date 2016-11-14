@@ -1,0 +1,70 @@
+﻿.pai_top_pic,.pai_top_piclist,
+.pai_top_piclist a                  { width:100%; height:480px; }
+.pai_top_piclist a                  { backface-visibility: hidden; display: block; }
+.pai_top_menu                       { width:100%; height:60px; overflow: inherit; z-index: 1; clear: both; }
+.pic_top_avatar                     { position: relative; width:104px; height:104px; top:0; margin-top:-60px; left:0;  float:left;  }
+.pic_top_avatar img                 { height:100px; width:100px; border:2px solid #fff; position: absolute; top:0; left:0;   }
+.pic_top_userinfo                   { float: left; margin:10px 10px 0 10px ; width:100px; overflow: hidden; }
+.pic_top_userinfo p                 { width:100px; overflow: hidden; height: 20px; }
+.pic_top_up                         { float:left; padding:12px 0 13px; }
+.pic_top_up a                       { background: url(../images/s_icon.png) no-repeat 15px 10px; padding:0 20px 0 38px; }
+.pic_top_nav                        { float:left; margin-left:20px; }
+.pic_top_nav li                     { float:left; padding:0 15px; line-height:60px; }
+.pic_top_nav li a                   { font-size: 14px; font-weight: 700; }
+.pic_top_nav li select              { height:33px; line-height: 33px; border:1px solid #eaeaea; padding:0 3px 0 10px; background: #f5f5f5; }
+.pic_content_recommend              { margin-top:15px; }
+.pic_content_recommend_title        { text-align: center; border-bottom:1px solid #c0c0c0; }
+.pic_content_recommend_title ul     { background: #eaeaea; padding:0 10px; display: inline-block; margin-bottom:-1px; }
+.pic_content_recommend_title li     { cursor: pointer; display: inline-block; margin:0 5px; padding:10px 0; font-size:16px; border-bottom:1px solid #c0c0c0; }
+.pic_content_recommend_title li.current { border-bottom-color: #1499f8; color:#1499f8; }
+.pic_content_recommend_list,
+.pic_content_recommend_kol          { margin-top:20px; }
+.pic_content_recommend_list ul,
+.pic_content_recommend_kol ul       { margin-right:-20px; }
+.pic_content_recommend_list li,
+.pic_content_recommend_kol li       { float:left; height:170px; width:260px; margin:0 20px 20px 0; position: relative; overflow: hidden; transition: all 0.2s ease-in-out; }
+.pic_content_recommend_list li p    { vertical-align: middle;   display: table-cell; width:220px; height:170px; padding:0 20px; text-align: center; background: rgba(255, 255, 255, 0.45); font-size: 16px; font-weight: 700; color:#000; }
+.pic_content_recommend_list li div  { position: absolute; bottom:-170px; left:0; z-index: 1;  transition:all 0.3s ease-in;}
+.pic_content_recommend_list li:hover div { bottom:0; }
+.pic_content_recommend_kol li div   { position: absolute; top:20px; left:0; z-index: 1; width:100%; }
+.pic_content_recommend_kol li div img { border-radius: 50px; }
+.pic_content_recommend_kol li a     { color:#fff; }
+.pic_content_recommend_kol li p     { text-align: center; }
+.pic_content_recommend_kolname      { background: rgba(0, 0, 0, 0.25); line-height:30px; margin:10px 0; }
+.pic_content_recommend_kol li .pipe { margin:0 6px 0 8px; }
+.pic_content_recommend_big          { margin:10px 0; }
+.pic_content_recommend_list li:hover,
+.pic_content_recommend_kol li:hover {  box-shadow: 0 10px 30px rgba(0,0,0,0.25);  }
+
+.pai_wrap                           { width:800px; padding:30px 40px;  background: #fff;}
+.pai_piclist_info p                 { line-height:2;}
+.pai_piclist                        { margin-top:20px; height:600px; width:800px; position: relative; }
+.pai_piclist a:hover                { color:#fff; }
+.pai_piclist_nav                    { background: rgba(0, 0, 0, 0.5); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#6f000000,endColorstr=#6f000000); position: absolute; left:0; bottom:0; width:100%; height:14px; padding:18px 0; text-align: center;  text-align: center; }
+.pai_piclist_nav span               { overflow: hidden; display: inline-block; height:10px; width:10px; border:1px solid #fff; background: #fff; border-radius: 50px; margin:0 2px;}
+.pai_piclist_nav span.current       { background: transparent; }
+.pai_piclist_fav                    { position: absolute; top:15px; left:15px; background:#000 url(../images/fav.png) no-repeat 15px 10px; line-height:35px; height:35px; padding:0 15px 0 40px; border-radius: 3px; }
+.pai_piclist_fav a                  { color:#fff; }
+.pai_piclist_other                  { position: absolute; right:15px; top:15px; }
+.pai_piclist_all,
+.pai_piclist_other .bdsharebuttonbox{ line-height:35px; height:35px; padding:0 15px;color:#fff; background-color:#000;  border-radius: 3px; display: inline-block;  float:right;}
+.pai_piclist_other .bdsharebuttonbox{ margin-right:10px; padding:0 5px 0 12px; }
+.pai_piclist_other .bdsharebuttonbox a { margin-top:10px; }
+.pai_piclist_all                     { background:#000 url(../images/images.png) no-repeat 13px 8px; padding:0 15px 0 40px;}
+
+.viewthread_fast                    { padding:30px 0 0; }
+.viewthread_fastreply               { padding:2px;border-radius:0 2px 2px 0; background: #4fc277; position: relative; }
+.viewthread_fast .viewthread_fastreplybutton         { position: absolute; right:1px; top:2px;  width:125px; }
+.viewthread_fastreplybutton button  { color:#fff; border:0; background:none; width: 100%; height:40px; line-height:40px;  }
+.viewthread_fastreplyinput          { margin-right:125px; }
+.viewthread_fastreplyinput input    { width: 100%; border:0; line-height:20px; padding:10px 11px 12px; }
+
+.pai_reply                          { }
+.pai_reply_list                     { border-bottom:1px solid #e6e6e6; padding:25px 0; }
+.pai_reply_avatar                   { width: 48px; height: 48px; float: left; margin-right: 12px; position: relative; }
+.pai_reply_avatar img               { width: 48px; height: 48px;border-radius: 50%; }
+.pai_reply_con                      { padding-left: 60px; }
+.pai_reply_content                  { padding: 10px 0 5px; }
+.pai_reply_con .cutline             { margin:-2px 10px 0; }
+.pai_reply_con span.spipe           { margin:0 4px;}
+.pai_reply_top                      { color:#999; }

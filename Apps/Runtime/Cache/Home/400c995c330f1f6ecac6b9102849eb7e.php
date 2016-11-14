@@ -12,11 +12,10 @@
 <link rel="stylesheet" type="text/css" href="/Public/qwhome/css/style_2_forum_index.css">
 <link rel="stylesheet" type="text/css" href="/Public/qwhome/css/no_login.css">
 <link rel="stylesheet" type="text/css" href="/Public/qwhome/css/style_2_forum_curmodule.css">
+<link rel="stylesheet" type="text/css" href="/Public/qwhome/css/pai.css">
+<link rel="stylesheet" type="text/css" href="/Public/qwhome/css/style_8_common.css" /> 
+<link rel="stylesheet" type="text/css" href="/Public/qwhome/css/style_8_forum_forumdisplay.css" /> 
 
-<link rel="stylesheet" type="text/css" href="/Public/timothy/css/style_8_common.css" /> 
-<link rel="stylesheet" type="text/css" href="/Public/timothy/css/style_8_forum_forumdisplay.css" /> 
-<link rel="stylesheet" type="text/css" href="/Public/timothy/css/style.css" />
-<link rel="stylesheet" type="text/css" href="/Public/timothy/css/lightbox.css" />
 
 <script type="text/javascript">
 	var discuz_uid = '0', 
@@ -48,7 +47,7 @@
 				<li  class="current"><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
 				<li ><a href="<?php echo U('Home/Section/index');?>">版块</a></li>
 				<li ><a href="<?php echo U('Home/Exchange/index');?>">兑金堂</a></li>
-				<li><a href="<?php echo U('Home/Pic/index');?>" >相册</a></li>
+				<li><a href="<?php echo U('Home/Pic/index');?>" >趣摄</a></li>
 				<li ><a href="<?php echo U('Home/Turntable/index');?>">转盘</a></li>
 			</ul>
 		</div>
@@ -108,6 +107,8 @@ perPage: 10  //设置首页左侧列表每页显示数量
 </script>
 <div class="wp ct2 qing_portal0 cl" style="margin:20px auto;">
 <div class="mn">
+
+
     	<!--首页左侧顶部焦点图 start 179667784-->
         <!--[diy=q_indexdiyfocus]-->
 <!--         <div id="q_indexdiyfocus" class="area">
@@ -121,17 +122,17 @@ perPage: 10  //设置首页左侧列表每页显示数量
                 <ul class="rpic">
                 	<li>
                 		<a href="" target="_blank">
-                			<img src="/Public/timothy/picture/5847e210767638e2ffa95b5c10cd8d47.jpg" width="710" height="310" />
+                			<img src="/Public/qwhome/picture/5847e210767638e2ffa95b5c10cd8d47.jpg" width="710" height="310" />
                 		</a>
                 	</li>
                 	<li>
                 		<a href="" target="_blank">
-                			<img src="/Public/timothy/picture/32cfdc9a7fec0a8ab02efd44cc1f8197.jpg" width="710" height="310" />
+                			<img src="/Public/qwhome/picture/32cfdc9a7fec0a8ab02efd44cc1f8197.jpg" width="710" height="310" />
                 		</a>
                 	</li>
                 	<li>
                 		<a href="" target="_blank">
-                			<img src="/Public/timothy/picture/a751df34c681d88d5e7f7245c6b74bfb.jpg" width="710" height="310" />
+                			<img src="/Public/qwhome/picture/a751df34c681d88d5e7f7245c6b74bfb.jpg" width="710" height="310" />
                 		</a>
                 	</li>
                 </ul>
@@ -174,10 +175,11 @@ perPage: 10  //设置首页左侧列表每页显示数量
             					<ul id="qing_indexpage">
 									<li>
       									<a href="" class="recommend_article_list_pic" target="_blank">
-      										<img src="/Public/timothy/picture/4d8cf730fda2be6db7d8e9a6f2577280.jpg" width="190" height="130" />
+      										<img src="/Public/qwhome/picture/4d8cf730fda2be6db7d8e9a6f2577280.jpg" width="190" height="130" />
       									</a>
 							       					<div class="recommend_article_list_content">
-							            	<h2><a href="forum.php?mod=viewthread&tid=18" target="_blank">一个喜欢自拍的妹子的相册 不喜勿进</a></h2>
+   
+							            	<h2><a href="forum.php?mod=viewthread&tid=18" target="_blank">一个喜欢自拍的妹子的相册 不喜勿进 ></a></h2>
 							            <div class="recommend_article_list_simple">
 											首先声明楼主几乎都是用手机自拍  从不p 当然色调除外  楼主也很少化妆的 一般只画眉  如果有看客不喜欢可以右上角红叉  那些眼
 										</div>
@@ -215,7 +217,7 @@ height:50px;
 display:block;
 position:relative;
 border-radius:4px;
-background-image:url(/Public/timothy/images/tou.png);
+background-image:url(/Public/qwhome/images/tou.png);
 background-repeat:no-repeat;
 background-position:14px 8px;
 cursor:pointer
@@ -250,7 +252,7 @@ height:23px;
 line-height:26px;
 padding-left:30px;
 border-bottom:1px solid #eee;
-background-image:url(/Public/timothy/images/tou2.jpg);
+background-image:url(/Public/qwhome/images/tou2.jpg);
 background-repeat:no-repeat;
 background-position:5px 0;
 margin-bottom:0;
@@ -261,7 +263,7 @@ height:22px;
 line-height:24px;
 padding-left:30px;
 width:60px;
-background-image:url(/Public/timothy/images/tou2.jpg);
+background-image:url(/Public/qwhome/images/tou2.jpg);
 background-repeat:no-repeat;
 background-position:5px -25px;
 color:#606060
@@ -342,7 +344,7 @@ padding-left:58px;
 height:55px;
 padding-top:22px;
 background-repeat:no-repeat;
-background-image:url(/Public/timothy/images/tou3.jpg);
+background-image:url(/Public/qwhome/images/tou3.jpg);
 background-position:0 5px;
 border-bottom:1px solid #eee
 }
@@ -486,12 +488,12 @@ document.getElementById("JD_sign").onclick = '';
         						<div class="bm_h"><h2>社区导航</h2></div>
         						<div class="big_grid">
 								    <a href="" target="_blank">
-								    	<img src="/Public/timothy/picture/common_41_icon.png" width="60" height="60" /><h3>活动中心</h3>最新活动资讯信息发布
+								    	<img src="/Public/qwhome/picture/common_41_icon.png" width="60" height="60" /><h3>活动中心</h3>最新活动资讯信息发布
 								    </a>
 								</div>
 <div class="big_grid">
     <a href="" target="_blank">
-    	<img src="/Public/timothy/picture/common_42_icon.png" width="60" height="60" /><h3>社区公告</h3>主要负责解封、投诉等事务
+    	<img src="/Public/qwhome/picture/common_42_icon.png" width="60" height="60" /><h3>社区公告</h3>主要负责解封、投诉等事务
     </a>
 </div>
 </div></div>
@@ -501,32 +503,32 @@ document.getElementById("JD_sign").onclick = '';
     <ul>
     	<li>
     		<a href="" class="li_1" target="_blank">
-    			<img src="/Public/timothy/picture/common_2_icon.png" width="30" height="30" />业界资讯
+    			<img src="/Public/qwhome/picture/common_2_icon.png" width="30" height="30" />业界资讯
     		</a>
     	</li>
     	<li>
     		<a href="" class="li_2" target="_blank">
-    			<img src="/Public/timothy/picture/common_36_icon.png" width="30" height="30" />热议话题
+    			<img src="/Public/qwhome/picture/common_36_icon.png" width="30" height="30" />热议话题
     		</a>
     	</li>
     	<li>
     		<a href="" class="li_3" target="_blank">
-    			<img src="/Public/timothy/picture/common_40_icon.png" width="30" height="30" />硬货科技
+    			<img src="/Public/qwhome/picture/common_40_icon.png" width="30" height="30" />硬货科技
     		</a>
     	</li>
     	<li>
     		<a href="" class="li_4" target="_blank">
-    			<img src="/Public/timothy/picture/common_45_icon.png" width="30" height="30" />网友杂谈
+    			<img src="/Public/qwhome/picture/common_45_icon.png" width="30" height="30" />网友杂谈
     		</a>
     	</li>
     	<li>
     		<a href="" class="li_5" target="_blank">
-    			<img src="/Public/timothy/picture/common_49_icon.png" width="30" height="30" />技巧分享
+    			<img src="/Public/qwhome/picture/common_49_icon.png" width="30" height="30" />技巧分享
     		</a>
     	</li>
     	<li>
     		<a href="" class="li_6" target="_blank">
-    			<img src="/Public/timothy/picture/common_51_icon.png" width="30" height="30" />主题壁纸
+    			<img src="/Public/qwhome/picture/common_51_icon.png" width="30" height="30" />主题壁纸
     		</a>
     	</li>
     </ul>
@@ -572,7 +574,7 @@ document.getElementById("JD_sign").onclick = '';
 <div id="portal_block_14" class="cl_block_bm block move-span">
 	<div id="portal_block_14_content" class="dxb_bc"><div class="portal_block_summary">
 		<a href="http://www.dzzsk.com" target="_blank">
-			<img src="/Public/timothy/picture/ad1.png" width="100%" />
+			<img src="/Public/qwhome/picture/ad1.png" width="100%" />
 		</a>
 	</div>
 </div>
@@ -584,11 +586,11 @@ document.getElementById("JD_sign").onclick = '';
     <div class="bm_h cl"><h2>关注ZUK</h2></div>
 <div class="qing_weibo cl">
 	<div class="sns_widget cl">
-    	<a href="http://www.dzzsk.com/" target="_blank"><img src="/Public/timothy/picture/weibo.jpg" /></a>
+    	<a href="http://www.dzzsk.com/" target="_blank"><img src="/Public/qwhome/picture/weibo.jpg" /></a>
         <p><a href="http://www.dzzsk.com/" target="_blank">新浪微博</a></p>
 	</div>
     <div class="sns_widget cl">
-    	<img src="/Public/timothy/picture/weixin.jpg" />
+    	<img src="/Public/qwhome/picture/weixin.jpg" />
         <p>官方微信</p>
 	</div>
 </div>
@@ -644,8 +646,8 @@ document.getElementById("JD_sign").onclick = '';
 <!-- _______________________________________________________ -->
 
 <!-- 广告推荐 -->
-<div class="fullbg" style="background-image:url(/Public/qwhome/images/235646yp35xycweuyxuanc.jpg)"></div>
-<div class="fullbg_link">
+<!-- <div class="fullbg" style="background-image:url(/Public/qwhome/images/235646yp35xycweuyxuanc.jpg)"></div>
+ --><div class="fullbg_link">
 	<a href="#" title="1" style="position: absolute; left:0; top:60px; height:300px; width:100px;display:block;"></a>
 	<a href="#" title="1" style="position: absolute; right:0; top:60px; height:300px; width:100px;display:block;"></a>
 </div>

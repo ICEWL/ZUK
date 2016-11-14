@@ -1,0 +1,541 @@
+<extend name="Index/index" />
+
+<block name="main">
+
+
+
+  
+
+
+ 
+
+  <div id="wp" class="wp">
+
+   <!--[diy=diynavtop]-->
+   <div id="diynavtop" class="area"></div>
+   <!--[/diy]--> 
+   <div id="pt" class="cl"> 
+    <div class="z"> 
+     <a href="./" class="nvhm" title="首页">BoBo演示站</a>
+     <em>&raquo;</em>
+     <a href="forum.php">论坛</a> 
+     <em>›</em> 
+     <a href="forum.php?gid=1">热门动态</a>
+     <em>›</em> 
+     <a href="forum.php?mod=forumdisplay&amp;fid=45">网友杂谈</a>
+    </div> 
+   </div>
+   <div class="wp"> 
+    <!--[diy=diy1]-->
+    <div id="diy1" class="area"></div>
+    <!--[/diy]--> 
+   </div> 
+   <div class="boardnav"> 
+    <div id="ct" class="wp cl ct2"> 
+     <div class="qing_forum_tit bm cl"> 
+      <div class="forum_left cl">
+       <img src="__PUBLIC__/qwhome/picture/common_45_icon.png" alt="网友杂谈" />
+      </div> 
+      <div class="forum_right cl" style="width:840px;"> 
+       <div class="forum_bm_h cl"> 
+        <div id="scbar" class="qing_search cl"> 
+         <form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($('scbar_txt'))" action="search.php?searchsubmit=yes" target="_blank"> 
+          <input type="hidden" name="mod" id="scbar_mod" value="search" /> 
+          <input type="hidden" name="formhash" value="759a6f10" /> 
+          <input type="hidden" name="srchtype" value="title" /> 
+          <input type="hidden" name="srhfid" value="45" /> 
+          <input type="hidden" name="srhlocality" value="forum::forumdisplay" /> 
+          <div class="qing_search_type"> 
+           <a href="javascript:;" id="scbar_type" onclick="showMenu(this.id)" hidefocus="true">搜索</a> 
+          </div> 
+          <div class="qing_search_txt"> 
+           <input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" /> 
+          </div> 
+          <div class="qing_search_btn"> 
+           <button type="submit" name="searchsubmit" id="scbar_btn" sc="1" value="true"></button> 
+          </div> 
+         </form> 
+        </div> 
+        <ul id="scbar_type_menu" class="qing_search_pop" style="display: none;">
+         <li><a href="javascript:;" rel="curforum" fid="45">本版</a></li>
+         <li><a href="javascript:;" rel="article">文章</a></li>
+         <li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li>
+         <li><a href="javascript:;" rel="group">群组</a></li>
+         <li><a href="javascript:;" rel="user">用户</a></li>
+        </ul> 
+
+        <h2> <a href="forum.php?mod=forumdisplay&amp;fid=45">网友杂谈</a> </h2> 
+        <div class="forum_rules" id="forum_rules_45" style=";">
+          聊人生聊理想聊妹子聊机友，畅所欲言，尽在网友杂谈。 
+        </div> 
+       </div> 
+       <div class="forum_stat cl"> 
+        <span class="z"> 今日 : 0<span class="pipe">|</span>主题 : 14 <span class="pipe">|</span>版主: <a href="home.php?mod=space&amp;username=admin" class="notabs" c="1">admin</a> </span> 
+        <span class="y"> <a href="home.php?mod=spacecp&amp;ac=favorite&amp;type=forum&amp;id=45&amp;handlekey=favoriteforum&amp;formhash=759a6f10" id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);">收藏本版 <strong class="xi1" id="number_favorite" style="display:none;">(<span id="number_favorite_num">0</span>)</strong></a> <span class="pipe">|</span><a href="forum.php?mod=rss&amp;fid=45&amp;auth=0" class="fa_rss" target="_blank" title="RSS">订阅</a> </span> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="mn"> 
+      <script src="__PUBLIC__/qwhome/js/lightbox.js"></script> 
+      <div class="drag"> 
+       <!--[diy=diy4]-->
+       <div id="diy4" class="area"></div>
+       <!--[/diy]--> 
+      </div> 
+      <div id="threadlist" class="tl qing_threadlist bm"> 
+       <ul id="thread_types" class="ttp cl"> 
+        <li id="ttp_all" class="xw1 a"><a href="forum.php?mod=forumdisplay&amp;fid=45">全部<span></span></a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=typeid&amp;typeid=1">最新信息<span></span></a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=typeid&amp;typeid=2">科技达人<span></span></a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=typeid&amp;typeid=3">网友分享<span></span></a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=typeid&amp;typeid=4">推荐机型<span></span></a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=typeid&amp;typeid=5">亲测可用<span></span></a></li> 
+       </ul> 
+       <div class="th q_th"> 
+        <table cellspacing="0" cellpadding="0"> 
+         <tbody>
+          <tr> 
+           <th colspan="2"> 
+            <div class="tf"> 
+
+
+             <div class="z"> 
+              <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=author&amp;orderby=dateline" class=""><i class="newthead"></i>最新</a>&nbsp; 
+              <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=lastpost&amp;orderby=lastpost" class=""><i class="lastthead"></i>最后发表</a>&nbsp; 
+              <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=heat&amp;orderby=heats" class=""><i class="hotthead"></i>热门</a>&nbsp; 
+              <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=digest&amp;digest=1" class=""><i class="verythead"></i>精华</a>&nbsp; 
+             </div> 
+            </div> </th> 
+          </tr> 
+         </tbody>
+        </table> 
+       </div> 
+       <div class="bm_c"> 
+        <div id="forumnew" style="display:none"></div> 
+        <form method="post" autocomplete="off" name="moderate" id="moderate" action="forum.php?mod=topicadmin&amp;action=moderate&amp;fid=45&amp;infloat=yes&amp;nopost=yes"> 
+         <input type="hidden" name="formhash" value="759a6f10" /> 
+         <input type="hidden" name="listextra" value="page%3D1" /> 
+         <table summary="forum_45" cellspacing="0" cellpadding="0" id="threadlisttableid"> 
+          <tbody id="stickthread_135"> 
+           <tr> 
+            <td class="icn"> 
+             <div class="qing_threadlist_stat"> 
+              <a href="forum.php?mod=viewthread&amp;tid=135&amp;extra=page%3D1" title="7 个回复">7</a> 
+             </div> </td> 
+            <th class="common"> 
+             <div class="q_f_title1"> 
+              <a href="javascript:;" id="content_135" class="showcontent y" title="更多操作" onclick="CONTENT_TID='135';CONTENT_ID='stickthread_135';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a> 
+              <div class="z qing_fenlei"> 
+              </div> 
+              <a href="forum.php?mod=viewthread&amp;tid=135&amp;extra=page%3D1" onclick="atarget(this)" class="s xst">精仿zuk风格详细介绍</a> 
+              <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" align="absmiddle" title="图片附件" /> 
+              <img src="__PUBLIC__/qwhome/picture/jing.gif" alt="digest" align="absmiddle" title="精华 3" /> 
+              <img src="__PUBLIC__/qwhome/picture/zd.gif" align="absmiddle" alt="全局置顶" /> 
+             </div> 
+             <div class="threadlist_imglist qnone_-1">
+      
+              <div class="threadlist_imglist qnone_-1"></div>
+             </div> 
+             <div class="q_f_title2"> 
+              <div class="z">
+               &gt; 
+              </div> 
+              <div class="y"> 
+               <a href="home.php?mod=space&amp;username=bobo">bobo</a> @ 2016-2-1 16:00 
+              </div> 
+             </div> </th> 
+           </tr> 
+          </tbody> 
+          <tbody id="separatorline"> 
+           <tr class="ts"> 
+            <th colspan="2">
+             <div class="separatorlinediv cl">
+              <a href="javascript:;" onclick="checkForumnew_btn('45')" title="查看更新" class="forumrefresh">版块主题</a>
+             </div></th> 
+           </tr> 
+          </tbody> 
+          <tbody id="normalthread_100"> 
+           <tr> 
+            <td class="icn"> 
+             <div class="qing_threadlist_stat"> 
+              <a href="forum.php?mod=viewthread&amp;tid=100&amp;extra=page%3D1" title="1 个回复">1</a> 
+             </div> </td> 
+            <th class="new"> 
+             <div class="q_f_title1"> 
+              <a href="javascript:;" id="content_100" class="showcontent y" title="更多操作" onclick="CONTENT_TID='100';CONTENT_ID='normalthread_100';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a> 
+              <div class="z qing_fenlei">
+               <em>[<a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=typeid&amp;typeid=3">网友分享</a>]</em> 
+              </div> 
+              <a href="forum.php?mod=viewthread&amp;tid=100&amp;extra=page%3D1" onclick="atarget(this)" class="s xst">关于连接MOTO360智能手表</a> 
+             </div> 
+             <div class="threadlist_imglist qnone_-1">
+             
+             </div> 
+             <div class="q_f_title2"> 
+              <div class="z"> 
+              </div> 
+              <div class="y"> 
+               <a href="home.php?mod=space&amp;username=%E5%8C%97%E6%96%B9%E7%9A%84%E9%9B%AA">北方的雪</a> @ 2016-10-30 19:34 
+              </div> 
+             </div> </th> 
+           </tr> 
+          </tbody> 
+         
+         
+         </table>
+         <!-- end of table "forum_G[fid]" branch 1/3 --> 
+        </form> 
+       </div> 
+      </div> 
+      <div id="filter_special_menu" class="p_pop" style="display:none" change="location.href='forum.php?mod=forumdisplay&amp;fid=45&amp;filter='+$('filter_special').value"> 
+       <ul> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45">全部主题</a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=specialtype&amp;specialtype=poll">投票</a></li>
+       </ul> 
+      </div> 
+      <div id="filter_reward_menu" class="p_pop" style="display:none" change="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=specialtype&amp;specialtype=reward&amp;rewardtype='+$('filter_reward').value"> 
+       <ul> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=specialtype&amp;specialtype=reward">全部悬赏</a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=specialtype&amp;specialtype=reward&amp;rewardtype=1">进行中</a></li>
+       </ul> 
+      </div> 
+      <div id="filter_dateline_menu" class="p_pop" style="display:none"> 
+       <ul class="pop_moremenu"> 
+        <li>排序: <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=author&amp;orderby=dateline">发帖时间</a><span class="pipe">|</span> <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=reply&amp;orderby=replies">回复/查看</a><span class="pipe">|</span> <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=reply&amp;orderby=views">查看</a> </li> 
+        <li>时间: <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;orderby=lastpost&amp;filter=dateline" class="xw1">全部时间</a><span class="pipe">|</span> <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=86400">一天</a><span class="pipe">|</span> <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=172800">两天</a><span class="pipe">|</span> <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=604800">一周</a><span class="pipe">|</span> <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=2592000">一个月</a><span class="pipe">|</span> <a href="forum.php?mod=forumdisplay&amp;fid=45&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=7948800">三个月</a> </li> 
+       </ul> 
+      </div> 
+      <div id="filter_orderby_menu" class="p_pop" style="display:none"> 
+       <ul> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45">默认排序</a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=author&amp;orderby=dateline">发帖时间</a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=reply&amp;orderby=replies">回复/查看</a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=reply&amp;orderby=views">查看</a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=lastpost&amp;orderby=lastpost">最后发表</a></li> 
+        <li><a href="forum.php?mod=forumdisplay&amp;fid=45&amp;filter=heat&amp;orderby=heats">热门</a></li> 
+       </ul> 
+      </div> 
+      <div class="bm bw0 pgs cl"> 
+       <span id="fd_page_bottom"></span> 
+      </div>
+      <!--[diy=diyfastposttop]-->
+      <div id="diyfastposttop" class="area"></div>
+      <!--[/diy]--> 
+      <!--[diy=diyforumdisplaybottom]-->
+      <div id="diyforumdisplaybottom" class="area"></div>
+      <!--[/diy]--> 
+     </div> 
+     <div class="sd"> 
+      <style type="text/css">
+.midaben_con {
+font-family:arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+background-color:#fff;
+width:270px;
+height:50px;
+border-radius:5px;
+position:relative
+}
+.midaben_con .midaben_signpanel {
+background-color:#ff6f3d;
+height:50px;
+display:block;
+position:relative;
+border-radius:4px;
+background-image:url(__PUBLIC__/qwhome/images/tou.png);
+background-repeat:no-repeat;
+background-position:14px 8px;
+cursor:pointer
+}
+.midaben_con .midaben_signpanel .font {
+position:absolute;
+color:#fff;
+width:55px;
+height:30px;
+font-size:24px;
+line-height:30px;
+top:11px;
+left:50px
+}
+.midaben_con .midaben_signpanel .nums {
+display:none
+}
+.midaben_con .midaben_signpanel .fblock {
+height:46px;
+width:101px;
+background-color:#fff;
+padding-left:5px;
+padding-right:5px;
+position:absolute;
+top:2px;
+right:2px;
+font-size:14px;
+color:#606060
+}
+.midaben_con .midaben_signpanel .fblock .all {
+height:23px;
+line-height:26px;
+padding-left:30px;
+border-bottom:1px solid #eee;
+background-image:url(__PUBLIC__/qwhome/images/tou2.jpg);
+background-repeat:no-repeat;
+background-position:5px 0;
+margin-bottom:0;
+color:#606060
+}
+.midaben_con .midaben_signpanel .fblock .line {
+height:22px;
+line-height:24px;
+padding-left:30px;
+width:60px;
+background-image:url(__PUBLIC__/qwhome/images/tou2.jpg);
+background-repeat:no-repeat;
+background-position:5px -25px;
+color:#606060
+}
+.midaben_con a.midaben_signpanel:hover {
+background-color:#ff7d49;
+}
+.midaben_con a.midaben_signpanel:active {
+background-color:#ff7d49;
+}
+.midaben_con .default {
+cursor:default;
+background-color:#ff6f3d;
+}
+.midaben_con a.default:hover {
+background-color:#ff7d49;
+}
+.midaben_con a.default:active {
+background-color:#ff7d49;
+}
+.midaben_con .visted {
+background-position:7px 8px
+}
+.midaben_con .visted .font {
+font-size:20px;
+line-height:25px;
+width:60px;
+left:40px;
+top:8px;
+text-shadow:0 1px 0 #ff7d49;
+}
+.midaben_con .visted .nums {
+display:block;
+font-size:12px;
+width:56px;
+text-align:center;
+line-height:20px;
+position:absolute;
+color:#fff;
+top:29px;
+left:43px
+}
+.midaben_con .midaben_win {
+width:205px;
+height:115px;
+background-color:#fff;
+border:1px solid #dedfe3;
+border-radius:5px;
+position:absolute;
+top:-135px;
+left:10px;
+box-shadow:0 5px 0 #dedfe3;
+padding-left:5px;
+padding-right:5px
+}
+.midaben_con .midaben_win .angleA {
+width:0;
+_border:0;
+position:absolute;
+bottom:-30px;
+left:70px;
+border-color:#dedfe3 transparent transparent;
+border-style:solid;
+border-width:15px
+}
+.midaben_con .midaben_win .angleB {
+width:0;
+_border:0;
+position:absolute;
+bottom:-20px;
+left:75px;
+border-color:#fff transparent transparent;
+border-style:solid;
+border-width:10px
+}
+.midaben_con .midaben_win .title {
+padding-left:58px;
+height:55px;
+padding-top:22px;
+background-repeat:no-repeat;
+background-image:url(__PUBLIC__/qwhome/images/tou3.jpg);
+background-position:0 5px;
+border-bottom:1px solid #eee
+}
+.midaben_con .midaben_win .title h3 {
+font-size:18px;
+color:#434a54;
+line-height:25px;
+font-weight:400;
+margin:0;
+padding:0
+}
+.midaben_con .midaben_win .title .con {
+font-size:12px;
+color:#434a54;
+line-height:20px;
+font-weight:normal;
+width:150px;
+margin:0;
+padding:0
+}
+.midaben_con .midaben_win .info {
+height:35px;
+line-height:35px;
+color:#aab2bd;
+font-size:14px;
+text-align:center;
+padding-left:10px
+}
+.midaben_con a.midaben_signpanel:visited,.midaben_con a.visted:visited,.midaben_con a.visted:hover,.midaben_con a.visted:active {
+background-color:#ff6f3d
+}
+
+</style> 
+      <script type="text/javascript">
+function cjdsign(){
+document.getElementById("JD_sign").className = 'midaben_signpanel JD_sign visted';  
+document.getElementById("JD_sign").href = 'javascript:;';
+document.getElementById("JD_sign").target = '_blank';
+document.getElementById("JD_sign").onclick = '';
+} 
+</script> 
+      <div id="midaben_sign"> 
+       <div class="midaben_con mbm"> 
+        <a class="midaben_signpanel JD_sign" id="JD_sign" href="member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href)"> 
+         <div class="font">
+           签到 
+         </div> <span class="nums"> 连续天 </span> 
+         <div class="fblock"> 
+          <div class="all">
+            1人 
+          </div> 
+          <div class="line"> 
+           <span style="font-size:12px;">签到看排名</span> 
+          </div> 
+         </div> </a> 
+        <div id="JD_win" class="midaben_win JD_win" style="display:none;"> 
+         <div class="title"> 
+          <h3> 签到成功 </h3> 
+          <p class="con"> </p> 
+         </div> 
+         <div class="info"> 
+         </div> 
+         <div class="angleA"> 
+         </div> 
+         <div class="angleB"> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <!--右侧发帖179667784--> 
+      <div class="qing_postbig bm cl"> 
+       <a href="forum.php?mod=post&amp;action=newthread&amp;fid=45"><img src="__PUBLIC__/qwhome/picture/post_big.png" alt="发新帖" /></a> 
+      </div> 
+      <!--diy开始179667784--> 
+      <!--[diy=diybktj]-->
+      <div id="diybktj" class="area">
+       <div id="frameQYrLkr" class="cl_frame_bm frame move-span cl frame-1">
+        <div id="frameQYrLkr_left" class="column frame-1-c">
+         <div id="frameQYrLkr_left_temp" class="move-span temp"></div>
+         <div id="portal_block_3" class="cl_block_bm block move-span">
+          <div id="portal_block_3_content" class="dxb_bc">
+           <div class="bm"> 
+            <div class="bm_h cl">
+             <h2>精彩推荐</h2>
+            </div> 
+            <div class="qing_tuijianimg cl"> 
+					<!-- 轮播推荐  -->
+
+             <div class="q_topltslide"> 
+              <ul class="rpic">
+               <li><a href="forum.php?mod=viewthread&amp;tid=18" target="_blank"><img src="__PUBLIC__/qwhome/picture/9208073df8183e1fda1278320f442167.jpg" width="270" height="180" /></a></li>
+              </ul> 
+             </div> 
+					<!-- 轮播推荐  -->
+
+            </div> 
+           </div>
+          </div>
+         </div>
+         <div id="portal_block_4" class="cl_block_bm block move-span">
+          <div id="portal_block_4_content" class="dxb_bc">
+           <div class="bm"> 
+            <div class="bm_h cl">
+             <h2>热门推荐</h2>
+            </div> 
+            <div class="qing_tuijianlist cl"> 
+             <ul>
+              <li><span></span><a href="forum.php?mod=viewthread&amp;tid=18" target="_blank">一个喜欢自拍的妹子的相册 不喜勿进</a></li>
+				 <li><span></span><a href="forum.php?mod=viewthread&amp;tid=18" target="_blank">一个喜欢自拍的妹子的相册 不喜勿进</a></li>
+				 <li><span></span><a href="forum.php?mod=viewthread&amp;tid=18" target="_blank">一个喜欢自拍的妹子的相册 不喜勿进</a></li>
+
+             </ul> 
+            </div> 
+           </div> 
+          </div>
+         </div>
+         <div id="portal_block_5" class="cl_block_bm block move-span">
+          <div id="portal_block_5_content" class="dxb_bc">
+           <div class="portal_block_summary">
+            <a href="http://www.dzzsk.com" target="_blank"><img src="__PUBLIC__/qwhome/picture/ad1.png" width="100%" /></a>
+           </div>
+          </div>
+         </div>
+         <div id="portal_block_6" class="cl_block_bm block move-span">
+          <div id="portal_block_6_content" class="dxb_bc">
+           <div class="portal_block_summary">
+            <div class="bm"> 
+             <div class="bm_h cl">
+              <h2>关注ZUK</h2>
+             </div> 
+             <div class="qing_weibo cl"> 
+              <div class="sns_widget cl"> 
+               <a href="http://www.dzzsk.com/" target="_blank"><img src="__PUBLIC__/qwhome/picture/weibo.jpg" /></a> 
+               <p><a href="http://www.dzzsk.com/" target="_blank">新浪微博</a></p> 
+              </div> 
+              <div class="sns_widget cl"> 
+               <img src="__PUBLIC__/qwhome/picture/weixin.jpg" /> 
+               <p>官方微信</p> 
+              </div> 
+             </div> 
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!--[/diy]--> 
+     
+      <div class="drag"> 
+       <!--[diy=diy2]-->
+       <div id="diy2" class="area"></div>
+       <!--[/diy]--> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   
+
+ 
+  </div> 
+
+
+
+
+</block>
+
+<block name="myjs">
+
+</block>
