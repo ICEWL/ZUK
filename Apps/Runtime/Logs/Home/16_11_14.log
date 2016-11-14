@@ -1,0 +1,21 @@
+[ 2016-11-14T09:40:36+08:00 ] 127.0.0.1 /Home/Section/static/_js/fn.slide.js?_=1479087636566
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T09:40:37+08:00 ] 127.0.0.1 /Home/Exchange/static/_js/fn.slide.js?_=1479087637532
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T09:40:38+08:00 ] 127.0.0.1 /Home/Turntable/static/_js/fn.slide.js?_=1479087638260
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+ERR: 非法操作:static
+
+[ 2016-11-14T09:40:41+08:00 ] 127.0.0.1 /Home/Turntable/home.php?mod=spacecp&ac=credit
+ERR: 非法操作:home.php
+

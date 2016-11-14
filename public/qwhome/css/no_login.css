@@ -1,0 +1,15 @@
+﻿.user_no_login { position: fixed; left: 0;bottom: 0; width: 100%; padding: 28px 0; height: 40px;text-align: center; line-height: 45px; background: #f9f9f9; border-top: 1px solid #e6e6e6;  }
+.use_id { line-height:40px; height:40px; border-radius: 3px; display: inline-block; margin-left:15px; }
+.use_id a { color:#fff; background: url(../images/no_login_icon.png) no-repeat; display: block; padding:0 18px 0 45px; }
+.use_zukid { background: #1499f8; padding:0 0 0 20px; }
+.use_zukid a { padding:0 20px 0 0; background-image: none; }
+.use_zukid:hover { background: #1290eb; }
+.use_qqid { background: #177dbf; }
+.use_qqid a { background-position: 0 -40px; }
+.use_qqid:hover { background: #1575b3; }
+.use_wbid { background: #d52b2b; }
+.use_wbid a { background-position: 0 -80px; }
+.use_wbid:hover { background: #c92727; }
+.user_no_login .cutline { margin: 0px 5px 0 20px; height: 20px; background:#ccc; }
+.user_no_login .font22 a { color:#1499f8;  }
+.user_no_loginbg { position: absolute; left: 0; top: -32px; width: 100%; height: 32px;background: url(../images/shadow.png) no-repeat center top; opacity: 0.95;}
