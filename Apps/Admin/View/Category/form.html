@@ -1,0 +1,162 @@
+<extend name="Index/index" />
+
+<block name="main">
+
+	<div class="page-content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+                <form class="form-horizontal" role="form" id="form" method="post" action="<{:U('update')}>">
+
+                    <input name="id" id="id" value="<{$currentcategory.id}>" type="hidden">
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label no-padding-right" for="type"> 版块类型 </label>
+                        <div class="col-sm-9">
+                            <select id="type" name="type" class="col-xs-10 col-sm-5">
+                                <option value="0"
+                                <if condition="$currentcategory['type'] eq 0">selected="selected"</if>
+                                >ZUK专区</option>
+                                <option value="1"
+                                <if condition="$currentcategory['type'] eq 1">selected="selected"</if>
+                                >Moto专区</option>
+                                <option value="2"
+                                <if condition="$currentcategory['type'] eq 2">selected="selected"</if>
+                                >粉丝广场</option>
+                                <option value="3"
+                                <if condition="$currentcategory['type'] eq 3">selected="selected"</if>
+                                >站务大厅</option>
+                            </select>
+                            <span class="help-inline col-xs-12 col-sm-7">
+								<span class="middle">版块类型。</span>
+							</span>
+                        </div>
+                    </div>
+
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label no-padding-right" for="pid"> 父版块 </label>
+                        <div class="col-sm-9">
+                            <select id="pid" name="pid" class="col-xs-10 col-sm-5">
+                            	<option value="0">顶级版块</option>
+                                <{$category}>
+                            </select>
+                            <span class="help-inline col-xs-12 col-sm-7">
+								<span class="middle">选择所属版块。</span>
+							</span>
+                        </div>
+                    </div>
+
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label no-padding-right" for="name"> 版块名称 </label>
+                        <div class="col-sm-9">
+                            <input type="text" name="name" id="name" placeholder="版块名称"
+                                   class="col-xs-10 col-sm-5" value="<{$currentcategory.name}>">
+                            <span class="help-inline col-xs-12 col-sm-7">
+								<span class="middle">版块名称，不能为空。</span>
+							</span>
+                        </div>
+                    </div>
+
+                    <div class="space-4"></div>
+                
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label no-padding-right" for="title">
+                            版块副标题 </label>
+                        <div class="col-sm-9">
+                            <input type="text" name="title" id="seotitle" placeholder="版块副标题"
+                                   class="col-xs-10 col-sm-5" value="<{$currentcategory.title}>">
+                            <span class="help-inline col-xs-12 col-sm-7">
+								<span class="middle">版块副标题</span>
+							</span>
+                        </div>
+                    </div>
+
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label no-padding-right" for="description"> 版块描述 </label>
+                        <div class="col-sm-9">
+                            <textarea name="description" id="description" placeholder="版块描述"
+                                      class="col-xs-10 col-sm-5"
+                                      rows="5"><{$currentcategory.description}></textarea>
+                            <span class="help-inline col-xs-12 col-sm-7">
+								<span class="middle">版块描述</span>
+							</span>
+                        </div>
+                    </div>
+                          
+                	<div class="space-4"></div>
+
+	                <div class="form-group">
+	                    <label class="col-sm-1 control-label no-padding-right" for="o"> 排序 </label>
+	                    <div class="col-sm-9">
+	                        <input type="number" name="o" id="o" placeholder="排序" class="col-xs-10 col-sm-5" value="<{$currentcategory.o}>">
+	                        <span class="help-inline col-xs-12 col-sm-7">
+								<span class="middle">越小越靠前。</span>
+							</span>
+	                    </div>
+	                </div>
+
+	                <div class="col-md-offset-2 col-md-9">
+	                    <button class="btn btn-info submit" type="button">
+	                        <i class="icon-ok bigger-110"></i>
+	                        提交
+	                    </button>
+
+	                    &nbsp; &nbsp; &nbsp;
+	                    <button class="btn" type="reset">
+	                        <i class="icon-undo bigger-110"></i>
+	                        重置
+	                    </button>
+	                </div>
+
+                </form>
+                <!-- PAGE CONTENT ENDS -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
+
+</block>
+
+<block name="myjs">
+	
+	<script>
+	    $(function () {
+            
+            $("#type").change(function () {
+                if ($(this).val() == 1) {
+                    $("#type1").removeClass('hidden');
+                    $("#type2").addClass('hidden');
+                } else if ($(this).val() == 2) {
+                    $("#type2").removeClass('hidden');
+                    $("#type1").addClass('hidden');
+                } else {
+                    $("#type1").addClass('hidden');
+                    $("#type2").addClass('hidden');
+                }
+            });
+
+	        $(".btn.btn-info.submit").click(function () {
+	            var name = $("#name").val();
+	            if (name == '') {
+	                bootbox.dialog({
+	                    message: "抱歉，版块名称不能为空。",
+	                    buttons: {
+	                        "success": {
+	                            "label": "确定",
+	                            "className": "btn-danger"
+	                        }
+	                    }
+	                });
+	                return false;
+	            }
+	            $("#form").submit();
+	        })
+	    })
+	</script>
+
+</block>
