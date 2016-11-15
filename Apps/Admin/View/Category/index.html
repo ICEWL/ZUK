@@ -10,7 +10,8 @@
                     <thead>
                     <tr>
                         <th class="col-xs-2">版块名称</th>
-                        <th class="col-xs-5">版块副标题</th>
+                        <th class="col-xs-3">版块副标题</th>
+                        <th class="col-xs-2">版块图标</th>
                         <th class="col-xs-1">排序</th>
                         <th class="col-xs-2">操作</th>
                     </tr>
@@ -29,9 +30,15 @@
                                     }
                                 echo '</td> <td>';
 
-                                echo "$val[title]</td> <td>";
+                                echo "$val[title]</td>";
+                                
+                                if($val['pid'] == 0){
+                                echo "<td><img width=50 height=50 src=__ROOT__$val[cgicon]> </td> ";
+                                }else{
+                                echo "<td>NO ICO</td>";
+                                }
                                     
-                                echo "$val[o]</td> <td>";
+                                echo "<td>$val[o]</td> <td>";
                                     if($val[pid]=='0'){
                                         echo '<a class="green" href="'.U('add',array('pid'=>$val['id'])).'"
                                                  title="新增分类"><i class="ace-icon fa fa-plus-circle bigger-100"></i>新增</a>&nbsp;&nbsp;';
@@ -54,7 +61,7 @@
                         </php>
                     <else/>
                         <tr>
-                            <td colspan="4">暂无分类</td>
+                            <td colspan="5">暂无分类</td>
                         </tr>
                     </if>
                     </tbody>

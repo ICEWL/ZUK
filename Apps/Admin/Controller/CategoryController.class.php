@@ -18,7 +18,7 @@ class CategoryController extends ComController
 
     public function index()
     {
-        $category = M('category')->field('id,pid,name,title,o')->order('o asc')->select();
+        $category = M('category')->field('id,pid,name,title,cgicon,o')->order('o asc')->select();
         $category = $this->getMenu($category);
         $this->assign('category', $category);
         $this->display();
@@ -60,7 +60,6 @@ class CategoryController extends ComController
         $tree = new Tree($category);
         $str = "<option value=\$id \$selected>\$spacer\$name</option>"; //生成的形式
         $category = $tree->get_tree(0, $str, $currentcategory['pid']);
-
         $this->assign('category', $category);
         $this->display('form');
     }
@@ -94,10 +93,13 @@ class CategoryController extends ComController
         }
 
         $id = I('post.id', false, 'intval');
+        $cgicon = I('post.cgicon', '', 'strip_tags');
+
         $data['type'] = I('post.type', 0, 'intval');
         $data['pid'] = I('post.pid', 0, 'intval');
         $data['name'] = I('post.name');
         $data['title'] = I('post.title', '', 'htmlspecialchars');
+        $data['cgicon'] = $cgicon ? $cgicon : '';
         $data['description'] = I('post.description', '', 'htmlspecialchars');
         $data['o'] = I('post.o', 0, 'intval');
         if ($data['name'] == '') {

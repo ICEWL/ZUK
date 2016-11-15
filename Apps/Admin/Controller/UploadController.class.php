@@ -20,7 +20,7 @@ class UploadController extends ComController
     }
 
     public function uploadpic()
-    {
+    {  
         $Img = I('Img');
         $Path = null;
         if ($_FILES['img']) {
@@ -46,7 +46,7 @@ class UploadController extends ComController
     }
 
     private function saveimg($files)
-    {
+    {   
         $mimes = array(
             'image/jpeg',
             'image/jpg',
@@ -67,11 +67,14 @@ class UploadController extends ComController
             'bmp',
             'x-png'
         );
+
+        $picpath = '';
+
         $upload = new Upload(array(
             'mimes' => $mimes,
             'exts' => $exts,
-            'rootPath' => './Public/',
-            'savePath' => 'attached/'.date('Y')."/".date('m')."/",
+            'rootPath' => './Uploads/',
+            'savePath' => $picpath.'/'.date('Y')."/".date('m')."/",
             'subName'  =>  array('date', 'd'),
         ));
         $info = $upload->upload($files);
@@ -80,7 +83,7 @@ class UploadController extends ComController
             echo "<script>alert('{$error}')</script>";
         }else{// 上传成功
             foreach ($info as $item) {
-                $filePath[] = "/Public/".$item['savepath'].$item['savename'];
+                $filePath[] = "/Uploads/".$item['savepath'].$item['savename'];
             }
             $ImgStr = implode("|", $filePath);
             return $ImgStr;
