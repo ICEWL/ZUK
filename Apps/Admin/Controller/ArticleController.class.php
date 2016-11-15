@@ -19,7 +19,6 @@ class ArticleController extends ComController
     public function index($sid = 0, $p = 1)
     {
 
-
         $p = intval($p) > 0 ? $p : 1;
 
         $article = M('article');
@@ -29,7 +28,7 @@ class ArticleController extends ComController
         $sid = isset($_GET['sid']) ? $_GET['sid'] : '';
         $keyword = isset($_GET['keyword']) ? htmlentities($_GET['keyword']) : '';
         $order = isset($_GET['order']) ? $_GET['order'] : 'DESC';
-        $where = '1 = 1 ';
+        $where = "1 = 1 and {$prefix}article.status = 0 ";
         if ($sid) {
             $sids_array = category_get_sons($sid);
             $sids = implode(',',$sids_array);
@@ -53,13 +52,87 @@ class ArticleController extends ComController
 
 
         $count = $article->where($where)->count();
-        $list = $article->field("{$prefix}article.*,{$prefix}category.name")->where($where)->order($orderby)->join("{$prefix}category ON {$prefix}category.id = {$prefix}article.sid")->limit($offset . ',' . $pagesize)->select();
+
+        // $list = $article->field("{$prefix}article.*,{$prefix}category.name")->where($where)->order($orderby)->join("{$prefix}category ON {$prefix}category.id = {$prefix}article.sid")->limit($offset . ',' . $pagesize)->select();
+
+        $list = $article->field("{$prefix}article.*,{$prefix}category.name,{$prefix}member.user")->where($where)->order($orderby)->join("{$prefix}member on {$prefix}article.mid = {$prefix}member.uid" , 'left')->join("{$prefix}category on {$prefix}article.sid = {$prefix}category.id", 'left')->limit($offset . ',' . $pagesize)->select();
 
         $page = new \Think\Page($count, $pagesize);
         $page = $page->show();
+
         $this->assign('list', $list);
         $this->assign('page', $page);
         $this->display();
+    }
+
+    public function manage($p = 1)
+    {   
+        $p = intval($p) > 0 ? $p : 1;
+        $article = M('article');
+        $pagesize = 20;#每页数量
+        $offset = $pagesize * ($p - 1);//计算记录偏移量
+        $prefix = C('DB_PREFIX');
+
+        $where = "1 = 1 and {$prefix}article.status = 1 ";
+
+        $list = $article->field("{$prefix}article.*,{$prefix}category.name,{$prefix}member.user")->where($where)->order($orderby)->join("{$prefix}member on {$prefix}article.mid = {$prefix}member.uid" , 'left')->join("{$prefix}category on {$prefix}article.sid = {$prefix}category.id", 'left')->limit($offset . ',' . $pagesize)->select();
+
+        // var_dump($list);die;
+        $page = new \Think\Page($count, $pagesize);
+        $page = $page->show();
+
+        $this->assign('list', $list);
+        $this->assign('page', $page);
+        $this->display('manage');
+    }
+
+    public function recycle()
+    {
+        $aids = isset($_REQUEST['aids']) ? $_REQUEST['aids'] : false;
+        if ($aids) {
+            if (is_array($aids)) {
+                $aids = implode(',', $aids);
+                $map['aid'] = array('in', $aids);
+            } else {
+                $map = 'aid=' . $aids;
+            }
+
+            $data['status'] = 1;
+
+            if (M('article')->data($data)->where($map)->save()) {
+                addlog('回收帖子，AID：' . $aids);
+                $this->success('恭喜，帖子回收成功！');
+            } else {
+                $this->error('参数错误！');
+            }
+        } else {
+            $this->error('参数错误！');
+        }
+    }
+
+    public function check()
+    {
+        $aids = isset($_REQUEST['aids']) ? $_REQUEST['aids'] : false;
+
+        if ($aids) {
+            if (is_array($aids)) {
+                $aids = implode(',', $aids);
+                $map['aid'] = array('in', $aids);
+            } else {
+                $map = 'aid=' . $aids;
+            }
+
+            $data['status'] = 0;
+
+            if (M('article')->data($data)->where($map)->save()) {
+                addlog('审核帖子，AID：' . $aids);
+                $this->success('恭喜，帖子审核成功！');
+            } else {
+                $this->error('参数错误！');
+            }
+        } else {
+            $this->error('参数错误！');
+        }
     }
 
     public function add()
