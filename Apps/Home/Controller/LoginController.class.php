@@ -77,25 +77,8 @@ class LoginController extends Controller {
         }
     }
 
-    function check_verify($code, $id = '')
-    {
-        $verify = new \Think\Verify();
-        return $verify->check($code, $id);
-    }
+ 
 
-    public function verify()
-    {
-        $config = array(
-            'fontSize' => 14, // 验证码字体大小
-            'length' => 1, // 验证码位数
-            'useNoise' => false, // 关闭验证码杂点
-            'codeSet' => '0123456789',
-            'imageW' => 100,
-            'imageH' => 30,
-        );
-        $verify = new \Think\Verify($config);
-        $verify->entry('login');
-    }
 
 
 }

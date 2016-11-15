@@ -1,27 +1,27 @@
-<!DOCTYPE>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE>
 <html class="null">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>&#27880;&#20876;</title>
   <script type="text/javascript" src="http://validform.rjboy.cn/wp-content/themes/validform/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="http://validform.rjboy.cn/Validform/v5.1/Validform_v5.1_min.js"></script>
-    <link href="__PUBLIC__/qwreg/css/lid_min_1.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLIC__/qwreg/css/lid_zuk_min_1.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/qwreg/css/lid_min_1.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/qwreg/css/lid_zuk_min_1.css" rel="stylesheet" type="text/css"/>
 </head>
 <body class="register">
 <!-- ldHeader -->
 <div id="ldHeader" class="ldHeader">
     <div class="cont clearfix">
         <div class="fleft">
-            <a href=""><img src="__PUBLIC__/qwreg/picture/logo_fm365.png"></a>
+            <a href=""><img src="/Public/qwreg/picture/logo_fm365.png"></a>
         </div>
         </div>
 </div>
 
 
 
-<script type="text/javascript" src="__PUBLIC__/qwreg/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/qwreg/js/Validform_v5.1_min.js"></script>
+<script type="text/javascript" src="/Public/qwreg/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/Public/qwreg/js/Validform_v5.1_min.js"></script>
 
 
 <!-- /ldHeader -->
@@ -34,7 +34,7 @@
    
 	<div class="clearfix">
 		<div class="regtitle">帐号注册</div>
-		<div class="regtext">轻松开启您的神奇之旅，已有联想帐号<a id="toLogin" ></a><a href="<{:U('Home/Login/index')}>">在此登录</a></div>
+		<div class="regtext">轻松开启您的神奇之旅，已有联想帐号<a id="toLogin" ></a><a href="<?php echo U('Home/Login/index');?>">在此登录</a></div>
 	</div>
 	<div class="hd">
 		<!-- 手机号注册 -->
@@ -48,7 +48,7 @@
 
 <div class="ldRegistMobileForm" id="ldRegistMobileForm">
    
-	<form method="post" class="demoform" action="<{:U('Reg/reg')}>" name="form1">
+	<form method="post" class="demoform" action="<?php echo U('Reg/reg');?>" name="form1">
 		<!-- 供200C接口使用 -->
 	
 		<div class="hd">
@@ -60,24 +60,24 @@
 				<li>
 					<span>用户名：</span>
 					<input name="name" class="username" type="text" value='' datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！"/>
-                    <img class="jsMOk ok" src="__PUBLIC__/qwreg/picture/icos.png">
+                    <img class="jsMOk ok" src="/Public/qwreg/picture/icos.png">
 				</li>
 				<li>
 					<span>设置密码：</span>
 					<input name="password" class="password" type="password" datatype="*6-15" errormsg="密码范围在6~15位之间！" />
-                    <img class="jsPOk ok" src="__PUBLIC__/qwreg/picture/icos.png">
+                    <img class="jsPOk ok" src="/Public/qwreg/picture/icos.png">
 					<p>密码长度8~20位，数字、字母、字符至少包含两种</p>
 				</li>
 				<li>
 					<span>确认密码：</span>
 					<input name="password2" type="password"  datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！"  />
-                    <img class="jsCPOk ok" src="__PUBLIC__/qwreg/picture/icos.png">
+                    <img class="jsCPOk ok" src="/Public/qwreg/picture/icos.png">
 				</li>
 
 				<li>
 					<span>手机号：</span>
 					<input class="username" type="password" onpaste="return false;" />
-                    <img class="jsCPOk ok" src="__PUBLIC__/qwreg/picture/icos.png">
+                    <img class="jsCPOk ok" src="/Public/qwreg/picture/icos.png">
 				</li>
 				<li>
 			        <!-- 验证码： -->
@@ -85,7 +85,7 @@
 					<input name="verify" placeholder="验证码" id="code" required type="text" class="code jsInput_code" />
 					<a class="jsCReset" href="#" onclick="return false;" id="capaaa">
                      <!--    <img class="jsCaptureImg" src="" width="120" height="36"> -->
-                         <img src="<{:U('Reg/verify_c')}>" id="yz_img" alt="" title="看不清楚？点击刷新" width="100" height="30" style="cursor:pointer;" >
+                         <img src="<?php echo U('Reg/verify_c');?>" id="yz_img" alt="" title="看不清楚？点击刷新" width="100" height="30" style="cursor:pointer;" >
                     </a>
 				</li>
 				<script>
@@ -107,7 +107,7 @@ captcha_img.click(function(){
 					<input name="verifycode" type="text" class="code " />
 					<input type="button" value='获取验证码' class="codebutton " />
 					<input type="hidden" value='重新获取' class="" />
-                    <img class=" ok" src="__PUBLIC__/qwreg/picture/icos.png">
+                    <img class=" ok" src="/Public/qwreg/picture/icos.png">
 				</li>
 				
 			</ul>
