@@ -28,23 +28,17 @@ class LoginController extends Controller {
         return $flag;
     }
     public function index(){
-    	$flag = $this->check_login();
-        if ($flag) {
-            $this->error('您已经登录,正在跳转到主页', U("Index/index"));
-        }
         $this->display('Login/index');
     }
 
-     public function login()
+    //执行登陆验证
+   public function login()
     {
-        $verify = isset($_POST['verify']) ? trim($_POST['verify']) : '';
-        if (!$this->check_verify($verify, 'login')) {
-            $this->error('验证码错误！', U("login/index"));
-        }
+        
 
         $username = isset($_POST['user']) ? trim($_POST['user']) : '';
         $password = isset($_POST['password']) ? password(trim($_POST['password'])) : '';
-        $remember = isset($_POST['remember']) ? $_POST['remember'] : 0;
+
         if ($username == '') {
             $this->error('用户名不能为空！', U("login/index"));
         } elseif ($password == '') {
@@ -62,22 +56,25 @@ class LoginController extends Controller {
             session('uid',$user['uid']);
             //加密cookie信息
             $auth = password($user['uid'].$user['user'].$ip.$ua.$salt);
-            if ($remember) {
-                cookie('auth', $auth, 3600 * 24 * 365);//记住我
-            } else {
-                cookie('auth', $auth);
-            }
-            addlog('登录成功。');
+
             $url = U('index/index');
             header("Location: $url");
             exit(0);
         } else {
-            addlog('登录失败。', $username);
+
             $this->error('登录失败，请重试！', U("login/index"));
         }
     }
 
- 
+  /**
+     * 用户注销
+     */
+    public function logout()
+    {
+        // 清楚所有session
+        session(null);
+        redirect(U('Login/login'), 2, '正在退出登录...');
+    }
 
 
 

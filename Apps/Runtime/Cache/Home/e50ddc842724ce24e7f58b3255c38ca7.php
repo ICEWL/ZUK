@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -6,17 +6,17 @@
    
 
 
-    <link href="__PUBLIC__/qwreg/css/lid_min.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLIC__/qwreg/css/lid_zuk_min.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLIC__/demo/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLIC__/demo/css/demo.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/qwreg/css/lid_min.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/qwreg/css/lid_zuk_min.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/demo/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/demo/css/demo.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body class="login"><!-- ldHeader -->
 <div id="ldHeader" class="ldHeader">
     <div class="cont clearfix">
         <div class="fleft">
-            <a href="<{:U('Home/Index/index')}> "><img src="__PUBLIC__/qwhome/images/logo_new.png"></a>
+            <a href="<?php echo U('Home/Index/index');?> "><img src="/Public/qwhome/images/logo_new.png"></a>
         </div>
         <div class="fright">
             <form class="jsLangForm" action="" name="changeLanguage" method="post">
@@ -34,12 +34,12 @@
 	<div class="fleft w58-2">
 	<!-- ldLoginIntro -->
 		<div class="ldLoginIntro">
-    <img width="450px" src="__PUBLIC__/qwreg/picture/main_fm365.png" />
+    <img width="450px" src="/Public/qwreg/picture/main_fm365.png" />
 </div><!-- /ldLoginIntro -->
 	</div>
 	<div class="fright w41-7">
 	<!-- ldLoginForm -->
-<form class="registerform" name="form1" method="post" action="<{:U('Login/login')}>">
+<form class="registerform" name="form1" method="post" action="<?php echo U('Login/login');?>">
     <div id="ldLoginForm" class="ldLoginForm comForm">
         <div class="hd clearfix">
             <!--<span>登录帐号</span>-->
@@ -67,13 +67,13 @@
                 </div>
                 <div class="tripartite jsTripartite">
                     <ul>
-                        <li><a href=""><img alt="" src="__PUBLIC__/qwreg/picture/tripartite_qq.png"></a></li>
-                        <li><a href=""><img alt="" src="__PUBLIC__/qwreg/picture/tripartite_wenbo.png"></a></li>
+                        <li><a href=""><img alt="" src="/Public/qwreg/picture/tripartite_qq.png"></a></li>
+                        <li><a href=""><img alt="" src="/Public/qwreg/picture/tripartite_wenbo.png"></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="ft">还没有帐号？<a href="<{:U('Home/Reg/index')}>" id="register">立即注册</a></div>
+        <div class="ft">还没有帐号？<a href="<?php echo U('Home/Reg/index');?>" id="register">立即注册</a></div>
     </div>
 </form>
 <!-- /ldLoginForm -->
@@ -93,8 +93,8 @@
 </body>
 </html>
 
-<script type="text/javascript" src="__PUBLIC__/demo/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/demo/js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="/Public/demo/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/Public/demo/js/Validform_v5.3.2_min.js"></script>
 <script type="text/javascript">
 $(function(){
     //$(".registerform").Validform();  //就这一行代码！;

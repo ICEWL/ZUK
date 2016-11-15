@@ -1,14 +1,14 @@
-<!DOCTYPE>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE>
 <html class="null">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>&#27880;&#20876;</title>
 <script type="text/javascript" src="http://validform.rjboy.cn/wp-content/themes/validform/js/jquery-1.6.2.min.js"></script>
 
-    <link href="__PUBLIC__/qwreg/css/lid_min.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLIC__/qwreg/css/lid_zuk_min.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLIC__/demo/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLIC__/demo/css/demo.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/qwreg/css/lid_min.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/qwreg/css/lid_zuk_min.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/demo/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/Public/demo/css/demo.css" rel="stylesheet" type="text/css"/>
     <style>
 		span{
 			width: 400px;
@@ -20,7 +20,7 @@
 <div id="ldHeader" class="ldHeader">
     <div class="cont clearfix">
         <div class="fleft">
-            <a href="<{:U('Home/Index/index')}>"><img src="__PUBLIC__/qwhome/images/logo_new.png"></a>
+            <a href="<?php echo U('Home/Index/index');?>"><img src="/Public/qwhome/images/logo_new.png"></a>
         </div>
         </div>
 </div>
@@ -37,7 +37,7 @@
    
 	<div class="clearfix">
 		<div class="regtitle">帐号注册</div>
-		<div class="regtext">轻松开启您的神奇之旅，已有联想帐号<a id="toLogin" ></a><a href="<{:U('Home/Login/index')}>">在此登录</a></div>
+		<div class="regtext">轻松开启您的神奇之旅，已有联想帐号<a id="toLogin" ></a><a href="<?php echo U('Home/Login/index');?>">在此登录</a></div>
 	</div>
 	<div class="hd">
 		<!-- 手机号注册 -->
@@ -51,7 +51,7 @@
 
 <div class="ldRegistMobileForm" id="">
    
-	<form method="post" class="registerform" action="<{:U('Reg/insert')}>" name="form1">
+	<form method="post" class="registerform" action="<?php echo U('Reg/insert');?>" name="form1">
 		<!-- 供200C接口使用 -->
 	
 		<div class="hd">
@@ -62,7 +62,7 @@
 			<ul>
 				<li>
 					<span style="width:100px">用&nbsp;户&nbsp;名：</span>
-					<input name="user"  type="text" value='' datatype="s5-16" errormsg="账号至少5个字符,最多16个字符！" ajaxurl="<{:U('Reg/user_name')}>" />
+					<input name="user"  type="text" value='' datatype="s5-16" errormsg="账号至少5个字符,最多16个字符！" ajaxurl="<?php echo U('Reg/user_name');?>" />
 					
 				</li>
 				<li>
@@ -84,7 +84,7 @@
 					<input name="verify" placeholder="验证码" id="code" required type="text" class="code jsInput_code" />
 					<a class="jsCReset" href="#" onclick="return false;" id="capaaa">
                      <!--    <img class="jsCaptureImg" src="" width="120" height="36"> -->
-                         <img src="<{:U('Reg/verify_c')}>" id="yz_img" alt="" title="看不清楚？点击刷新" width="100" height="30" style="cursor:pointer;" >
+                         <img src="<?php echo U('Reg/verify_c');?>" id="yz_img" alt="" title="看不清楚？点击刷新" width="100" height="30" style="cursor:pointer;" >
                     </a>
 				</li>
 <script>
@@ -124,8 +124,8 @@
 	<!-- /ldRegistMobileForm -->
 	<!-- ldRegistEmailForm -->
 		
-<script type="text/javascript" src="__PUBLIC__/demo/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/demo/js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="/Public/demo/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/Public/demo/js/Validform_v5.3.2_min.js"></script>
 <script type="text/javascript">
 $(function(){
 	//$(".registerform").Validform();  //就这一行代码！;
@@ -151,7 +151,3 @@ $(function(){
 
 </body>
 </html>
-
-
-
-
