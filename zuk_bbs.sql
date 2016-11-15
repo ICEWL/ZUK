@@ -10,10 +10,33 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-11-15 09:27:24
+Date: 2016-11-15 11:10:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `zuk_article`
+-- ----------------------------
+DROP TABLE IF EXISTS `zuk_article`;
+CREATE TABLE `zuk_article` (
+  `aid` int(11) NOT NULL AUTO_INCREMENT,
+  `mid` int(11) NOT NULL COMMENT '发贴人id',
+  `sid` int(11) NOT NULL COMMENT '版块id',
+  `title` varchar(255) NOT NULL COMMENT '标题',
+  `keywords` varchar(255) DEFAULT NULL COMMENT '标签',
+  `thumbnail` varchar(255) NOT NULL COMMENT '缩略图',
+  `content` text NOT NULL COMMENT '内容',
+  `t` int(10) unsigned NOT NULL COMMENT '时间',
+  `n` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '点击',
+  PRIMARY KEY (`aid`),
+  KEY `sid` (`sid`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zuk_article
+-- ----------------------------
+INSERT INTO `zuk_article` VALUES ('1', '1', '47', '1', '1', '/Uploads//2016/11/15/582a7a718164e.jpg', '1', '1479178867', '0');
 
 -- ----------------------------
 -- Table structure for `zuk_auth_group`
@@ -84,8 +107,8 @@ INSERT INTO `zuk_auth_rule` VALUES ('7', '5', 'Category/add', '新增版块', ''
 INSERT INTO `zuk_auth_rule` VALUES ('9', '8', '', '所有主题', '', '1', '1', '', '1', '9', '');
 INSERT INTO `zuk_auth_rule` VALUES ('10', '8', '', '新增主题', '', '1', '1', '', '1', '10', '');
 INSERT INTO `zuk_auth_rule` VALUES ('11', '0', '', '帖子管理', 'menu-icon fa fa-cubes', '1', '1', '', '1', '11', '');
-INSERT INTO `zuk_auth_rule` VALUES ('12', '11', '', '所有帖子', '', '1', '1', '', '1', '12', '');
-INSERT INTO `zuk_auth_rule` VALUES ('13', '11', '', '发布帖子', '', '1', '1', '', '1', '13', '');
+INSERT INTO `zuk_auth_rule` VALUES ('12', '11', 'Article/index', '所有帖子', '', '1', '1', '', '1', '12', '');
+INSERT INTO `zuk_auth_rule` VALUES ('13', '11', 'Article/add', '发布帖子', '', '1', '1', '', '1', '13', '');
 INSERT INTO `zuk_auth_rule` VALUES ('14', '11', '', '帖子回收', '', '1', '1', '', '1', '14', '');
 INSERT INTO `zuk_auth_rule` VALUES ('15', '0', '', '评论管理', 'menu-icon fa fa-comment', '1', '1', '', '1', '15', '');
 INSERT INTO `zuk_auth_rule` VALUES ('16', '15', '', '所有评论', '', '1', '1', '', '1', '16', '');
@@ -150,7 +173,7 @@ CREATE TABLE `zuk_log` (
   `ip` varchar(16) NOT NULL,
   `log` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=213 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=216 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zuk_log
@@ -367,6 +390,9 @@ INSERT INTO `zuk_log` VALUES ('209', 'admin', '1479172393', '127.0.0.1', '修改
 INSERT INTO `zuk_log` VALUES ('210', 'admin', '1479172605', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
 INSERT INTO `zuk_log` VALUES ('211', 'admin', '1479172918', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
 INSERT INTO `zuk_log` VALUES ('212', 'admin', '1479172974', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
+INSERT INTO `zuk_log` VALUES ('213', 'admin', '1479175744', '127.0.0.1', '编辑菜单，ID：12');
+INSERT INTO `zuk_log` VALUES ('214', 'admin', '1479175768', '127.0.0.1', '编辑菜单，ID：13');
+INSERT INTO `zuk_log` VALUES ('215', 'admin', '1479178867', '127.0.0.1', '新增帖子，AID：1');
 
 -- ----------------------------
 -- Table structure for `zuk_member`
