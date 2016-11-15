@@ -1,45 +1,6 @@
-[ 2016-11-15T09:39:49+08:00 ] 127.0.0.1 /Home/Section/static/_js/fn.slide.js?_=1479173989382
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-ERR: 非法操作:static
-
-[ 2016-11-15T09:39:51+08:00 ] 127.0.0.1 /Home/Exchange/static/_js/fn.slide.js?_=1479173991030
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-ERR: 非法操作:static
-
-[ 2016-11-15T09:39:51+08:00 ] 127.0.0.1 /Home/Pic/static/_js/fn.slide.js?_=1479173991520
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-ERR: 非法操作:static
-
-[ 2016-11-15T09:39:56+08:00 ] 127.0.0.1 /Home/Turntable/static/_js/fn.slide.js?_=1479173996775
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-ERR: 非法操作:static
-
-[ 2016-11-15T09:39:57+08:00 ] 127.0.0.1 /Home/Pic/static/_js/fn.slide.js?_=1479173997851
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-ERR: 非法操作:static
-
-[ 2016-11-15T09:39:58+08:00 ] 127.0.0.1 /Home/Exchange/static/_js/fn.slide.js?_=1479173998407
+[ 2016-11-15T16:46:43+08:00 ] 127.0.0.1 /Home/Index/static/_js/fn.slide.js?_=1479199602979
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
 ERR: 非法操作:static
-
-[ 2016-11-15T09:39:59+08:00 ] 127.0.0.1 /Home/Section/static/_js/fn.slide.js?_=1479173999103
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-ERR: 非法操作:static
-
-[ 2016-11-15T09:40:14+08:00 ] 127.0.0.1 /Home/Login/verify.html
-ERR: 非法操作:verify
 
