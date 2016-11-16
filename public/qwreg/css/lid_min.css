@@ -255,7 +255,9 @@ body.login {
 }
 
 .ldLoginForm .bd .mhd {
-	margin-bottom: 20px
+	margin-bottom: 20px;
+	    height: 125px;
+
 }
 
 .ldLoginForm .bd .mhd .username {
