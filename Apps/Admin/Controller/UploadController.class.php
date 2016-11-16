@@ -23,8 +23,9 @@ class UploadController extends ComController
     {  
         $Img = I('Img');
         $Path = null;
+        $Path = I('BackCall');
         if ($_FILES['img']) {
-            $Img = $this->saveimg($_FILES);
+            $Img = $this->saveimg($_FILES,$Path);
         }
         $BackCall = I('BackCall');
         $Width = I('Width');
@@ -45,7 +46,7 @@ class UploadController extends ComController
         $this->display('Uploadpic');
     }
 
-    private function saveimg($files)
+    private function saveimg($files,$path)
     {   
         $mimes = array(
             'image/jpeg',
@@ -68,15 +69,18 @@ class UploadController extends ComController
             'x-png'
         );
 
-        $picpath = '';
-
-        $upload = new Upload(array(
+        $arr = array(
             'mimes' => $mimes,
             'exts' => $exts,
             'rootPath' => './Uploads/',
-            'savePath' => $picpath.'/'.date('Y')."/".date('m')."/",
+            'savePath' => temp.'/'.date('Y')."/".date('m')."/",
             'subName'  =>  array('date', 'd'),
-        ));
+        );
+        if ($path) {
+            $arr['savePath'] = $path.'/'.date('Y')."/".date('m')."/";
+        }
+        
+        $upload = new Upload($arr);
         $info = $upload->upload($files);
         if(!$info) {// 上传错误提示错误信息
             $error = $upload->getError();

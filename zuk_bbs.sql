@@ -10,10 +10,34 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-11-15 09:27:24
+Date: 2016-11-16 09:12:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `zuk_article`
+-- ----------------------------
+DROP TABLE IF EXISTS `zuk_article`;
+CREATE TABLE `zuk_article` (
+  `aid` int(11) NOT NULL AUTO_INCREMENT,
+  `mid` int(11) NOT NULL COMMENT '发贴人id',
+  `sid` int(11) NOT NULL COMMENT '版块id',
+  `title` varchar(255) NOT NULL COMMENT '标题',
+  `keywords` varchar(255) DEFAULT NULL COMMENT '标签',
+  `thumbnail` varchar(255) NOT NULL COMMENT '缩略图',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '0：正常  1：待审',
+  `content` text NOT NULL COMMENT '内容',
+  `t` int(10) unsigned NOT NULL COMMENT '时间',
+  `n` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '点击',
+  PRIMARY KEY (`aid`),
+  KEY `sid` (`sid`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zuk_article
+-- ----------------------------
+INSERT INTO `zuk_article` VALUES ('3', '1', '47', '1', '', '', '0', '1', '1479194514', '0');
 
 -- ----------------------------
 -- Table structure for `zuk_auth_group`
@@ -69,7 +93,7 @@ CREATE TABLE `zuk_auth_rule` (
   `o` int(11) NOT NULL COMMENT '排序',
   `tips` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zuk_auth_rule
@@ -84,9 +108,8 @@ INSERT INTO `zuk_auth_rule` VALUES ('7', '5', 'Category/add', '新增版块', ''
 INSERT INTO `zuk_auth_rule` VALUES ('9', '8', '', '所有主题', '', '1', '1', '', '1', '9', '');
 INSERT INTO `zuk_auth_rule` VALUES ('10', '8', '', '新增主题', '', '1', '1', '', '1', '10', '');
 INSERT INTO `zuk_auth_rule` VALUES ('11', '0', '', '帖子管理', 'menu-icon fa fa-cubes', '1', '1', '', '1', '11', '');
-INSERT INTO `zuk_auth_rule` VALUES ('12', '11', '', '所有帖子', '', '1', '1', '', '1', '12', '');
-INSERT INTO `zuk_auth_rule` VALUES ('13', '11', '', '发布帖子', '', '1', '1', '', '1', '13', '');
-INSERT INTO `zuk_auth_rule` VALUES ('14', '11', '', '帖子回收', '', '1', '1', '', '1', '14', '');
+INSERT INTO `zuk_auth_rule` VALUES ('12', '11', 'Article/index', '所有帖子', '', '1', '1', '', '1', '12', '');
+INSERT INTO `zuk_auth_rule` VALUES ('13', '11', 'Article/add', '发布帖子', '', '1', '1', '', '1', '13', '');
 INSERT INTO `zuk_auth_rule` VALUES ('15', '0', '', '评论管理', 'menu-icon fa fa-comment', '1', '1', '', '1', '15', '');
 INSERT INTO `zuk_auth_rule` VALUES ('16', '15', '', '所有评论', '', '1', '1', '', '1', '16', '');
 INSERT INTO `zuk_auth_rule` VALUES ('17', '15', '', '评论回收', '', '1', '1', '', '1', '17', '');
@@ -104,6 +127,7 @@ INSERT INTO `zuk_auth_rule` VALUES ('29', '26', 'Menu/add', '新增菜单', '', 
 INSERT INTO `zuk_auth_rule` VALUES ('30', '26', 'Setting/setting', '网站设置', '', '1', '1', '', '1', '30', '');
 INSERT INTO `zuk_auth_rule` VALUES ('67', '2', 'Group/index', '用户组管理', '', '1', '1', '', '1', '32', '');
 INSERT INTO `zuk_auth_rule` VALUES ('68', '2', 'Group/add', '新增用户组', '', '1', '1', '', '1', '33', '');
+INSERT INTO `zuk_auth_rule` VALUES ('70', '11', 'Article/manage', '帖子审核', '', '1', '1', '', '1', '15', '');
 
 -- ----------------------------
 -- Table structure for `zuk_category`
@@ -126,7 +150,7 @@ CREATE TABLE `zuk_category` (
 -- Records of zuk_category
 -- ----------------------------
 INSERT INTO `zuk_category` VALUES ('49', '0', '0', 'ZUI社区', '简单，最好看 — ZUI官方用户交流区', '', 'ZUI是ZUK基于Android系统深度定制的UI，力求打造“简单，最好看”的手机系统。', '30');
-INSERT INTO `zuk_category` VALUES ('47', '0', '0', 'ZUK Z1手机', 'ZUK首款智能手机ZUK Z1用户交流区', '/Uploads//2016/11/15/582a636de2df2.jpg', 'ZUK Z1搭载骁龙801处理器、采用5.5英寸全高清屏幕，内置4100mAh大容量电池', '10');
+INSERT INTO `zuk_category` VALUES ('47', '0', '0', 'ZUK Z1手机', 'ZUK首款智能手机ZUK Z1用户交流区', '/Uploads/cgicon/2016/11/15/582b26b1d5e3e.jpeg', 'ZUK Z1搭载骁龙801处理器、采用5.5英寸全高清屏幕，内置4100mAh大容量电池', '10');
 INSERT INTO `zuk_category` VALUES ('48', '0', '0', '联想ZUK Z2', 'ZUK Z2智能手机用户交流区', '', '高通骁龙820处理器、4GB内存+64GB存储、发热先知', '20');
 INSERT INTO `zuk_category` VALUES ('50', '0', '49', '产品公告', '', '', '', '1');
 INSERT INTO `zuk_category` VALUES ('52', '1', '0', 'Moto M', '全金属机身 · 智能指纹识别', '', '全金属机身 · 杜比全景声 · 智能指纹识别', '40');
@@ -150,7 +174,7 @@ CREATE TABLE `zuk_log` (
   `ip` varchar(16) NOT NULL,
   `log` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=213 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=243 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zuk_log
@@ -367,6 +391,36 @@ INSERT INTO `zuk_log` VALUES ('209', 'admin', '1479172393', '127.0.0.1', '修改
 INSERT INTO `zuk_log` VALUES ('210', 'admin', '1479172605', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
 INSERT INTO `zuk_log` VALUES ('211', 'admin', '1479172918', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
 INSERT INTO `zuk_log` VALUES ('212', 'admin', '1479172974', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
+INSERT INTO `zuk_log` VALUES ('213', 'admin', '1479175744', '127.0.0.1', '编辑菜单，ID：12');
+INSERT INTO `zuk_log` VALUES ('214', 'admin', '1479175768', '127.0.0.1', '编辑菜单，ID：13');
+INSERT INTO `zuk_log` VALUES ('215', 'admin', '1479178867', '127.0.0.1', '新增帖子，AID：1');
+INSERT INTO `zuk_log` VALUES ('216', 'admin', '1479179682', '127.0.0.1', '修改个人资料');
+INSERT INTO `zuk_log` VALUES ('217', 'admin', '1479179895', '127.0.0.1', '编辑帖子，AID：1');
+INSERT INTO `zuk_log` VALUES ('218', 'admin', '1479183620', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
+INSERT INTO `zuk_log` VALUES ('219', 'admin', '1479190713', '127.0.0.1', '新增帖子，AID：2');
+INSERT INTO `zuk_log` VALUES ('220', 'admin', '1479190748', '127.0.0.1', '删除帖子，AID：2');
+INSERT INTO `zuk_log` VALUES ('221', 'admin', '1479190758', '127.0.0.1', '删除帖子，AID：1');
+INSERT INTO `zuk_log` VALUES ('222', 'admin', '1479190777', '127.0.0.1', '修改个人资料');
+INSERT INTO `zuk_log` VALUES ('223', 'admin', '1479192024', '127.0.0.1', '编辑菜单，ID：14');
+INSERT INTO `zuk_log` VALUES ('224', 'admin', '1479192124', '127.0.0.1', '新增菜单，名称：帖子审核');
+INSERT INTO `zuk_log` VALUES ('225', 'admin', '1479192150', '127.0.0.1', '编辑菜单，ID：70');
+INSERT INTO `zuk_log` VALUES ('226', 'admin', '1479193255', '127.0.0.1', '删除菜单ID：14');
+INSERT INTO `zuk_log` VALUES ('227', 'admin', '1479194501', '127.0.0.1', '编辑菜单，ID：70');
+INSERT INTO `zuk_log` VALUES ('228', 'admin', '1479194514', '127.0.0.1', '新增帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('229', 'admin', '1479196438', '127.0.0.1', '审核帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('230', 'admin', '1479196512', '127.0.0.1', '审核帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('231', 'admin', '1479196912', '127.0.0.1', '回收帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('232', 'admin', '1479196957', '127.0.0.1', '审核帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('233', 'admin', '1479196961', '127.0.0.1', '回收帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('234', 'admin', '1479197007', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
+INSERT INTO `zuk_log` VALUES ('235', 'admin', '1479198962', '127.0.0.1', '审核帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('236', 'admin', '1479199187', '127.0.0.1', '回收帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('237', 'admin', '1479199191', '127.0.0.1', '审核帖子，AID：3');
+INSERT INTO `zuk_log` VALUES ('238', 'admin', '1479212221', '127.0.0.1', '修改网站配置。');
+INSERT INTO `zuk_log` VALUES ('239', 'admin', '1479212238', '127.0.0.1', '修改网站配置。');
+INSERT INTO `zuk_log` VALUES ('240', 'admin', '1479212250', '127.0.0.1', '修改网站配置。');
+INSERT INTO `zuk_log` VALUES ('241', 'admin', '1479222936', '127.0.0.1', '修改个人资料');
+INSERT INTO `zuk_log` VALUES ('242', 'admin', '1479222962', '127.0.0.1', '版块分类修改，ID：47，名称：ZUK Z1手机');
 
 -- ----------------------------
 -- Table structure for `zuk_member`
@@ -375,7 +429,7 @@ DROP TABLE IF EXISTS `zuk_member`;
 CREATE TABLE `zuk_member` (
   `uid` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(225) NOT NULL,
-  `head` varchar(255) NOT NULL COMMENT '头像',
+  `head` varchar(255) DEFAULT NULL COMMENT '头像',
   `sex` tinyint(1) NOT NULL COMMENT '0保密1男，2女',
   `birthday` int(10) NOT NULL COMMENT '生日',
   `phone` varchar(20) NOT NULL COMMENT '电话',
@@ -390,7 +444,7 @@ CREATE TABLE `zuk_member` (
 -- ----------------------------
 -- Records of zuk_member
 -- ----------------------------
-INSERT INTO `zuk_member` VALUES ('1', 'admin', '/Uploads//2016/11/15/582a612814220.jpg', '1', '1478793600', '13053237223', '239126037', 'shineky7@163.com', '66d6a1c8748025462128dc75bf5ae8d1', '1479131236', '0');
+INSERT INTO `zuk_member` VALUES ('1', 'admin', '/Uploads/head/2016/11/15/582b269798fa0.jpg', '1', '1478793600', '13053237223', '239126037', 'shineky7@163.com', '66d6a1c8748025462128dc75bf5ae8d1', '1479131236', '0');
 INSERT INTO `zuk_member` VALUES ('17', 'sky', '/Public/attached/2016/11/11/582587856e249.jpg', '0', '-28800', '', '', '', '66d6a1c8748025462128dc75bf5ae8d1', '1478854557', '0');
 
 -- ----------------------------
@@ -410,6 +464,6 @@ CREATE TABLE `zuk_setting` (
 -- Records of zuk_setting
 -- ----------------------------
 INSERT INTO `zuk_setting` VALUES ('sitename', 'ZUK-BBS', '0', '');
-INSERT INTO `zuk_setting` VALUES ('title', 'ZUK-BBS', '0', '');
-INSERT INTO `zuk_setting` VALUES ('keywords', 'ZUK-BBS', '0', '');
-INSERT INTO `zuk_setting` VALUES ('description', 'ZUK-BBS', '0', '');
+INSERT INTO `zuk_setting` VALUES ('title', '联想手机社区-联想手机官方论坛 -  联想手机社区', '0', '');
+INSERT INTO `zuk_setting` VALUES ('keywords', '联想手机,联想手机官网,联想手机论坛,联想ZUK,ZUK官网,ZUK手机,ZUI,ZUK社区,moto官网,moto手机,moto论坛', '0', '');
+INSERT INTO `zuk_setting` VALUES ('description', '联想手机社区,是联想官方面向全国联想手机用户的公开交流平台。以moto手机_zuk手机_联想手机等系列产品为主，为联想手机用户提供最新鲜的联想手机评测、联想手机固件刷机、联想手机玩机技巧、联想手机售后服务以及联想手机官方资讯等。更多精彩，尽在联想手机社区 ,联想手机社区', '0', '');
