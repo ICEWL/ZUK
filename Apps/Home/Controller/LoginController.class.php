@@ -1,42 +1,29 @@
 <?php
+/**
+ *
+ * 版权所有：ICEWL
+ * 作    者：Timothy<yleigg@163.com>
+ * 日    期：2016-11-26
+ * 版    本：1.0.0
+ * 功能说明：前台登录控制器。
+ *
+ **/
+
 namespace Home\Controller;
 
 class LoginController extends ComController 
 {
-
-	public function check_login()
+    public function index()
     {
-        $flag = false;
-
-        $salt = C("COOKIE_SALT");
-        $ip = get_client_ip();
-        $ua = $_SERVER['HTTP_USER_AGENT'];
-
-        $auth = cookie('auth');
-
-        $uid = session('uid');
-
-        if ($uid) {
-            $user = M('member')->where(array('uid' => $uid))->find();
-
-            if ($user) {
-                if ($auth ==  password($uid.$user['user'].$ip.$ua.$salt)) {
-                    $flag = true;
-                    $this->USER = $user;
-                }
-            }
+        $flag = $this->check_login();
+        if ($flag) {
+            $this->error('您已经登录,正在跳转到主页', U("index/index"));
         }
-        return $flag;
-    }
-    public function index(){
-        $this->display('Login/index');
+        $this->display();        
     }
 
-    //执行登陆验证
     public function login()
     {
-        
-
         $username = isset($_POST['user']) ? trim($_POST['user']) : '';
         $password = isset($_POST['password']) ? password(trim($_POST['password'])) : '';
 
@@ -57,24 +44,14 @@ class LoginController extends ComController
             session('uid',$user['uid']);
             //加密cookie信息
             $auth = password($user['uid'].$user['user'].$ip.$ua.$salt);
+            cookie('auth', $auth);
 
             $url = U('index/index');
             header("Location: $url");
             exit(0);
         } else {
 
-            $this->error('登录失败，请重试！', U("login/index"));
+            $this->error('用户名或密码错误！', U("login/index"));
         }
     }
-
-    /**
-     * 用户注销
-     */
-    public function logout()
-    {
-        // 清楚所有session
-        session(null);
-        redirect(U('Login/login'), 2, '正在退出登录...');
-    }
-    
 }

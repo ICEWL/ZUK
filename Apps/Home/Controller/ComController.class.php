@@ -10,14 +10,51 @@
  **/
 namespace Home\Controller;
 
-use Think\Controller;
+use Common\Controller\BaseController;
+use Think\Auth;
 
-class ComController extends Controller
+class ComController extends BaseController
 {
+    
+    public $USER;
 
     public function _initialize()
     {
-        C(setting());
-        
+        C(setting()); 
+        if (!C("COOKIE_SALT")) {
+            $this->error('请配置COOKIE_SALT信息');
+        }
+
+        // 查询登录用户信息
+        $UID = I('session.uid/d');
+        if ($UID) {
+            $user = M('Member')->where(array('uid' => $UID))->find();
+            $this->assign('user', $user);
+        }
+    }
+
+    public function check_login()
+    {
+        $flag = false;
+
+        $salt = C("COOKIE_SALT");
+        $ip = get_client_ip();
+        $ua = $_SERVER['HTTP_USER_AGENT'];
+
+        $auth = cookie('auth');
+
+        $uid = session('uid');
+
+        if ($uid) {
+            $user = M('member')->where(array('uid' => $uid))->find();
+
+            if ($user) {
+                if ($auth ==  password($uid.$user['user'].$ip.$ua.$salt)) {
+                    $flag = true;
+                    $this->USER = $user;
+                }
+            }
+        }
+        return $flag;
     }
 }

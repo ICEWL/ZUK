@@ -32,12 +32,13 @@
 
 </html>
 
-
-<!-- 未登陆提示———start -->
+<!-- 未登录&登录顶部个人信息 -->
 <script>
 	var discuz_uid = '0',GroupChangeis = 0,TodayBirthdayis = 0,NewUserWelcomeis = 0,UserBackWelcomeis = 0,TidParty = 13,LOCALWEB = 0;
 </script>
 
+<!-- 未登陆提示———start -->
+<if condition="$user eq null">
 <div class="user_no_login" id="_js_nologin">
 	<span class="font22">现在加入zuk手机社区，<a href="#">注册一个账号</a>或</span>
 	<span class="use_id use_zukid"><a href="#">zuk账号登陆</a></span>
@@ -45,7 +46,9 @@
 	<span class="use_id use_wbid"><a href="#">微博账号登陆</a></span>
 	<span class="use_id use_wbid"><a href="#">待定账号登陆</a></span>
 </div>
+</if>
 <!-- 未登陆提示———end -->
+
 
 <!-- 返回顶部——start -->
 <div id="scrolltop" class="js_scrolltop">

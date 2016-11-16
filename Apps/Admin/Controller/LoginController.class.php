@@ -10,8 +10,6 @@
  **/
 namespace Admin\Controller;
 
-use Admin\Controller\ComController;
-
 class LoginController extends ComController
 {
     public function index()

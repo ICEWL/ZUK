@@ -57,68 +57,110 @@
 			</ul>
 		</div>
 
+		<if condition="$user eq null">
+			<div class="fm_userinfo fm_noinfo">
+				<a href="<{:U('Home/Login/index')}>" class="ppdiag">登录</a>
+				<span class="pipe">|</span>
+				<a href="<{:U('Home/Reg/index')}>">注册</a>
+			</div>
+		<else />
+			<div class="fm_userinfo">
+				<div class="fm_dibavatar js_dibavatar">
 
-		<div class="fm_userinfo">
-<div class="fm_dibavatar js_dibavatar">
-<a  href="/space.php?uid=298163" target="_blank" title="">Timothy</a> ( <em><a href="/home.php?mod=spacecp&amp;ac=usergroup" class="colorlink">幼儿园</a></em>  )
-<div class="flu_grid js_grid">
-<div class="flu_grid_t">
-<a href="/home.php?mod=spacecp&amp;ac=avatar" class="grid_avatar"><img src="picture/63_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /><div class="grid_edit">编辑<br />头像</div>
-</a>
-</div>
+					<a  href="/space.php?uid=298163" target="_blank" title=""><{$user.user}></a>
+					( <em><a href="/home.php?mod=spacecp&amp;ac=usergroup" class="colorlink">幼儿园</a></em> )
 
-<div class="grid_stat flu_grid_c">
-<div class="grid_list">
-<ul>
-<li><a href="/home.php?mod=space&amp;do=thread&amp;view=me" target="_blank"><span class="grid_list_num threadNum">...</span>帖子</a></li>
-<li><a href="/home.php?mod=space&amp;do=favorite&amp;type=thread" target="_blank"><span class="grid_list_num favoriteNum">...</span>收藏</a></li>
-<li><a href="/home.php?mod=space&amp;do=friend" target="_blank"><span class="grid_list_num friendNum">...</span>好友</a></li>
-<li><a href="/home.php?mod=spacecp&amp;ac=credit" target="_blank"><span class="grid_list_num extcredits5">...</span>金币</a></li>
-<li><a href="/home.php?mod=task" target="_blank"><span class="grid_list_num taskNum">...</span>任务</a></li>
-<li><a href="/myzuk/" target="_blank"><span class="grid_list_num"></span>认证</a></li>
-</ul>
-</div>
-</div>
+					<div class="flu_grid js_grid">
 
-<div class="flu_grid_f"><a href="/home.php?mod=spacecp&amp;ac=profile" class="greensmallbutton">修改资料</a><span class="pipe"></span><a href="/passport.php?act=logout" class="graysmallbutton">退出登录</a></div>
-</div>
-</div>
-<div class="fm_dibavatar js_dibavatar">
-<span class="pipe">|</span><a href="/home.php?mod=space&amp;do=pm">通知<div class="promptdot redsmallbox">1</div></a>
-<div class="flu_grid js_grid">
+						<div class="flu_grid_t">
+							<a href="#" class="grid_avatar">
+								<img src="__ROOT__<{$user.head}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" />
+								<div class="grid_edit">编辑<br />头像</div>
+							</a>
+						</div>
 
-<div class="grid_stat flu_grid_c">
-<div class="grid_list">
-<ul>
-<li><a href="/home.php?mod=space&amp;do=pm" target="_blank"><span class="grid_list_num">0</span>短消息</a></li>
-<li><a href="/home.php?mod=space&amp;do=notice&amp;view=mypost" target="_blank"><span class="grid_list_num">1</span>我的帖子</a></li>
-</ul>
-</div>
-</div>
+						<div class="grid_stat flu_grid_c">
+							<div class="grid_list">
+								<ul>
+									<li>
+										<a href="/home.php?mod=space&amp;do=thread&amp;view=me" target="_blank">
+											<span class="grid_list_num threadNum">...</span>帖子
+										</a>
+									</li>
+									<li>
+										<a href="/home.php?mod=space&amp;do=favorite&amp;type=thread" target="_blank">
+											<span class="grid_list_num favoriteNum">...</span>收藏
+										</a>
+									</li>
+									<li>
+										<a href="/home.php?mod=space&amp;do=friend" target="_blank">
+											<span class="grid_list_num friendNum">...</span>好友
+										</a>
+									</li>
+									<li>
+										<a href="/home.php?mod=spacecp&amp;ac=credit" target="_blank">
+											<span class="grid_list_num extcredits5">...</span>金币
+										</a>
+									</li>
+									<li>
+										<a href="/home.php?mod=task" target="_blank">
+											<span class="grid_list_num taskNum">...</span>任务
+										</a>
+									</li>
+									<li>
+										<a href="/myzuk/" target="_blank">
+											<span class="grid_list_num"></span>认证
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 
-<div class="flu_grid_f">
-<a href="/home.php?mod=spacecp&amp;ac=pm" class="greensmallbutton">给好友发私信</a>
-</div>
+						<div class="flu_grid_f">
+							<a href="#" class="greensmallbutton">修改资料</a>
+							<span class="pipe"></span>
+							<a href="<{:U('Home/Logout/index')}>" class="graysmallbutton">退出登录</a>
+						</div>
 
-</div>
+					</div>
+				</div>
 
+				<div class="fm_dibavatar js_dibavatar">
 
-</div>
-</div>
+					<span class="pipe">|</span>
+					<a href="/home.php?mod=space&amp;do=pm">通知
+						<div class="promptdot redsmallbox">1</div>
+					</a>
 
+					<div class="flu_grid js_grid">
 
-		<script>
-		// $("ul.nav_list>li").click(function(){
-		// 	    $("ul.nav_list>li").removeClass("current");
-		// 	    $(this).addClass("current");
-		// 	})
-		</script>
+						<div class="grid_stat flu_grid_c">
+							<div class="grid_list">
+								<ul>
+									<li>
+										<a href="/home.php?mod=space&amp;do=pm" target="_blank">
+											<span class="grid_list_num">0</span>短消息
+										</a>
+									</li>
+									<li>
+										<a href="/home.php?mod=space&amp;do=notice&amp;view=mypost" target="_blank">
+											<span class="grid_list_num">1</span>我的帖子
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 
-		<div class="fm_userinfo fm_noinfo">
-			<a href="<{:U('Home/Login/index')}>" class="ppdiag">登录</a>
-			<span class="pipe">|</span>
-			<a href="<{:U('Home/Reg/index')}>">注册</a>
-		</div>
+						<div class="flu_grid_f">
+							<a href="/home.php?mod=spacecp&amp;ac=pm" class="greensmallbutton">给好友发私信</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</if>
+		
+		<!-- 搜索——start -->
 		<div class="fm_search">
 			<form id="scbar_form" method="post"  onsubmit="#" action="#" target="_blank">
 				<div class="forum_search">
@@ -136,6 +178,8 @@
 				</div>
 			</form>
 		</div>
+		<!-- 搜索——end -->
+
 	</div>
 	<div class="fm_line"></div>
 </div>
