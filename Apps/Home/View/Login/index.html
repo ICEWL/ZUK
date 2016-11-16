@@ -7,7 +7,7 @@
     <meta name="description" content="<{$Think.CONFIG.description}>" />
 
     <link href="__PUBLIC__/qwreg/css/lid_min.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLIC__/demo/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="__PUBLIC__/demo/css/style1.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body class="login">
@@ -55,11 +55,11 @@
                 </div>
                 <div class="bd">
                     <div class="mhd">
-                        <input name="user" class="user" type="text" placeholder='账号' datatype="s5-16" errormsg="账号至少5个字符,最多16个字符！"/>
+                        <input name="user" class="user" type="text" placeholder='账号' datatype="s5-16" errormsg="账号至少5个字符,最多16个字符！" sucmsg="     "/>
                         <br>
                         <br>
                 
-                       <input type="password" value="" name="password" class="inputxt" datatype="*5-16" nullmsg="请输入密码！" errormsg="密码范围在6~16位之间！" />    
+                       <input type="password" value="" name="password" class="inputxt" datatype="*5-16" placeholder='密码' nullmsg="请输入密码！" errormsg="密码范围在6~16位之间！"  sucmsg="     "/>    
                     </div>
 
                     <div class="mft">
@@ -108,5 +108,8 @@ $(function(){
     $(".registerform").Validform({
         tiptype:4
     });
+    var demo=$(".registerform").Validform();
+    demo.tipmsg.s="error! no message inputed.";
+
 })
 </script>
