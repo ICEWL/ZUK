@@ -1,9 +1,10 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class LoginController extends Controller {
 
-	 public function check_login()
+class LoginController extends ComController 
+{
+
+	public function check_login()
     {
         $flag = false;
 
@@ -32,7 +33,7 @@ class LoginController extends Controller {
     }
 
     //执行登陆验证
-   public function login()
+    public function login()
     {
         
 
@@ -66,7 +67,7 @@ class LoginController extends Controller {
         }
     }
 
-  /**
+    /**
      * 用户注销
      */
     public function logout()
@@ -75,7 +76,5 @@ class LoginController extends Controller {
         session(null);
         redirect(U('Login/login'), 2, '正在退出登录...');
     }
-
-
-
+    
 }

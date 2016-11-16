@@ -1,8 +1,10 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class TurntableController extends Controller {
-    public function index(){
+
+class TurntableController extends ComController 
+{
+    public function index()
+    {
 
         $this->display('Turntable/index');
     }
