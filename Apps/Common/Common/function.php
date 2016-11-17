@@ -139,43 +139,16 @@ function category_get_sons($sid, &$array = array())
 
 
 /**
- * 获取文章url地址
- * url结构：ttp://wwww.qwadmin.com/分类/子分类/子分类/id.html
- * 使用方法：模板中{:articleUrl(array('aid'=>$val['aid']))}
- *
- *
- * @param $data
+ * 统计总数
+ * @param $tabname
+ * @param $condition
  * @return $string
  */
-function articleUrl($data)
-{
-    //如果数组为空直接返回空字符
-    if (!$data) {
-        return '';
+function total($tabname, $condition)
+{   
+    $where = "1 = 1 ";
+    if ($condition) {
+        $where.="and $condition";
     }
-    //如果参数错误直接返回空字符
-    if (!isset($data['aid'])) {
-        return '';
-    }
-
-    $aid = (int)$data['aid'];
-
-    //获取文章信息
-    $article = M('article')->where(array('aid' => $aid))->find();
-    //获取当前内容所在分类
-    $category = M('category')->where(array('id' => $article['sid']))->find();
-    //获取当前分类
-    $categoryUrl = $category['dir'];
-    //遍历获取当前文章所在分类的有上级分类并且组合url
-    while ($category['pid'] <> 0) {
-        $category = M('category')->where(array('id' => $category['pid']))->find();
-        $categoryUrl = $category['dir'] . "/" . $categoryUrl;
-        //如果上级分类已经无上级分类则退出
-    }
-
-    $categoryUrl = __ROOT__ . "/" . $categoryUrl;
-    //组合文章url
-    $articleUrl = $categoryUrl . '/' . $aid . ".html";
-    return $articleUrl;
-
+    return M($tabname)->where($where)->count();
 }

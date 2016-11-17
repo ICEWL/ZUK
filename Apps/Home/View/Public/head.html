@@ -29,11 +29,41 @@
 
 	<!-- 释放 $ 标识符控制 -->
 	<script>
-		jQuery.noConflict();
+		// jQuery.noConflict();
 	</script>
 
 	<script src="__PUBLIC__/qwhome/js/jquery.forum.js" type="text/javascript"></script>
 	<!-- <script src="__PUBLIC__/qwhome/js/forum.js" type="text/javascript"></script> -->
+
+	<style>
+		/*分页自定义样式statrt*/
+		.pagination li{
+			float: left;
+		}
+		
+
+		.pagination li a{
+		    margin-left: 5px;
+		    padding: 9px 13px 9px 14px;
+		    height: 17px;
+		    line-height: 17px;
+		}
+
+		.pagination li a:hover{
+			color: #1499f8;
+		}
+
+		.disabled a{
+			background-color: #1499f8;
+			color: #fff;
+		}
+		.disabled a:hover{
+			background-color: #1499f8;
+			color: #fff;
+			cursor: no-drop;
+		}
+		/*分页自定义样式end*/
+	</style>
 
 </head>
 
