@@ -1,0 +1,1049 @@
+﻿.wbody,.content {
+	width: 1100px
+}
+
+.w18 {
+	width: 770px
+}
+
+.w7 {
+	width: 310px
+}
+
+.content {
+	margin: 0 auto
+}
+
+.h50,.greenbigbutton,.bluebigbutton,.p_nav h3,.p_navs li i {
+	height: 50px
+}
+
+.lh50,.greenbigbutton,.bluebigbutton,.p_nav h3,.p_navs li {
+	line-height: 50px
+}
+
+.font12,.bluesmallbox,.greensmallbox,.graysmallbox,.p_threadlist em a,.p_viewlist .p_timeline em a,.redsmallbox,.bluesmallblankbox,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox,.more,.p_timeline em,.p_pm_tousername p,.p_pm_list_c_time,.p_threadlist em,.p_threadlist p a,.p_viewlist_info {
+	font-size: 12px
+}
+
+.font14,.more em {
+	font-size: 14px
+}
+
+.font16,.greenbigbutton,.bluebigbutton,.p_viewlist_title a,.p_navs li a {
+	font-size: 16px
+}
+
+.font18 {
+	font-size: 18px
+}
+
+.font22,.time_prompt,.p_header .modname,.p_s_title h3,.p_s_nolog span,.p_nav h3 {
+	font-size: 22px;
+	font-weight: 400
+}
+
+.fullfont {
+	font-size: 28px;
+	font-weight: 400
+}
+
+.whitecolor,.greenbigbutton,.greenbigbutton:hover,.bluebigbutton,.bluebigbutton:hover,.greensmallbutton,.greensmallbutton:hover,.bluesmallbutton,.bluesmallbutton:hover,.greensmallblankbutton:hover,.bluesmallblankbutton:hover,.bluesmallbox,.greensmallbox,.graysmallbox,.p_threadlist em a,.p_viewlist .p_timeline em a,.redsmallbox,.p_header .tab li.a a,.p_pm_list .pg a,.p_pm_isay .p_pm_list_c,.p_pm_isay .p_pm_list_c a {
+	color: #fff
+}
+
+.blackcolor {
+	color: #3f3f3f
+}
+
+.color,.whitesmallbutton,.p_s_manage>a,.whitesmallbutton:hover,.p_s_manage>a:hover,.p_timeline_title .p_quote,.p_notice .quote,.p_pm_tousername,.p_s_stat,.p_s_table table td,.p_s_table table th,.p_nav h3 {
+	color: #535353
+}
+
+.color1,.graysmallbutton:hover,.graysmallblankbox,.p_pm_lastsummary,.p_s_title h3 {
+	color: #6f6f6f
+}
+
+.color2,.p_timeline em,.p_timeline_title,.p_notice .p_notice_same,.p_threadlist em,.p_threadlist_stat a {
+	color: #9f9f9f
+}
+
+.color3,.graysmallbutton,.more a,.time_prompt,.p_pm_tousername p,.p_threadlist p a,.p_threadlist_get a,.p_viewlist_info,.p_viewlist_info a {
+	color: #afafaf
+}
+
+.color4,.time_prompt,.p_pm_list_c_time,.p_threadlist_stat span,.p_s_nolog,.p_s_nolog a {
+	color: silver
+}
+
+.greencolor,.greensmallblankbutton,.greensmallblankbox {
+	color: #4fc277
+}
+
+.redcolor,.redsmallblankbox {
+	color: #f35b4f
+}
+
+.bluecolor,.bluesmallblankbutton,.bluesmallblankbox,.p_timeline em span,.p_pm_list_c a,.p_threadlist em span,.p_navs li.a a {
+	color: #1499f8
+}
+
+.yellowcolor {
+	color: #f9dc50
+}
+
+.brround,.p_s_avatar>img {
+	border-radius: 50%
+}
+
+.br50,.p_timeline li i span,.p_timeline_list_avt img,.p_pm_list_avt img {
+	border-radius: 50px
+}
+
+.br5 {
+	border-radius: 5px
+}
+
+.br3,.greenbigbutton,.bluebigbutton,.whitesmallbutton,.p_s_manage>a,.graysmallbutton,.greensmallbutton,.bluesmallbutton,.greensmallblankbutton,.bluesmallblankbutton,.bluesmallbox,.greensmallbox,.graysmallbox,.p_threadlist em a,.p_viewlist .p_timeline em a,.redsmallbox,.bluesmallblankbox,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox,.p_header .tab li a,.p_timeline_title .p_quote,.p_notice .quote,.p_threadlist dl:hover,.p_threadlist li:hover,.p_thread_list li:hover,.p_threadlist_m li,.p_threadlist_avatar img,.p_viewlist .tab,.p_s_pic>a {
+	border-radius: 2px
+}
+
+.shadow {
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.08)
+}
+
+.ts,.greenbigbutton,.bluebigbutton,.whitesmallbutton,.p_s_manage>a,.graysmallbutton,.greensmallbutton,.bluesmallbutton,.greensmallblankbutton,.bluesmallblankbutton,.title_line {
+	transition: all 0.2s ease-in
+}
+
+.grayborder,.whitesmallbutton,.p_s_manage>a,.graysmallbutton,.p_threadlist dl:hover,.p_threadlist li:hover,.p_thread_list li:hover,.p_threadlist_m li,.p_viewlist .tab,.p_s_stat,.p_s_pic,.p_s_pic>a,.p_s_table,.page_mode,.page_mode_01,.p_navs {
+	border: 1px solid #f1f1f1
+}
+
+.grayborder1,.whitesmallbutton:hover,.p_s_manage>a:hover,.graysmallbutton:hover,.p_threadlist_get a,.p_s_title h3 {
+	border: 1px solid #e6e6e6
+}
+
+.grayborder2,.graysmallblankbox,.p_timeline ul,.p_threadlist em {
+	border: 1px solid silver
+}
+
+.greenborder,.greensmallblankbutton,.greensmallblankbox,.p_threadlist_get a:hover {
+	border: 1px solid #4fc277
+}
+
+.whiteborder,.p_timeline li i {
+	border: 1px solid #fff
+}
+
+.blueborder,.bluesmallblankbutton,.bluesmallblankbox,.p_threadlist li:hover em {
+	border: 1px solid #1499f8
+}
+
+.redborder,.redsmallblankbox {
+	border: 1px solid #f35b4f
+}
+
+.graytopborder,.p_timeline,.p_threadlist dl,.p_pm_list,.p_threadlist li,.p_thread_list li,.p_threadlist_m,.p_profile {
+	border-top: 1px solid #f1f1f1
+}
+
+.graybottomborder,.p_timeline li,.p_s_stat li,.p_s_table table td,.p_s_table table th,.p_navs li {
+	border-bottom: 1px solid #f1f1f1
+}
+
+.whitebg,.p_timeline li i,.p_navs {
+	background: #fff
+}
+
+.graybg,.p_threadlist dl:hover,.p_threadlist li:hover,.p_thread_list li:hover,.p_threadlist_m li,.p_viewlist .tab,.page_mode,.page_mode_01 {
+	background-color: #f9f9f9
+}
+
+.graybg1,.whitesmallbutton:hover,.p_s_manage>a:hover,.graysmallbutton,#space_info .sidebar .box,.p_s_title h3 {
+	background-color: #f5f5f5
+}
+
+.graybg2,.graysmallbutton:hover,.p_pm_usay .p_pm_list_c,.p_threadlist_m li:hover,.p_viewlist .p_timeline li:hover .p_quote {
+	background-color: #f1f1f1
+}
+
+.graybg3 {
+	background-color: #e6e6e6
+}
+
+.graybg4,.p_navs li i {
+	background-color: silver
+}
+
+.graybg5,.graysmallbox,.p_threadlist em a,.p_viewlist .p_timeline em a,.p_timeline li i span {
+	background-color: #afafaf
+}
+
+.greenbg,.greenbigbutton,.greensmallbutton,.greensmallblankbutton:hover,.greensmallbox,.p_pm_isay .p_pm_list_c {
+	background-color: #4fc277
+}
+
+.bluebg,.bluebigbutton,.bluesmallbutton,.bluesmallblankbutton:hover,.bluesmallbox,.title_line,.p_header .tab li.a a,.p_timeline li:hover i span,.p_pm_list .pg a,.p_navs li:hover i {
+	background-color: #1499f8
+}
+
+.redbg,.redsmallbox {
+	background-color: #f35b4f
+}
+
+.bluelightbg,.p_timeline li:hover .p_quote,.p_notice li:hover .quote,.p_viewlist .p_timeline li:hover .p_quote:hover {
+	background-color: #eef8fe
+}
+
+.redlightbg {
+	background-color: #feeeed
+}
+
+.greenlightbg {
+	background-color: #eef9f2
+}
+
+.yellowlightbg {
+	background-color: #fefae4
+}
+
+.tpbg {
+	background-color: rgba(0,0,0,0.7)
+}
+
+.smallbtnh,.graysmallbutton,.greensmallblankbutton,.bluesmallblankbutton {
+	height: 33px;
+	line-height: 33px;
+	padding: 0 15px
+}
+
+.smallbt,.whitesmallbutton,.p_s_manage>a,.greensmallbutton,.bluesmallbutton {
+	height: 35px;
+	line-height: 35px;
+	padding: 0 15px
+}
+
+.greenbigbutton:hover {
+	background-color: #3cac63
+}
+
+.bluebigbutton:hover {
+	background-color: #0783dd
+}
+
+.greensmallbutton:hover {
+	background-color: #3cac63
+}
+
+.bluesmallbutton:hover {
+	background-color: #0783dd
+}
+
+.smallbox,.bluesmallbox,.greensmallbox,.graysmallbox,.p_threadlist em a,.p_viewlist .p_timeline em a,.redsmallbox {
+	height: 19px;
+	line-height: 20px;
+	padding: 0 7px
+}
+
+.smallboxh,.bluesmallblankbox,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox {
+	height: 17px;
+	line-height: 17px;
+	padding: 0 3px
+}
+
+.icon,.r_arrow,.p_pm_list_arrow {
+	background-image: url(../images/icon.png)
+}
+
+.icon16 {
+	height: 16px;
+	width: 16px;
+	background-image: url(../images/icon16.png);
+	margin: -2px 5px 0 0
+}
+
+.icon30 {
+	height: 30px;
+	width: 30px;
+	background-image: url(../images/icon30-3.png)
+}
+
+.icon16link {
+	float: right;
+	margin-left: 15px
+}
+
+.r_arrow {
+	left: -20px;
+	height: 21px;
+	width: 12px;
+	background-position: -291px 2px;
+	top: 27px
+}
+
+.a_arrow {
+	float: right;
+	width: 7px;
+	height: 9px;
+	background-image: url(../images/page.png);
+	background-position: -37px -37px;
+	opacity: 0.5
+}
+
+a:hover .a_arrow {
+	background-position: 40px 18px;
+	opacity: 1
+}
+
+button.bluesmallbutton,button.greensmallbutton {
+	border: 0
+}
+
+.clear:after,.content:after,.p_threadlist dl:after,.p_pm_list:after,.p_pm_say:after,.p_threadlist li:after,.p_thread_list li:after,.p_threadlist_m:after,.p_s_stat:after,.p_s_pic:after,.p_s_table:after,.clear:before,.content:before,.p_threadlist dl:before,.p_pm_list:before,.p_pm_say:before,.p_threadlist li:before,.p_thread_list li:before,.p_threadlist_m:before,.p_s_stat:before,.p_s_pic:before,.p_s_table:before {
+	display: table;
+	content: "";
+	line-height: 0
+}
+
+.clear:after,.content:after,.p_threadlist dl:after,.p_pm_list:after,.p_pm_say:after,.p_threadlist li:after,.p_thread_list li:after,.p_threadlist_m:after,.p_s_stat:after,.p_s_pic:after,.p_s_table:after {
+	clear: both
+}
+
+.clear,.content,.p_threadlist dl,.p_pm_list,.p_pm_say,.p_threadlist li,.p_thread_list li,.p_threadlist_m,.p_s_stat,.p_s_pic,.p_s_table {
+	zoom: 1
+}
+
+.pr,.p_header,.p_timeline ul,.p_timeline li,.p_threadlist dl:hover,.p_pm_list_c,.p_threadlist li:hover,.p_thread_list li:hover,.p_navs li {
+	position: relative
+}
+
+.pa,.r_arrow,.p_header .tab,.p_timeline li i,.p_timeline em,.p_pm_list_avt,.p_pm_list_arrow,.p_pm_list_c_time,.p_navs li i {
+	position: absolute
+}
+
+.tu,.p_threadlist_stat a:hover,.p_s_nolog a {
+	text-decoration: underline
+}
+
+.tc,.greenbigbutton,.bluebigbutton,.time_prompt,.p_s_title h3,.p_s_nolog,.p_s_avatar,.p_s_manage {
+	text-align: center
+}
+
+.fb {
+	font-weight: bold
+}
+
+.dn,.p_rightinfo a,.p_navs li.a i,.p_navs li .r_arrow {
+	display: none
+}
+
+.db,.greenbigbutton,.bluebigbutton,.p_timeline li i,.p_navs li a {
+	display: block
+}
+
+.minh,.time_prompt,.p_timeline,.p_pm_list,.p_threadlist,.p_profile,.p_thread_list,.p_threadlist_m {
+	min-height: 500px;
+	_height: 500px;
+	_overfow: visible
+}
+
+.vam {
+	vertical-align: middle;
+	*vertical-align: auto;
+	zoom: 1;
+	*display: inline
+}
+
+.dib,.whitesmallbutton,.p_s_manage>a,.graysmallbutton,.greensmallbutton,.bluesmallbutton,.greensmallblankbutton,.bluesmallblankbutton,.bluesmallbox,.greensmallbox,.graysmallbox,.p_threadlist em a,.p_viewlist .p_timeline em a,.redsmallbox,.bluesmallblankbox,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox,.icon,.r_arrow,.p_pm_list_arrow,.icon16,.icon30,.removeline,.cutline,.rightward_line,.p_timeline em span,.p_s_title h3,.p_s_pic>a {
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	zoom: 1;
+	*display: inline
+}
+
+.dib-wrap {
+	font-size: 0;
+	*word-spacing: -1px
+}
+
+.dib-wrap .dib,.dib-wrap .whitesmallbutton,.dib-wrap .p_s_manage>a,.dib-wrap .graysmallbutton,.dib-wrap .greensmallbutton,.dib-wrap .bluesmallbutton,.dib-wrap .greensmallblankbutton,.dib-wrap .bluesmallblankbutton,.dib-wrap .bluesmallbox,.dib-wrap .greensmallbox,.dib-wrap .graysmallbox,.dib-wrap .p_threadlist em a,.p_threadlist em .dib-wrap a,.dib-wrap .p_viewlist .p_timeline em a,.p_viewlist .p_timeline em .dib-wrap a,.dib-wrap .redsmallbox,.dib-wrap .bluesmallblankbox,.dib-wrap .greensmallblankbox,.dib-wrap .graysmallblankbox,.dib-wrap .redsmallblankbox,.dib-wrap .icon,.dib-wrap .r_arrow,.dib-wrap .p_pm_list_arrow,.dib-wrap .icon16,.dib-wrap .icon30,.dib-wrap .removeline,.dib-wrap .cutline,.dib-wrap .rightward_line,.dib-wrap .p_timeline em span,.p_timeline em .dib-wrap span,.dib-wrap .p_s_title h3,.p_s_title .dib-wrap h3,.dib-wrap .p_s_pic>a {
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top
+}
+
+.mb15 {
+	margin-bottom: 15px
+}
+
+.mlr25,.time_prompt,#space_info .nomyhomelog,.p_timeline,.p_pm_list,.p_threadlist_m,.p_viewlist,.p_profile {
+	margin: 0 25px
+}
+
+.plr20,.p_s_stat,.p_s_table,.p_nav h3,.p_navs {
+	padding: 0 20px
+}
+
+.plr25 {
+	padding: 0 25px
+}
+
+.p20,.p_threadlist_m li,.p_s_info {
+	padding: 20px
+}
+
+.p25 {
+	padding: 25px
+}
+
+.hide,.wordnowrap,.p_s_stat ul {
+	overflow: hidden
+}
+
+.word {
+	word-wrap: break-word;
+	word-break: break-all
+}
+
+.wordnowrap {
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.pipe {
+	margin: 0 12px;
+	font-family: serif, "Tahoma", Arial,sans-serif;
+	color: #e6e6e6
+}
+
+.blur {
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px)
+}
+
+.removeline {
+	margin-top: -1px
+}
+
+.title_line {
+	float: left;
+	height: 15px;
+	width: 4px;
+	margin: 18px 0 0 -20px
+}
+
+.more {
+	float: right
+}
+
+.more em {
+	margin-left: 2px
+}
+
+.cutline {
+	height: 13px;
+	width: 1px;
+	background: #e6e6e6;
+	margin-top: 19px
+}
+
+.right {
+	float: right
+}
+
+.time_prompt {
+	line-height: 400px
+}
+
+.rightward_line {
+	width: 7px;
+	height: 9px;
+	background-image: url(../images/page.png);
+	background-position: -38px -37px;
+	margin: -2px 5px 0 0;
+	opacity: 0.7
+}
+
+#space_info {
+	margin-bottom: 30px
+}
+
+#space_info .main {
+	width: 820px
+}
+
+#space_info .sidebar {
+	position: static;
+	width: 260px
+}
+
+#space_info .sidebar .box {
+	overflow: inherit;
+	padding-bottom: 20px
+}
+
+.p_header {
+	padding: 15px 25px
+}
+
+.p_header .modname {
+	padding: 0
+}
+
+.p_header .tab {
+	bottom: 15px;
+	right: 10px;
+	border: 0;
+	height: 35px;
+	line-height: 35px
+}
+
+.p_header .tab li {
+	margin: 0 0 0 10px
+}
+
+.p_header .tab li a {
+	padding: 0 18px;
+	height: 35px
+}
+
+.p_header .tab li span {
+	bottom: -16px
+}
+
+.p_header_button {
+	float: right
+}
+
+.p_header_button a {
+	margin: 8px 0 10px
+}
+
+.p_timeline {
+	padding: 0 0 30px
+}
+
+.p_timeline ul {
+	padding: 10px 0 50px 10px;
+	border-width: 0 0 0 2px;
+	margin-left: 110px
+}
+
+.p_timeline li {
+	margin: 0 20px 0 15px;
+	padding: 30px 0
+}
+
+.p_timeline li i span {
+	float: left;
+	margin: 0;
+	height: 6px;
+	width: 6px
+}
+
+.p_timeline li i {
+	padding: 10px;
+	left: -40px;
+	top: 36px
+}
+
+.p_timeline em {
+	top: 33px;
+	left: -132px;
+	width: 80px;
+	height: 35px;
+	text-align: right
+}
+
+.p_timeline em span {
+	font-weight: 700
+}
+
+.p_timeline em span {
+	margin-top: 8px
+}
+
+.p_timeline_title h4 {
+	margin-top: 5px
+}
+
+.p_timeline_title h4 a {
+	font-weight: 400
+}
+
+.p_timeline_title .p_quote,.p_notice .quote {
+	min-height: 24px;
+	margin: 0 0 12px 0;
+	padding: 13px 35px;
+	line-height: 24px;
+	background: #f1f1f1 url(../images/qa_main.png) 15px 18px no-repeat
+}
+
+.p_notice li {
+	padding: 25px 0
+}
+
+.p_notice em {
+	top: 19px
+}
+
+.p_notice li i {
+	top: 22px
+}
+
+.p_notice .p_notice_same {
+	margin-top: 8px
+}
+
+.p_notice .quote {
+	margin: 12px 0
+}
+
+.p_notice blockquote {
+	margin: 0
+}
+
+.p_notice li:hover .p_rightinfo a {
+	display: inherit
+}
+
+.p_threadlist dl {
+	padding: 20px 10px
+}
+
+.p_threadlist dl:hover {
+	padding: 20px 20px;
+	cursor: pointer;
+	margin: 0 -11px -1px
+}
+
+.p_timeline_list_avt {
+	width: 65px
+}
+
+.p_timeline_list_avt img {
+	float: left;
+	width: 48px;
+	height: 48px
+}
+
+.p_pm_time {
+	width: 75px;
+	text-align: right;
+	padding-left: 20px
+}
+
+.p_pm_tousername {
+	width: 135px
+}
+
+.p_threadlist .p_pm_tousername p {
+	margin-top: 3px
+}
+
+.p_pm_list {
+	padding: 25px 0 0 0
+}
+
+.p_pm_list .pg {
+	text-align: center
+}
+
+.p_pm_say {
+	margin-bottom: 40px
+}
+
+.p_pm_list_avt {
+	bottom: 0
+}
+
+.p_pm_list_avt img {
+	width: 48px;
+	height: 48px
+}
+
+.p_pm_isay .p_pm_list_avt {
+	right: -65px
+}
+
+.p_pm_usay .p_pm_list_avt {
+	left: -65px
+}
+
+.p_pm_list_arrow {
+	bottom: -1px;
+	width: 9px;
+	height: 10px
+}
+
+.p_pm_isay .p_pm_list_arrow {
+	background-position: -71px -20px;
+	right: -7px
+}
+
+.p_pm_usay .p_pm_list_arrow {
+	background-position: -55px -20px;
+	left: -7px
+}
+
+.p_pm_list_c {
+	padding: 12px 15px;
+	max-width: 350px;
+	line-height: 1.85
+}
+
+.p_pm_list_c a {
+	margin: 0 5px
+}
+
+.p_pm_isay .p_pm_list_c {
+	float: right;
+	margin-right: 65px;
+	border-radius: 5px 5px 0
+}
+
+.p_pm_usay .p_pm_list_c {
+	float: left;
+	margin-left: 65px;
+	border-radius: 5px 5px 5px 0
+}
+
+.p_pm_list_c_time {
+	bottom: -25px;
+	width: 100px
+}
+
+.p_pm_isay .p_pm_list_c_time {
+	right: 15px;
+	text-align: right
+}
+
+.p_pm_usay .p_pm_list_c_time {
+	left: 15px;
+	text-align: left
+}
+
+.p_threadlist,.p_profile,.p_thread_list {
+	padding: 0 25px 18px
+}
+
+.p_threadlist li,.p_thread_list li {
+	padding: 15px 0
+}
+
+.p_threadlist em {
+	float: left;
+	width: 130px;
+	text-align: right;
+	padding: 2px 25px 6px 0;
+	border-width: 0 2px 0 0;
+	margin: 0 23px 0 0
+}
+
+.p_threadlist em a {
+	margin-top: 5px
+}
+
+.p_threadlist em span {
+	font-weight: 700
+}
+
+.p_threadlist p {
+	margin-top: 5px
+}
+
+.p_threadlist li:hover,.p_thread_list li:hover {
+	padding: 15px 10px;
+	margin: 0 -11px -1px
+}
+
+.p_threadlist li:hover em {
+	border-width: 0 2px 0 0
+}
+
+.p_threadlist_m {
+	padding-bottom: 5px
+}
+
+.p_threadlist_m ul {
+	margin: 25px -50px 0 0
+}
+
+.p_threadlist_m li {
+	float: left;
+	width: 333px;
+	height: 168px;
+	margin: 0 20px 20px 0
+}
+
+.p_threadlist_avatar {
+	float: right
+}
+
+.p_threadlist_avatar img {
+	height: 64px;
+	width: 64px
+}
+
+.p_threadlist_c {
+	margin: 0 0 0 10px
+}
+
+.p_threadlist_c p {
+	margin-top: 2px
+}
+
+.p_threadlist_c i {
+	margin: 6px 0 0 -31px;
+	height: 20px
+}
+
+.p_threadlist_c .ap_icon img {
+	vertical-align: -2%
+}
+
+.p_threadlist_stat {
+	margin: 20px 0 0 10px;
+	height: 20px
+}
+
+.p_threadlist_stat span {
+	margin: 0 10px
+}
+
+.p_threadlist_get {
+	margin: 30px 0 0 10px
+}
+
+.p_threadlist_get a {
+	margin-right: 10px
+}
+
+.p_threadlist_right {
+	float: right
+}
+
+.p_threadlist_right input {
+	margin: 7px 30px 0 0
+}
+
+.p_threadlist_last {
+	text-align: right
+}
+
+.p_threadlist_last input {
+	margin: -2px 5px 0 5px;
+	vertical-align: middle
+}
+
+.p_threadlist_last label {
+	margin-left: 10px
+}
+
+.p_viewlist .tab {
+	margin-bottom: -1px
+}
+
+.p_viewlist .tab select {
+	margin-top: 10px
+}
+
+.p_viewlist .p_viewlist_tabli {
+	float: right;
+	margin: 0
+}
+
+.p_viewlist_info {
+	margin-top: 5px
+}
+
+.p_viewlist_info .pipe {
+	margin: 0 6px
+}
+
+.p_viewlist .p_timeline em {
+	top: 24px
+}
+
+.p_viewlist .p_timeline em a {
+	margin: 5px 0 0
+}
+
+.p_timeline_thread li {
+	padding: 20px 0
+}
+
+.p_viewlist em.p_timeline_em {
+	top: 33px
+}
+
+.p_profile {
+	padding: 25px 0 0
+}
+
+.p_s_list {
+	margin-bottom: 25px
+}
+
+.p_s_title {
+	float: left;
+	width: 110px
+}
+
+.p_s_title h3 {
+	border-radius: 2px 0 0 2px;
+	width: 47px;
+	padding: 15px 30px;
+	border-width: 1px 0 1px 3px;
+	border-left-color: silver
+}
+
+.p_s_stat {
+	margin: 0 0 0 110px;
+	border-radius: 0 2px 2px 2px
+}
+
+.p_s_stat ul {
+	margin: 0 -60px -1px 0
+}
+
+.p_s_stat li {
+	float: left;
+	width: 139.5px;
+	line-height: 40px;
+	margin-right: 20px
+}
+
+.p_s_stat_twolist li {
+	width: 299px
+}
+
+.p_s_stat em {
+	padding-right: 5px
+}
+
+.p_s_stat .p_s_stat_title {
+	width: 618px
+}
+
+.p_s_page_mode {
+	margin-left: 110px
+}
+
+.p_s_pic {
+	border-radius: 0 2px 2px 2px;
+	padding: 25px 25px 15px;
+	margin: 0 0 0 110px
+}
+
+.p_s_pic img {
+	width: 48px;
+	height: 48px
+}
+
+.p_s_bigpic img {
+	width: 64px;
+	height: 64px
+}
+
+.p_s_list .p_s_bigpic>a {
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0 15px 10px 0
+}
+
+.p_s_pic>a {
+	padding: 12px;
+	margin: 0 10px 10px 0
+}
+
+.p_s_nolog {
+	line-height: 32px;
+	margin-top: 3px
+}
+
+.p_s_table {
+	border-radius: 0 2px 2px 2px;
+	margin: 0 0 0 110px
+}
+
+.p_s_table table td,.p_s_table table th {
+	line-height: 40px
+}
+
+.page_mode,.page_mode_01 {
+	border-width: 0 1px 1px;
+	padding: 1px;
+	border-radius: 0 0 2px 2px
+}
+
+.page_mode {
+	margin: 0 2px
+}
+
+.page_mode_01 {
+	margin: 0 4px
+}
+
+.p_s_avatar>img {
+	margin-top: 40px;
+	height: 120px;
+	width: 120px
+}
+
+.p_s_avatar p {
+	margin: 10px 0 -8px
+}
+
+.p_s_info .viewthread_author_act {
+	margin: 5px -30px 10px -15px
+}
+
+.p_s_info .viewthread_author_act a {
+	padding: 0 15px
+}
+
+.p_s_manage {
+	padding: 20px 20px 0
+}
+
+.p_s_manage .pipe {
+	margin: 0 5px
+}
+
+.p_nav {
+	padding-top: 15px
+}
+
+.p_navs {
+	border-width: 1px 0
+}
+
+.p_navs ul {
+	margin-bottom: -1px
+}
+
+.p_navs li span {
+	float: right;
+	margin: 15px 0 0
+}
+
+.p_navs li i {
+	width: 4px;
+	left: -24px;
+	top: 0;
+	border-radius: 2px 0 0 2px
+}
+
+.p_navs li.a .r_arrow {
+	display: inherit;
+	left: -41px;
+	top: 12px
+}

@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0
 }
+
 body,input,textarea,select,button {
 	font: 14px/1.5 "Helvetica Neue", Arial,"Hiragino Sans GB", "STHeiti", "Microsoft Yahei","SimSun", "WenQuanYi Micro Hei",sans-serif
 }
@@ -49,184 +50,6 @@ table {
 caption,th {
 	text-align: left;
 	font-weight: 400
-}
-
-.wbody,.content {
-	width: 1100px
-}
-
-.w18,.main,.recommend_pic {
-	width: 770px
-}
-
-.w7,.sidebar,.fixed_sidebar {
-	width: 310px
-}
-
-.content {
-	margin: 0 auto
-}
-
-.font18 {
-	font-size: 18px
-}
-
-
-
-
-.br5 {
-	border-radius: 5px
-}
-
-
-
-.greenbigbutton:hover {
-	background-color: #3cac63
-}
-
-.bluebigbutton:hover {
-	background-color: #0783dd
-}
-
-.greensmallbutton:hover,.replay button:hover {
-	background-color: #3cac63
-}
-
-.bluesmallbutton:hover {
-	background-color: #0783dd
-}
-
-.smallbox,.bluesmallbox,.greensmallbox,.graysmallbox,.redsmallbox {
-	height: 19px;
-	line-height: 20px;
-	padding: 0 7px
-}
-
-.smallboxh,.bluesmallblankbox,.floorauthor,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox {
-	height: 17px;
-	line-height: 17px;
-	padding: 0 3px
-}
-
-.icon,.r_arrow,.signin_arrow,#atarget i,#threadthumb i,#atarget.atarget_1 i,#threadthumb.threadthumb_yes i,.threadlist_stat {
-	background-image: url(../images/icon.png)
-}
-
-.icon16,.fm_close,.s_screen,.scbarbutton button,.index_clear,.index_clear:hover,.oneway_text>ul>li>a>i,.manage_group2,.s_reply,.s_rate,.s_view {
-	height: 16px;
-	width: 16px;
-	background-image: url(../images/icon16.png);
-	margin: -2px 5px 0 0
-}
-
-.icon30 {
-	height: 30px;
-	width: 30px;
-	background-image: url(../images/icon30-3.png)
-}
-
-.icon16link {
-	float: right;
-	margin-left: 15px
-}
-
-.r_arrow {
-	left: -20px;
-	height: 21px;
-	width: 12px;
-	background-position: -291px 2px;
-	top: 27px
-}
-
-.a_arrow {
-	float: right;
-	width: 7px;
-	height: 9px;
-	background-image: url(../images/page.png);
-	background-position: -37px -37px;
-	opacity: 0.5
-}
-
-a:hover .a_arrow {
-	background-position: 40px 18px;
-	opacity: 1
-}
-
-
-.minh,.time_prompt {
-	min-height: 500px;
-	_height: 500px;
-	_overfow: visible
-}
-
-.vam {
-	vertical-align: middle;
-	*vertical-align: auto;
-	zoom: 1;
-	*display: inline
-}
-
-.dib-wrap {
-	font-size: 0;
-	*word-spacing: -1px
-}
-
-
-.pipe {
-	margin: 0 12px;
-	font-family: serif, "Tahoma", Arial,sans-serif;
-	color: #e6e6e6
-}
-
-.blur {
-	-webkit-filter: blur(3px);
-	-moz-filter: blur(3px);
-	-o-filter: blur(3px);
-	-ms-filter: blur(3px);
-	filter: blur(3px)
-}
-
-.removeline {
-	margin-top: -1px
-}
-
-.title_line {
-	float: left;
-	height: 15px;
-	width: 4px;
-	margin: 18px 0 0 -20px
-}
-
-.more {
-	float: right
-}
-
-.more em {
-	margin-left: 2px
-}
-
-.cutline {
-	height: 13px;
-	width: 1px;
-	background: #e6e6e6;
-	margin-top: 19px
-}
-
-.right {
-	float: right
-}
-
-.time_prompt {
-	line-height: 400px
-}
-
-.rightward_line {
-	width: 7px;
-	height: 9px;
-	background-image: url(../images/page.png);
-	background-position: -38px -37px;
-	margin: -2px 5px 0 0;
-	opacity: 0.7
 }
 
 .wbody,.content {
@@ -335,7 +158,9 @@ a:hover .a_arrow {
 	border-radius: 5px
 }
 
-
+.br3,.greenbigbutton,.bluebigbutton,.whitesmallbutton,.forum_newbie a,.graysmallbutton,.greensmallbutton,.replay button,.bluesmallbutton,.greensmallblankbutton,.bluesmallblankbutton,.bluesmallbox,.greensmallbox,.graysmallbox,.redsmallbox,.bluesmallblankbox,.floorauthor,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox,.makecover,.mem_cover,.flu_cover,.coverforum_title .bigtitle a,.upavatar,.upavatar img,.cstamp,.inpartlist li .inpartimg img,.signinwindows,.signin_body,.signin_topic,.ccdar td,.flu_grid,.forum_search,.box,.itofeedback,.quotebtn,.recommend_pic,.recommend_pic_small img,.featured_list li,.s_toplist .s_links em,.slide_picshow_status a,.slide_picshow_status span,.snswidget img,.viewthread_author_stat,.threadlist:hover,.s_text_list span,.s_timeline li div p,.viewthread_rush,.viewthread_rush .rush_r,.viewthread_manage a,.viewthread_replylog,.viewthread_ratelog,.viewthread_ratelog tr,.viewthread_locked,.needlogin,.typeinfo,.viewthread_foot .bdsharebuttonbox a,.k_favorite,#livereplycontentout,#liverefresh,#livereplymessage,.pg a,.pg strong,.quotepost-pan,.replay .replay-con,.quotepost-tip,.authphone_layer {
+	border-radius: 2px
+}
 
 .shadow,.box,.itofeedback,.quotebtn,.recommend_pic,.typeinfo,.pg a,.pg strong,.authphone_layer {
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.08)
@@ -598,7 +423,483 @@ button.bluesmallbutton,button.greensmallbutton,.replay button {
 	*word-spacing: -1px
 }
 
+.dib-wrap .dib,.dib-wrap .whitesmallbutton,.dib-wrap .forum_newbie a,.forum_newbie .dib-wrap a,.dib-wrap .graysmallbutton,.dib-wrap .greensmallbutton,.dib-wrap .replay button,.replay .dib-wrap button,.dib-wrap .bluesmallbutton,.dib-wrap .greensmallblankbutton,.dib-wrap .bluesmallblankbutton,.dib-wrap .bluesmallbox,.dib-wrap .greensmallbox,.dib-wrap .graysmallbox,.dib-wrap .redsmallbox,.dib-wrap .bluesmallblankbox,.dib-wrap .floorauthor,.dib-wrap .greensmallblankbox,.dib-wrap .graysmallblankbox,.dib-wrap .redsmallblankbox,.dib-wrap .icon,.dib-wrap .r_arrow,.dib-wrap .signin_arrow,.dib-wrap #atarget i,#atarget .dib-wrap i,.dib-wrap #threadthumb i,#threadthumb .dib-wrap i,.dib-wrap .threadlist_stat,.dib-wrap .icon16,.dib-wrap .fm_close,.dib-wrap .s_screen,.dib-wrap .scbarbutton button,.scbarbutton .dib-wrap button,.dib-wrap .index_clear,.dib-wrap .oneway_text>ul>li>a>i,.dib-wrap .manage_group2,.dib-wrap .s_reply,.dib-wrap .s_rate,.dib-wrap .s_view,.dib-wrap .icon30,.dib-wrap .removeline,.dib-wrap .cutline,.dib-wrap .rightward_line,.dib-wrap .coverforum_title .bigtitle a,.coverforum_title .bigtitle .dib-wrap a,.dib-wrap .clist li a span,.clist li a .dib-wrap span,.dib-wrap .newmsgdot,.dib-wrap .fm_icon24,.dib-wrap .newprompt,.dib-wrap .newreplies,.dib-wrap .rightarrow,.dib-wrap .grid_avatar,.dib-wrap .itofeedback a,.itofeedback .dib-wrap a,.dib-wrap .grid_list li a,.grid_list li .dib-wrap a,.dib-wrap .grid_list li em,.grid_list li .dib-wrap em,.dib-wrap .grid_list_num,.dib-wrap .grid_list_img,.dib-wrap .featured_list li,.featured_list .dib-wrap li,.dib-wrap .featured_list li span,.featured_list li .dib-wrap span,.dib-wrap .featured_list li i,.featured_list li .dib-wrap i,.dib-wrap .s_links i,.s_links .dib-wrap i,.dib-wrap .s_top_num,.dib-wrap .slide_picshow_status a,.slide_picshow_status .dib-wrap a,.dib-wrap .slide_picshow_status span,.slide_picshow_status .dib-wrap span,.dib-wrap .sns_widget,.dib-wrap .viewthread_author_stat,.dib-wrap .tab_more li span,.tab_more li .dib-wrap span,.dib-wrap .s_timeline li div p,.s_timeline li div .dib-wrap p,.dib-wrap .viewthread_title h1,.viewthread_title .dib-wrap h1,.dib-wrap .viewthread_manage a,.viewthread_manage .dib-wrap a,.dib-wrap .viewthread_medal,.dib-wrap .viewthread_foot .managebutton,.viewthread_foot .dib-wrap .managebutton,.dib-wrap .floor_link,.dib-wrap .floor_img,.dib-wrap .postbutton a,.postbutton .dib-wrap a,.dib-wrap .postbutton button,.postbutton .dib-wrap button,.dib-wrap .viewthread_replylog .avatar,.viewthread_replylog .dib-wrap .avatar,.dib-wrap .viewthread_quote blockquote,.viewthread_quote .dib-wrap blockquote,.dib-wrap .viewthread_foot .bdsharebuttonbox a,.viewthread_foot .bdsharebuttonbox .dib-wrap a,.dib-wrap .k_favorite,.dib-wrap .taglist,.dib-wrap .nextpage a,.nextpage .dib-wrap a,.dib-wrap .pg a,.pg .dib-wrap a,.dib-wrap .pg strong,.pg .dib-wrap strong {
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top
+}
 
+.mb15,.box,.itofeedback,.quotebtn,.recommend_pic,.big_forumlist,.postbutton,.viewthread_locked,.pg {
+	margin-bottom: 15px
+}
+
+.mlr25,.time_prompt,.forumdisplay .oneway_text {
+	margin: 0 25px
+}
+
+.plr20,.modname,.s_links,.s_tab_content ul,.use_guide,.viewthread_author_act,.s_text_list {
+	padding: 0 20px
+}
+
+.plr25,.main_box .modname,.recommend_pic_small,.oneway_text {
+	padding: 0 25px
+}
+
+.p20,.itofeedback,.s_topic_content,.forum_newbie,.viewthread_r,.firstfloor #viewthread_foot,#viewthread_fastreply,#livethread {
+	padding: 20px
+}
+
+.p25,.viewthread_pst {
+	padding: 25px
+}
+
+.hide,.wordnowrap,.cfourlist p.fbfont,.cthreelist p.fbfont,.clist li,.ctwolist li,.inpartlist .fbfont,.recommend_article_list li,.slide_picshow li div p,.s_tab_content li p,.viewthread_replylog li,.viewthread_replylog li p,.viewthread_ratelog_name div,.row_list li,.mem_active,.flu_close a,.cfourlist p.smallfont,.cforum_footer,.getbirthday,.inpartlist .smallfont,.signinwindows,.scbarbox,.scbarbox input,.scbarbutton button,.box,.itofeedback,.quotebtn,.recommend_pic,.recommend_article_list ul,.modname,.forum_user_stat .grid_list,.grid_list,.grid_list ul,.slide_picshow,.slide_picshow ul,.slide_picshow_status a,.slide_picshow_status span,.s_tab_title ul,.s_zui_update,.viewthread_author_stat,.viewthread_author_stat ul,.threadlist_title a,.viewthread_title h1,.viewthread_rush .rush_r,#replylists,#f_pst,.viewthread_ratelog,.firstfloor #viewthread_foot,.typeinfo,.viewthread_foot .bdsharebuttonbox a,.k_favorite,.pg a.prev,.pg a.nxt {
+	overflow: hidden
+}
+
+.word,.viewthread_table td {
+	word-wrap: break-word;
+	word-break: break-all
+}
+
+.wordnowrap,.cfourlist p.fbfont,.cthreelist p.fbfont,.clist li,.ctwolist li,.inpartlist .fbfont,.recommend_article_list li,.slide_picshow li div p,.s_tab_content li p,.viewthread_replylog li,.viewthread_replylog li p,.viewthread_ratelog_name div,.row_list li {
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.pipe {
+	margin: 0 12px;
+	font-family: serif, "Tahoma", Arial,sans-serif;
+	color: #e6e6e6
+}
+
+.blur {
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px)
+}
+
+.removeline {
+	margin-top: -1px
+}
+
+.title_line {
+	float: left;
+	height: 15px;
+	width: 4px;
+	margin: 18px 0 0 -20px
+}
+
+.more {
+	float: right
+}
+
+.more em {
+	margin-left: 2px
+}
+
+.cutline {
+	height: 13px;
+	width: 1px;
+	background: #e6e6e6;
+	margin-top: 19px
+}
+
+.right {
+	float: right
+}
+
+.time_prompt {
+	line-height: 400px
+}
+
+.rightward_line {
+	width: 7px;
+	height: 9px;
+	background-image: url(../images/page.png);
+	background-position: -38px -37px;
+	margin: -2px 5px 0 0;
+	opacity: 0.7
+}
+
+.wbody,.content {
+	width: 1100px
+}
+
+.w18,.main,.recommend_pic {
+	width: 770px
+}
+
+.w7,.sidebar,.fixed_sidebar {
+	width: 310px
+}
+
+.content {
+	margin: 0 auto
+}
+
+.h50,.greenbigbutton,.bluebigbutton,.flu_close,.bigtitleh,.cforum_footer,.modname,.s_tab_title li,.oneway_text,.forum_top_info,.tab,.tab li a {
+	height: 50px
+}
+
+.lh50,.greenbigbutton,.bluebigbutton,.flu_close,.bigtitleh,.cforum_footer,.s_links li a,.s_tab_title li,.oneway_text,.tab,.breadcrumbs,.nextpage a {
+	line-height: 50px
+}
+
+.font12,.bluesmallbox,.greensmallbox,.graysmallbox,.redsmallbox,.bluesmallblankbox,.floorauthor,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox,.more,.newmsgdot,.ctwolist li a,.signin_sidebarinfo li,.ccdar_tit td,.s_links em,.threadlist_title,.threadlist_info,.threadlist_imglist,.s_timeline li>p,.s_timeline li div p,.pic_text_list .s_tab_content p,.viewthread_manage a,.floor_link,.viewthread_replylog a.author,.moderatorlog,#livereplycontent dl dd.dateline {
+	font-size: 12px
+}
+
+.font14,.more em,.coverforum_title .bigtitle a,.cthreelist p.fbfont,.signin_sidebarinfo .signlist,.grid_avatar:hover .grid_edit,.modname,.featured_list li p em,.s_topic_content span,.s_toplist .s_links span,.needlogin,.viewthread_blockcode,.viewthread_foot .bdsharebuttonbox a,.k_favorite {
+	font-size: 14px
+}
+
+.font16,.greenbigbutton,.bluebigbutton,.coverforum_title .smalltitle,.bigtitleh,.cfourlist p.fbfont,.csiderlist li p,.getbirthday,.inpartlist .fbfont,.signin_topic,.fm_nav a,.modname,.s_topic_content,.s_links span,.s_toplist span.s_top_num,.use_guide h4,.threadlist_title a,.threadlist_title em,.pic_text_list .s_tab_content a,.replylist_title,.postbutton a,.postbutton button,.firstfloor .viewthread_table,.breadcrumbs em,.quotepost-tip {
+	font-size: 16px
+}
+
+.font18 {
+	font-size: 18px
+}
+
+.font22,.time_prompt,.coverforum_title .midtitle,.birthday_title .midtitle,.signin_sidebarinfo .signinnum,.grid_list_num,.featured_list li h4,.mainforumcontent h2,.viewthread_title h1 a {
+	font-size: 22px;
+	font-weight: 400
+}
+
+.fullfont,.forum_top_name h2 {
+	font-size: 28px;
+	font-weight: 400
+}
+
+.whitecolor,.greenbigbutton,.greenbigbutton:hover,.bluebigbutton,.bluebigbutton:hover,.greensmallbutton,.replay button,.greensmallbutton:hover,.replay button:hover,.bluesmallbutton,.bluesmallbutton:hover,.greensmallblankbutton:hover,.bluesmallblankbutton:hover,.bluesmallbox,.greensmallbox,.graysmallbox,.redsmallbox,.coverforum_title .bigtitle,.coverforum_title .bigtitle a,.coverforum_title .midtitle,.coverforum_title .smalltitle,.newmsgdot,.getbirthday,.getbirthday:hover,.signin_main_box .ccdar .ccdar_today,.grid_avatar .grid_edit,.recommend_pic_title li a,.s_topic_content,.s_toplist .s_links li a:hover em,.slide_picshow li a,.viewthread_manage a:hover,.viewthread_foot .right .greensmallbutton,.viewthread_foot .right .replay button,.replay .viewthread_foot .right button,.viewthread_top .floor_pin,.viewthread_fastreplybutton button,.viewthread_foot .k_favorite:hover,.pg strong,.quotebtn {
+	color: #fff
+}
+
+.blackcolor,.modname,.s_tab_title li.current,.mainforumcontent h2 a,.threadlist_title a,.viewthread_replylog li,.footer_links .modname {
+	color: #3f3f3f
+}
+
+.color,.whitesmallbutton,.forum_newbie a,.whitesmallbutton:hover,.forum_newbie a:hover,.grid_list_num,.row_list li {
+	color: #535353
+}
+
+.color1,.graysmallbutton:hover,.graysmallblankbox,.cfourlist li,.cthreelist li,.ctwolist li a,.birthday_title .midtitle,.inpartlist .fbfont,.signin_main_top,.grid_list li a,.grid_list li em,.s_tab_title li,.oneway_text em,.forum_top_name p,.forum_top_info,.viewthread_foot .managebutton,.viewthread_replylog a.author,.viewthread_ratelog_name a,.viewthread_locked,.viewthread_quote blockquote,.viewthread_blockcode,.breadcrumbs {
+	color: #6f6f6f
+}
+
+.color2,.cfourlist p.smallfont,.clist li a,.csiderlist li p,.cforum_footer a,.birthday_body,.inpartlist .smallfont,.ccdar td,.scbartype a,.mbox_list,.s_links em,.s_top_num,.oneway_text,.oneway_text li a,.mainforum,.viewthread_ratelog,.quote,.quotepost-tip {
+	color: #9f9f9f
+}
+
+.color3,.graysmallbutton,.more a,.time_prompt,.modname .more,.modname .more a,.s_tab_content li p,.use_guide em,.viewthread_author_stat li,#separatorline,#atarget,#threadthumb,#fontsearch th,.s_timeline li>p,.viewthread_manage a,.viewthread_top,.viewthread_foot label,.viewthread_foot a,.moderatorlog a,.typeinfo li.typeinfo_first,.viewthread_foot .bdsharebuttonbox,.breadcrumbs em {
+	color: #afafaf
+}
+
+.color4,.time_prompt,.ccdar .ccdar_last,.ccdar_tit td,.recommend_article_list em,.threadlist_info,.threadlist_info a,.floor_link,#livereplycontent dl dd.dateline {
+	color: silver
+}
+
+.greencolor,.greensmallblankbutton,.greensmallblankbox,.signin a,.threadlist_stat_new a,.viewthread_blockcode ol li:hover,.viewthread_foot .k_favorite {
+	color: #4fc277
+}
+
+.redcolor,.redsmallblankbox,.threadlist_stat_hot a {
+	color: #f35b4f
+}
+
+.bluecolor,.bluesmallblankbutton,.bluesmallblankbox,.floorauthor,.clist li a:hover,.cforum_footer a:hover,.cstamp,.ctwolist li a:hover,.cflu_screen:hover .s_screen,.cflu_weibo:hover .s_weibo,.cflu_screen:hover,.cflu_weibo:hover,.signin_sidebarinfo .signinnum,.signin_topic a,.fm_nav li.current a,.content .colorlink,.recommend_pic_title li.current a,.grid_list li a:hover .grid_list_num,.s_links li a:hover,.s_forumlist .grid_list a:hover,.s_zui_update h3,.oneway_text a:hover,.oneway_text li.current a,.mainforumcontent h2 a:hover,.tab li.a a,.tab_more li.a a,#fontsearch a:hover,#fontsearch .a a,.threadlist_title a:hover,.s_text_list li:hover a,.viewthread_rush .rush_r,.viewthread_foot a:hover,.viewthread_ratelog strong,.viewthread_table .viewthread_locked a,.viewthread_locked h4,.viewthread_table a,.needlogin,.viewthread_blockcode em,.typeinfo li,#messagetext a,#livereplycontent dl dd a,#liverefresh,.authphone_layer {
+	color: #1499f8
+}
+
+.yellowcolor,.coverforum_title .smalltitle span {
+	color: #f9dc50
+}
+
+.brround,.flu_close a,.cfourlist img,.grid_avatar img,.grid_avatar .grid_edit,.viewthread_author_avatar img,.viewthread_avatar,.author_avatar img,.viewthread_replylog .avatar,.viewthread_replylog .avatar img {
+	border-radius: 50%
+}
+
+.br50,.clist li a span,.newmsgdot,.s_toplist img,.s_timeline li span,.viewthread_ratelog_avatar img,#livereplycontent dl dt img {
+	border-radius: 50px
+}
+
+.br5 {
+	border-radius: 5px
+}
+
+.br3,.greenbigbutton,.bluebigbutton,.whitesmallbutton,.forum_newbie a,.graysmallbutton,.greensmallbutton,.replay button,.bluesmallbutton,.greensmallblankbutton,.bluesmallblankbutton,.bluesmallbox,.greensmallbox,.graysmallbox,.redsmallbox,.bluesmallblankbox,.floorauthor,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox,.makecover,.mem_cover,.flu_cover,.coverforum_title .bigtitle a,.upavatar,.upavatar img,.cstamp,.inpartlist li .inpartimg img,.signinwindows,.signin_body,.signin_topic,.ccdar td,.flu_grid,.forum_search,.box,.itofeedback,.quotebtn,.recommend_pic,.recommend_pic_small img,.featured_list li,.s_toplist .s_links em,.slide_picshow_status a,.slide_picshow_status span,.snswidget img,.viewthread_author_stat,.threadlist:hover,.s_text_list span,.s_timeline li div p,.viewthread_rush,.viewthread_rush .rush_r,.viewthread_manage a,.viewthread_replylog,.viewthread_ratelog,.viewthread_ratelog tr,.viewthread_locked,.needlogin,.typeinfo,.viewthread_foot .bdsharebuttonbox a,.k_favorite,#livereplycontentout,#liverefresh,#livereplymessage,.pg a,.pg strong,.quotepost-pan,.replay .replay-con,.quotepost-tip,.authphone_layer {
+	border-radius: 2px
+}
+
+.shadow,.box,.itofeedback,.quotebtn,.recommend_pic,.typeinfo,.pg a,.pg strong,.authphone_layer {
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.08)
+}
+
+.ts,.greenbigbutton,.bluebigbutton,.whitesmallbutton,.forum_newbie a,.graysmallbutton,.greensmallbutton,.replay button,.bluesmallbutton,.greensmallblankbutton,.bluesmallblankbutton,.title_line,.coverforum_title .bigtitle a:hover,.grid_avatar:hover .grid_edit,.recommend_pic_title,.slide_picshow li div,.tab li span {
+	transition: all 0.2s ease-in
+}
+
+.grayborder,.whitesmallbutton,.forum_newbie a,.graysmallbutton,.cfourlist,.cforum_body,.cforum_body_t,.cforum_footer,.inpartlist li,.flu_grid,.forum_search,.scbartype,.index_tab,.grid_list li a,.grid_list li em,.s_tab_title li,.viewthread_author_stat,.viewthread_author_stat li,.viewthread_author .viewthread_medal,.threadlist:hover,.viewthread_replylog,.viewthread_replylog li,.viewthread_pst,.viewthread_ratelog table,.typeinfo,#liverefresh {
+	border: 1px solid #f1f1f1
+}
+
+.grayborder1,.whitesmallbutton:hover,.forum_newbie a:hover,.graysmallbutton:hover,.signin_body,.signin_topic,.viewthread_manage a,.viewthread_blockcode,.viewthread_blockcode em,.viewthread_foot .bdsharebuttonbox a,#livethread,#livereplycontentout,#livereplymessage,.taglist li,.replay .replay-con,.quotepost-tip,.authphone_layer {
+	border: 1px solid #e6e6e6
+}
+
+.grayborder2,.graysmallblankbox,.viewthread_rush table td,.viewthread_locked,.needlogin {
+	border: 1px solid silver
+}
+
+.greenborder,.greensmallblankbutton,.greensmallblankbox,.forum_user_stat,.k_favorite {
+	border: 1px solid #4fc277
+}
+
+.whiteborder,.ccdar td,.s_timeline li i {
+	border: 1px solid #fff
+}
+
+.blueborder,.bluesmallblankbutton,.bluesmallblankbox,.floorauthor,.viewthread_manage a:hover {
+	border: 1px solid #1499f8
+}
+
+.redborder,.redsmallblankbox {
+	border: 1px solid #f35b4f
+}
+
+.graytopborder,.ccdar_tit,.flu_grid_f,.mbox_list,.featured_list,.s_links li,.s_tab_content li,.use_guide li,.s_zui_update,.customer_service,.forumlist,#separatorline,.s_text_list ul,.viewthread .sunken,#viewthread_fastreply,#livereplycontent dl,.nextpage a {
+	border-top: 1px solid #f1f1f1
+}
+
+.graybottomborder,.flu_grid_t,.signin,.grid_list li,.s_grid_line,.viewthread_author,.tab,.tab_more,.sortlist,.threadlist,.s_timeline li>p,.viewthread_main,.viewthread_title,.viewthread_ratelog td,.typeinfo ul,.sunken,.nologin #messagetext {
+	border-bottom: 1px solid #f1f1f1
+}
+
+.whitebg,.coverforum,.signin_body,.fm_header,.flu_grid,.box,.itofeedback,.quotebtn,.s_tab_title li.current,.viewthread_author,.viewthread_author .viewthread_medal,.s_timeline li i,.viewthread_r,#livereplycontentout,#livereplymessage,.pg a,.pg strong,.quotepost-pan,.authphone_layer,.fm_footer {
+	background: #fff
+}
+
+.graybg,.flu_grid_c,.s_tab_title li,.s_zui_update,.viewthread_author_stat,.viewthread_author_threads,.tab_more,.threadlist:hover,.viewthread_replylog,.viewthread_reply,.viewthread_ratelog tr:nth-child(odd),.viewthread_locked,.needlogin,#viewthread_fastreply,.viewthread_blockcode,.typeinfo,.sunken-inside {
+	background-color: #f9f9f9
+}
+
+.graybg1,.whitesmallbutton:hover,.forum_newbie a:hover,.graysmallbutton,.signinwindows,.viewthread_blockcode em,.nextpage a,.pg a:hover,.quote {
+	background-color: #f5f5f5
+}
+
+.graybg2,.graysmallbutton:hover,.s_toplist .s_links em,.viewthread_blockcode em:hover,.nextpage a:hover {
+	background-color: #f1f1f1
+}
+
+.graybg3,.footer_links {
+	background-color: #e6e6e6
+}
+
+.graybg4,.s_text_list span {
+	background-color: silver
+}
+
+.graybg5,.graysmallbox,.s_timeline li span {
+	background-color: #afafaf
+}
+
+.greenbg,.greenbigbutton,.greensmallbutton,.replay button,.greensmallblankbutton:hover,.greensmallbox,.signin_main_box .ccdar .ccdar_today,.viewthread_fastreply,.k_favorite:hover {
+	background-color: #4fc277
+}
+
+.bluebg,.bluebigbutton,.bluesmallbutton,.bluesmallblankbutton:hover,.bluesmallbox,.title_line,.flu_close a:hover,.clist li a span,.newmsgdot,.s_toplist .s_links li a:hover em,.slide_picshow_status a.current,.slide_picshow_status span.current,.tab li span,.s_text_list li:hover span,.viewthread_manage a:hover,.pg strong {
+	background-color: #1499f8
+}
+
+.redbg,.redsmallbox,.viewthread_top .floor_pin {
+	background-color: #f35b4f
+}
+
+.bluelightbg {
+	background-color: #eef8fe
+}
+
+.redlightbg {
+	background-color: #feeeed
+}
+
+.greenlightbg {
+	background-color: #eef9f2
+}
+
+.yellowlightbg,.signin_topic,#postlistreply,#livethread {
+	background-color: #fefae4
+}
+
+.tpbg,.grid_avatar .grid_edit,.recommend_pic_title,.slide_picshow li div p {
+	background-color: rgba(0,0,0,0.7)
+}
+
+.smallbtnh,.graysmallbutton,.greensmallblankbutton,.bluesmallblankbutton {
+	height: 33px;
+	line-height: 33px;
+	padding: 0 15px
+}
+
+.smallbt,.whitesmallbutton,.forum_newbie a,.greensmallbutton,.replay button,.bluesmallbutton {
+	height: 35px;
+	line-height: 35px;
+	padding: 0 15px
+}
+
+.greenbigbutton:hover {
+	background-color: #3cac63
+}
+
+.bluebigbutton:hover {
+	background-color: #0783dd
+}
+
+.greensmallbutton:hover,.replay button:hover {
+	background-color: #3cac63
+}
+
+.bluesmallbutton:hover {
+	background-color: #0783dd
+}
+
+.smallbox,.bluesmallbox,.greensmallbox,.graysmallbox,.redsmallbox {
+	height: 19px;
+	line-height: 20px;
+	padding: 0 7px
+}
+
+.smallboxh,.bluesmallblankbox,.floorauthor,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox {
+	height: 17px;
+	line-height: 17px;
+	padding: 0 3px
+}
+
+.icon,.r_arrow,.signin_arrow,#atarget i,#threadthumb i,#atarget.atarget_1 i,#threadthumb.threadthumb_yes i,.threadlist_stat {
+	background-image: url(../images/icon.png)
+}
+
+.icon16,.fm_close,.s_screen,.scbarbutton button,.index_clear,.index_clear:hover,.oneway_text>ul>li>a>i,.manage_group2,.s_reply,.s_rate,.s_view {
+	height: 16px;
+	width: 16px;
+	background-image: url(../images/icon16.png);
+	margin: -2px 5px 0 0
+}
+
+.icon30 {
+	height: 30px;
+	width: 30px;
+	background-image: url(../images/icon30-3.png)
+}
+
+.icon16link {
+	float: right;
+	margin-left: 15px
+}
+
+.r_arrow {
+	left: -20px;
+	height: 21px;
+	width: 12px;
+	background-position: -291px 2px;
+	top: 27px
+}
+
+.a_arrow {
+	float: right;
+	width: 7px;
+	height: 9px;
+	background-image: url(../images/page.png);
+	background-position: -37px -37px;
+	opacity: 0.5
+}
+
+a:hover .a_arrow {
+	background-position: 40px 18px;
+	opacity: 1
+}
+
+button.bluesmallbutton,button.greensmallbutton,.replay button {
+	border: 0
+}
+
+.clear:after,.content:after,.coverforum_title:after,.coverforum:after,.cfourlist:after,.cthreelist:after,.cforum_footer:after,.inpartlist ul:after,.main:after,.recommend_pic_small:after,.recommend_article_list:after,.big_forumlist:after,.forumlist:after,.tab_more:after,.viewthread_main:after,.viewthread_rush:after,.viewthread_content:after,.typeinfo ul:after,.clear:before,.content:before,.coverforum_title:before,.coverforum:before,.cfourlist:before,.cthreelist:before,.cforum_footer:before,.inpartlist ul:before,.main:before,.recommend_pic_small:before,.recommend_article_list:before,.big_forumlist:before,.forumlist:before,.tab_more:before,.viewthread_main:before,.viewthread_rush:before,.viewthread_content:before,.typeinfo ul:before {
+	display: table;
+	content: "";
+	line-height: 0
+}
+
+.clear:after,.content:after,.coverforum_title:after,.coverforum:after,.cfourlist:after,.cthreelist:after,.cforum_footer:after,.inpartlist ul:after,.main:after,.recommend_pic_small:after,.recommend_article_list:after,.big_forumlist:after,.forumlist:after,.tab_more:after,.viewthread_main:after,.viewthread_rush:after,.viewthread_content:after,.typeinfo ul:after {
+	clear: both
+}
+
+.clear,.content,.coverforum_title,.coverforum,.cfourlist,.cthreelist,.cforum_footer,.inpartlist ul,.main,.recommend_pic_small,.recommend_article_list,.big_forumlist,.forumlist,.tab_more,.viewthread_main,.viewthread_rush,.viewthread_content,.typeinfo ul {
+	zoom: 1
+}
+
+.pr,.flu_close,.birthday_body,.fm_header,.fm_dibavatar,.grid_avatar,.fm_line,.index_tab,.recommend_pic,.sidebar,.signin,.featured,.featured_list li span,.s_topic_content,.slide_picshow .fm_line,.slide_picshow li a:hover,.viewthread_author,.viewthread_author_avatar,.viewthread_author .viewthread_medal,.tab li a,.s_timeline li,.viewthread_title,.viewthread_avatar,.viewthread_rush,.viewthread_top,.viewthread_fastreply,.alert_right,#livethread,#livereplycontentout,#livereplycontent dl,#livefastcomment,.fm_footer .fm_line {
+	position: relative
+}
+
+.pa,.r_arrow,.fm_cover,.flu_close a,.getbirthday,.cj_wrap,.flu_grid,.grid_avatar .grid_edit,.index_tab .tab,.recommend_pic_title,.fixed_sidebar,.signin_arrow,.featured .slide_picshow_status,.featured_list li i,.s_topic_content span,.slide_picshow li div,.tab li span,.s_timeline li i,.manage_group1,.manage_group2,.viewthread_fastreplybutton,#livereplycontent,#livereplycontent dl dt,#livereplycontent dl dd.dateline {
+	position: absolute
+}
+
+.tu,.getbirthday:hover,.signin_sidebarinfo .signlist,.signin_topic a:hover,.content a.colorlink:hover,.s_links li a:hover em,.mainforumcontentinfo a,.threadlist_info a:hover,#quotepostmessage a {
+	text-decoration: underline
+}
+
+.tc,.greenbigbutton,.bluebigbutton,.time_prompt,.mem_active,.flu_close a,.cfourlist li,.cfourlist p.fbfont,.signinwindows,.flu_grid_t,.flu_grid_f,.recommend_pic_title li a,.signin,.grid_list li,.featured_list li,.s_top_num,.slide_picshow li div,.slide_picshow_status,.s_tab_title li,.s_zui_update,.sns_widget p,.customer_service,.viewthread_author_avatar,.viewthread_author_info,.viewthread_author_stat,.viewthread_author_act,.viewthread_author .viewthread_medal,.mainforumcontent,.threadlist_stat,.viewthread_rush .rush_r,.viewthread_locked h4,.moderatorlog,.viewthread_blockcode em,.succeedmessage,#liverefresh,.nextpage a,.nologin_box,#quotepostmessage a {
+	text-align: center
+}
+
+.fb,.coverforum_title .bigtitle,.coverforum_title .bigtitle a:hover,.coverforum_title .midtitle,.cfourlist p.fbfont,.cthreelist p.fbfont,.cstamp,.birthday_title .midtitle,.getbirthday,.inpartlist .fbfont,.recommend_pic_title li a,.threadlist_stat_hot,.viewthread_replylog a.author {
+	font-weight: bold
+}
+
+.dn,.flu_grid,.slide_picshow li div,#separatorline,.pg label {
+	display: none
+}
+
+.db,.greenbigbutton,.bluebigbutton,.mem_cover img,.csiderlist li img,.cj_login,.cj_register,.grid_avatar:hover .grid_edit,.recommend_pic_small img,.s_topic_content,.s_links li a,.slide_picshow li a,.slide_picshow img,.snswidget img,.mainforumicon,.tab li a,.tab li span,.threadlist_stat a,.s_timeline li i,.viewthread_avatar .author_avatar,.viewthread_medal a,.needlogin,.replay button,.replay textarea,#quotepostmessage a {
+	display: block
+}
+
+.minh,.time_prompt {
+	min-height: 500px;
+	_height: 500px;
+	_overfow: visible
+}
+
+.vam {
+	vertical-align: middle;
+	*vertical-align: auto;
+	zoom: 1;
+	*display: inline
+}
+
+.dib,.whitesmallbutton,.forum_newbie a,.graysmallbutton,.greensmallbutton,.replay button,.bluesmallbutton,.greensmallblankbutton,.bluesmallblankbutton,.bluesmallbox,.greensmallbox,.graysmallbox,.redsmallbox,.bluesmallblankbox,.floorauthor,.greensmallblankbox,.graysmallblankbox,.redsmallblankbox,.icon,.r_arrow,.signin_arrow,#atarget i,#threadthumb i,#atarget.atarget_1 i,#threadthumb.threadthumb_yes i,.threadlist_stat,.icon16,.fm_close,.s_screen,.scbarbutton button,.index_clear,.index_clear:hover,.oneway_text>ul>li>a>i,.manage_group2,.s_reply,.s_rate,.s_view,.icon30,.removeline,.cutline,.rightward_line,.coverforum_title .bigtitle a,.clist li a span,.newmsgdot,.fm_icon24,.newprompt,.newreplies,.rightarrow,.grid_avatar,.itofeedback a,.grid_list li a,.grid_list li em,.grid_list_num,.grid_list_img,.featured_list li,.featured_list li span,.featured_list li i,.s_links i,.s_top_num,.slide_picshow_status a,.slide_picshow_status span,.sns_widget,.viewthread_author_stat,.tab_more li span,.s_timeline li div p,.viewthread_title h1,.viewthread_manage a,.viewthread_medal,.viewthread_foot .managebutton,.floor_link,.floor_img,.postbutton a,.postbutton button,.viewthread_replylog .avatar,.viewthread_quote blockquote,.viewthread_foot .bdsharebuttonbox a,.k_favorite,.taglist,.nextpage a,.pg a,.pg strong {
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	zoom: 1;
+	*display: inline
+}
+
+.dib-wrap {
+	font-size: 0;
+	*word-spacing: -1px
+}
+
+.dib-wrap .dib,.dib-wrap .whitesmallbutton,.dib-wrap .forum_newbie a,.forum_newbie .dib-wrap a,.dib-wrap .graysmallbutton,.dib-wrap .greensmallbutton,.dib-wrap .replay button,.replay .dib-wrap button,.dib-wrap .bluesmallbutton,.dib-wrap .greensmallblankbutton,.dib-wrap .bluesmallblankbutton,.dib-wrap .bluesmallbox,.dib-wrap .greensmallbox,.dib-wrap .graysmallbox,.dib-wrap .redsmallbox,.dib-wrap .bluesmallblankbox,.dib-wrap .floorauthor,.dib-wrap .greensmallblankbox,.dib-wrap .graysmallblankbox,.dib-wrap .redsmallblankbox,.dib-wrap .icon,.dib-wrap .r_arrow,.dib-wrap .signin_arrow,.dib-wrap #atarget i,#atarget .dib-wrap i,.dib-wrap #threadthumb i,#threadthumb .dib-wrap i,.dib-wrap .threadlist_stat,.dib-wrap .icon16,.dib-wrap .fm_close,.dib-wrap .s_screen,.dib-wrap .scbarbutton button,.scbarbutton .dib-wrap button,.dib-wrap .index_clear,.dib-wrap .oneway_text>ul>li>a>i,.dib-wrap .manage_group2,.dib-wrap .s_reply,.dib-wrap .s_rate,.dib-wrap .s_view,.dib-wrap .icon30,.dib-wrap .removeline,.dib-wrap .cutline,.dib-wrap .rightward_line,.dib-wrap .coverforum_title .bigtitle a,.coverforum_title .bigtitle .dib-wrap a,.dib-wrap .clist li a span,.clist li a .dib-wrap span,.dib-wrap .newmsgdot,.dib-wrap .fm_icon24,.dib-wrap .newprompt,.dib-wrap .newreplies,.dib-wrap .rightarrow,.dib-wrap .grid_avatar,.dib-wrap .itofeedback a,.itofeedback .dib-wrap a,.dib-wrap .grid_list li a,.grid_list li .dib-wrap a,.dib-wrap .grid_list li em,.grid_list li .dib-wrap em,.dib-wrap .grid_list_num,.dib-wrap .grid_list_img,.dib-wrap .featured_list li,.featured_list .dib-wrap li,.dib-wrap .featured_list li span,.featured_list li .dib-wrap span,.dib-wrap .featured_list li i,.featured_list li .dib-wrap i,.dib-wrap .s_links i,.s_links .dib-wrap i,.dib-wrap .s_top_num,.dib-wrap .slide_picshow_status a,.slide_picshow_status .dib-wrap a,.dib-wrap .slide_picshow_status span,.slide_picshow_status .dib-wrap span,.dib-wrap .sns_widget,.dib-wrap .viewthread_author_stat,.dib-wrap .tab_more li span,.tab_more li .dib-wrap span,.dib-wrap .s_timeline li div p,.s_timeline li div .dib-wrap p,.dib-wrap .viewthread_title h1,.viewthread_title .dib-wrap h1,.dib-wrap .viewthread_manage a,.viewthread_manage .dib-wrap a,.dib-wrap .viewthread_medal,.dib-wrap .viewthread_foot .managebutton,.viewthread_foot .dib-wrap .managebutton,.dib-wrap .floor_link,.dib-wrap .floor_img,.dib-wrap .postbutton a,.postbutton .dib-wrap a,.dib-wrap .postbutton button,.postbutton .dib-wrap button,.dib-wrap .viewthread_replylog .avatar,.viewthread_replylog .dib-wrap .avatar,.dib-wrap .viewthread_quote blockquote,.viewthread_quote .dib-wrap blockquote,.dib-wrap .viewthread_foot .bdsharebuttonbox a,.viewthread_foot .bdsharebuttonbox .dib-wrap a,.dib-wrap .k_favorite,.dib-wrap .taglist,.dib-wrap .nextpage a,.nextpage .dib-wrap a,.dib-wrap .pg a,.pg .dib-wrap a,.dib-wrap .pg strong,.pg .dib-wrap strong {
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top
+}
 
 .mb15,.box,.itofeedback,.quotebtn,.recommend_pic,.big_forumlist,.postbutton,.viewthread_locked,.pg {
 	margin-bottom: 15px
@@ -1610,7 +1911,7 @@ button.bluesmallbutton,button.greensmallbutton,.replay button {
 }
 
 .grid_list li a,.grid_list li em {
-	width: 78px;
+	width: 75px;
 	height: 65px;
 	padding: 0 9px 0 0px;
 	border-width: 0 1px 0 0
@@ -1897,7 +2198,6 @@ button.bluesmallbutton,button.greensmallbutton,.replay button {
 .snswidget {
 	padding: 25px 0 20px 25px
 }
-
 
 .sns_widget {
 	margin-right: 20px
