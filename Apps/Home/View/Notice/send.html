@@ -1,0 +1,97 @@
+<!-- 发消息 -->
+
+<extend name="Notice/news" />
+
+<block name="mainaa">
+	<div class="content" id="space_info"> 
+   <div class="sidebar">
+    <div class="box p_nav"> 
+     <h3>通知</h3> 
+     <div class="p_navs"> 
+      <ul> 
+       <li class="a"> 
+        <div class="r_arrow"></div><a href="<{:U("Home/Notice/news")}>"><i></i>消息</a> </li> 
+       <li> 
+        <div class="r_arrow"></div><a href="<{:U("Home/Notice/message")}>"><i></i>系统消息</a> </li>
+        <li> 
+        <div class="r_arrow"></div><a href="<{:U("Home/Notice/mypost")}>"><i></i>我的帖子</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+</block>
+
+<block name="mainaas">
+  <div class="main"> 
+   <div class="box"> 
+    <div class="p_header"> 
+     <div class="p_header_button">
+      <a href='<{:U("Home/Notice/news")}>' class="whitesmallbutton">返回列表</a>
+     </div> 
+     <h3 class="modname">与 
+     	<a href="" class="colorlink">ZUK946486</a> 的消息记录 &nbsp;
+     	（<span id="membernum">2</span>）
+     </h3> 
+    </div> 
+    <div id="pm_ul" class="p_pm_list"> 
+     <div id="pmlist_54430" class="p_pm_say p_pm_isay"> 
+      <div class="p_pm_list_c">
+        11111
+       <div class="p_pm_list_arrow"></div> 
+       <div class="p_pm_list_c_time">
+        <span title="2016-11-16 22:00">昨天&nbsp;22:00</span>
+       </div> 
+       <div class="p_pm_list_avt"> 
+        <a href="" target="_blank"><img src="http://uc.bbs.zuk.cn/data/avatar/000/29/81/63_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
+       </div> 
+      </div> 
+     </div>
+     <div id="pmlist_54473" class="p_pm_say p_pm_usay"> 
+      <div class="p_pm_list_c">
+        1234
+       <div class="p_pm_list_arrow"></div> 
+       <div class="p_pm_list_c_time">
+        <span title="2016-11-17 13:37">半小时前</span>
+       </div> 
+       <div class="p_pm_list_avt" id="bottom"> 
+        <a href="" target="_blank"><img src="http://uc.bbs.zuk.cn/data/avatar/000/29/89/17_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
+       </div> 
+      </div> 
+     </div>
+     <div id="pm_append" style="display: none"></div> 
+    </div> 
+    <a name="last"></a>
+    <div id="pm_ul_post" class="p25"> 
+     <form method="post"  action="" > 
+      <div class="tedt graybg"> 
+       <div class="area "> 
+        <textarea rows="3" cols="40" name="message" class="pt" id="replymessage" ></textarea> 
+       </div> 
+
+       <!-- 表情 -->
+       <div class="bar">
+        <div class="fpd"> 
+         <a href="javascript:;" class="fsml" id="replysml" onclick="showMenu({'ctrlid':this.id,'evt':'click','layer':2});return false;">Smilies</a> 
+         <script type="text/javascript" reload="1">smilies_show('replysmiliesdiv', 8, 'reply');</script> 
+        </div>
+       </div> 
+      </div> 
+      <!-- 表情结束 -->
+
+
+      <div class="mtm right mbw"> 
+       <button type="submit" name="pmsubmit" id="pmsubmit" class="greensmallbutton" value="true">
+       	<strong>发送</strong>
+       </button> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+  </div>
+</div>
+</block>
+
+
+<block name="myjs">
+
+</block>

@@ -1,1 +1,118 @@
 <!-- 我的等级 -->
+<extend name="My/post" />
+
+<include file="Public/head" />
+<block name="content">
+	<div class="sidebar">
+        <div class="box p_nav"> 
+         <h3>我的</h3> 
+         <div class="p_navs"> 
+          <ul> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/post')}>">帖子</a> </li> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/collection')}>">收藏</a> </li> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/friends')}>">好友</a> </li> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/record')}>">兑换记录</a> </li> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/winning')}>">转盘中奖记录</a> </li> 
+          </ul> 
+         </div> 
+         <h3>等级&amp;金币</h3> 
+         <div class="p_navs"> 
+          <ul> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygold')}>">我的金币</a> </li> 
+           <li class="a"> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygrade')}>">用户等级</a> </li> 
+          </ul> 
+         </div> 
+         <h3>其他</h3> 
+         <div class="p_navs"> 
+          <ul> 
+           <li> <i></i><a href="<{:U('Home/My/mymedal')}>" target="_blank">勋章</a> </li> 
+           <li> <i></i><a href="<{:U('Home/My/mytask')}>" target="_blank">任务</a> </li>  
+          </ul> 
+         </div> 
+        </div>
+       </div>
+</block>
+<block name="right">
+	<div class="main"> 
+    <div class="box"> 
+     <div class="p_header"> 
+      <h3 class="modname">用户等级</h3>
+      <div class="tab"> 
+       <ul> 
+        <li class="y showmenu" id="gmy" onmouseover="showMenu(this.id)"><a href="/home.php?mod=spacecp&amp;ac=usergroup">我的用户等级<span></span></a></li> 
+        <li class="y a showmenu" id="gupgrade" onmouseover="showMenu(this.id)"><a>晋级用户等级<span></span></a></li> 
+        <li class="y showmenu" id="guser" onmouseover="showMenu(this.id)"><a>普通用户等级<span></span></a></li> 
+        <li class="y showmenu" id="gadmin" onmouseover="showMenu(this.id)"><a>站点管理组<span></span></a></li> 
+       </ul> 
+      </div>
+     </div> 
+     <link rel="stylesheet" type="text/css" href="css/pinfo_old.css" /> 
+     <div class="minh mlr25 graytopborder">
+      <div class="p-main-aticle"> 
+       <div class="grayborder graybg" style="padding: 12px 20px;">
+        <strong class="redcolor">用户等级</strong> = 
+        <strong class="greencolor">经验值</strong> = 发帖数 + 贡献 - 抢楼回帖 （
+        <em class="color4"> 5 = 2 + 0 - 0 </em>）
+       </div> 
+       <div class="p-conlist"> 
+
+
+
+
+ 
+        <div id="gmy_menu" class="p_pop" style="display:none">
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup">幼儿园</a>
+        </div> 
+        <div id="gupgrade_menu" class="p_pop" style="display:none">
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=9">限制会员</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=10">幼儿园</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=11" class="xi1">学前班</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=12">小学生</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=13">初中生</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=14">高中生</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=15">大学生</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=21">硕士生</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=22">博士生</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=23">博士后</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=24">院士</a>
+        </div> 
+        <div id="guser_menu" class="p_pop" style="display:none">
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=4">禁止发言</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=5">禁止访问</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=6">禁止 IP</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=7">游客</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=8">等待验证会员</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=20">QQ游客</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=34">ZUK首席执行官</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=49">乐商店官方运营</a>
+        </div> 
+        <div id="gadmin_menu" class="p_pop" style="display:none">
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=1">管理员</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=2">社区锦衣卫</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=3">社区版主</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=29">解惑游侠</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=38">社区运营团队</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=42">实习版主</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=44">ZUK工程师</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=46">ZUK产品经理</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=47">联想集团副总裁</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=48">趣摄阁正使</a>
+         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=53">主题匠师</a>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div>
+  </div> 
+</block>
+<include file="Public/foot" />
+<block name="myjs">
+</block>

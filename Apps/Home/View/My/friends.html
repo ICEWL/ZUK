@@ -1,1 +1,72 @@
 <!-- 好友 -->
+<extend name="My/post" />
+
+<include file="Public/head" />
+<block name="content">
+ <div class="sidebar">
+        <div class="box p_nav"> 
+         <h3>我的</h3> 
+         <div class="p_navs"> 
+          <ul> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/post')}>">帖子</a> </li> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/collection')}>">收藏</a> </li> 
+           <li class="a"> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/friends')}>">好友</a> </li> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/record')}>">兑换记录</a> </li> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/winning')}>">转盘中奖记录</a> </li> 
+          </ul> 
+         </div> 
+         <h3>等级&amp;金币</h3> 
+         <div class="p_navs"> 
+          <ul> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygold')}>">我的金币</a> </li> 
+           <li> 
+            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygrade')}>">用户等级</a> </li> 
+          </ul> 
+         </div> 
+         <h3>其他</h3> 
+         <div class="p_navs"> 
+          <ul> 
+           <li> <i></i><a href="<{:U('Home/My/mymedal')}>" target="_blank">勋章</a> </li> 
+           <li> <i></i><a href="<{:U('Home/My/mytask')}>" target="_blank">任务</a> </li>  
+          </ul> 
+         </div> 
+        </div>
+       </div>
+</block>
+<block name="right">
+	 <div class="main"> 
+    <div class="box"> 
+     <div class="p_header"> 
+      <h3 class="modname">我的好友</h3> 
+     </div> 
+     <div class="p_threadlist_m"> 
+      <ul>
+       <li id="friend_298917_li"> 
+        <div class="p_threadlist_avatar"> 
+         <a href="" c="1"><img src="picture/17_avatar_small.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'"></a> 
+        </div> 
+        <div class="p_threadlist_c"> 
+         <i class="title_line"></i> 
+         <a href="" class="font22">ZUK946486</a> 
+         <p>幼儿园</p> 
+        </div> 
+        <div class="p_threadlist_stat"> 
+        </div> 
+        <div class="p_threadlist_get"> 
+         <a href="" id="a_sendpm_298917" onclick="showWindow('showMsgBox', this.href, 'get', 0)" title="发送消息" class="greensmallblankbutton">发消息</a>
+         <a href="" onclick="showWindow(this.id, this.href, 'get', 0);" title="删除" class="whitesmallbutton">解除关系</a> 
+        </div> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div>
+</block>
+<include file="Public/foot" />
+<block name="myjs">
+</block>
