@@ -14,7 +14,11 @@ namespace Admin\Controller;
 class SettingController extends ComController
 {
     public function setting()
-    {
+    {   
+        $logo = M('setting')->field('v')->where("k =  'logo' ")->select();
+        $logo = $logo['0']['v'];
+        $this->assign('logo', $logo);
+        // var_dump($logo);die;
         $this->display();
     }
 
@@ -22,6 +26,10 @@ class SettingController extends ComController
     {
 
         $data = $_POST;
+        $logo = I('post.logo', '', 'strip_tags');
+        if ($logo <> '') {
+            $data['logo'] = $logo;
+        }
         $data['sitename'] = isset($_POST['sitename']) ? strip_tags($_POST['sitename']) : '';
         $data['title'] = isset($_POST['title']) ? strip_tags($_POST['title']) : '';
         $data['keywords'] = isset($_POST['keywords']) ? strip_tags($_POST['keywords']) : '';

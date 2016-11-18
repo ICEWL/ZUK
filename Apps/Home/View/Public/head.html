@@ -82,14 +82,14 @@
 
 <div class="fm_header">
 	<div class="content">
-		<div class="fm_logo"><a href="<{:U('Home/Index/index')}>">联想手机社区</a></div>
+		<div class="fm_logo" style="background-image:url('__ROOT__<{$Think.CONFIG.logo}>')"><a href="<{:U('Home/Index/index')}>">联想手机社区</a></div>
 		<div class="fm_nav">
 			<ul class="nav_list">
-				<li class="current"><a href="<{:U('Home/Index/index')}>">首页</a></li>
-				<li class=""><a href="<{:U('Home/Section/index')}>">版块</a></li>
-				<li class=""><a href="<{:U('Home/Exchange/index')}>">兑金堂</a></li>
-				<li class=""><a href="<{:U('Home/Pic/index')}>" >趣摄</a></li>
-				<li class=""><a href="<{:U('Home/Turntable/index')}>">转盘</a></li>
+				<li class="<if condition=" $CNAME eq 'Index' ">current</if>"><a href="<{:U('Home/Index/index')}>">首页</a></li>
+				<li class="<if condition=" $CNAME eq 'Section' ">current</if>"><a href="<{:U('Home/Section/index')}>">版块</a></li>
+				<li class="<if condition=" $CNAME eq 'Exchange' ">current</if>"><a href="<{:U('Home/Exchange/index')}>">兑金堂</a></li>
+				<li class="<if condition=" $CNAME eq 'Pic' ">current</if>"><a href="<{:U('Home/Pic/index')}>" >趣摄</a></li>
+				<li class="<if condition=" $CNAME eq 'Turntable' ">current</if>"><a href="<{:U('Home/Turntable/index')}>">转盘</a></li>
 			</ul>
 		</div>
 
@@ -114,35 +114,40 @@
 								<div class="grid_edit">编辑<br />头像</div>
 							</a>
 						</div>
-				<div class="grid_stat flu_grid_c">
+
+						<div class="grid_stat flu_grid_c">
 							<div class="grid_list">
 								<ul>
 									<li>
-										<a href="<{:U('Home/My/post')}>" target="_blank">
+										<a href="/home.php?mod=space&amp;do=thread&amp;view=me" target="_blank">
 											<span class="grid_list_num threadNum">...</span>帖子
 										</a>
 									</li>
 									<li>
-										<a href="<{:U('Home/My/post')}>" target="_blank">
+										<a href="/home.php?mod=space&amp;do=favorite&amp;type=thread" target="_blank">
 											<span class="grid_list_num favoriteNum">...</span>收藏
 										</a>
 									</li>
 									<li>
-										<a href="<{:U('Home/My/post')}>" target="_blank">
+										<a href="/home.php?mod=space&amp;do=friend" target="_blank">
 											<span class="grid_list_num friendNum">...</span>好友
 										</a>
 									</li>
 									<li>
-										<a href="<{:U('Home/My/post')}>" target="_blank">
+										<a href="/home.php?mod=spacecp&amp;ac=credit" target="_blank">
 											<span class="grid_list_num extcredits5">...</span>金币
 										</a>
 									</li>
 									<li>
-										<a href="<{:U('Home/My/mytask')}>" target="_blank">
+										<a href="/home.php?mod=task" target="_blank">
 											<span class="grid_list_num taskNum">...</span>任务
 										</a>
 									</li>
-
+									<li>
+										<a href="/myzuk/" target="_blank">
+											<span class="grid_list_num"></span>认证
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -159,7 +164,7 @@
 				<div class="fm_dibavatar js_dibavatar">
 
 					<span class="pipe">|</span>
-					<a href="<{:U('Home/Notice/news')}>">通知
+					<a href="/home.php?mod=space&amp;do=pm">通知
 						<div class="promptdot redsmallbox">1</div>
 					</a>
 
@@ -169,12 +174,12 @@
 							<div class="grid_list">
 								<ul>
 									<li>
-										<a href="<{:U('Home/Notice/news')}>" target="_blank">
+										<a href="/home.php?mod=space&amp;do=pm" target="_blank">
 											<span class="grid_list_num">0</span>短消息
 										</a>
 									</li>
 									<li>
-										<a href="<{:U('Home/Notice/mypost')}>" target="_blank">
+										<a href="/home.php?mod=space&amp;do=notice&amp;view=mypost" target="_blank">
 											<span class="grid_list_num">1</span>我的帖子
 										</a>
 									</li>
@@ -183,7 +188,7 @@
 						</div>
 
 						<div class="flu_grid_f">
-							<a href="<{:U('Home/Space/friends')}>" class="greensmallbutton">给好友发私信</a>
+							<a href="/home.php?mod=spacecp&amp;ac=pm" class="greensmallbutton">给好友发私信</a>
 						</div>
 					</div>
 				</div>

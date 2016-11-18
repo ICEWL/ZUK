@@ -1,96 +1,113 @@
 <extend name="Index/index" />
 
 <block name="main">
-   
-  <div class="breadcrumbs content"> 
-   <a href="./" title="首页">联想手机社区</a>
-   <em>&raquo;</em>
-   <a href="/forum.php">版块</a> 
-   <em>&raquo;</em> 
-   <a href="/zui/">ZUI社区</a>
-   <em>&raquo;</em> 
-   <a href="/zui/t197927/">【解惑游侠出品】为什么你的手机会卡</a> 
-  </div> 
-  <div class="content" id="viewthread"> 
-   <div class="main viewthread"> 
-    <div class="box">
-     <div id="post_3693762" class="viewthread_main firstfloor">
-      <div id="threadstamp">
-       <img src="__PUBLIC__/qwhome/picture/006.gif" title="推荐" />
-      </div> 
-      <div class="viewthread_title"> 
-       
-       <div class="viewthread_con"> 
-        <h1> <a href="" class="colorlink">[经验教程]</a><a href="" onclick="return copyThreadUrl(this, '联想手机社区')"><span id="thread_subject">【解惑游侠出品】为什么你的手机会卡</span></a> </h1> 
-        <span> </span> 
-        <div class="viewthread_top"> 
-         <em id="authorposton3693762">2016-9-22 17:19:10</em>
-         <span class="cutline"></span>
-         <a title="浏览器" href="/tag/%E6%B5%8F%E8%A7%88%E5%99%A8/" target="_blank" class="color3">浏览器</a>, 
-         <a title="Android" href="/tag/Android/" target="_blank" class="color3">Android</a>, 
-         <a title="输入法" href="/tag/%E8%BE%93%E5%85%A5%E6%B3%95/" target="_blank" class="color3">输入法</a>, 
-         <a title="CPU" href="/tag/CPU/" target="_blank" class="color3">CPU</a>, 
-         <a title="音乐" href="/tag/%E9%9F%B3%E4%B9%90/" target="_blank" class="color3">音乐</a>
-         <div class="viewthreadtop_storey right">
-          <span class="s_view" title="查看"></span>4673
-          <span class="pipe"></span>
-          <span class="s_reply" title="回复"></span>652
-         </div> 
-        </div> 
-       </div> 
-      </div> 
-
-      <div class="viewthread_con_first " id="pid3693762" summary="pid3693762"> 
-       <div class="viewthread_content" author="西门拉玛峰" pid="3693762" formhash="c8a069ed"> 
-        <div class="viewthread_table">
-         <table cellspacing="0" cellpadding="0">
-          <tbody>
-11111111111111111111111111111111111111111
-          </tbody>
-         </table>
-        </div> 
-        <!--回复帖回复列表--> 
-        <div id="comment_3693762"> 
-        </div> 
-       </div> 
-       <div id="viewthread_foot"> 
-        <div class="viewthread_foot"> 
-         <div class="right"> 
-          <a href="javascript:;" class="opacity"><span class="s_rate"></span>评分</a>
-          <a href=""><span class="s_reply"></span>回复</a> 
-         </div> 
-         <div class="bdsharebuttonbox dib">
-          分享至：
-          <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博<i></i></a>
-          <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-          <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-          <a href="#" class="bds_more" data-cmd="more"></a>
-         </div> 
-         <script>
-            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","kaixin001","tieba","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-            </script> 
-         <span class="cutline"></span>
-         <a href="" class="k_favorite" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" title="收藏本帖"><span class=""></span>8人收藏</a> 
-        </div> 
-       </div> 
-      </div> 
-
-     </div> 
-     <form method="post" autocomplete="off" id="vfastpostform" action="" > 
     
-      <div id="viewthread_fastreply"> 
-       <div class="viewthread_fastreply" id="vfastposttb"> 
-        <div class="viewthread_fastreplybutton">
-         <button type="submit" name="replysubmit" id="vreplysubmit" value="true">快速回复</button>
-        </div> 
-        <div class="viewthread_fastreplyinput">
-         <input type="text" name="message"/>
-        </div> 
-       </div> 
-      </div> 
-     </form> 
+    <div class="breadcrumbs content"> 
+        <a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
+        <em>&raquo;</em>
+        <a href="<{:U('Home/Section/index')}>">版块</a> 
+        <em>&raquo;</em> 
+        <a href="<{:U('theme',array('sid'=>$cgpost['pid']))}>"><{$pcgpost['name']}></a>
+        <em>&raquo;</em> 
+        <a href="<{:U('content',array('aid'=>$arr['aid']))}>"><{$arr['title']}></a>
+    </div>
 
-    </div> 
+
+    <div class="content" id="viewthread"> 
+
+        <div class="main viewthread"> 
+
+            <div class="box">
+
+                <div class="viewthread_main firstfloor">
+
+                    <!-- <div id="threadstamp">
+                        <img src="__PUBLIC__/qwhome/picture/006.gif" title="推荐" />
+                    </div>  -->
+
+                    <div class="viewthread_title"> 
+
+                        <div class="viewthread_con"> 
+                            <h1> 
+                                <a href="<{:U('theme',array('cgid'=>$cgpost['id'],'sid'=>$cgpost['pid']))}>" class="colorlink">
+                                    [<{$cgpost['name']}>]
+                                </a>
+                                <a href="<{:U('content',array('aid'=>$arr['aid']))}>">
+                                    <span id="thread_subject"><{$arr['title']}></span>
+                                </a> 
+                            </h1> 
+                            <span> </span>
+
+                            <div class="viewthread_top">
+
+                                <em id="authorposton3693762"><{$arr['t']|date="Y-m-d H:i:s",###}></em>
+                                <span class="cutline"></span>
+                                <a title="" href="/" target="_blank" class="color3"><{$arr['keywords']}></a>
+                                <div class="viewthreadtop_storey right">
+                                    <span class="s_view" title="查看"></span>4673
+                                    <span class="pipe"></span>
+                                    <span class="s_reply" title="回复"></span>652
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+                    <div class="viewthread_con_first ">
+
+                        <!-- <div class="viewthread_content">
+                            
+                        </div> -->
+                        <{$arr['content']}>
+
+                        <div id="viewthread_foot"> 
+                            <div class="viewthread_foot"> 
+
+                                <div class="right"> 
+                                    <a href="javascript:;" class="opacity"><span class="s_rate"></span>评分</a>
+                                    <a href=""><span class="s_reply"></span>回复</a> 
+                                </div>
+
+                                <div class="bdsharebuttonbox dib">分享至：
+                                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博<i></i></a>
+                                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+                                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                                    <a href="#" class="bds_more" data-cmd="more"></a>
+                                </div> 
+                                <script>
+                                window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","kaixin001","tieba","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                                </script>
+
+                                <span class="cutline"></span>
+                                <a href="" class="k_favorite" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" title="收藏本帖">
+                                    <span class=""></span>8人收藏
+                                </a> 
+                            </div> 
+                        </div> 
+                    </div> 
+
+                </div>
+
+
+                <form method="post" autocomplete="off" id="vfastpostform" action="" > 
+                    <div id="viewthread_fastreply"> 
+                        <div class="viewthread_fastreply" id="vfastposttb"> 
+                            <div class="viewthread_fastreplybutton">
+                                <button type="submit" name="replysubmit" id="vreplysubmit" value="true">快速回复</button>
+                            </div> 
+                            <div class="viewthread_fastreplyinput">
+                                <input type="text" name="message"/>
+                            </div> 
+                        </div> 
+                    </div> 
+                </form> 
+
+            </div>
+
+
+
     <div class="box" id="replylists"> 
      <div class="viewthread_main replylist_title"> 
       <div class="right font14"> 
@@ -211,155 +228,65 @@
       </div> 
      </form> 
     </div> 
-   </div> 
-   <div class="sidebar"> 
-    <div class="box"> 
-     <div class="viewthread_author"> 
-      <div class="r_arrow"></div> 
-      <div class="viewthread_author_avatar" id="favatar3693762"> 
-       <a href="/space.php?uid=201392" target="_blank"><img src="picture/92_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
-      </div> 
-      <div class="viewthread_author_info"> 
-       <p><a href="" target="_blank" style="color: #000000"><strong>西门拉玛峰</strong></a><span class="authphone ap_icon" hwtxts="ZUK Z2121"><a href="/myzuk/"><img src="__PUBLIC__/qwhome/picture/authphone_p.png" /></a></span></p> 
-       <a href="" target="_blank"><font color="#000000">解惑游侠</font></a> 
-      </div> 
-      <div class="viewthread_author_stat"> 
-       <ul> 
-        <li><a href="" target="_blank">2600</a><p>积分</p></li> 
-        <li><a href="" target="_blank">155</a><p>主题</p></li> 
-        <li><a href="" target="_blank">2193</a><p>回帖</p></li> 
-        <li><a href="" target="_blank">44</a><p>好友</p></li> 
-       </ul> 
-      </div> 
-      <div class="viewthread_author_act"> 
-       <a href="" id="a_sendpm_201392" class="bluesmallbutton" onclick="showWindow('showMsgBox', this.href, 'get', 0)" title="发消息">发消息</a>
-       <a href="" class="greensmallbutton" id="a_friend" onclick="showWindow(this.id, this.href, 'get', 0);">加好友</a> 
-      </div> 
-     </div> 
-     <div class="viewthread_author_threads s_timeline"> 
-      <div class="s_text_list"> 
-       <ul>
-        <li>
-          <i><span></span></i>
-          <a href="" title="2016年11月17日签到帖" target="_blank">2016年11月17日签到帖</a>
-          <p>2016.11.17</p>
-        </li> 
- 
-       </ul> 
-      </div> 
-     </div> 
-    </div> 
-    <div class="box"> 
-     <h3 class="modname"><span class="more">第16期 - 2016年10月18日更新</span>全民话题</h3> 
-     <div class="s_topic" style="background:url(images/105252bw0woohoy2377r1g.jpg); "> 
-      <a href="chat/t304460/" class="s_topic_content"> 手机带来的便利<span class="bluesmallblankbutton">参与讨论</span> </a> 
-     </div>
-    </div> 
-    <div class="box s_forumlist"> 
-     <h3 class="modname">快速入口</h3> 
-     <div class="s_links"> 
-      <ul class="s_grid_line"> 
-
-       <li>
-        <a href="/z2/">
-          <i><img src="__PUBLIC__/qwhome/picture/s_z2.png" width="24" height="24" /></i>
-          <small class="a_arrow"></small>
-          <em>重新定义新旗舰</em>
-          <span>联想ZUK Z2</span>
-        </a>
-      </li> 
-      
-      </ul> 
-     </div> 
-     <div class="grid_stat"> 
-      <div class="grid_list"> 
-       <ul> 
-        <li><a href="chat/"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_chat.png" width="30" height="30" /></span>联想畅谈</a></li> 
-        <li><a href="camera/"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_camera.png" width="30" height="30" /></span>趣摄阁</a></li> 
-        <li><a href="zhuti/"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_style.png" width="30" height="30" /></span>主题苑</a></li> 
-        <li><a href="huodong/"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_activity.png" width="30" height="30" /></span>活动中心</a></li> 
-        <li><a href="zhanwu/"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_feedback.png" width="30" height="30" /></span>建议申诉</a></li> 
-        <li><a href="gonggao/"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_announcement.png" width="30" height="30" /></span>申请公告</a></li> 
-       </ul> 
-      </div> 
-     </div>
-    </div> 
-    <div class="box"> 
-     <h3 class="modname"><span class="more"><a href="">ZUI固件列表<em>&raquo;</em></a></span>ZUI更新</h3> 
-     <div class="s_zui_update"> 
-      <h3 title="ZUI ZUI 2.3">ZUI 2.3</h3> 
-      <p class="font12 color3">最后更新：2016年10月18日</p> 
-      <p><a href="zui/t267994" class="bluesmallblankbutton">更新说明</a><span class="pipe"></span><a href="zui/t267994" class="bluesmallblankbutton">卡刷包下载</a></p> 
-     </div> 
-     <div class="lh50 tc graytopborder"> 
-      <a href="" target="_blank">OTA及卡刷教程</a>
-      <span class="pipe">|</span>
-      <a href="z1/t59771/" target="_blank">开发版和稳定版说明</a> 
-     </div>
-    </div> 
-
-    <div class="box s_forumlist"> 
-     <h3 class="modname">热门标签</h3> 
-     <div class="s_links"> 
-      <ul> 
-       <li>
-        <a href="zplay/t301169/">
-          <small class="a_arrow"></small>
-          <em>美图赏析</em>
-          <span>Moto Z Play下的秋雨霏霏</span>
-        </a>
-      </li> 
-      </ul> 
-     </div>
-    </div> 
+   </div>
 
 
-    <div class="box _helplide"> 
-     <div class="s_tab_title"> 
-      <ul class="_helplidetit"> 
-       <li class="current">售后服务</li> 
-       <li>关注我们</li> 
-       <li>社区新手</li> 
-      </ul> 
-     </div> 
-     <div class="_helplidelist"> 
-      <div> 
-       <div class="grid_list"> 
-        <ul> 
-         <li><a href="" target="_blank"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_customer.png" width="30" height="30" /></span>在线咨询</a></li> 
-         <li><a href="" target="_blank"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_map.png" width="30" height="30" /></span>售后网点</a></li> 
-         <li><a href="" target="_blank"><span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_service.png" width="30" height="30" /></span>服务中心</a></li> 
-        </ul> 
-       </div> 
-       <div class="customer_service"> 
-        <h4 class="fullfont color">400-8828-228</h4> 
-        <p class="font12 color3">电话服务热线时间：9:00 - 21:00</p> 
-       </div> 
-      </div> 
-      <div class="snswidget" style="display: none;"> 
-       <div class="sns_widget">
-        <a href="" title="ZUK官方微博" target="_blank"><img src="__PUBLIC__/qwhome/picture/wb_sidebar.jpg" height="120" width="120" /></a>
-        <p><a href="" target="_blank" title="ZUK官方微博">官方微博</a></p>
-       </div>
-       <div class="sns_widget">
-        <img src="__PUBLIC__/qwhome/picture/wx_sidebar.jpg" height="120" width="120" title="扫一扫关注微信" />
-        <p>ZUK微信</p>
-       </div> 
-      </div> 
-      <div class="forum_newbie" style="display: none;"> 
-       <a href="newbie/t966/" target="_blank"><span class="a_arrow"></span>发帖与回复</a>
-       <a href="gonggao/t119913/" target="_blank"><span class="a_arrow"></span>社区总版规</a>
-       <a href="gonggao/t123679/" target="_blank"><span class="a_arrow"></span>赚金币</a>
-       <a href="newbie/t971/" target="_blank"><span class="a_arrow"></span>任务体系</a>
-       <a href="/home.php?mod=medal" target="_blank"><span class="a_arrow"></span>荣誉勋章</a>
-       <a href="gonggao/t30750/" target="_blank"><span class="a_arrow"></span>ZUK产品认证</a> 
-      </div> 
-     </div>
-    </div> 
-   </div> 
-  </div> 
-  <!--底部--> 
-  
+
+        <div class="sidebar">
+
+            <div class="box">
+
+                <div class="viewthread_author">
+
+                    <div class="r_arrow"></div>
+
+                    <div class="viewthread_author_avatar" id="favatar3693762"> 
+                        <a href="<{:U('Space/dynamic',array('mid'=>$postuser['uid']))}>" target="_blank"><img src="__ROOT__<{$postuser.head}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
+                    </div>
+
+                    <div class="viewthread_author_info"> 
+                        <p>
+                            <a href="<{:U('Space/dynamic',array('mid'=>$postuser['uid']))}>" target="_blank" style="color: #000000">
+                                <strong><{$postuser['user']}></strong>
+                            </a>
+                        </p> 
+                        <a href="<{:U('Home/My/mygrade')}>" target="_blank"><font color="#000000"><{$grouptitle['title']}></font></a> 
+                    </div>
+
+                    <div class="viewthread_author_stat"> 
+                        <ul> 
+                            <li><a href="" target="_blank">2600</a><p>积分</p></li> 
+                            <li><a href="" target="_blank">155</a><p>主题</p></li> 
+                            <li><a href="" target="_blank">2193</a><p>回帖</p></li> 
+                            <li><a href="" target="_blank">44</a><p>好友</p></li> 
+                        </ul> 
+                    </div> 
+                    <div class="viewthread_author_act"> 
+                        <a href="" id="a_sendpm_201392" class="bluesmallbutton" onclick="showWindow('showMsgBox', this.href, 'get', 0)" title="发消息">发消息</a>
+                        <a href="" class="greensmallbutton" id="a_friend" onclick="showWindow(this.id, this.href, 'get', 0);">加好友</a> 
+                    </div>
+
+                </div><!--./viewthread_author-->
+
+                <div class="viewthread_author_threads s_timeline"> 
+                    <div class="s_text_list"> 
+                        <ul>
+                            <li>
+                                <i><span></span></i>
+                                <a href="" title="2016年11月17日签到帖" target="_blank">2016年11月17日签到帖</a>
+                                <p>2016.11.17</p>
+                            </li> 
+                        </ul> 
+                    </div> 
+                </div><!--./viewthread_author_threads-->
+
+            </div><!--./box-->
+
+            <include file="Public/sidebar"/>
+
+        </div><!--./sidebar-->
+
+    </div>
 
 </block>
 

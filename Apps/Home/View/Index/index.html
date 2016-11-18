@@ -77,9 +77,15 @@
                 <h3 class="modname">社区讨论</h3>
                 <div class="tab">
                     <ul class="tabul">
-                        <li class="a"><a href="<{:U('index',array('ss'=>hot))}>">热门<span></span></a></li>
+                        <li class="
+                            <if condition=" I('get.sid') eq '' ">a</if>
+                        ">
+                            <a href="<{:U('index',array('ss'=>hot))}>">热门<span></span></a>
+                        </li>
                         <volist name="indexcategory" id="v">
-                            <li class="">
+                            <li class="
+                                <if condition=" I('get.sid') eq $v['cgid']">a</if>
+                            ">
                                 <a href="<{:U('index',array('sid'=>$v['cgid']))}>">
                                     <{$v['title']}>
                                     <span></span>
@@ -88,11 +94,6 @@
                         </volist>
                     </ul>
                 </div>
-                <script>
-                    $('.tabul>li').click(function(){
-                        $(this).addClass("a").parent().siblings().find("li").removeClass("a");
-                    });
-                </script>
             </div>
 
 
@@ -107,14 +108,14 @@
                         </div>
                         <div class="threadlist_title">
                             <div class="right"></div>
-                            <a href=""><{$val['title']}></a>
+                            <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>"><{$val['title']}></a>
                             <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
                             <img src="__PUBLIC__/qwhome/picture/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
-                            <img src="__PUBLIC__/qwhome/picture/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 619" />
+                            <img src="__PUBLIC__/qwhome/picture/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度" />
                         </div>
                         <div class="threadlist_imglist">
                             <div>
-                                <a href="">
+                                <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>">
                                     <img src="
                                     <if condition=" $val.thumbnail eq ''">__ROOT__/Uploads/thumbnail/jz.jpg
                                     <else/>__ROOT__<{$val[thumbnail]}>
@@ -125,9 +126,9 @@
                         </div>
                         <div class="threadlist_info">
                             <div class="lastreply">
-                                <a href="">ZUKZ1imax @ <span title="2016-11-15 22:22">38&nbsp;秒前</span></a>
+                                <span><{$val['t']|date="Y-m-d H:i:s",###}></span>
                             </div>
-                            <a href=""><{$val['user']}></a> @ <{$val['t']|date="Y-m-d H:i:s",###}>
+                             @ <a href="<{:U('Space/dynamic',array('mid'=>$val['mid']))}>"><{$val['user']}></a>
                         </div>
                     </div>
                 </volist>
@@ -136,7 +137,7 @@
             </div>
             <!-- 帖子列表-end -->
 
-            <div class="nextpage"><a href="javasctipt:;">下一页</a></div>
+            <!-- <div class="nextpage"><a href="javasctipt:;">下一页</a></div> -->
 
         </div>
         <!-- 列表推荐-end -->
@@ -147,288 +148,74 @@
     <!-- content_left-end -->
 
 
-<div class="sidebar">
-    <div class="box forum_user_stat">
+    <div class="sidebar">
 
-    <div class="signin">
-        <a href="javascript:;" onclick="userfnbox('checkin');"><font class="font16">签到可获随机金币奖励  ›</font></a>
-        <div class="signin_arrow"></div>
-    </div>
+        <div class="box forum_user_stat">
 
-    <div class="grid_stat myinfo_stat">
-        <div class="grid_list">
-            <ul>
-                <li><a href="" target="_blank"><span class="grid_list_num">17</span>今日任务</a></li>
-                <li><a href="" target="_blank"><span class="grid_list_num">0</span>我的勋章</a></li>
-                <li><em><span class="grid_list_num"><font class="greencolor">1</font></span>签到天数</em></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="featured _flslide">
-        <div class="featured_list">
-            <ul class="_flslidelist">
-
-                <li>
-                    <h4 class="bluecolor">社区金币</h4>
-                    <p class="bluecolor">
-                        <span>
-                            <i class="left_line bluebg"></i>截止目前，我拥有 
-                            <a href="" class="bluecolor" target="_blank">5</a> 枚金币
-                            <i class="right_line bluebg"></i>
-                        </span>
-                    </p>
-                    <p>
-                        <a href="" class="whitesmallbutton color2" target="_blank">看看能做啥<em>»</em></a>
-                        <small class="pipe"></small>
-                        <a href="" class="whitesmallbutton color2" target="_blank">金币全攻略<em>»</em></a>
-                    </p>
-                </li>
-
-                <li style="display: none;">
-                    <h4 class="bluecolor">ZUK产品认证</h4>
-                    <p class="bluecolor">
-                        <span>
-                            <i class="left_line bluebg"></i>截止目前，我认证了 
-                            <a href="" class="bluecolor" target="_blank">0</a> 款产品
-                            <i class="right_line bluebg"></i>
-                        </span>
-                    </p>
-                    <p>
-                        <a href="" class="whitesmallbutton color2" target="_blank">立刻认证<em>»</em></a>
-                        <small class="pipe"></small>
-                        <a href="" class="whitesmallbutton color2" target="_blank">购买产品<em>»</em></a>
-                    </p>
-                </li>
-            </ul>
-        </div>
-        <div class="slide_picshow_status _flslidetit">
-            <span class="current"></span>
-            <span></span>
-        </div>
-    </div>
-</div>
-
-
-    <div class="box">
-        <h3 class="modname">
-            <span class="more">第16期 - 2016年10月18日更新</span>全民话题
-        </h3>
-        <div class="s_topic" style="background:url(__PUBLIC__/qwhome/images/105252bw0woohoy2377r1g.jpg); ">
-            <a href="" class="s_topic_content">手机带来的便利
-                <span class="bluesmallblankbutton">参与讨论</span>
-            </a>
-        </div>
-    </div>
-
-
-
-    <div class="box s_forumlist">
-        <h3 class="modname">快速入口</h3>
-        <div class="s_links">
-            <ul class="s_grid_line">
-                <li>
-                    <a href="/z2/">
-                        <i><img src="__PUBLIC__/qwhome/picture/s_z2.png" width="24" height="24"></i>
-                        <small class="a_arrow"></small>
-                        <em>重新定义新旗舰</em><span>联想ZUK Z2</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="z1/">
-                        <i><img src="__PUBLIC__/qwhome/picture/s_z1.png" width="24" height="24"></i>
-                        <small class="a_arrow"></small>
-                        <em>ZUK Z1官方讨论区 </em><span>ZUK Z1</span>
-                    </a>
-                </li>
-            
-            </ul>
-        </div>
-
-
-        <div class="grid_stat">
-            <div class="grid_list">
-                <ul>
-                    <li>
-                        <a href="">
-                            <span class="grid_list_img"><img src="__PUBLIC__/qwhome/picture/s_chat.png" width="30" height="30">
-                            </span>联想畅谈
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="">
-                            <span class="grid_list_img">
-                                <img src="__PUBLIC__/qwhome/picture/s_camera.png" width="30" height="30">
-                            </span>趣摄阁
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="zhuti/">
-                            <span class="grid_list_img">
-                                <img src="__PUBLIC__/qwhome/picture/s_style.png" width="30" height="30">
-                            </span>主题苑
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="">
-                            <span class="grid_list_img">
-                                <img src="__PUBLIC__/qwhome/picture/s_activity.png" width="30" height="30">
-                            </span>活动中心
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="zhanwu/">
-                            <span class="grid_list_img">
-                                <img src="__PUBLIC__/qwhome/picture/s_feedback.png" width="30" height="30">
-                            </span>建议申诉
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="gonggao/">
-                            <span class="grid_list_img">
-                                <img src="__PUBLIC__/qwhome/picture/s_announcement.png" width="30" height="30">
-                            </span>申请公告
-                        </a>
-                    </li>
-                </ul>
+            <div class="signin">
+                <a href="javascript:;" onclick="userfnbox('checkin');"><font class="font16">签到可获随机金币奖励  ›</font></a>
+                <div class="signin_arrow"></div>
             </div>
-        </div>
-    </div>
 
-
-
-<div class="box">
-    <h3 class="modname">
-        <span class="more">
-            <a href="">ZUI固件列表<em>»</em></a>
-        </span>ZUI更新
-    </h3>
-    <div class="s_zui_update">
-        <h3 title="ZUI ZUI 2.3">ZUI 2.3</h3>
-        <p class="font12 color3">最后更新：2016年10月18日</p>
-        <p>
-            <a href="" class="bluesmallblankbutton">更新说明</a>
-            <span class="pipe"></span>
-            <a href="" class="bluesmallblankbutton">卡刷包下载</a>
-        </p>
-    </div>
-    <div class="lh50 tc graytopborder">
-        <a href="" target="_blank">OTA及卡刷教程</a>
-        <span class="pipe">|</span>
-        <a href="" target="_blank">开发版和稳定版说明</a>
-    </div>
-</div>
-
-
-
-
-
-<div class="box s_forumlist">
-    <h3 class="modname">热门标签</h3>
-    <div class="s_links">
-        <ul>
-            <li>
-                <a href="">
-                    <small class="a_arrow"></small><em>美图赏析</em>
-                    <span>Moto Z Play下的秋雨霏霏</span>
-                </a>
-            </li>
-             <li>
-                <a href="">
-                    <small class="a_arrow"></small><em>美图赏析</em>
-                    <span>Moto Z Play下的秋雨霏霏</span>
-                </a>
-            </li>
-             <li>
-                <a href="">
-                    <small class="a_arrow"></small><em>美图赏析</em>
-                    <span>Moto Z Play下的秋雨霏霏</span>
-                </a>
-            </li>
-             <li>
-                <a href="">
-                    <small class="a_arrow"></small><em>美图赏析</em>
-                    <span>Moto Z Play下的秋雨霏霏</span>
-                </a>
-            </li>    
-        </ul>
-    </div>
-</div>
-
-
-
-
-<div class="box _helplide">
-        <div class="s_tab_title">
-            <ul class="_helplidetit">
-                <li  class="current">售后服务</li>
-                <li>关注我们</li>
-                <li>社区新手</li>
-            </ul>
-        </div>
-        <div class="_helplidelist">
-            <div>
+            <div class="grid_stat myinfo_stat">
                 <div class="grid_list">
                     <ul>
+                        <li><a href="" target="_blank"><span class="grid_list_num">17</span>今日任务</a></li>
+                        <li><a href="" target="_blank"><span class="grid_list_num">0</span>我的勋章</a></li>
+                        <li><em><span class="grid_list_num"><font class="greencolor">1</font></span>签到天数</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="featured _flslide">
+                <div class="featured_list">
+                    <ul class="_flslidelist">
+
                         <li>
-                            <a href="" target="_blank">
-                                <span class="grid_list_img">
-                                    <img src="__PUBLIC__/qwhome/picture/s_customer.png" width="30" height="30">
-                                </span>在线咨询
-                            </a>
+                            <h4 class="bluecolor">社区金币</h4>
+                            <p class="bluecolor">
+                                <span>
+                                    <i class="left_line bluebg"></i>截止目前，我拥有 
+                                    <a href="" class="bluecolor" target="_blank">5</a> 枚金币
+                                    <i class="right_line bluebg"></i>
+                                </span>
+                            </p>
+                            <p>
+                                <a href="" class="whitesmallbutton color2" target="_blank">看看能做啥<em>»</em></a>
+                                <small class="pipe"></small>
+                                <a href="" class="whitesmallbutton color2" target="_blank">金币全攻略<em>»</em></a>
+                            </p>
                         </li>
-                        <li>
-                            <a href="" target="_blank">
-                                <span class="grid_list_img">
-                                    <img src="__PUBLIC__/qwhome/picture/s_map.png" width="30" height="30">
-                                </span>售后网点
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" target="_blank">
-                                <span class="grid_list_img">
-                                    <img src="__PUBLIC__/qwhome/picture/s_service.png" width="30" height="30">
-                                </span>服务中心
-                            </a>
+
+                        <li style="display: none;">
+                            <h4 class="bluecolor">ZUK产品认证</h4>
+                            <p class="bluecolor">
+                                <span>
+                                    <i class="left_line bluebg"></i>截止目前，我认证了 
+                                    <a href="" class="bluecolor" target="_blank">0</a> 款产品
+                                    <i class="right_line bluebg"></i>
+                                </span>
+                            </p>
+                            <p>
+                                <a href="" class="whitesmallbutton color2" target="_blank">立刻认证<em>»</em></a>
+                                <small class="pipe"></small>
+                                <a href="" class="whitesmallbutton color2" target="_blank">购买产品<em>»</em></a>
+                            </p>
                         </li>
                     </ul>
                 </div>
-                <div class="customer_service">
-                    <h4 class="fullfont color">400-8828-228</h4>
-                    <p class="font12 color3">电话服务热线时间：9:00 - 21:00</p>
+                <div class="slide_picshow_status _flslidetit">
+                    <span class="current"></span>
+                    <span></span>
                 </div>
             </div>
-                <div class="snswidget" style="display: none;">
-                    <div class="sns_widget">
-                        <a href="" title="ZUK官方微博" target="_blank">
-                            <img src="__PUBLIC__/qwhome/picture/wb_sidebar.jpg" height="120" width="120">
-                        </a>
-                        <p>
-                            <a href="" target="_blank" title="ZUK官方微博">官方微博</a>
-                        </p>
-                    </div>
-                    <div class="sns_widget">
-                        <img src="__PUBLIC__/qwhome/picture/wx_sidebar.jpg" height="120" width="120" title="扫一扫关注微信">
-                        <p>ZUK微信</p>
-                    </div>
-                </div>
-                <div class="forum_newbie" style="display: none;">
-                    <a href="" target="_blank"><span class="a_arrow"></span>发帖与回复</a>
-                    <a href=""  target="_blank"><span class="a_arrow"></span>社区总版规</a>
-                    <a href="" target="_blank"><span class="a_arrow"></span>赚金币</a>
-                    <a href="" target="_blank"><span class="a_arrow"></span>任务体系</a>
-                    <a href="" target="_blank"><span class="a_arrow"></span>荣誉勋章</a>
-                    <a href="" target="_blank"><span class="a_arrow"></span>ZUK产品认证</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
+        </div><!--./box forum_user_stat-->
+    
+    <include file="Public/sidebar"/>
+
+    </div><!--./sidebar-->
+
 </div>
 
 </block>

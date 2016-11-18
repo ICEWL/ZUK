@@ -31,6 +31,26 @@ class ComController extends BaseController
             $user = M('Member')->where(array('uid' => $UID))->find();
             $this->assign('user', $user);
         }
+
+        // 查询版块信息
+        $CGARR = M('category')->where('pid = 0')->order('o asc')->select();
+        foreach ($CGARR as $k => $v) {
+            if ($v['type']==0) {
+                $arrs['zuk'][]=$v;
+            }elseif($v['type']==1){
+                $arrs['Moto专区'][]=$v;
+            }elseif($v['type']==2){
+                $arrs['粉丝广场'][]=$v;
+            }else{
+                $arrs['站务大厅'][]=$v;
+            }
+        }
+        $this->assign('arrs', $arrs);
+
+        // 获取当前控制器名称
+        $CNAME = CONTROLLER_NAME;
+        $this->assign('CNAME', $CNAME);
+
     }
 
     public function check_login()
@@ -57,4 +77,12 @@ class ComController extends BaseController
         }
         return $flag;
     }
+
+
+    public function sidebar()
+    {
+
+    }
+
+
 }
