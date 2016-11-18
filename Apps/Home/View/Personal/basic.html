@@ -1,0 +1,178 @@
+<!-- 基础资料 -->
+<extend name="Notice/news" />
+<block name="mainaa">
+	    <div class="content" id="space_info"> 
+<div class="sidebar"><div class="box p_nav">
+<h3>个人资料</h3>
+<div class="p_navs">
+<ul>
+<li class="a">
+<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/basic')}>">基本资料</a>
+</li>
+<li>
+<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/modifypic')}>">修改头像</a>
+</li>
+<li>
+<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/modifypass')}>">密码安全</a>
+</li>
+<li>
+<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/address')}>">收货地址</a>
+</li>
+</ul>
+</div>
+</div></div> 
+</block>
+
+<block name="mainaas">
+	<div class="main">
+<div class="box">
+<div class="p_header">
+<h3 class="modname">基本资料
+</h3>
+</div>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo_old.css?hs6">
+<div class="graytopborder mlr25">
+  <div class="p-main-aticle">
+<div class="p-subnav">以下个人信息仅供活动,奖品发放使用,不会对外公开</div>
+<div class="p-conlist  p25">
+
+<script src="__PUBLIC__/qwhome/js/profile.js?hs6" type="text/javascript"></script>
+<div id="loadcont"><style>
+table { width:98%; margin-top:15px; }
+table strong  { width:150px; display: inline-block; padding-right:15px; text-align: right; font-weight: 100; }
+table td { padding:0 0 12px; }
+table input,table select { border:1px solid #d1d1d1; padding:5px;}
+table select { margin-right:5px; }
+table .px { vertical-align: middle; margin-right:3px;}
+table .pipe { padding:0 2px;}
+
+#postform button {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+#postform button {
+  width: auto;
+  overflow: visible;
+  display: inline-block;
+  padding: 6px 12px;
+  _margin-left: 5px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+</style>
+
+<div style="">
+<form method="post" id="postform" class="registerform">
+<input type="hidden" name="formhash" id="formhash" value="2935a076">
+
+<table cellpadding="2" cellspacing="2" border="0">
+<tbody>
+<tr>
+<td>
+<strong>昵称</strong>
+<input type="text" name="uname" datatype="*5-16" errormsg="请输入5到10个任意字符的昵称！"> <span style="float:right">(昵称一旦设置无法修改)</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>真实姓名</strong>
+<input type="text" name="userinfo[realname]" datatype="*2-5" errormsg="请输入2到5位的中文！"> <span style="float:right">(真实姓名一旦设置无法修改)</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>性别</strong>
+ 
+<label><input type="radio" name="userinfo[gender]" value="1" class="px">男</label><span class="pipe"></span>
+<label><input type="radio" name="userinfo[gender]" value="2" class="px">女</label>
+<span style="float:right">(性别一旦设置无法修改)</span>
+</td>
+</tr>
+<!-- <tr>
+<td>
+<strong>生日</strong>
+
+<span style="float:right">(生日一旦设置无法修改)</span>
+</td>
+</tr> -->
+
+<tr>
+<td>
+<strong>手机</strong>
+<input type="text" name="userinfo[mobile]"  datatype="m" nullmsg="请输入您的手机号码！" errormsg="请输入您的手机号码！"  >
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>QQ</strong>
+<input type="text" name="userinfo[qq]" datatype="n6-13" errormsg="请输入6到13个数字的QQ！">
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>邮箱</strong>
+<input type="text" name="userinfo[email]" datatype="e" errormsg="请输入正确的邮箱">
+</td>
+</tr>
+
+
+<tr>
+<td>
+<strong></strong>
+<button type="submin" onclick="userinfopost(this)"> 更新资料 </button>
+</td>
+</tr>
+
+
+
+
+</tbody>
+</table>
+</form>
+</div>
+</div>
+</div>	
+
+</div>
+  </div>
+</div>
+</div>
+</div>
+</block>
+
+
+
+<block name="myjs">
+
+<script type="text/javascript" src="__PUBLIC__/demo/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/demo/js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//$(".registerform").Validform();  //就这一行代码！;
+		
+	$(".registerform").Validform({
+		tiptype:3
+	});
+})
+</script>
+</block>

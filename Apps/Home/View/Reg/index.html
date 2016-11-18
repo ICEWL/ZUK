@@ -106,8 +106,13 @@
 					<!-- 短信验证码： -->
 					<span style="width:100px">短信验证码：</span>
 					<input name="verifycode" type="text" class="code " />
-					<input type="button" value='获取验证码' class="codebutton " />
-					<input type="hidden" value='重新获取' class="" />
+				<input type="button"  onclick="act1()" class="codebutton "  value="获取验证码" />
+		<script>
+             function act1(){
+                      document.form1.action="__PUBLIC__/yzm/SendTemplateSMS.php";
+                       document.form1.submit();   
+				}
+</script>
 				</li>
 				
 			</ul>
