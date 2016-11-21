@@ -89,16 +89,15 @@
                     </div> 
 
                 </div>
-
-
-                <form method="post" autocomplete="off" id="vfastpostform" action="" > 
+                <form method="post" autocomplete="off" id="vfastpostform" action="<{:U('Home/Section/fast')}>" > 
                     <div id="viewthread_fastreply"> 
                         <div class="viewthread_fastreply" id="vfastposttb"> 
                             <div class="viewthread_fastreplybutton">
-                                <button type="submit" name="replysubmit" id="vreplysubmit" value="true">快速回复</button>
+                                <button type="submit" name="replysubmit" id="vreplysubmit" >快速回复</button>
                             </div> 
                             <div class="viewthread_fastreplyinput">
                                 <input type="text" name="message"/>
+                                <input type="hidden" name="aid" value=<{$_GET['aid']}> />
                             </div> 
                         </div> 
                     </div> 
@@ -107,7 +106,10 @@
             </div>
 
 
-
+<?php 
+  var_dump($_SESSION);
+  var_dump($_GET);
+ ?>
     <div class="box" id="replylists"> 
      <div class="viewthread_main replylist_title"> 
       <div class="right font14"> 
@@ -117,20 +119,22 @@
       </div> 
       <strong>652</strong> 条回帖 
      </div> 
+
+    <foreach name="critic" item="va">
      <div id="post_3695031" class="viewthread_main"> 
       <div class="viewthread_avatar" id="favatar3695031"> 
        <div id="remainTime" style="font-size:20px;font-weight:700;color:#FF9900;"></div> 
-       <a href="" class="author_avatar" target="_blank"><img src="picture/79_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
+       <a href="" class="author_avatar" target="_blank"><img src="__ROOT__<{$va['head']}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
       </div> 
       <div class="viewthread_con " id="pid3695031" summary="pid3695031"> 
        <div class="viewthread_top"> 
   
-        <a href="" target="_blank"><strong>ZUK383932</strong></a>
+        <a href="" target="_blank"><strong><{$va['uname']}></strong></a>
         <span class="spipe"></span>
         <a href="" class="color3" target="_blank">初中生</a> 
         <span class="cutline"></span>
-        <em id="authorposton3695031">2016-9-22 20:03:32</em>
-        <span class="cutline"></span>来自手机 
+        <em id="authorposton3695031"><{$va['dateline']|date="Y-m-d H:i:s",###}></em>
+        
         <div class="viewthreadtop_storey right"> 
          <div class="floor_function"> 
          </div> 
@@ -142,31 +146,65 @@
          <table cellspacing="0" cellpadding="0">
           <tbody>
            <tr>
-            <td id="postmessage_3695031">按楼主的说法难道是要关闭安全中心里的自动加速和自动清理功能</td>
+            <td id="postmessage_3695031"><{$va['message']}></td>
            </tr>
           </tbody>
          </table>
         </div> 
         <!--回复帖回复列表--> 
-        <div id="comment_3695031"> 
+        <div id="comment_3695031">
+          <!-- 回复 -->
+      <foreach name="criti" item="vb">   
+          <div class="viewthread_replylog">
+            <ul>
+              <li title="发表于1970-1-1 08:00 ">
+                <a href="" class="avatar" c="1">
+                  <img src="__ROOT__<{$vb['head']}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'">
+                </a>
+                <p>
+                  <a href="" class="author">Timothy：</a>
+                  <a href="">6666</a>
+                </p> 
+              </li>
+            </ul>
+          </div> 
+    </foreach>
+
         </div> 
        </div> 
        <div id="viewthread_foot"> 
         <div class="viewthread_foot"> 
          <div class="right"> 
-          <a href="javascript:;" class="opacity" onclick="showWindow('rate', 'forum.php?mod=misc&amp;action=rate&amp;tid=197927&amp;pid=3695031', 'get', -1);return false;"><span class="s_rate"></span>评分</a>
-          <a href="" onclick="showWindow('comment', this.href, 'get', 0)"><span class="s_reply"></span>回复</a> 
+          <form id="tform" action="<{:U('Home/Section/fasta')}>" method="post">
+          <input type="text" name="message" style="border:2px solid #F1F1F1; width:570px;height:30px">
+          <input type="hidden" name="" valeu=   >
+          <input type="hidden" name="" valeu=   >
+          <a  href="javascript:void(0)" onclick="document.getElementById('tform').submit()"><span class="s_reply"></span>回复</a> 
+        </form>
          </div> 
         </div> 
        </div> 
       </div> 
-
      </div> 
-        
+</foreach>
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="21f3c92feba9a8a4e9a0ca61aa960175" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"timosl"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
 
-     <div class="nextpage">
-      <a href="javasctipt:;">下一页</a>
-     </div> 
+
     </div> 
     <div class="clear"> 
      <div class="right"> 
@@ -298,4 +336,9 @@
                 window.editor = K.create('#editor_id');
         });
 </script>
+
+
+<script type="text/javascript">
+
+    </script>
 </block>

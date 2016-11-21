@@ -56,7 +56,7 @@ class SectionController extends ComController
             $todaytotal = M('category')->table('zuk_category as cg,zuk_article as a')
                         ->where("cg.pid = $v[id] and a.sid = cg.id and a.t>$today and a.t<$endtoday")
                         ->count();
-            $v['todaytotal'] = $todaytotal;
+                         $v['todaytotal'] = $todaytotal;
 
             if ($v['type']==0) {
                 $arr['zuk'][]=$v;
@@ -166,6 +166,18 @@ class SectionController extends ComController
         $this->display('theme');
     }
 
+
+
+
+/**
+ *
+ * 版权所有：ICEWL
+ * 作    者：Timothy<yleigg@163.com>
+ * 日    期：2016-11-21
+ * 版    本：1.0.0
+ * 功能说明：前台版块控制器。
+ *
+ **/
     public function content()
     {      
         $aid = isset($_GET['aid']) ? $_GET['aid'] : '';
@@ -205,12 +217,74 @@ class SectionController extends ComController
             $pcgpost = $pcgpost['0'];
             $this->assign('pcgpost', $pcgpost);
 
+
+            //查询评论人信息
+            $tid = I('get.aid');
+            // var_dump($uid);
+            $critic =M('home_comment')->table("zuk_member m,zuk_home_comment h")->where("m.uid=h.uid and h.tid=$tid")->select();
+            var_dump($critic);
+            $this->assign('critic', $critic);
+
+
+
+            //查询回复评论人信息
+
         } else {
             $this->error('404 NOT FOUND');
         }
         
         $this->display('content');
     }
+
+
+    
+    // 快速评论
+    public function fast() 
+    {   
+        $aid = I('post.aid');
+        $today = M('article')->field('mid')->where("aid = $aid")->select();
+        $todays = array_column($today, 'mid');
+        // var_dump($todays);
+        $data['id'] = $todays[0];
+        $data['message'] = I('post.message');
+        $data['uid'] = I('session.uid');
+        $data['tid'] = I('post.aid');
+        $data['dateline'] = time();       
+        if(I('post.message')!=null){            
+                $cid = M('home_comment')->data($data)->add();
+               $this->success("回复成功！",U('content',array('aid'=>$aid)));                
+        }else{
+            $this->error("回复失败,内容不能为空");
+        }
+
+    }
+
+
+    // 回复
+    public function fasta() 
+    {   
+        var_dump($_GET);
+        var_dump($_SESSION);
+        var_dump($_request);
+        die;
+        $aid = I('post.aid');
+        $today = M('article')->field('mid')->where("aid = $aid")->select();
+        $todays = array_column($today, 'mid');
+        // var_dump($todays);
+        $data['id'] = $todays[0];
+        $data['message'] = I('post.message');
+        $data['uid'] = I('session.uid');
+        $data['tid'] = I('post.aid');
+        $data['dateline'] = time();       
+        if(I('post.message')!=null){            
+                $cid = M('home_comment')->data($data)->add();
+               $this->success("回复成功！",U('content',array('aid'=>$aid)));                
+        }else{
+            $this->error("回复失败,内容不能为空");
+        }
+
+    }
+
 
 
 
