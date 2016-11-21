@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-11-21 09:30:05
+Date: 2016-11-21 09:41:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1295,7 +1295,7 @@ CREATE TABLE `zuk_member` (
 -- Records of zuk_member
 -- ----------------------------
 INSERT INTO `zuk_member` VALUES ('1', 'admin', '/Uploads/head/2016/11/16/582c3ad3abeef.jpg', '1', '1478793600', '13053237223', '239126037', 'shineky7@163.com', '66d6a1c8748025462128dc75bf5ae8d1', '1479131236', '0');
-INSERT INTO `zuk_member` VALUES ('17', 'sky', '/Public/attached/2016/11/11/582587856e249.jpg', '0', '-28800', '', '', '', '66d6a1c8748025462128dc75bf5ae8d1', '1478854557', '0');
+INSERT INTO `zuk_member` VALUES ('17', 'sky', '/Uploads/head/2016/11/16/582587856e249.jpg', '0', '-28800', '', '', '', '66d6a1c8748025462128dc75bf5ae8d1', '1478854557', '0');
 
 -- ----------------------------
 -- Table structure for zuk_setting
