@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : zuk
+Source Server         : WAMP
 Source Server Version : 50711
 Source Host           : localhost:3306
 Source Database       : zuk_bbs
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-11-21 19:55:55
+Date: 2016-11-21 20:16:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1328,6 +1328,27 @@ INSERT INTO `zuk_member` VALUES ('17', 'sky1111', '牛逼', '/Uploads/head/2016/
 INSERT INTO `zuk_member` VALUES ('18', 'admin1', '牛逼', null, '0', null, '15665370632', null, null, '66d6a1c8748025462128dc75bf5ae8d1', '1479694655', '0');
 
 -- ----------------------------
+-- Table structure for zuk_read
+-- ----------------------------
+DROP TABLE IF EXISTS `zuk_read`;
+CREATE TABLE `zuk_read` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `pic` varchar(255) NOT NULL,
+  `o` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `o` (`o`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zuk_read
+-- ----------------------------
+INSERT INTO `zuk_read` VALUES ('7', '考工记', '/', '/Uploads/pic/2016/11/21/583259508c825.jpg', '3');
+INSERT INTO `zuk_read` VALUES ('6', '用户组招募集结令', 'http://bbs.lenovomobile.cn/gonggao/t120886/', '/Uploads/pic/2016/11/21/583259343f27c.jpg', '2');
+INSERT INTO `zuk_read` VALUES ('5', '【主题合集】大鱼海棠or阴阳师', '/', '/Uploads/pic/2016/11/21/58325914c84ba.jpg', '1');
+
+-- ----------------------------
 -- Table structure for zuk_setting
 -- ----------------------------
 DROP TABLE IF EXISTS `zuk_setting`;
@@ -1369,3 +1390,4 @@ CREATE TABLE `zuk_slide` (
 INSERT INTO `zuk_slide` VALUES ('2', '纯情傻白甜vs妖冶腹黑女', '/', '/Uploads/pic/2016/11/21/583248527e958.jpg', '1');
 INSERT INTO `zuk_slide` VALUES ('3', '天声丽音，最强神文案征集大赛', '/', '/Uploads/pic/2016/11/21/583248b4cd980.jpg', '2');
 INSERT INTO `zuk_slide` VALUES ('4', '联想手机双11，晒单壕礼送不停', '/', '/Uploads/pic/2016/11/21/583248cf26f81.png', '3');
+SET FOREIGN_KEY_CHECKS=1;
