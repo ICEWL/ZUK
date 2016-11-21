@@ -3,7 +3,11 @@
 	<div class="content clear">
 		<div class="links_list">
 			<ul>
-				<li><a href="http://www.igao7.com/" target="_blank" title="爱搞机">爱搞机</a></li>
+			<volist name="links" id="v">
+				<li>
+					<a href="<{$v['url']}>" target="_blank" title="<{$v['title']}>"><{$v['title']}></a>
+				</li>
+			</volist>
 			</ul>
 		</div>
 	</div>

@@ -43,23 +43,35 @@ class SectionController extends ComController
 
     	$cgarr = M('category')->where('pid = 0')->order('o asc')->select();
 
-    	foreach ($cgarr as $k => $v) {
-    		if ($v['type']==0) {
-    			$arr['zuk'][]=$v;
-    		}
-    	}
+        // 查询各版块信息
+        foreach ($cgarr as $key => $v) {
 
-    	foreach ($cgarr as $k => $v) {
-    		if ($v['type']==0) {
-    			
-    		}elseif($v['type']==1){
-    			$arrs['Moto专区'][]=$v;
-    		}elseif($v['type']==2){
-    			$arrs['粉丝广场'][]=$v;
-    		}else{
-    			$arrs['站务大厅'][]=$v;
-    		}
-    	}
+            $v['total'] = '';
+            $total = M('category')->table('zuk_category as cg,zuk_article as a')
+                        ->where("cg.pid = $v[id] and a.sid = cg.id")
+                        ->count();
+            $v['total'] = $total;
+
+            $v['todaytotal'] = '';
+            $todaytotal = M('category')->table('zuk_category as cg,zuk_article as a')
+                        ->where("cg.pid = $v[id] and a.sid = cg.id and a.t>$today and a.t<$endtoday")
+                        ->count();
+            $v['todaytotal'] = $todaytotal;
+
+            if ($v['type']==0) {
+                $arr['zuk'][]=$v;
+            }
+
+            if ($v['type']==0) {
+                
+            }elseif($v['type']==1){
+                $arrs['Moto专区'][]=$v;
+            }elseif($v['type']==2){
+                $arrs['粉丝广场'][]=$v;
+            }else{
+                $arrs['站务大厅'][]=$v;
+            }
+        }
     	
         $this->assign('yesterdayposts',$yesterdayposts);
         $this->assign('todayposts',$todayposts);

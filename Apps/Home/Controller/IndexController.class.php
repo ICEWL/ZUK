@@ -31,8 +31,9 @@ class IndexController extends ComController
             $sids = implode(',',$sids_array);
             $where .= "and {$prefix}article.sid in ($sids) ";
         }
-        
-        $orderby = "t desc";  //默认按照时间降序
+
+        // $orderby = "t desc";  //默认按照时间降序
+        $orderby = "n desc";
 
         $count = $article->where($where)->count();
 
@@ -41,13 +42,19 @@ class IndexController extends ComController
         $page = new \Think\Page($count, $pagesize);
         $page = $page->show();
 
+        // 轮播图
+        $slide = M('slide')->order('o asc')->select();
+        $this->assign('slide', $slide);
+
         // 查询社区讨论菜单
         $indexcategory = M('index_category')->select();
+        
 
         $this->assign('indexcategory', $indexcategory);
         $this->assign('list', $list);
         $this->assign('page', $page);
         $this->display();
+
     }
 
 }

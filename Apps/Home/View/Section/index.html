@@ -2,7 +2,7 @@
 
 <block name="main">
 	<div class="breadcrumbs content">
-		<a href="<{:U('Home/Index/index')}>" title="首页">联想手机社区</a>
+		<a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
 		<em>&raquo;</em><a href="<{:U('Home/Section/index')}>">版块</a>
 	</div>
 
@@ -26,8 +26,8 @@
 					<h2><a href="<{:U('theme',array('sid'=>$v['id']))}>"><{$v['name']}></a></h2>
 					<p><{$v['title']}></p>
 					<p class="mainforumcontentinfo">
-						今日: <font class="bluecolor">224</font>
-						<span class="pipe">|</span>主题: 48942
+						今日: <font class="bluecolor"><{$v['todaytotal']}></font>
+						<span class="pipe">|</span>主题: <{$v['total']}>
 					</p>
 				</div>
 			</div>
@@ -52,8 +52,8 @@
 							<a href="<{:U('theme',array('sid'=>$v['id']))}>"><{$v['name']}></a>
 						</h2>
 						<p><{$v['title']}></p>
-						<p>今日：<font class="bluecolor">4</font>
-						<span class="pipe">|</span>主题: 609</p>
+						<p>今日：<font class="bluecolor"><{$v['todaytotal']}></font>
+						<span class="pipe">|</span>主题: <{$v['total']}></p>
 					</div>
 				</div>
 			</volist>

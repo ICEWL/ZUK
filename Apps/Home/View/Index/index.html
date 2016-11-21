@@ -12,35 +12,23 @@
 
             <div class="recommend_pic_list" >
                 <ul class="_slidepic">
-                    <li>
-                        <a href=" " target="_blank">
-                            <img src="__PUBLIC__/qwhome/picture/144933zdxfo0dvvcvy8c8s.jpg" height="350" width="770" alt="天声丽音，最强神文案征集大赛">
-                        </a>
-                    </li>
-                    <li>
-                        <a href=" " target="_blank">
-                            <img src="__PUBLIC__/qwhome/picture/141054zs8le4kwelon44o0.png" height="350" width="770" alt="【辩论】双十一剁手还是脱单更重要">
-                        </a>
-                    </li>
-                    <li>
-                        <a href=" " target="_blank">
-                            <img src="__PUBLIC__/qwhome/picture/144146j11du115z1dh5sqk.png" height="350" width="770" alt="联想手机双11，晒单壕礼送不停">
-                        </a>
-                    </li>
+                    <volist name="slide" id="val">
+                        <li>
+                            <a href=" " target="_blank">
+                                <img src="<{$val['pic']}>" height="350" width="770" alt="<{$val['title']}>">
+                            </a>
+                        </li>
+                    </volist>
                 </ul>
             </div>
 
             <div class="recommend_pic_title">
                 <ul class="_slidetit">
-                    <li>
-                        <a href="" target="_blank">天声丽音，最强神文案征集大赛</a>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">【辩论】双十一剁手还是脱单更重要</a>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">联想手机双11，晒单壕礼送不停</a>
-                    </li>
+                    <volist name="slide" id="val">
+                        <li>
+                            <a href="<{$val['url']}>" target="_blank"><{$val['title']}></a>
+                        </li>
+                    </volist>
                 </ul>
             </div>
 
@@ -80,7 +68,7 @@
                         <li class="
                             <if condition=" I('get.sid') eq '' ">a</if>
                         ">
-                            <a href="<{:U('index',array('ss'=>hot))}>">热门<span></span></a>
+                            <a href="<{:U('index')}>">热门<span></span></a>
                         </li>
                         <volist name="indexcategory" id="v">
                             <li class="
@@ -109,9 +97,9 @@
                         <div class="threadlist_title">
                             <div class="right"></div>
                             <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>"><{$val['title']}></a>
-                            <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
-                            <img src="__PUBLIC__/qwhome/picture/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
-                            <img src="__PUBLIC__/qwhome/picture/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度" />
+                            <!-- <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+                            <img src="__PUBLIC__/qwhome/picture/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" /> -->
+                            <img src="<if condition=" $val.n egt 50">__PUBLIC__/qwhome/picture/hot_3.gif</if>" align="absmiddle" />
                         </div>
                         <div class="threadlist_imglist">
                             <div>
@@ -162,7 +150,7 @@
                     <ul>
                         <li><a href="" target="_blank"><span class="grid_list_num">17</span>今日任务</a></li>
                         <li><a href="" target="_blank"><span class="grid_list_num">0</span>我的勋章</a></li>
-                        <li><em><span class="grid_list_num"><font class="greencolor">1</font></span>签到天数</em></li>
+                        <li><em style="border-right:none;"><span class="grid_list_num"><font class="greencolor">1</font></span>签到天数</em></li>
                     </ul>
                 </div>
             </div>

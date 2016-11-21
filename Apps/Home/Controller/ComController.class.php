@@ -51,6 +51,10 @@ class ComController extends BaseController
         $CNAME = CONTROLLER_NAME;
         $this->assign('CNAME', $CNAME);
 
+        // 查询友情链接
+        $links = M('links')->order('o asc')->select();
+        $this->assign('links', $links);
+
     }
 
     public function check_login()

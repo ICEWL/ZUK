@@ -2007,7 +2007,8 @@ button.bluesmallbutton,button.greensmallbutton,.replay button {
 }
 
 .s_links i {
-	margin: -5px 10px 0 0
+	margin: -5px 10px 0 0;
+	height:33px;/*NB李俊峰*/
 }
 
 .s_links li small {
