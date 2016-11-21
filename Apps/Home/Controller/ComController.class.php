@@ -21,6 +21,7 @@ class ComController extends BaseController
     public function _initialize()
     {
         C(setting()); 
+        // var_dump($a);
         if (!C("COOKIE_SALT")) {
             $this->error('请配置COOKIE_SALT信息');
         }

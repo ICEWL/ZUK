@@ -1,16 +1,5 @@
 <?php
-/*
- *  Copyright (c) 2014 The CCP project authors. All Rights Reserved.
- *
- *  Use of this source code is governed by a Beijing Speedtong Information Technology Co.,Ltd license
- *  that can be found in the LICENSE file in the root of the web site.
- *
- *   http://www.yuntongxun.com
- *
- *  An additional intellectual property rights grant can be found
- *  in the file PATENTS.  All contributing project authors may
- *  be found in the AUTHORS file in the root of the source tree.
- */
+
 
 include_once("./CCPRestSmsSDK.php");
 
@@ -36,18 +25,13 @@ $serverPort='8883';
 //REST版本号，在官网文档REST介绍中获得。
 $softVersion='2013-12-26';
 
-        srand((double)microtime()*1000000);
-        $ychar="0,1,2,3,4,5,6,7,8,9";
-        $list=explode(",",$ychar);
-        for($i=0;$i<4;$i++){
-        $randnum=rand(0,10); // 10+26;
-        $authnum.=$list[$randnum];
-        }
-        $datas=$authnum;
-        $to = $_POST['phone'];
-        var_dump($_POST['to']);
-        var_dump($datas);
 
+        $datas= mt_rand(1000,9999);
+        $to = $_POST['phone'];
+        // 写入
+        session_start();
+        $_SESSION['verifysl'] = $datas;  // 存入session 
+        
 /**
   * 发送模板短信
   * @param to 手机号码集合,用英文逗号分开
@@ -90,11 +74,5 @@ function sendTemplateSMS($to,$datas,$tempId)
 		//*则13800000000手机号收到的短信内容是：【云通讯】您使用的是云通讯短信模板，您的验证码是6532，请于5分钟内正确输入     *
 		//*********************************************************************************************************************
     sendTemplateSMS($to,array($datas,'5'),"1");//手机号码，替换内容数组，模板ID
-     // echo "<script type='text/javascript'>alert('发送成功');</script>";
-    // echo "<script>window.location.href='1111.html';</script>"; 
-    if($to==null){
-        echo "<script type='text/javascript'>alert('请填写手机号');history.go(-1);</script>";
-    }else{
-        echo "<script type='text/javascript'>alert('发送成功');history.go(-1);</script>";
-    }
+
 ?>

@@ -46,12 +46,16 @@ class RegController extends ComController
         if(!$this->check_verify($verify)){
             $this->error("亲，验证码输错了哦！",$this->site_url,3);  
         } 
-        //实例化Model对象
-        // $user = M("member");
+        
+        // var_dump($_SESSION['verifysl']);
+        // var_dump($_POST['verifysl']);
+        if ($_SESSION['verifysl'] != $_POST['verifysl'] ){
+            $this->error('手机验证码输入错误',$this->site_url,30);
+            session_destroy();
 
-        // $_POST['addtime'] = time(); 
-        // $user->create();
-        // $user->password = md5($_POST['password']);
+        }
+
+
 
 
         $user = isset($_POST['user']) ? htmlspecialchars($_POST['user'], ENT_QUOTES) : '';
@@ -73,8 +77,6 @@ class RegController extends ComController
             }
             $data['user'] = $user;
             $uid = M('member')->data($data)->add();
-
-
 
         if($uid>0){            
             
