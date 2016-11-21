@@ -1,126 +1,114 @@
-<!-- 个人动态 -->
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>个人动态</title>
-  <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css" /> 
-</head>
-<body>
+<include file="Public/head"/>
 
-	<include file="Public/head"/>
-	 <div class="breadcrumbs content"> 
-   <a href="./" title="首页">联想手机社区</a>
-   <em>&raquo;</em>
-   <a href="">Sidney 的个人主页</a> 
-  </div>
+<block name="mycss">
 
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css" />
 
- 
-  <div class="content" id="space_info"> 
-
-
-  <block name="mainc"> 	
-   <div class="main"> 
-    <div class="box"> 
-     <div class="p_header"> 
-      <h3 class="modname">个人动态</h3> 
-     </div> 
-     <div class="p_timeline"> 
-      <ul>
-        <li> 
-	       	<i><span></span></i>
-	       	<em><span title="2016-11-16 18:19">1&nbsp;小时前</span></em> 
-	        <div class="p_timeline_title"> 
-	         <div class="p_quote">
-	          楼主，您好！ 很抱歉给您带来了不便，您的问题我已经了解，我会与管理员进行沟通，希望给您一个确切的答复 ...
-	         </div> 
-	         来自 
-	         <a href="" target="_blank">警告5次就永久封号，是这样吗！</a> 
-	        </div> 
-    	</li> 
-    	 <li> 
-	       	<i><span></span></i>
-	       	<em><span title="2016-11-16 18:19">1&nbsp;小时前</span></em> 
-	        <div class="p_timeline_title"> 
-	         <div class="p_quote">
-	          楼主，您好！ 很抱歉给您带来了不便，您的问题我已经了解，我会与管理员进行沟通，希望给您一个确切的答复 ...
-	         </div> 
-	         来自 
-	         <a href="" target="_blank">警告5次就永久封号，是这样吗！</a> 
-	        </div> 
-    	</li> 
-    	 <li> 
-	       	<i><span></span></i>
-	       	<em><span title="2016-11-16 18:19">1&nbsp;小时前</span></em> 
-	        <div class="p_timeline_title"> 
-	         <div class="p_quote">
-	          楼主，您好！ 很抱歉给您带来了不便，您的问题我已经了解，我会与管理员进行沟通，希望给您一个确切的答复 ...
-	         </div> 
-	         来自 
-	         <a href="" target="_blank">警告5次就永久封号，是这样吗！</a> 
-	        </div> 
-    	</li> 
-      
- 
-      </ul> 
-     </div> 
-    </div> 
-    <div class="pg">
-     <div class="pg">
-      <strong>1</strong>
-      <a href="">2</a>
-      <a href="">3</a>
-      <a href="">4</a>
-      <a href="">5</a>
-      <a href="">6</a>
-      <a href="">7</a>
-      <a href="">8</a>
-      <a href="">9</a>
-      <a href="">10</a>
-      <a href="" class="last">... 2238</a>
-      <label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="1" onkeydown="if(event.keyCode==13) {window.location='space.php?mod=index&amp;uid=232801&amp;page='+this.value;; doane(event);}" /><span title="共 1000 页"> / 1000 页</span></label>
-      <a href="/space.php?mod=index&amp;uid=232801&amp;page=2" class="nxt">下一页</a>
-     </div>
-    </div>
-   </div>
 </block>
 
+    <div class="breadcrumbs content"> 
+        <a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
+        <em>&raquo;</em>
+        <a href="<{:U('Home/Space/dynamic',array('mid'=>$muser['uid']))}>"><{$muser['user']}>的个人主页</a>
+    </div>
 
 
-   <div class="sidebar"> 
-    <div class="box"> 
-     <div class="p_s_avatar">
-      <img src="picture/01_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" />
-      <p> <strong>Sidney</strong><span class="authphone ap_icon" hwtxts="ZUK Z2131"><a href="/myzuk/"><img src="__PUBLIC__/qwhome/picture/authphone_p.png" /></a></span></p> 
-      <p><font color="#000000">实习版主</font></p> 
-     </div> 
-     <div class="p_s_info"> 
-      <div class="viewthread_author_act"> 
-       <a href="" id="a_sendpm_232801" onclick="showWindow('showMsgBox', this.href, 'get', 0)" class="bluesmallbutton" title="发送消息">发送消息</a>
-       <a href="" onclick="showWindow(this.id, this.href, 'get', 0);" class="greensmallbutton">加为好友</a> 
-      </div> 
-     </div> 
-  <block name="maincs">
-     <div class="p_navs"> 
-      <ul> 
-       <li class="a">
-        <div class="r_arrow"></div><a href="<{:U('Home/Space/dynamic')}>" title="Sidney的社区动态"><i></i>个人动态</a></li> 
-       <li>
-        <div class="r_arrow"></div><a href="<{:U('Home/Space/theme')}>" title="Sidney发表的主题"><i></i><span class="graysmallbox">382</span>主题</a></li> 
-       <li>
-        <div class="r_arrow"></div><a href="<{:U('Home/Space/collection')}>" title="Sidney收藏的帖子"><i></i><span class="graysmallbox">52</span>收藏</a></li> 
-       <li>
-        <div class="r_arrow"></div><a href="<{:U('Home/Space/friends')}>" title="Sidney的好友列表"><i></i><span class="graysmallbox">320</span>好友</a></li> 
-       <li>
-        <div class="r_arrow"></div><a href="<{:U('Home/Space/information')}>" title="Sidney的个人资料"><i></i>社区资料</a></li> 
-      </ul> 
-     </div> 
- </block>
-    </div>  
-   </div>
-  </div>
+<div class="content" id="space_info">
+        
+        <div class="main">
+            <div class="box">
 
-  <include file="Public/foot"/>
-</body>
-</html>
+            <block name="main">
+                <div class="p_header"> 
+                    <h3 class="modname">个人动态</h3> 
+                </div>
+
+                <if condition="$userlist neq ''">
+                    <div class="p_timeline"> 
+                        <ul>
+                            <li> 
+                                <i><span></span></i>
+                                <em><span title="2016-11-16 18:19">1&nbsp;小时前</span></em> 
+                                <div class="p_timeline_title"> 
+                                    <div class="p_quote">
+                                        很抱歉给您带来了不便，您的问题我已经了解
+                                    </div> 
+                                    来自 
+                                    <a href="" target="_blank">警告5次就永久封号，是这样吗！</a> 
+                                </div> 
+                            </li> 
+                        </ul> 
+                    </div>
+                <else />
+                    <div class="time_prompt nomyhomelog  graytopborder"></div>
+                </if>
+
+            </block>
+
+            </div>
+            <div class="pg"><{$page}></div>
+        </div><!--./main-->
+
+
+        <div class="sidebar">
+
+            <div class="box">
+
+                <div class="p_s_avatar">
+                    <img src="__ROOT__<{$muser.head}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" />
+                    <p><strong><{$muser.user}></strong></p> 
+                    <p><font color="#000000">实习版主</font></p> 
+                </div> 
+
+                <div class="p_s_info"> 
+                    <div class="viewthread_author_act"> 
+                        <a href="" id="a_sendpm_232801" onclick="showWindow('showMsgBox', this.href, 'get', 0)" class="bluesmallbutton" title="发送消息">
+                            发送消息
+                        </a>
+                        <a href="" onclick="showWindow(this.id, this.href, 'get', 0);" class="greensmallbutton">
+                            加为好友
+                        </a> 
+                    </div> 
+                </div> 
+
+                <div class="p_navs"> 
+                    <ul> 
+                        <li class="<if condition=" $ANAME eq 'dynamic' ">a</if>">
+                            <div class="r_arrow"></div>
+                            <a href="<{:U('Home/Space/dynamic',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>的社区动态">
+                                <i></i>个人动态
+                            </a>
+                        </li> 
+                        <li class="<if condition=" $ANAME eq 'theme' ">a</if>">
+                            <div class="r_arrow"></div>
+                                <a href="<{:U('Home/Space/theme',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>发表的主题">
+                                <i></i><span class="graysmallbox"><{$usertotal}></span>主题
+                            </a>
+                        </li> 
+                        <li class="<if condition=" $ANAME eq 'collection' ">a</if>">
+                            <div class="r_arrow"></div>
+                            <a href="<{:U('Home/Space/collection',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>收藏的帖子">
+                                <i></i><span class="graysmallbox">52</span>收藏
+                            </a>
+                        </li> 
+                        <li class="<if condition=" $ANAME eq 'friends' ">a</if>">
+                            <div class="r_arrow"></div>
+                            <a href="<{:U('Home/Space/friends',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>的好友列表">
+                                <i></i><span class="graysmallbox">320</span>好友
+                            </a>
+                        </li> 
+                        <li class="<if condition=" $ANAME eq 'information' ">a</if>">
+                            <div class="r_arrow"></div>
+                            <a href="<{:U('Home/Space/information',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>的个人资料">
+                                <i></i>社区资料
+                            </a>
+                        </li> 
+                    </ul> 
+                </div> 
+
+            </div>  
+        </div><!--./sidebar-->
+
+    </div><!--#/space_info-->
+
+<include file="Public/foot"/>

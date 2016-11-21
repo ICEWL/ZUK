@@ -48,9 +48,12 @@ class IndexController extends ComController
 
         // 查询社区讨论菜单
         $indexcategory = M('index_category')->select();
-        
-
         $this->assign('indexcategory', $indexcategory);
+
+        // 友情链接
+        $links = M('links')->order('o asc')->select();
+        $this->assign('links', $links);
+
         $this->assign('list', $list);
         $this->assign('page', $page);
         $this->display();

@@ -36,27 +36,20 @@
 
             <div class="box main_box">
 
-                <!-- 小图推荐 --> 
-                <h3 class="modname">推荐阅读</h3> 
-                <div class="recommend_pic_small"> 
+                <!-- 小图推荐-start -->
+                <h3 class="modname">推荐阅读</h3>
+                <div class="recommend_pic_small">
                     <ul>
+                    <volist name="read" id="val">
                         <li>
-                            <a href="" target="_blank" title="">
-                                <img src="__PUBLIC__/qwhome/picture/165444vooka61av7tc6z7r.jpg" alt="" height="100" width="228" />
+                            <a href="<{$val['url']}>"  target="_blank" title="<{$val['title']}>">
+                                <img src="<{$val['pic']}>" alt="<{$val['title']}>" height="100" width="228">
                             </a>
-                        </li> 
-                        <li>
-                            <a href="" target="_blank" title="">
-                                <img src="__PUBLIC__/qwhome/picture/101836cwn69i6rnwvwxn69.jpg" alt="" height="100" width="228" />
-                            </a>
-                        </li> 
-                        <li>
-                            <a href="" target="_blank" title="">
-                                <img src="__PUBLIC__/qwhome/picture/150059nbjh7jzaygasasw4.jpg" alt="考" height="100" width="228" />
-                            </a>
-                        </li> 
-                    </ul> 
-                </div> 
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+                <!-- 小图推荐-end -->
 
 
                 <div class="graybg graytopborder"> 

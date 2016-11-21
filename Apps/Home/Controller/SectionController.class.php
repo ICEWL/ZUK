@@ -222,7 +222,7 @@ class SectionController extends ComController
             $tid = I('get.aid');
             // var_dump($uid);
             $critic =M('home_comment')->table("zuk_member m,zuk_home_comment h")->where("m.uid=h.uid and h.tid=$tid")->select();
-            var_dump($critic);
+            // var_dump($critic);
             $this->assign('critic', $critic);
 
 
@@ -263,10 +263,10 @@ class SectionController extends ComController
     // 回复
     public function fasta() 
     {   
-        var_dump($_GET);
-        var_dump($_SESSION);
-        var_dump($_request);
-        die;
+        // var_dump($_GET);
+        // var_dump($_SESSION);
+        // var_dump($_request);
+        // die;
         $aid = I('post.aid');
         $today = M('article')->field('mid')->where("aid = $aid")->select();
         $todays = array_column($today, 'mid');

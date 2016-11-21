@@ -20,9 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_8_common.css" /> 
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_8_forum_forumdisplay.css" />
 	
-
-
-
+	<!-- mycss -->
+	<block name="mycss"></block>
 	
 	<!-- 底部未登录css -->
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/no_login.css" />
@@ -103,13 +102,13 @@
 			<div class="fm_userinfo">
 				<div class="fm_dibavatar js_dibavatar">
 
-					<a  href="<{:U('Home/Space/dynamic')}>" target="_blank" title=""><{$user.user}></a>
+					<a  href="<{:U('Space/dynamic',array('mid'=>$user['uid']))}>" target="_blank" title=""><{$user.user}></a>
 					( <em><a href="" class="colorlink">幼儿园</a></em> )
 
 					<div class="flu_grid js_grid">
 
 						<div class="flu_grid_t">
-							<a href="#" class="grid_avatar">
+							<a href="<{:U('Home/Personal/modifypic',array('uid'=>$user['uid']))}>" class="grid_avatar">
 								<img src="__ROOT__<{$user.head}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" />
 								<div class="grid_edit">编辑<br />头像</div>
 							</a>
@@ -138,22 +137,12 @@
 											<span class="grid_list_num extcredits5">...</span>金币
 										</a>
 									</li>
-									<li>
-										<a href="/home.php?mod=task" target="_blank">
-											<span class="grid_list_num taskNum">...</span>任务
-										</a>
-									</li>
-									<li>
-										<a href="/myzuk/" target="_blank">
-											<span class="grid_list_num"></span>认证
-										</a>
-									</li>
 								</ul>
 							</div>
 						</div>
 
 						<div class="flu_grid_f">
-							<a href="#" class="greensmallbutton">修改资料</a>
+							<a href="<{:U('Home/Personal/basic',array('uid'=>$user['uid']))}>" class="greensmallbutton">修改资料</a>
 							<span class="pipe"></span>
 							<a href="<{:U('Home/Logout/index')}>" class="graysmallbutton">退出登录</a>
 						</div>

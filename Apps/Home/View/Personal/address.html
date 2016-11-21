@@ -1,112 +1,17 @@
-<!-- 我的地址 -->
-<extend name="Notice/news" />
-<block name="mainaa">
-   <div class="content" id="space_info"> 
-<div class="sidebar"><div class="box p_nav">
+<!-- 收货地址 -->
+<extend name="Personal/basic" />
 
-<h3>个人资料</h3>
-<div class="p_navs">
-<ul>
-<li>
-<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/basic')}>">基本资料</a>
-</li>
-<li>
-<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/modifypic')}>">修改头像</a>
-</li>
-<li>
-<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/modifypass')}>">密码安全</a>
-</li>
-<li class="a">
-<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/address')}>">收货地址</a>
-</li>
-</ul>
-</div>
-</div></div> 
-</block>
+<block name="main">
 
-<block name="mainaas">
-<div class="main">
-    <div class="box">
-      <div class="p_header">
-      <h3 class="modname">收货地址
-      </h3>
-      </div>
-      <div class="graytopborder mlr25">
-        <div class="p-main-aticle">
-          <div class="p-subnav">以下收货信息为默认的收货信息,仅用于收货使用,不会对外公开</div>
-          <div class="p-conlist  p25">
-          <script src="static/_js/profile.js?pdo" type="text/javascript"></script>
-          <div id="loadcont">
-            <style>
-          table {
-            width: 98%;
-            margin-top: 15px;
-          }
+  <div class="p_header"> 
+        <h3 class="modname">收货地址</h3> 
+    </div>
 
-          table strong {
-            width: 150px;
-            display: inline-block;
-            padding-right: 15px;
-            text-align: right;
-            font-weight: 100;
-          }
+    <div class="p_timeline">
+        <br>
+        <div class="p-subnav">以下收货信息为默认的收货信息,仅用于收货使用,不会对外公开</div>
 
-          table td {
-            padding: 0 0 12px;
-          }
-
-          table input,table select {
-            border: 1px solid #d1d1d1;
-            padding: 5px;
-          }
-
-          table select {
-            margin-right: 5px;
-          }
-
-          table .px {
-            vertical-align: middle;
-            margin-right: 3px;
-          }
-
-          table .pipe {
-            padding: 0 2px;
-          }
-
-          #postform button {
-            color: #ffffff;
-            background-color: #428bca;
-            border-color: #357ebd;
-          }
-
-          #postform button {
-            width: auto;
-            overflow: visible;
-            display: inline-block;
-            padding: 6px 12px;
-            _margin-left: 5px;
-            margin-bottom: 0;
-            font-size: 14px;
-            font-weight: normal;
-            line-height: 1.428571429;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            cursor: pointer;
-            background-image: none;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-          }
-
-          </style>
-
-          <div style="">
-          <form method="post" id="postform">
+        <form method="post" id="postform">
             <input type="hidden" name="formhash" id="formhash" value="5dd0f4b0">
             <table cellpadding="2" cellspacing="2" border="0">
               <tbody>
@@ -137,21 +42,8 @@
                 </tr>
               </tbody>
             </table>
-          </form>
-        </div>
-      </div>
-     </div>
-<br><br><br><br><br><br>
-      </div>
-        </div>
-    </div>
-</div>
+        </form>
 
-</div>
-<br>
-</block>
-
-
-<block name="myjs">
+    </div><!--./p_timeline-->
 
 </block>

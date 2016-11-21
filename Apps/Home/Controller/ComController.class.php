@@ -52,9 +52,13 @@ class ComController extends BaseController
         $CNAME = CONTROLLER_NAME;
         $this->assign('CNAME', $CNAME);
 
-        // 查询友情链接
-        $links = M('links')->order('o asc')->select();
-        $this->assign('links', $links);
+        // 获取当前操作名称
+        $ANAME = ACTION_NAME;
+        $this->assign('ANAME', $ANAME);
+
+        // 推荐阅读
+        $read = M('read')->limit(3)->order('o asc')->select();
+        $this->assign('read', $read);
 
     }
 

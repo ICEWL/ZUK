@@ -1,102 +1,17 @@
-<!-- 我的帖子 -->
-<extend name="Notice/news" />
-<block name="mainaa">
-	   <div class="content" id="space_info"> 
-<div class="sidebar"><div class="box p_nav">
+<!-- 密码安全 -->
+<extend name="Personal/basic" />
 
-<h3>个人资料</h3>
-<div class="p_navs">
-<ul>
-<li>
-<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/basic')}>">基本资料</a>
-</li>
-<li>
-<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/modifypic')}>">修改头像</a>
-</li>
-<li class="a">
-<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/modifypass')}>">密码安全</a>
-</li>
-<li>
-<div class="r_arrow"></div><i></i><a href="<{:U('Home/Personal/address')}>">收货地址</a>
-</li>
-</ul>
-</div>
-</div></div> 
-</block>
+<block name="main">
 
-<block name="mainaas">
-	 <style>
-          table {
-            width: 98%;
-            margin-top: 15px;
-          }
+  <div class="p_header"> 
+        <h3 class="modname">密码安全</h3> 
+    </div>
 
-          table strong {
-            width: 150px;
-            display: inline-block;
-            padding-right: 15px;
-            text-align: right;
-            font-weight: 100;
-          }
-
-          table td {
-            padding: 0 0 12px;
-          }
-
-          table input,table select {
-            border: 1px solid #d1d1d1;
-            padding: 5px;
-          }
-
-          table select {
-            margin-right: 5px;
-          }
-
-          table .px {
-            vertical-align: middle;
-            margin-right: 3px;
-          }
-
-          table .pipe {
-            padding: 0 2px;
-          }
-
-          #postform button {
-            color: #ffffff;
-            background-color: #428bca;
-            border-color: #357ebd;
-          }
-
-          #postform button {
-            width: auto;
-            overflow: visible;
-            display: inline-block;
-            padding: 6px 12px;
-            _margin-left: 5px;
-            margin-bottom: 0;
-            font-size: 14px;
-            font-weight: normal;
-            line-height: 1.428571429;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            cursor: pointer;
-            background-image: none;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-          }
-
-          </style>
-	<div class="main">
-		<form method="post" id="postform" class="registerform">
+    <div class="p_timeline">
+        
+        <form method="post" id="postform" class="registerform">
             <input type="hidden" name="formhash" id="formhash" value="5dd0f4b0">
             <table cellpadding="2" cellspacing="2" border="0">
-              <tbody>
                 <tr>
                   <td>
                   <strong>当前密码</strong>
@@ -122,24 +37,9 @@
                   <button type="submin"> 确认更改 </button>
                   </td>
                 </tr>
-              </tbody>
             </table>
-          </form>
-	</div>
-</div>
-</block>
+        </form>
 
+    </div><!--./p_timeline-->
 
-<block name="myjs">
-<script type="text/javascript" src="__PUBLIC__/demo/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/demo/js/Validform_v5.3.2_min.js"></script>
-<script type="text/javascript">
-$(function(){
-	//$(".registerform").Validform();  //就这一行代码！;
-		
-	$(".registerform").Validform({
-		tiptype:4
-	});
-})
-</script>
 </block>
