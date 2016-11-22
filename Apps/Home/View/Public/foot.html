@@ -20,12 +20,23 @@
 
 </html>
 
+<!-- 返回顶部——start -->
+<div id="scrolltop" class="js_scrolltop" style="left: 90%;">
+	<a title="返回顶部"  class="scrolltopa">
+		<s class="scrolltopb"><img src="__PUBLIC__/qwhome/picture/scrolltop_2.png" alt=""></s>
+		<b>返回顶部</b>
+	</a>
+</div>
+<!-- 返回顶部——end -->
+
 <!-- 未登录&登录顶部个人信息 -->
 <script>
 	var discuz_uid = '0',GroupChangeis = 0,TodayBirthdayis = 0,NewUserWelcomeis = 0,UserBackWelcomeis = 0,TidParty = 13,LOCALWEB = 0;
 </script>
 
 <!-- 未登陆提示———start -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/no_login.css" />
+
 <if condition="$user eq null">
 <div class="user_no_login" id="_js_nologin">
 	<span class="font22">现在加入ZUK手机社区，<a href="<{:U('Home/Reg/index')}>">注册一个账号</a>或</span>
@@ -35,30 +46,3 @@
 </div>
 </if>
 <!-- 未登陆提示———end -->
-
-
-<!-- 返回顶部——start -->
-<div id="scrolltop" class="js_scrolltop">
-	<a title="返回顶部"  class="scrolltopa">
-		<s class="scrolltopb"><img src="__PUBLIC__/qwhome/picture/scrolltop_2.png" alt=""></s>
-		<b>返回顶部</b>
-	</a>
-</div>
-<!-- 返回顶部——end -->
-
-
-<!-- 广告推荐——start -->
-<!-- <div class="fullbg" style="background-image:url(__PUBLIC__/qwhome/images/235646yp35xycweuyxuanc.jpg)"></div> -->
-<!-- <div class="fullbg_link">
-	<a href="#" title="left" style="position: absolute; left:0; top:60px; height:300px; width:100px;display:block;"></a>
-	<a href="#" title="right" style="position: absolute; right:0; top:60px; height:300px; width:100px;display:block;"></a>
-</div> -->
-<!-- 广告推荐——end -->
-
-
-<script type="text/javascript">
-// var h5n = new Html5notification();
-// if(h5n.issupport()) {
-// h5n.shownotification('notice_mypost', 'http://bbs.lenovomobile.cn/home.php?mod=space&do=notice&view=mypost', 'http://uc.bbs.zuk.cn/data/avatar/000/29/81/63_avatar_small.jpg', '我的帖子 (1)', '有新的提醒，快去看看吧');
-// }
-</script>
