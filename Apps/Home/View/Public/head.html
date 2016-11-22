@@ -20,6 +20,12 @@
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_8_common.css" /> 
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_8_forum_forumdisplay.css" />
 	
+
+	 <!-- 输入框样式效果 -->
+	<script src="__PUBLIC__/emoj/jquery.js"></script>
+	<script src="__PUBLIC__/emoj/myemojiPl.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/emoj/myemojiPl.css">
+
 	<!-- mycss -->
 	<block name="mycss"></block>
 	
@@ -102,7 +108,7 @@
 			<div class="fm_userinfo">
 				<div class="fm_dibavatar js_dibavatar">
 
-					<a  href="<{:U('Space/dynamic',array('mid'=>$user['uid']))}>" target="_blank" title=""><{$user.user}></a>
+					<a  href="<{:U('Space/dynamic',array('mid'=>$user['uid']))}>" target="_blank" title=""><{$user.uname}></a>
 					( <em><a href="" class="colorlink">幼儿园</a></em> )
 
 					<div class="flu_grid js_grid">

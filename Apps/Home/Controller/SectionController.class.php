@@ -9,9 +9,7 @@
  *
  **/
 namespace Home\Controller;
-
 use Vendor\Tree;
-
 class SectionController extends ComController 
 {
 
@@ -217,17 +215,35 @@ class SectionController extends ComController
             $pcgpost = $pcgpost['0'];
             $this->assign('pcgpost', $pcgpost);
 
+            $prefix = C('DB_PREFIX');
 
             //查询评论人信息
             $tid = I('get.aid');
             // var_dump($uid);
-            $critic =M('home_comment')->table("zuk_member m,zuk_home_comment h")->where("m.uid=h.uid and h.tid=$tid")->select();
+            $critic =M('home_comment')->table("{$prefix}member m,{$prefix}home_comment h")->order('dateline asc')->where("m.uid=h.uid and h.tid=$tid and h.authorid='0'")->select();
             // var_dump($critic);
             $this->assign('critic', $critic);
 
 
-
             //查询回复评论人信息
+
+            foreach ($critic as $key => $val) {
+
+                $reply =M('home_comment')->table("{$prefix}member m,{$prefix}home_comment h")->where("h.tid=$tid and m.uid=h.authorid and h.author=$val[cid]")->select();
+
+                foreach ($reply as $key => $value) {
+
+                    if ($key = $value['author']) {
+
+                        $newarrs[$key][] = $value;
+                    }                   
+                }
+            }
+            $this->assign('reply', $newarrs);
+
+
+
+
 
         } else {
             $this->error('404 NOT FOUND');
@@ -241,12 +257,16 @@ class SectionController extends ComController
     // 快速评论
     public function fast() 
     {   
+
+        // var_dump($_POST);
+        // die;
+
         $aid = I('post.aid');
         $today = M('article')->field('mid')->where("aid = $aid")->select();
         $todays = array_column($today, 'mid');
         // var_dump($todays);
         $data['id'] = $todays[0];
-        $data['message'] = I('post.message');
+        $data['message'] = $_POST['message'];
         $data['uid'] = I('session.uid');
         $data['tid'] = I('post.aid');
         $data['dateline'] = time();       
@@ -263,24 +283,32 @@ class SectionController extends ComController
     // 回复
     public function fasta() 
     {   
+        
+        // var_dump($_POST);
         // var_dump($_GET);
         // var_dump($_SESSION);
-        // var_dump($_request);
         // die;
-        $aid = I('post.aid');
-        $today = M('article')->field('mid')->where("aid = $aid")->select();
+  
+        $prefix = C('DB_PREFIX');
+        $uid = I('post.uid');
+        $tid = I('post.tid');
+        // $reply =M('home_comment')->table("{$prefix}member m,{$prefix}home_comment h")->where("h.tid=$tid and m.uid=h.authorid")->select();
+        // var_dump($reply);die;
+        $today = M('article')->field('mid')->where("aid = $tid")->select();
         $todays = array_column($today, 'mid');
         // var_dump($todays);
         $data['id'] = $todays[0];
         $data['message'] = I('post.message');
         $data['uid'] = I('session.uid');
-        $data['tid'] = I('post.aid');
+        $data['tid'] = $tid;
+        $data['authorid'] = $uid;
+        $data['author'] = I('post.cid');
         $data['dateline'] = time();       
         if(I('post.message')!=null){            
                 $cid = M('home_comment')->data($data)->add();
-               $this->success("回复成功！",U('content',array('aid'=>$aid)));                
+               $this->success("评论成功！",U('content',array('aid'=>$tid)));                
         }else{
-            $this->error("回复失败,内容不能为空");
+            $this->error("评论失败,内容不能为空");
         }
 
     }
