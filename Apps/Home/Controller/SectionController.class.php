@@ -196,14 +196,6 @@ class SectionController extends ComController
         $this->display('article');
     }
 
-    public function posts()
-    {   
-        var_dump($user);
-        var_dump($_POST);
-    }
-
-
-
 
 /**
  *
@@ -214,6 +206,41 @@ class SectionController extends ComController
  * 功能说明：前台版块控制器。
  *
  **/
+
+    // 发帖
+    public function posts()
+    {   
+
+        if (I('post.content')==null) {
+           $this->error("发帖失败,内容不能为空");
+        }
+
+        $id = I('post.typeid');
+        $pid = M('category')->where("id = $id")->select();
+        $pid = $pid[0]['pid'];
+
+        $sid=I('post.sid');
+        $prefix = C('DB_PREFIX');
+        $data['sid'] = I('post.typeid');
+        $data['title'] = I('post.title');
+        $data['content'] = I('post.content');
+        $data['mid'] = I('session.uid');
+        $data['t'] = time();       
+        if(I('post.content')!=null){            
+            $cid = M('article')->data($data)->add();
+            $this->success("发帖成功！",U('themes',array('sid'=>$pid)));                
+        }else{
+            $this->error("发帖失败,内容不能为空");
+        }
+
+
+
+    }
+
+
+
+
+    // 查看
     public function content()
     {      
         $aid = isset($_GET['aid']) ? $_GET['aid'] : '';

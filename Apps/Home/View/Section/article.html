@@ -2,9 +2,46 @@
 
 <block name="mycss">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/post.css" />
+    <!-- <link rel="stylesheet" href="__PUBLIC__/demo/css/style.css" type="text/css" media="all" /> -->
+    <style>
+    .Validform_checktip{
+    margin-left:8px;
+    line-height:20px;
+    height:20px;
+    overflow:hidden;
+    color:#999;
+    font-size:12px;
+}
+.Validform_right{
+    color:#71b83d;
+    padding-left:20px;
+    background:url(__PUBLIC__/demo/images/right.png) no-repeat left center;
+}
+.Validform_wrong{
+    color:red;
+    padding-left:20px;
+    white-space:nowrap;
+    background:url(__PUBLIC__/demo/images/error.png) no-repeat left center;
+}
+.Validform_loading{
+    padding-left:20px;
+    background:url(__PUBLIC__/demo/images/onLoad.gif) no-repeat left center;
+}
+.Validform_error{
+    background-color:#ffe7e7;
+}
+#Validform_msg{color:#7d8289; font: 15px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; width:300px;height:100px; -webkit-box-shadow:2px 2px 3px #aaa; -moz-box-shadow:2px 2px 3px #aaa; background:#Fff; position:absolute; top:0px; right:50px; z-index:99999; display:none;filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');}
+#Validform_msg .iframe{position:absolute; left:0px; top:-1px; z-index:-1;}
+#Validform_msg .Validform_title{line-height:25px; height:25px; text-align:left; font-weight:bold; padding:0 8px; color:#fff; position:relative; background-color:#1499F8;}
+#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:22px; position:absolute; right:8px; top:0px; color:#fff; text-decoration:none;}
+#Validform_msg a.Validform_close:hover{color:#cc0;}
+#Validform_msg .Validform_info{padding:8px; border:1px solid #F0F0EE; border-top:none; text-align:left;height:59px;}
+</style>
+
 </block>
 
 <block name="main">
+
 
 <div class="breadcrumbs content">
     <a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
@@ -14,7 +51,7 @@
 </div>
 
 
-<form method="post" action="<{:U('posts')}>" id="form">
+<form method="post" action="<{:U('posts')}>" id="form" class="registerform">
     <div id="ct" class="box content">
         <div id="editorbox">
 
@@ -25,8 +62,8 @@
             <div id="postbox" class="p20" style="margin: 15px 0 0 0;text-align: right;">
                 <div class="clear mb15">
                     <div class="posttid">
-                        <select name="typeid" id="typeid" width="80">     
-                            <option value="0">选择版块分类</option>
+                        <select name="typeid" id="typeid" width="80" nullmsg="请选择版块主题！">     
+                            <option value="">选择版块分类</option>
 
                             <volist name="cglist" id="val">
                                 <option value="<{$val['id']}>"><{$val['name']}></option>
@@ -34,12 +71,12 @@
                             
                         </select>
                     </div>
-                    <input type="text" name="title" id="title" class="inputboxtitle" value="" style="width: 25em;height: 15px;float: left;" />
+                    <input type="text" name="title" id="title" class="inputboxtitle" value="" style="width: 25em;height: 15px;float: left;" datatype="*1-99" nullmsg="请填写标题！" />
                 </div>
 
                 <input type="hidden" name="uid" value="<{$user['uid']}>">
 
-                <textarea id="content" name="content" style="width:1050px;height:500px;"></textarea>
+                <textarea id="content" name="content" style="width:1050px;height:500px;" ></textarea>
 
                 <div class="postbutton" style="margin: 15px 0 0 0;">
                     <button type="submit" id="postsubmit" class="bluesmallbutton submit">
@@ -55,59 +92,23 @@
 </block>
 
 <block name="myjs">
-    <script>
-        $(function () {
-            $(".submit").click(function () {
-                alert(1);
-                var sid = $("#typeid").val();
-                var title = $("#title").val();
-                var content = $("#content").val();
-                console.log(sid);
-                if (sid == 0) {
-                    // bootbox.dialog({
-                    //     title: '友情提示：',
-                    //     message: "帖子版块必须选择。",
-                    //     buttons: {
-                    //         "success": {
-                    //             "label": "确定",
-                    //             "className": "btn-danger"
-                    //         }
-                    //     }
-                    // });
-                    alert('1');
-                    return;
-                }
-                if (title == '') {
-                    bootbox.dialog({
-                        title: '友情提示：',
-                        message: "帖子标题必须填写。",
-                        buttons: {
-                            "success": {
-                                "label": "确定",
-                                "className": "btn-danger"
-                            }
-                        }
-                    });
-                    return;
-                }
-                if (content == '') {
-                    bootbox.dialog({
-                        title: '友情提示：',
-                        message: "帖子内容需要填写。",
-                        buttons: {
-                            "success": {
-                                "label": "确定",
-                                "className": "btn-danger"
-                            }
-                        }
-                    });
-                    return;
-                    return;
-                }
-                $("#form").submit();
-            });
-        });
-    </script>
+
+<script type="text/javascript" src="__PUBLIC__/demo/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/demo/js/Validform_v5.3.2_min.js"></script>
+  <script type="text/javascript">
+$(function(){
+   var demo=$(".registerform").Validform({
+        tiptype:1,
+    });
+    
+    demo.addRule([{
+        ele:"select",
+        datatype:"*"
+
+    }]);
+    
+})
+</script>
 
     <script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
     <!-- <script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script> -->
