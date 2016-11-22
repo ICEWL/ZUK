@@ -79,9 +79,9 @@
                                 <i></i>个人动态
                             </a>
                         </li> 
-                        <li class="<if condition=" $ANAME eq 'theme' ">a</if>">
+                        <li class="<if condition=" $ANAME eq 'stheme' ">a</if>">
                             <div class="r_arrow"></div>
-                                <a href="<{:U('Home/Space/theme',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>发表的主题">
+                                <a href="<{:U('Home/Space/stheme',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>发表的主题">
                                 <i></i><span class="graysmallbox"><{$usertotal}></span>主题
                             </a>
                         </li> 

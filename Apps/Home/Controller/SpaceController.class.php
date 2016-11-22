@@ -44,7 +44,7 @@ class SpaceController extends ComController
     }
 
 
-    public function theme($p = 1)
+    public function stheme($p = 1)
     {   
 
         $article = M('article');
@@ -75,7 +75,7 @@ class SpaceController extends ComController
         $this->assign('postslist', $postslist);
         $this->assign('page', $page);
 
-        $this->display('theme');
+        $this->display('stheme');
     }
 
 

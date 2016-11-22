@@ -20,12 +20,6 @@
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_8_common.css" /> 
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_8_forum_forumdisplay.css" />
 	
-
-	 <!-- 输入框样式效果 -->
-	<script src="__PUBLIC__/emoj/jquery.js"></script>
-	<script src="__PUBLIC__/emoj/myemojiPl.js"></script>
-	<link rel="stylesheet" href="__PUBLIC__/emoj/myemojiPl.css">
-
 	<!-- mycss -->
 	<block name="mycss"></block>
 	
@@ -36,12 +30,6 @@
 
 	<script src="__PUBLIC__/qwhome/js/common.js" type="text/javascript"></script>
 	<!-- <script src="__PUBLIC__/qwhome/js/sea.js" type="text/javascript"></script> -->
-	
-
-	<!-- 释放 $ 标识符控制 -->
-	<script>
-		// jQuery.noConflict();
-	</script>
 
 	<script src="__PUBLIC__/qwhome/js/jquery.forum.js" type="text/javascript"></script>
 	<!-- <script src="__PUBLIC__/qwhome/js/forum.js" type="text/javascript"></script> -->
@@ -97,8 +85,7 @@
 				<li class="<if condition=" $CNAME eq 'Turntable' ">current</if>"><a href="<{:U('Home/Turntable/index')}>">转盘</a></li>
 			</ul>
 		</div>
-
-		<if condition="$user eq null">
+		<if condition="$user eq ''">
 			<div class="fm_userinfo fm_noinfo">
 				<a href="<{:U('Home/Login/index')}>" class="ppdiag">登录</a>
 				<span class="pipe">|</span>

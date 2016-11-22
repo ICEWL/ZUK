@@ -144,7 +144,7 @@ function category_get_sons($sid, &$array = array())
  * @param $condition
  * @return $string
  */
-function total($tabname, $condition)
+function total($tabname, $condition = array())
 {   
     $where = "1 = 1 ";
     if ($condition) {

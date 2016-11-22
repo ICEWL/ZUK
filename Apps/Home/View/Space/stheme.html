@@ -1,0 +1,33 @@
+<!-- 主题 -->
+<extend name="Space/dynamic" />
+
+<block name="main">
+
+    <div class="p_header"> 
+        <h3 class="modname">主题</h3> 
+    </div>
+
+    <if condition="$postslist neq ''">
+        <div class="p_threadlist"> 
+            <ul>
+            <volist name="postslist" id="val">
+                <li> 
+                    <em>
+                        <span title="<{$val['t']|date="Y-m-d H:i:s",###}>">
+                            <{$val['t']|date="Y-m-d H:i:s",###}>
+                        </span><br />
+                        <a href="<{:U('Section/themes',array('cgid'=>$val['sid'],'sid'=>$val['pid']))}>" class="color1" target="_blank"><{$val['name']}></a>
+                    </em>
+                    <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>" class="font16 lh50" target="_blank">
+                    <if condition="$val.status eq '1'"><span style="color: red">【待审核】</span></if>
+                    <{$val['title']}>
+                    </a> 
+                </li> 
+            </volist>
+            </ul> 
+        </div>
+    <else />
+        <div class="time_prompt nomyhomelog  graytopborder"></div>
+    </if>
+
+</block>

@@ -27,13 +27,24 @@ class ComController extends BaseController
         }
 
         // 查询登录用户信息
+        $user = '';
         $UID = I('session.uid/d');
         if ($UID) {
-            $user = M('Member')->where(array('uid' => $UID))->find();
-            $this->assign('user', $user);
+            $user = M('Member')->where(array('uid' => $UID))->find();  
         }
+        $this->assign('user', $user);
 
-        // 查询版块信息
+        // 推荐阅读
+        $read = M('read')->limit(3)->order('o asc')->select();
+        $this->assign('read', $read);
+
+        // 全民话题
+        $topic = M('article')->where(array('sid' => 137))->limit(1)->order('t asc')->select();
+        $ft = explode('：',$topic['0']['title']); 
+        $topic['0']['title'] = $ft['1'];
+        $this->assign('topic', $topic['0']);
+
+        // 快速入口
         $CGARR = M('category')->where('pid = 0')->order('o asc')->select();
         foreach ($CGARR as $k => $v) {
             if ($v['type']==0) {
@@ -55,10 +66,6 @@ class ComController extends BaseController
         // 获取当前操作名称
         $ANAME = ACTION_NAME;
         $this->assign('ANAME', $ANAME);
-
-        // 推荐阅读
-        $read = M('read')->limit(3)->order('o asc')->select();
-        $this->assign('read', $read);
 
     }
 
@@ -86,12 +93,5 @@ class ComController extends BaseController
         }
         return $flag;
     }
-
-
-    public function sidebar()
-    {
-
-    }
-
 
 }

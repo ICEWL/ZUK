@@ -1,0 +1,205 @@
+<extend name="Index/index" />
+
+<block name="main">
+
+    <div class="breadcrumbs content"> 
+        <a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
+        <em>&raquo;</em>
+        <a href="<{:U('Home/Section/index')}>">版块</a> 
+        <em>&raquo;</em> 
+        <a href="<{:U('themes',array('sid'=>$arr['id']))}>"><{$arr['name']}></a>
+    </div> 
+
+    <div class="content forumdisplay">
+
+        <div class="box">
+
+            <div class="forum_top_icon">
+             <img src="__ROOT__<{$arr['cgicon']}>" alt="" height="140" width="140" />
+            </div> 
+
+            <div class="forum_top_name"> 
+                <h2><a href="<{:U('themes',array('sid'=>$arr['id']))}>"><{$arr['name']}></a></h2> 
+                <p><{$arr['description']}></p> 
+            </div> 
+
+            <div class="forum_top_info"> 
+                <div class="right">
+                    版主: <a href="" class="notabs" c="1">静爱与静界</a>
+                </div>
+                今日: <{$todayposts}><span class="pipe">|</span>主题: <{$totalpost}>
+            </div> 
+        </div>
+
+
+        <div class="main">
+
+            <div class="box main_box">
+
+                <!-- 小图推荐-start -->
+                <h3 class="modname">推荐阅读</h3>
+                <div class="recommend_pic_small">
+                    <ul>
+                    <volist name="read" id="val">
+                        <li>
+                            <a href="<{$val['url']}>"  target="_blank" title="<{$val['title']}>">
+                                <img src="<{$val['pic']}>" alt="<{$val['title']}>" height="100" width="228">
+                            </a>
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+                <!-- 小图推荐-end -->
+
+
+                <div class="graybg graytopborder"> 
+                    <div class="tab"> 
+                        <ul> 
+                            <li class="
+                                <if condition=" I('get.cgid') eq '' ">a</if>
+                            ">
+                                <a href="<{:U('themes',array('sid'=>$arr['id']))}>">全部<span></span></a>
+                            </li> 
+                            
+                            <volist name="category" id="val">
+                                <li class="
+                                    <if condition=" I('get.cgid') eq $val['id'] ">a</if>
+                                ">
+                                    <a href="<{:U('themes',array('cgid'=>$val['id'],'sid'=>$val['pid']))}>"><{$val.name}><span></span></a>
+                                </li> 
+                            </volist>
+
+                        </ul> 
+                    </div> 
+                </div> 
+
+
+                <div class="oneway_text graybottomborder"> 
+                    <ul> 
+                        <li>
+                            <a href="<{:U('themes',array('sid'=>$val['pid'],'filter'=>'new'))}>">
+                                <i class="newthead"></i>最新
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="<{:U('themes',array('sid'=>$val['pid'],'filter'=>'hot'))}>">
+                                <i class="hotthead"></i>热门
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="<{:U('themes',array('sid'=>$val['pid'],'filter'=>'digest'))}>">
+                                <i class="verythead"></i>精华
+                            </a>
+                        </li> 
+                    </ul> 
+                </div> 
+                
+                <div class="thread minh" id="threadlist" summary="forum_92"> 
+                    
+                    <!-- 置顶列表 -->
+                    <div class="threadlist"> 
+
+                        <div class="threadlist_stat">
+                            <a href="" title="93 个回帖">93</a>
+                        </div> 
+
+                        <div class="threadlist_title"> 
+                            <div class="right"></div> 
+                            <em>[<a href="">活动公告</a>]</em>
+                            <a href="" style="font-weight: bold;color: #EE1B2E;" onclick="atarget(this)">
+                                【Moto M】天声丽音，最强神文案征集大赛
+                            </a> 
+                            <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" /> 
+                            <span class="redsmallbox" title="全局置顶">置顶</span>
+                        </div> 
+
+                        <div class="threadlist_info">
+                            <div class="lastreply">
+                                <a href="">仙女 @ <span title="2016-11-16 10:27">11&nbsp;分钟前</span></a>
+                            </div> 
+                             <a href="" c="1" style="color: #FF0000;">仙女</a>
+                            <span class="authphone ap_icon" hwtxts="ZUK Z2121">
+                                <a href=""><img src="__PUBLIC__/qwhome/picture/authphone_p.png" /></a>
+                            </span> @ 
+                            <span title="2016-11-10">6&nbsp;天前</span> 
+                        </div>
+
+                    </div> 
+
+
+                    <div id="separatorline">帖子列表</div> 
+                    
+                <volist name="list" id="v">
+                    <div class="threadlist"> 
+
+                        <div class="threadlist_stat">
+                            <a href="" title="23 个回帖">23</a>
+                        </div> 
+
+                        <div class="threadlist_title"> 
+                            <div class="right"></div> 
+                            <em>[<a href="<{:U('themes',array('cgid'=>$v['sid'],'sid'=>$val['pid']))}>"><{$v.name}></a>]</em> 
+                            <a href="<{:U('content',array('aid'=>$v['aid']))}>">
+                                <{$v.title}>
+                            </a>
+                            <if condition=" $v.thumbnail neq ''">
+                            <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+                            </if>
+                        </div>
+
+                        <div class="threadlist_imglist">
+                            <div>
+                                <a href="<{:U('content',array('aid'=>$v['aid']))}>">
+                                    <img src="
+                                    <if condition=" $v.thumbnail eq ''">__ROOT__/Uploads/thumbnail/jz.jpg
+                                    <else/>__ROOT__<{$v[thumbnail]}>
+                                    </if>
+                                    " />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="threadlist_info"> 
+                            <div class="lastreply">
+                                <span title=""><{$v['t']|date="Y-m-d H:i:s",###}></span>
+                            </div>
+                            @ <a href="<{:U('Space/dynamic',array('mid'=>$v['mid']))}>" c="1" style="color: #000000;">
+                                <{$v.user}>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </volist>
+                <if condition="empty($list)"><div class="time_prompt nothread"></div></if>
+                </div> 
+
+            </div><!--./box main_box-->
+
+
+            <div class="pg">
+                <{$page}>
+            </div>
+
+        </div><!--./main-->
+
+
+        <div class="sidebar"> 
+
+            <div class="box p20"> 
+                <a href="<{:U('Home/Section/article',array('sid'=>$arr['id']))}>" class="bluebigbutton" title="发新帖">发新帖</a> 
+            </div> 
+        
+        <include file="Public/sidebar"/>
+
+        </div><!--sidebar-->
+
+    </div> 
+
+
+
+</block>
+
+<block name="myjs">
+
+</block>

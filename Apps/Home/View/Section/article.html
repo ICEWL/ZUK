@@ -1,87 +1,119 @@
 <extend name="Index/index" />
 
+<block name="mycss">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/post.css" />
+</block>
+
 <block name="main">
 
+<div class="breadcrumbs content">
+    <a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
+    <em>»</em> <a href="<{:U('Home/Section/index')}>">版块</a> 
+    <em>»</em> <a href="<{:U('themes',array('sid'=>$cgname['id']))}>"><{$cgname['name']}></a>
+    <em>»</em>发表帖子
+</div>
 
 
+<form method="post" action="<{:U('posts')}>" id="form">
+    <div id="ct" class="box content">
+        <div id="editorbox">
 
-  <div id="wp" class="wp">
-   <div id="pt" class="bm cl"> 
-    <div class="z">
-     <a href="./" class="nvhm" title="首页">BoBo演示站</a> 
-     <em>›</em> 
-     <a href="forum.php">论坛</a> 
-     <em>›</em> 
-     <a href="forum.php?gid=1">热门动态</a> 
-     <em>›</em> 
-     <a href="forum.php?mod=forumdisplay&amp;fid=45">网友杂谈</a> 
-     <em>›</em> 发表帖子 
-    </div> 
-   </div>
-   <form method="post" autocomplete="off" id="postform" action="" onsubmit="return validate(this)"> 
-    <div id="ct" class="ct2_a ct2_a_r wp cl" style="padding:15px; background:#fff; margin-bottom:20px;"> 
-     <input type="hidden" name="formhash" id="formhash" value="9f03e547" /> 
-     <input type="hidden" name="posttime" id="posttime" value="1479110002" /> 
-     <input type="hidden" name="wysiwyg" id="e_mode" value="1" /> 
-     <div class="bm bw0 cl" id="editorbox"> 
-      <ul class="tb cl mbw"> 
-       <li class="a"><a href="javascript:;" onclick="switchpost('forum.php?mod=post&amp;action=newthread')">发表帖子</a></li>
+            <div class="tab graybg">
+                <ul class="graybg p20"><li class="a"><a href="javascript:;">发表帖子<span></span></a></li></ul>
+            </div>
 
-      </ul> 
-      <div id="draftlist_menu" style="display:none"> 
-       <ul class="xl xl1"> 
-        <li class="xi2"><a href="forum.php?mod=guide&amp;view=my&amp;type=thread&amp;filter=save&amp;fid=0" target="_blank">查看所有草稿</a></li> 
-       </ul> 
-      </div> 
-      <div id="postbox"> 
-       <div class="pbt cl"> 
-        <div class="ftid"> 
-         <select name="typeid" id="typeid" width="100">
-          <option value="0">选择主题分类</option>
-          <option value="1">最新信息</option>
-          <option value="2">科技达人</option> 
-          <option value="3">网友分享</option> 
-          <option value="4">推荐机型</option> 
-          <option value="5">亲测可用</option> 
-      </select> 
-        </div> 
-        <div class="z"> 
-         <span>
-         	<input type="text" name="subject" id="subject" class="px" value="" onblur="if($('tags')){relatekw('-1','-1');doane();}" onkeyup="strLenCalc(this, 'checklen', 80);" style="width: 25em" tabindex="1"  />
-         </span> 
-         <span id="subjectchk">还可输入 <strong id="checklen">80</strong> 个字符</span> 
-         <script type="text/javascript">strLenCalc($('subject'), 'checklen', 80)</script> 
-        </div> 
-       </div> 
+            <div id="postbox" class="p20" style="margin: 15px 0 0 0;text-align: right;">
+                <div class="clear mb15">
+                    <div class="posttid">
+                        <select name="typeid" id="typeid" width="80">     
+                            <option value="0">选择版块分类</option>
 
-			<textarea id="editor_id" name="content" style="width:900px;height:500px;">
-			
-			</textarea>
+                            <volist name="cglist" id="val">
+                                <option value="<{$val['id']}>"><{$val['name']}></option>
+                            </volist>
+                            
+                        </select>
+                    </div>
+                    <input type="text" name="title" id="title" class="inputboxtitle" value="" style="width: 25em;height: 15px;float: left;" />
+                </div>
 
+                <input type="hidden" name="uid" value="<{$user['uid']}>">
 
+                <textarea id="content" name="content" style="width:1050px;height:500px;"></textarea>
 
-  
-       <div class="mtm mbm pnpost"> 
-        <a href="home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=45" class="y" target="_blank">本版积分规则</a> 
-        <button type="submit" id="postsubmit" class="pn pnc" value="true" name="topicsubmit"> <span>发表帖子</span> </button> 
-    
+                <div class="postbutton" style="margin: 15px 0 0 0;">
+                    <button type="submit" id="postsubmit" class="bluesmallbutton submit">
+                        <span>发表帖子</span>
+                    </button>
+                </div>
+            </div>
 
-
-       </div> 
-      </div> 
-     </div> 
-    </div> 
-   </form> 
-  
+        </div><!--./editorbox-->
+    </div><!--./box content-->
+</form>
   
 </block>
 
 <block name="myjs">
-<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
-<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script>
-<script>
-        KindEditor.ready(function(K) {
-                window.editor = K.create('#editor_id');
+    <script>
+        $(function () {
+            $(".submit").click(function () {
+                alert(1);
+                var sid = $("#typeid").val();
+                var title = $("#title").val();
+                var content = $("#content").val();
+                console.log(sid);
+                if (sid == 0) {
+                    // bootbox.dialog({
+                    //     title: '友情提示：',
+                    //     message: "帖子版块必须选择。",
+                    //     buttons: {
+                    //         "success": {
+                    //             "label": "确定",
+                    //             "className": "btn-danger"
+                    //         }
+                    //     }
+                    // });
+                    alert('1');
+                    return;
+                }
+                if (title == '') {
+                    bootbox.dialog({
+                        title: '友情提示：',
+                        message: "帖子标题必须填写。",
+                        buttons: {
+                            "success": {
+                                "label": "确定",
+                                "className": "btn-danger"
+                            }
+                        }
+                    });
+                    return;
+                }
+                if (content == '') {
+                    bootbox.dialog({
+                        title: '友情提示：',
+                        message: "帖子内容需要填写。",
+                        buttons: {
+                            "success": {
+                                "label": "确定",
+                                "className": "btn-danger"
+                            }
+                        }
+                    });
+                    return;
+                    return;
+                }
+                $("#form").submit();
+            });
         });
-</script>
+    </script>
+
+    <script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+    <!-- <script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script> -->
+    <script>
+            KindEditor.ready(function(K) {
+                    window.editor = K.create('#content');
+            });
+    </script>
 </block>

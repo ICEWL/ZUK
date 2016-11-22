@@ -15,7 +15,7 @@
                     <volist name="slide" id="val">
                         <li>
                             <a href=" " target="_blank">
-                                <img src="<{$val['pic']}>" height="350" width="770" alt="<{$val['title']}>">
+                                <img src="__ROOT__<{$val['pic']}>" height="350" width="770" alt="<{$val['title']}>">
                             </a>
                         </li>
                     </volist>
@@ -45,7 +45,7 @@
                 <volist name="read" id="val">
                     <li>
                         <a href="<{$val['url']}>"  target="_blank" title="<{$val['title']}>">
-                            <img src="<{$val['pic']}>" alt="<{$val['title']}>" height="100" width="228">
+                            <img src="__ROOT__<{$val['pic']}>" alt="<{$val['title']}>" height="100" width="228">
                         </a>
                     </li>
                 </volist>
@@ -53,7 +53,7 @@
             </div>
             <!-- 小图推荐-end -->
 
-            <div class="graybg graytopborder index_tab"  name="threadsbody" id="threadsbody">
+            <div class="graybg graytopborder index_tab">
                 <h3 class="modname">社区讨论</h3>
                 <div class="tab">
                     <ul class="tabul">
@@ -82,23 +82,21 @@
                 <form method="post" autocomplete="off" name="moderate" id="moderate" action="">
 
                 <volist name="list" id="val">
-                    <div class="threadlist" id="normalthread_62430" >
+                    <div class="threadlist">
                         <div class="threadlist_stat threadlist_stat_hot">
-                            <a href=" " title="696 个回帖">696</a>
+                            <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>" title="<{$val['total']}>个回帖"><{$val['total']}></a>
                         </div>
                         <div class="threadlist_title">
                             <div class="right"></div>
                             <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>"><{$val['title']}></a>
-                            <!-- <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
-                            <img src="__PUBLIC__/qwhome/picture/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" /> -->
-                            <img src="<if condition=" $val.n egt 50">__PUBLIC__/qwhome/picture/hot_3.gif</if>" align="absmiddle" />
+                            <img src="<if condition="$val.n egt 50">__PUBLIC__/qwhome/picture/hot_3.gif</if>" align="absmiddle" />
                         </div>
                         <div class="threadlist_imglist">
                             <div>
                                 <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>">
                                     <img src="
-                                    <if condition=" $val.thumbnail eq ''">__ROOT__/Uploads/thumbnail/jz.jpg
-                                    <else/>__ROOT__<{$val[thumbnail]}>
+                                    <if condition="$val.thumbnail eq ''">__ROOT__/Uploads/thumbnail/jz.jpg
+                                    <else />__ROOT__<{$val['thumbnail']}>
                                     </if>
                                     ">
                                 </a>
@@ -197,9 +195,9 @@
     </div><!--./sidebar-->
 
 </div>
-
+<include file="Public/link"/>
 </block>
 
-<include file="Public/link"/>
+
 
 <include file="Public/foot"/>

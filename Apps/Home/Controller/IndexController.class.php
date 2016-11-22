@@ -24,7 +24,7 @@ class IndexController extends ComController
         $offset = $pagesize * ($p - 1);  //计算记录偏移量
         $p = intval($p) > 0 ? $p : 1;
         $sid = isset($_GET['sid']) ? $_GET['sid'] : '';  //GET获取版块ID
-        $where = "{$prefix}article.status = 0 ";  //过滤未审核帖子
+        $where = "1=1 ";
 
         if ($sid) {
             $sids_array = category_get_sons($sid);
@@ -32,15 +32,35 @@ class IndexController extends ComController
             $where .= "and {$prefix}article.sid in ($sids) ";
         }
 
-        // $orderby = "t desc";  //默认按照时间降序
+        // 按照点击量降序
         $orderby = "n desc";
 
+        // 统计
         $count = $article->where($where)->count();
 
-        $list = $article->field("{$prefix}article.*,{$prefix}category.name,{$prefix}member.user")->where($where)->order($orderby)->join("{$prefix}member on {$prefix}article.mid = {$prefix}member.uid" , 'left')->join("{$prefix}category on {$prefix}article.sid = {$prefix}category.id", 'left')->limit($offset . ',' . $pagesize)->select();
+        // 帖子列表
+        $lists = $article->field("{$prefix}article.*,{$prefix}category.name,{$prefix}member.user")
+                        ->where($where)
+                        ->order($orderby)
+                        ->join("{$prefix}member on {$prefix}article.mid = {$prefix}member.uid" , 'left')
+                        ->join("{$prefix}category on {$prefix}article.sid = {$prefix}category.id", 'left')
+                        ->limit($offset . ',' . $pagesize)
+                        ->select();
 
+        foreach ($lists as $key => $v) {
+            $v['total'] = '';
+            $total = M('home_comment')->where("tid = $v[aid]")->count();// 回帖数
+            $v['total'] = $total;
+            if ($v['status']==0) {//过滤未审核帖子
+                $list[]=$v;
+            }
+        }                
+        $this->assign('list', $list);
+
+        // 分页
         $page = new \Think\Page($count, $pagesize);
         $page = $page->show();
+        $this->assign('page', $page);
 
         // 轮播图
         $slide = M('slide')->order('o asc')->select();
@@ -53,9 +73,7 @@ class IndexController extends ComController
         // 友情链接
         $links = M('links')->order('o asc')->select();
         $this->assign('links', $links);
-
-        $this->assign('list', $list);
-        $this->assign('page', $page);
+        
         $this->display();
 
     }

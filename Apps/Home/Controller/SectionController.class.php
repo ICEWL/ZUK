@@ -9,7 +9,9 @@
  *
  **/
 namespace Home\Controller;
+
 use Vendor\Tree;
+
 class SectionController extends ComController 
 {
 
@@ -54,7 +56,7 @@ class SectionController extends ComController
             $todaytotal = M('category')->table('zuk_category as cg,zuk_article as a')
                         ->where("cg.pid = $v[id] and a.sid = cg.id and a.t>$today and a.t<$endtoday")
                         ->count();
-                         $v['todaytotal'] = $todaytotal;
+            $v['todaytotal'] = $todaytotal;
 
             if ($v['type']==0) {
                 $arr['zuk'][]=$v;
@@ -82,10 +84,14 @@ class SectionController extends ComController
         $this->display();
     }
 
-    public function theme()
+    public function themes($p = 1)
     {   
 
         $article = M('article');
+
+        $pagesize = 8;  //每页数量
+        $offset = $pagesize * ($p - 1);  //计算记录偏移量
+        $p = intval($p) > 0 ? $p : 1;
 
         $prefix = C('DB_PREFIX');
 
@@ -135,14 +141,16 @@ class SectionController extends ComController
         // if ($keyword) {
         //     $where .= "and {$prefix}article.title like '%{$keyword}%' ";
         // }
-
+        
         //默认按照时间降序
-        // $orderby = "t desc";
-        // if ($order == "asc") {
-
-        //     $orderby = "t asc";
-        // }
-
+        $filter = isset($_GET['filter']) ? $_GET['filter'] : ''; 
+        if ($filter == "new") {
+            $orderby = "t desc";
+        }elseif ($filter == "hot") {
+            $orderby = "n desc";
+        }else{
+            $orderby = "t desc";
+        }
 
         // 查询帖子
         $list = $article->field("{$prefix}article.*,{$prefix}category.name,{$prefix}member.user")->where($where)->order($orderby)->join("{$prefix}member on {$prefix}article.mid = {$prefix}member.uid" , 'left')->join("{$prefix}category on {$prefix}article.sid = {$prefix}category.id", 'left')->limit($offset . ',' . $pagesize)->select();
@@ -161,7 +169,37 @@ class SectionController extends ComController
         $this->assign('list', $list);
         $this->assign('page', $page);
 
-        $this->display('theme');
+        $this->display('themes');
+    }
+
+    public function article()
+    {   
+        $flag = $this->check_login();
+        if (!$flag) {
+            $errormessage = '没有权限在该版块发帖';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/error');
+            die;
+        }
+
+        $sid = isset($_GET['sid']) ? $_GET['sid'] : '';
+        $cgname = M('category')->where(array('id'=>$sid,'pid'=>'0'))->select();
+        if (empty($cgname)) {
+            $this->error('404 NOT FOUND');
+        }
+        $this->assign('cgname', $cgname['0']);
+
+        $cgpid = $cgname['0']['id'];
+        $cglist = M('category')->where(array('pid'=>$cgpid))->select();
+        $this->assign('cglist', $cglist);
+
+        $this->display('article');
+    }
+
+    public function posts()
+    {   
+        var_dump($user);
+        var_dump($_POST);
     }
 
 

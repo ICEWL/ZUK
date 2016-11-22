@@ -19,11 +19,11 @@
 		<volist name="Section['zuk']" id="v">
 			<div class="mainforum box">
 				<div class="mainforumicon">
-					<a href="<{:U('theme',array('sid'=>$v['id']))}>">
-						<img src="__ROOT__<{$v[cgicon]}>" height="90" width="150" alt=""></a>
+					<a href="<{:U('themes',array('sid'=>$v['id']))}>">
+						<img src="__ROOT__<{$v['cgicon']}>" height="90" width="150" alt=""></a>
 				</div>
 				<div class="mainforumcontent">
-					<h2><a href="<{:U('theme',array('sid'=>$v['id']))}>"><{$v['name']}></a></h2>
+					<h2><a href="<{:U('themes',array('sid'=>$v['id']))}>"><{$v['name']}></a></h2>
 					<p><{$v['title']}></p>
 					<p class="mainforumcontentinfo">
 						今日: <font class="bluecolor"><{$v['todaytotal']}></font>
@@ -43,13 +43,13 @@
 			<volist name="val" id="v">
 				<div class="mainforum">
 					<div class="mainforumicon">
-						<a href="<{:U('theme',array('sid'=>$v['id']))}>">
-							<img src="__ROOT__<{$v[cgicon]}>" align="left" alt="" />
+						<a href="<{:U('themes',array('sid'=>$v['id']))}>">
+							<img src="__ROOT__<{$v['cgicon']}>" align="left" alt="" />
 						</a>
 					</div>
 					<div class="mainforumcontent">
 						<h2>
-							<a href="<{:U('theme',array('sid'=>$v['id']))}>"><{$v['name']}></a>
+							<a href="<{:U('themes',array('sid'=>$v['id']))}>"><{$v['name']}></a>
 						</h2>
 						<p><{$v['title']}></p>
 						<p>今日：<font class="bluecolor"><{$v['todaytotal']}></font>

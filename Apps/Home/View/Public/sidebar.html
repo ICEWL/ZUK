@@ -1,9 +1,9 @@
 <div class="box">
     <h3 class="modname">
-        <span class="more">第16期 - 2016年10月18日更新</span>全民话题
+        <span class="more"><{$topic['t']|date="Y年m月d日",###}>更新</span>全民话题
     </h3>
     <div class="s_topic" style="background:url(__PUBLIC__/qwhome/images/105252bw0woohoy2377r1g.jpg); ">
-        <a href="" class="s_topic_content">手机带来的便利
+        <a href="<{:U('Section/content',array('aid'=>$topic['aid']))}>" class="s_topic_content"><{$topic['title']}>
             <span class="bluesmallblankbutton">参与讨论</span>
         </a>
     </div>
