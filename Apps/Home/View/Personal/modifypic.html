@@ -8,7 +8,22 @@
     </div>
 
     <div class="p_timeline">
-	<{:UpImage("head",100,100,$user['head'])}>
+	    <form method="post" id="postform" class="registerform" action="<{:U('update')}>" >
+	    	<input type="hidden" name="uid" value="<{$user['uid']}>">
+			<table cellpadding="2" cellspacing="2" border="0">
+                <tr>
+                  <td>
+					<{:UpImage("head",100,100,$user['head'])}>
+				  </td>
+				</tr>
+				<tr>
+	              <td>
+	              <strong></strong>
+	              <button type="submin"> 确认更改 </button>
+	              </td>
+	            </tr>
+            </table>
+		</form>
     </div><!--./p_timeline-->
 
 </block>

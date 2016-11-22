@@ -1,0 +1,21 @@
+<include file="Public/head"/>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_2_forum_viewthread.css">
+
+<div class="content " id="showmessage">
+  <div class="alert_error"></div>
+  <div class="box succeedmessage">
+    <div id="messagetext">
+    <p><{$errormessage}></p>
+    <script type="text/javascript">
+      if(history.length > (BROWSER.ie ? 0 : 1)) {
+        document.write('<p><a href="javascript:history.back()">[ 点击这里返回上一页 ]</a></p>');
+      } else {
+        document.write('<p><a href="./">[ 联想手机社区 首页 ]</a></p>');
+      }
+    </script>
+    </div>
+  </div>
+</div>
+
+<include file="Public/foot"/>

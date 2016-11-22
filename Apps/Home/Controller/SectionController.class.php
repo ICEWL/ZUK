@@ -95,20 +95,17 @@ class SectionController extends ComController
 
         $prefix = C('DB_PREFIX');
 
-        $sid = isset($_GET['sid']) ? $_GET['sid'] : '';
-
-        $cgid = isset($_GET['cgid']) ? $_GET['cgid'] : '';
-
-        $keyword = isset($_GET['keyword']) ? htmlentities($_GET['keyword']) : '';
+        $sid = I('get.sid/d') ? I('get.sid/d') : '0';
+        $cgid = I('get.cgid/d') ? I('get.cgid/d') : '0';
 
         $order = isset($_GET['order']) ? $_GET['order'] : 'DESC';
 
         $where = "{$prefix}article.status = 0 ";
 
-        if ($sid) {
+        // 查询当前版块信息
+        $arr = M('category')->where("id = $sid")->select();
 
-            // 查询当前版块信息
-            $arr = M('category')->where("id = $sid")->select();
+        if ($arr) {
 
             // 获取当前版块子版块信息
             $category = M('category')->field('id,pid,name')->where("pid = $sid")->order('o asc')->select();
@@ -131,16 +128,15 @@ class SectionController extends ComController
             $where .= "and {$prefix}article.sid in ($sids) ";
 
         } else {
-            $this->error('404 NOT FOUND');
+            $errormessage = '抱歉，指定的版块不存在';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/notfound');
+            die;
         }
 
         if ($cgid) {
             $where .= "and {$prefix}article.sid = $cgid";
         }
-
-        // if ($keyword) {
-        //     $where .= "and {$prefix}article.title like '%{$keyword}%' ";
-        // }
         
         //默认按照时间降序
         $filter = isset($_GET['filter']) ? $_GET['filter'] : ''; 
@@ -197,6 +193,7 @@ class SectionController extends ComController
     }
 
 
+
 /**
  *
  * 版权所有：ICEWL
@@ -233,22 +230,17 @@ class SectionController extends ComController
             $this->error("发帖失败,内容不能为空");
         }
 
-
-
     }
 
-
-
-
-    // 查看
     public function content()
     {      
-        $aid = isset($_GET['aid']) ? $_GET['aid'] : '';
+        $aid = isset($_GET['aid']) ? $_GET['aid'] : '0';
+        $arr = M('article')->where("aid = $aid")->select();
 
-        if ($aid) {
+        if ($arr) {
 
             // 查询帖子详情
-            $arr = M('article')->where("aid = $aid")->select();
+            
             $arr = $arr['0'];
             $this->assign('arr', $arr);
 
@@ -291,7 +283,7 @@ class SectionController extends ComController
 
 
             //查询回复评论人信息
-
+            $newarrs = array();
             foreach ($critic as $key => $val) {
 
                 $reply =M('home_comment')->table("{$prefix}member m,{$prefix}home_comment h")->where("h.tid=$tid and m.uid=h.authorid and h.author=$val[cid]")->select();
@@ -299,19 +291,17 @@ class SectionController extends ComController
                 foreach ($reply as $key => $value) {
 
                     if ($key = $value['author']) {
-
                         $newarrs[$key][] = $value;
                     }                   
                 }
             }
             $this->assign('reply', $newarrs);
 
-
-
-
-
         } else {
-            $this->error('404 NOT FOUND');
+            $errormessage = '抱歉，指定的帖子不存在或已被删除或正在被审核';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/notfound');
+            die;
         }
         
         $this->display('content');

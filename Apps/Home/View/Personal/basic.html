@@ -64,48 +64,65 @@
                     <br>
                     <div class="p-subnav">以下个人信息仅供活动,奖品发放使用,不会对外公开</div>
 
-                    <form method="post" id="postform" class="registerform">
-                        <input type="hidden" name="formhash" id="formhash" value="2935a076">
+                    <form method="post" id="postform" class="registerform" action="<{:U('update')}>">
+                        <input type="hidden" name="uid" value="<{$user['uid']}>">
                         <table cellpadding="2" cellspacing="2" border="0">
                             <tr>
                                 <td>
+                                    <strong>用户名</strong>
+                                    <input type="text" name="user" value="<{$user['user']}>" disabled> 
+                                    <span style="float:right">(用户名无法修改)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     <strong>昵称</strong>
-                                    <input type="text" name="uname" datatype="*5-16" errormsg="请输入5到10个任意字符的昵称！"> 
-                                    <span style="float:right">(昵称一旦设置无法修改)</span>
+                                    <input type="text" name="uname" datatype="*5-16" errormsg="请输入5到10个任意字符的昵称！" value="<{$user['uname']}>"> 
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <strong>性别</strong>
-                                    <label><input type="radio" name="userinfo[gender]" value="1" class="px">男</label>
+                                    <label>
+                                        <input type="radio" name="gender" value="1" class="px" 
+                                        <if condition="$user.sex eq '1'">checked</if>
+                                        <if condition="$user.sex neq '0'">disabled</if>
+                                        >男
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender" value="2" class="px" 
+                                        <if condition="$user.sex eq '2'">checked</if>
+                                        <if condition="$user.sex neq '0'">disabled</if>
+                                        >女
+                                    </label>
                                     <span class="pipe"></span>
-                                    <label><input type="radio" name="userinfo[gender]" value="2" class="px">女</label>
                                     <span style="float:right">(性别一旦设置无法修改)</span>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            <tr>
                                 <td>
                                     <strong>生日</strong>
-
+                                    <input class="form-control" id="birthday" name="birthday"
+                                       value="<{$udrt['birthday']|date=" Y-m-d",###}>" type="text" />
                                     <span style="float:right">(生日一旦设置无法修改)</span>
                                 </td>
-                            </tr> -->
+                            </tr>
                             <tr>
                                 <td>
                                     <strong>手机</strong>
-                                    <input type="text" name="userinfo[mobile]"  datatype="m" nullmsg="请输入您的手机号码！" errormsg="请输入您的手机号码！" value="<{$user['phone']}>" >
+                                    <input type="text" name="mobile"  datatype="m" nullmsg="请输入您的手机号码！" errormsg="请输入您的手机号码！" value="<{$user['phone']}>" >
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <strong>QQ</strong>
-                                    <input type="text" name="userinfo[qq]" datatype="n6-13" errormsg="请输入6到13个数字的QQ！" value="<{$user['qq']}>" >
+                                    <input type="text" name="qq" datatype="n6-13" errormsg="请输入6到13个数字的QQ！" value="<{$user['qq']}>" >
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <strong>邮箱</strong>
-                                    <input type="text" name="userinfo[email]" datatype="e" errormsg="请输入正确的邮箱" value="<{$user['email']}>">
+                                    <input type="text" name="email" datatype="e" errormsg="请输入正确的邮箱" value="<{$user['email']}>">
                                 </td>
                             </tr>
                             <tr>
@@ -134,22 +151,22 @@
                         <li class="<if condition=" $ANAME eq 'basic' ">a</if>">
                             <div class="r_arrow"></div>
                             <i></i>
-                            <a href="<{:U('basic',array('uid'=>$user['uid']))}>">基本资料</a>
+                            <a href="<{:U('basic')}>">基本资料</a>
                         </li>
                         <li class="<if condition=" $ANAME eq 'modifypic' ">a</if>">
                             <div class="r_arrow"></div>
                             <i></i>
-                            <a href="<{:U('modifypic',array('uid'=>$user['uid']))}>">修改头像</a>
+                            <a href="<{:U('modifypic')}>">修改头像</a>
                         </li>
                         <li class="<if condition=" $ANAME eq 'modifypass' ">a</if>">
                             <div class="r_arrow"></div>
                             <i></i>
-                            <a href="<{:U('modifypass',array('uid'=>$user['uid']))}>">密码安全</a>
+                            <a href="<{:U('modifypass')}>">密码安全</a>
                         </li>
                         <li class="<if condition=" $ANAME eq 'address' ">a</if>">
                             <div class="r_arrow"></div>
                             <i></i>
-                            <a href="<{:U('address',array('uid'=>$user['uid']))}>">收货地址</a>
+                            <a href="<{:U('address')}>">收货地址</a>
                         </li>
                     </ul>
                 </div>

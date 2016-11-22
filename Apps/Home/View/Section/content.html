@@ -7,7 +7,7 @@
         <em>&raquo;</em>
         <a href="<{:U('Home/Section/index')}>">版块</a> 
         <em>&raquo;</em> 
-        <a href="<{:U('theme',array('sid'=>$cgpost['pid']))}>"><{$pcgpost['name']}></a>
+        <a href="<{:U('themes',array('sid'=>$cgpost['pid']))}>"><{$pcgpost['name']}></a>
         <em>&raquo;</em> 
         <a href="<{:U('content',array('aid'=>$arr['aid']))}>"><{$arr['title']}></a>
     </div>
@@ -29,7 +29,7 @@
 
                         <div class="viewthread_con"> 
                             <h1> 
-                                <a href="<{:U('theme',array('cgid'=>$cgpost['id'],'sid'=>$cgpost['pid']))}>" class="colorlink">
+                                <a href="<{:U('themes',array('cgid'=>$cgpost['id'],'sid'=>$cgpost['pid']))}>" class="colorlink">
                                     [<{$cgpost['name']}>]
                                 </a>
                                 <a href="<{:U('content',array('aid'=>$arr['aid']))}>">
@@ -134,7 +134,7 @@
 
        </div> 
        <div class="viewthread_content" author="ZUK383932" pid="3695031" formhash="c8a069ed"> 
-        <div class="viewthread_table">
+        <div class="">
          <table cellspacing="0" cellpadding="0">
           <tbody>
            <tr>
@@ -308,7 +308,6 @@
 
 <block name="myjs">
 <script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
-<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script>
 <script>
         KindEditor.ready(function(K) {
                 window.editor = K.create('#editor_id');
