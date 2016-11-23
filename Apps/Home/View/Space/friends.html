@@ -4,10 +4,14 @@
 <block name="main">
 
     <div class="p_header"> 
-        <h3 class="modname">Ta有 <span class="greencolor">320</span> 位好友</h3>
+        <h3 class="modname">Ta有 <span class="greencolor"><{$user['countufriends']}></span> 位好友</h3>
     </div>
 
-    <if condition="$postslist neq ''">
+    <empty name="postslist">
+        <div class="time_prompt nomyfriend graytopborder"></div>
+    <else />
+
+
         <div class="p_threadlist_m">
 	<ul>
 		<li>
@@ -44,8 +48,7 @@
 
 </ul>
 </div>
-    <else />
-        <div class="time_prompt nomyfriend graytopborder"></div>
-    </if>
+        
+    </empty>
 
 </block>

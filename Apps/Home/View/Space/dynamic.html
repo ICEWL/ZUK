@@ -82,19 +82,19 @@
                         <li class="<if condition=" $ANAME eq 'stheme' ">a</if>">
                             <div class="r_arrow"></div>
                                 <a href="<{:U('Home/Space/stheme',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>发表的主题">
-                                <i></i><span class="graysmallbox"><{$usertotal}></span>主题
+                                <i></i><span class="graysmallbox"><{$usertotal['userposts']}></span>主题
                             </a>
                         </li> 
                         <li class="<if condition=" $ANAME eq 'collection' ">a</if>">
                             <div class="r_arrow"></div>
                             <a href="<{:U('Home/Space/collection',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>收藏的帖子">
-                                <i></i><span class="graysmallbox">52</span>收藏
+                                <i></i><span class="graysmallbox"><{$usertotal['userfavorite']}></span>收藏
                             </a>
                         </li> 
                         <li class="<if condition=" $ANAME eq 'friends' ">a</if>">
                             <div class="r_arrow"></div>
                             <a href="<{:U('Home/Space/friends',array('mid'=>$muser['uid']))}>" title="<{$muser['user']}>的好友列表">
-                                <i></i><span class="graysmallbox">320</span>好友
+                                <i></i><span class="graysmallbox"><{$usertotal['userfriends']}></span>好友
                             </a>
                         </li> 
                         <li class="<if condition=" $ANAME eq 'information' ">a</if>">

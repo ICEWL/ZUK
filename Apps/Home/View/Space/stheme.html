@@ -7,7 +7,9 @@
         <h3 class="modname">主题</h3> 
     </div>
 
-    <if condition="$postslist neq ''">
+    <empty name="postslist">
+        <div class="time_prompt nomyhomelog  graytopborder"></div>
+    <else />
         <div class="p_threadlist"> 
             <ul>
             <volist name="postslist" id="val">
@@ -26,8 +28,6 @@
             </volist>
             </ul> 
         </div>
-    <else />
-        <div class="time_prompt nomyhomelog  graytopborder"></div>
-    </if>
+    </empty>
 
 </block>

@@ -44,9 +44,9 @@
                                 <span class="cutline"></span>
                                 <a title="" href="/" target="_blank" class="color3"><{$arr['keywords']}></a>
                                 <div class="viewthreadtop_storey right">
-                                    <span class="s_view" title="查看"></span>4673
+                                    <span class="s_view" title="查看"></span><{$arr['n']}>
                                     <span class="pipe"></span>
-                                    <span class="s_reply" title="回复"></span>652
+                                    <span class="s_reply" title="回复"></span><{$countcritic}>
                                 </div>
 
                             </div>
@@ -65,10 +65,10 @@
                         <div id="viewthread_foot"> 
                             <div class="viewthread_foot"> 
 
-                                <div class="right"> 
+                                <!-- <div class="right"> 
                                     <a href="javascript:;" class="opacity"><span class="s_rate"></span>评分</a>
                                     <a href=""><span class="s_reply"></span>回复</a> 
-                                </div>
+                                </div> -->
 
                                 <div class="bdsharebuttonbox dib">分享至：
                                     <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博<i></i></a>
@@ -105,27 +105,37 @@
 
             </div>
 
-
-
     <div class="box" id="replylists"> 
      <div class="viewthread_main replylist_title"> 
-      <div class="right font14"> 
-       <a href="" class="bluecolor">楼层顺序</a>
+      <div class="right font14">
+        <a href="<{:U('content',array('aid'=>$arr['aid'],'order'=>'old'))}>" class="
+          <if condition=" (I('get.order') eq '') OR  (I('get.order') eq 'old') ">bluecolor</if>
+        ">楼层顺序</a>
        <span class="pipe">|</span>
-       <a href="">最新评论</a> 
+        <a href="<{:U('content',array('aid'=>$arr['aid'],'order'=>'new'))}>" class="
+        <if condition=" I('get.order') eq 'new' ">bluecolor</if>
+        ">最新评论</a> 
       </div> 
-      <strong>652</strong> 条回帖 
+      <strong><{$countcritic}></strong> 条回帖 
      </div> 
 
     <foreach name="critic" item="va">
      <div id="post_3695031" class="viewthread_main"> 
       <div class="viewthread_avatar" id="favatar3695031"> 
        <div id="remainTime" style="font-size:20px;font-weight:700;color:#FF9900;"></div> 
-       <a href="" class="author_avatar" target="_blank"><img src="__ROOT__<{$va['head']}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
+       <a href="<{:U('Space/dynamic',array('mid'=>$va['uid']))}>" class="author_avatar" target="_blank">
+        <img src="
+          <if condition=" $user.head eq '' ">
+            __PUBLIC__/qwhome/picture/00_avatar_middle.jpg
+          <else />
+            __ROOT__<{$va.head}>
+          </if>
+        "/>
+       </a> 
       </div> 
       <div class="viewthread_con " id="pid3695031" summary="pid3695031"> 
        <div class="viewthread_top"> 
-        <a href="" target="_blank"><strong><{$va['uname']}></strong></a>
+        <a href="<{:U('Space/dynamic',array('mid'=>$va['uid']))}>" target="_blank"><strong><{$va['uname']}></strong></a>
         <span class="spipe"></span>
         <a href="" class="color3" target="_blank">初中生</a> 
         <span class="cutline"></span>
@@ -146,16 +156,22 @@
         <!--回复帖回复列表--> 
         <div id="comment_3695031">
           <!-- 回复 -->
-      <foreach name="reply[$va['cid']]" item="vb">   
+      <foreach name="newarrs[$va['cid']]" item="vb">   
           <div class="viewthread_replylog">
             <ul>
               <li title="发表于<{$va['dateline']|date="Y-m-d H:i:s",###}> ">
-                <a href="" class="avatar" c="1">
-                  <img src="__ROOT__<{$vb['head']}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'">
+                <a href="<{:U('Space/dynamic',array('mid'=>$vb['uid']))}>" class="avatar" c="1">
+                  <img src="
+                    <if condition=" $user.head eq '' ">
+                      __PUBLIC__/qwhome/picture/00_avatar_middle.jpg
+                    <else />
+                      __ROOT__<{$vb.head}>
+                    </if>
+                  ">
                 </a>
                 <p>
-                  <a href="" class="author"><{$vb['uname']}>:</a>
-                  <a href=""><{$vb['message']}></a>
+                  <a href="<{:U('Space/dynamic',array('mid'=>$vb['uid']))}>" class="author"><{$vb['uname']}>:</a>
+                  <{$vb['message']}>
                 </p> 
               </li>
             </ul>
@@ -195,22 +211,10 @@
 </foreach>
 
     </div> 
-    <div class="clear"> 
+    <div class="clear" style="margin-bottom: 15px;"> 
      <div class="right"> 
       <div class="pg">
-       <strong>1</strong>
-       <a href="/zui/t197927/2/">2</a>
-       <a href="/zui/t197927/3/">3</a>
-       <a href="/zui/t197927/4/">4</a>
-       <a href="/zui/t197927/5/">5</a>
-       <a href="/zui/t197927/6/">6</a>
-       <a href="/zui/t197927/7/">7</a>
-       <a href="/zui/t197927/8/">8</a>
-       <a href="/zui/t197927/9/">9</a>
-       <a href="/zui/t197927/10/">10</a>
-       <a href="/zui/t197927/14/" class="last">... 14</a>
-       <label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="1" onkeydown="if(event.keyCode==13) {window.location='/zui/t197927/'+this.value;; doane(event);}" /><span title="共 14 页"> / 14 页</span></label>
-       <a href="/zui/t197927/2/" class="nxt">下一页</a>
+       <{$page}>
       </div>
      </div> 
     </div> 
@@ -268,10 +272,22 @@
 
                     <div class="viewthread_author_stat"> 
                         <ul> 
-                            <li><a href="" target="_blank">2600</a><p>积分</p></li> 
-                            <li><a href="" target="_blank">155</a><p>主题</p></li> 
-                            <li><a href="" target="_blank">2193</a><p>回帖</p></li> 
-                            <li><a href="" target="_blank">44</a><p>好友</p></li> 
+                            <li>
+                              <a href="<{:U('Space/information',array('mid'=>$postuser['uid']))}>" target="_blank">1111</a>
+                              <p>积分</p>
+                            </li> 
+                            <li>
+                              <a href="<{:U('Space/stheme',array('mid'=>$postuser['uid']))}>" target="_blank"><{$postuser['fatie'] }></a>
+                              <p>主题</p>
+                            </li> 
+                            <li>
+                              <a href="<{:U('Space/dynamic',array('mid'=>$postuser['uid']))}>" target="_blank"><{$postuser['huitie'] }></a>
+                              <p>回帖</p>
+                            </li> 
+                            <li>
+                              <a href="<{:U('Space/friends',array('mid'=>$postuser['uid']))}>" target="_blank"><{$postuser['haoyou'] }></a>
+                              <p>好友</p>
+                            </li> 
                         </ul> 
                     </div> 
                     <div class="viewthread_author_act"> 
@@ -284,11 +300,15 @@
                 <div class="viewthread_author_threads s_timeline"> 
                     <div class="s_text_list"> 
                         <ul>
+                        <volist name="beenposts" id="v">
                             <li>
                                 <i><span></span></i>
-                                <a href="" title="2016年11月17日签到帖" target="_blank">2016年11月17日签到帖</a>
-                                <p>2016.11.17</p>
-                            </li> 
+                                <a href="
+                                <{:U('Section/content',array('aid'=>$v['aid']))}>
+                                " title="<{$v.title}>" target="_blank"><{$v.title}></a>
+                                <p><{$v['t']|date="Y-m-d H:i:s",###}></p>
+                            </li>
+                        </volist>
                         </ul> 
                     </div> 
                 </div><!--./viewthread_author_threads-->

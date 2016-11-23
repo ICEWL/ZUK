@@ -97,7 +97,7 @@
                 <div class="thread minh" id="threadlist" summary="forum_92"> 
                     
                     <!-- 置顶列表 -->
-                    <div class="threadlist"> 
+                    <!-- <div class="threadlist"> 
 
                         <div class="threadlist_stat">
                             <a href="" title="93 个回帖">93</a>
@@ -124,7 +124,7 @@
                             <span title="2016-11-10">6&nbsp;天前</span> 
                         </div>
 
-                    </div> 
+                    </div>  -->
 
 
                     <div id="separatorline">帖子列表</div> 
@@ -133,7 +133,7 @@
                     <div class="threadlist"> 
 
                         <div class="threadlist_stat">
-                            <a href="" title="23 个回帖">23</a>
+                            <a href="" title="<{$v.total}> 个回帖"><{$v.total}></a>
                         </div> 
 
                         <div class="threadlist_title"> 
@@ -142,6 +142,7 @@
                             <a href="<{:U('content',array('aid'=>$v['aid']))}>">
                                 <{$v.title}>
                             </a>
+                            <img src="<if condition="$v.n egt 50">__PUBLIC__/qwhome/picture/hot_3.gif</if>" align="absmiddle" />
                             <if condition=" $v.thumbnail neq ''">
                             <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
                             </if>

@@ -29,9 +29,18 @@ class SpaceController extends ComController
         }
 
         // 主题数
-        $usertotal = M('article')->where(array('mid' => $uid))->count();
-        $this->assign('usertotal', $usertotal);
+        $userposts = M('article')->where(array('mid' => $uid))->count();
+        $usertotal['userposts'] = $userposts;
 
+        // 收藏帖子数
+        $userfavorite = M('home_favorite')->where(array('uid' => $uid))->count();
+        $usertotal['userfavorite'] = $userfavorite;
+
+        // 好友数
+        $userfriends = M('home_friends')->where(array('uid' => $uid))->count();
+        $usertotal['userfriends'] =$userfriends;
+
+        $this->assign('usertotal', $usertotal);
     }
     
     public function dynamic()

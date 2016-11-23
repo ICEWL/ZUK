@@ -149,8 +149,16 @@ class SectionController extends ComController
         }
 
         // 查询帖子
-        $list = $article->field("{$prefix}article.*,{$prefix}category.name,{$prefix}member.user")->where($where)->order($orderby)->join("{$prefix}member on {$prefix}article.mid = {$prefix}member.uid" , 'left')->join("{$prefix}category on {$prefix}article.sid = {$prefix}category.id", 'left')->limit($offset . ',' . $pagesize)->select();
+        $lists = $article->field("{$prefix}article.*,{$prefix}category.name,{$prefix}member.user")->where($where)->order($orderby)->join("{$prefix}member on {$prefix}article.mid = {$prefix}member.uid" , 'left')->join("{$prefix}category on {$prefix}article.sid = {$prefix}category.id", 'left')->limit($offset . ',' . $pagesize)->select();
 
+        foreach ($lists as $key => $v) {
+            $v['total'] = '';
+            $total = M('home_comment')->where("tid = $v[aid]")->count();// 回帖数
+            $v['total'] = $total;
+            if ($v['status']==0) {//过滤未审核帖子
+                $list[]=$v;
+            }
+        }
 
         // 分页处理
         $count = $article->where($where)->count();
@@ -200,7 +208,7 @@ class SectionController extends ComController
  * 作    者：Timothy<yleigg@163.com>
  * 日    期：2016-11-21
  * 版    本：1.0.0
- * 功能说明：前台版块控制器。
+ * 功能说明：前台帖子控制器。
  *
  **/
 
@@ -232,9 +240,9 @@ class SectionController extends ComController
 
     }
 
-    public function content()
-    {      
-        $aid = isset($_GET['aid']) ? $_GET['aid'] : '0';
+    public function content($p = 1)
+    {   
+        $aid = I('get.aid/d') ? I('get.aid/d') : '0';
         $arr = M('article')->where("aid = $aid")->select();
 
         if ($arr) {
@@ -248,7 +256,24 @@ class SectionController extends ComController
             $uid = $arr['mid'];
             $postuser = M('member')->where("uid = $uid")->select();
             $postuser = $postuser['0'];
+            
+
+            // 统计用户发帖数
+            $fatie = M('article')->where(array('mid' => $postuser['uid']))->count(); 
+            $postuser['fatie'] = $fatie;
+            // 统计用户回帖数
+            $huitie = M('home_comment')->where(array('uid' => $postuser['uid']))->count();
+            $postuser['huitie'] = $huitie;
+            // 统计用户好友数
+            $haoyou = M('home_friends')->where(array('uid' => $postuser['uid']))->count();
+            $postuser['haoyou'] =$haoyou;
+
             $this->assign('postuser', $postuser);
+
+            // 查询发帖人最近发的帖子
+            $beenposts = M('article')->where(array('uid' => $postuser['uid']))->order('t desc')->limit('5')->select();
+            $this->assign('beenposts', $beenposts);
+
 
             // 查询发帖人权限
             $groupid = M('auth_group_access')->field('group_id')->where("uid = $uid")->select();
@@ -256,9 +281,6 @@ class SectionController extends ComController
             $grouptitle = M('auth_group')->field('title')->where("id = $groupid")->select();
             $grouptitle = $grouptitle['0'];
             $this->assign('grouptitle', $grouptitle);
-
-            
-            // SELECT g.title FROM zuk_auth_group as g,zuk_auth_group_access as a WHERE g.id = a.group_id and a.uid = 1
 
             // 查询所属版块
             $sid = $arr['sid'];
@@ -274,13 +296,35 @@ class SectionController extends ComController
 
             $prefix = C('DB_PREFIX');
 
-            //查询评论人信息
-            $tid = I('get.aid');
-            // var_dump($uid);
-            $critic =M('home_comment')->table("{$prefix}member m,{$prefix}home_comment h")->order('dateline asc')->where("m.uid=h.uid and h.tid=$tid and h.authorid='0'")->select();
-            // var_dump($critic);
-            $this->assign('critic', $critic);
+            // 设置分页信息
+            $pagesize = 10;  //每页数量
+            $offset = $pagesize * ($p - 1);  //计算记录偏移量
+            $p = intval($p) > 0 ? $p : 1;
 
+            $tid = I('get.aid');
+
+            // 统计查询回贴数
+            $countcritic = M('home_comment')->where("tid=$tid and authorid='0'")->count();
+            $this->assign('countcritic', $countcritic);
+
+            // 排序
+            $filter = isset($_GET['order']) ? $_GET['order'] : ''; 
+            if ($filter == "old") {
+                $orderby = "t desc";
+            }else{
+                $orderby = "t asc";
+            }
+
+            //查询评论信息
+            // $tid = I('get.aid');
+            $critic =M('home_comment')->table("{$prefix}member m,{$prefix}home_comment h")->order($orderby)->where("m.uid=h.uid and h.tid=$tid and h.authorid='0'")->limit($offset . ',' . $pagesize)->select();
+            $this->assign('critic', $critic);
+   
+
+            // 分页
+            $page = new \Think\Page($countcritic, $pagesize);
+            $page = $page->show();
+            $this->assign('page', $page);
 
             //查询回复评论人信息
             $newarrs = array();
@@ -295,7 +339,7 @@ class SectionController extends ComController
                     }                   
                 }
             }
-            $this->assign('reply', $newarrs);
+            $this->assign('newarrs', $newarrs);
 
             // 查询帖子被收藏数
             $countcollection = M('home_favorite')->where(array('tid'=>$arr['aid']))->count();
@@ -316,9 +360,6 @@ class SectionController extends ComController
     // 快速评论
     public function fast() 
     {   
-
-        var_dump($_POST);
-        die;
 
         $aid = I('post.aid');
         $today = M('article')->field('mid')->where("aid = $aid")->select();
@@ -342,20 +383,12 @@ class SectionController extends ComController
     // 回复
     public function fasta() 
     {   
-        
-        // var_dump($_POST);
-        // var_dump($_GET);
-        // var_dump($_SESSION);
-        // die;
   
         $prefix = C('DB_PREFIX');
         $uid = I('post.uid');
         $tid = I('post.tid');
-        // $reply =M('home_comment')->table("{$prefix}member m,{$prefix}home_comment h")->where("h.tid=$tid and m.uid=h.authorid")->select();
-        // var_dump($reply);die;
         $today = M('article')->field('mid')->where("aid = $tid")->select();
         $todays = array_column($today, 'mid');
-        // var_dump($todays);
         $data['id'] = $todays[0];
         $data['message'] = I('post.message');
         $data['uid'] = I('session.uid');
@@ -371,8 +404,5 @@ class SectionController extends ComController
         }
 
     }
-
-
-
 
 }

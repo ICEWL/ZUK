@@ -6,8 +6,10 @@
     <div class="p_header"> 
         <h3 class="modname">收藏</h3> 
     </div>
-
-    <if condition="$ctlist neq ''">
+    
+    <empty name="ctlist">
+        <div class="time_prompt nomyhomelog  graytopborder"></div>
+    <else />
         <div class="p_threadlist"> 
             <ul>
             <volist name="postslist" id="val">
@@ -24,9 +26,7 @@
                 </li>
             </volist>
             </ul> 
-        </div>
-    <else />
-        <div class="time_prompt nomyhomelog  graytopborder"></div>
-    </if>
+        </div>    
+    </empty>
 
 </block>

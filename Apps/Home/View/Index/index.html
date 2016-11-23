@@ -90,6 +90,9 @@
                             <div class="right"></div>
                             <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>"><{$val['title']}></a>
                             <img src="<if condition="$val.n egt 50">__PUBLIC__/qwhome/picture/hot_3.gif</if>" align="absmiddle" />
+                            <if condition=" $val.thumbnail neq ''">
+                            <img src="__PUBLIC__/qwhome/picture/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+                            </if>
                         </div>
                         <div class="threadlist_imglist">
                             <div>
