@@ -30,7 +30,17 @@ class ComController extends BaseController
         $user = '';
         $UID = I('session.uid/d');
         if ($UID) {
-            $user = M('Member')->where(array('uid' => $UID))->find();  
+            // 用户基本信息
+            $user = M('Member')->where(array('uid' => $UID))->find(); 
+            // 统计用户发帖数
+            $countuposts = M('article')->where(array('mid' => $UID))->count(); 
+            $user['countuposts'] = $countuposts;
+            // 统计用户收藏帖子数
+            $countfavorite = M('home_favorite')->where(array('uid' => $UID))->count();
+            $user['countfavorite'] = $countfavorite;
+            // 统计用户好友数
+            $countufriends = M('home_friends')->where(array('uid' => $UID))->count();
+            $user['countufriends'] =$countufriends;
         }
         $this->assign('user', $user);
 

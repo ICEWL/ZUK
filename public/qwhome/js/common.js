@@ -1814,8 +1814,8 @@ function showTopLink() {
 			left = left < sw ? left * 2 - sw : left;
 			scrolltop.style.left = ( basew + left ) + 10 + 'px';
 		} else {
-			scrolltop.style.left = 'auto';
-			scrolltop.style.right = 0;
+			// scrolltop.style.left = 'auto';
+			// scrolltop.style.right = 0;
 		}
 
 		if (BROWSER.ie && BROWSER.ie < 7) {

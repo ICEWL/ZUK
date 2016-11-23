@@ -1,40 +1,7 @@
 <!-- 我的金币 -->
-<extend name="My/post" />
+<extend name="My/posts" />
 
-<include file="Public/head" />
-<block name="content">
- <div class="sidebar">
-        <div class="box p_nav"> 
-         <h3>我的</h3> 
-         <div class="p_navs"> 
-          <ul> 
-           <li> 
-            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/post')}>">帖子</a> </li> 
-           <li> 
-            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/collection')}>">收藏</a> </li> 
-           <li> 
-            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/friends')}>">好友</a> </li> 
-           <li> 
-            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/record')}>">兑换记录</a> </li> 
-           <li> 
-            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/winning')}>">转盘中奖记录</a> </li> 
-          </ul> 
-         </div> 
-         <h3>等级&amp;金币</h3> 
-         <div class="p_navs"> 
-          <ul> 
-           <li class="a"> 
-            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygold')}>">我的金币</a> </li> 
-           <li> 
-            <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygrade')}>">用户等级</a> </li> 
-          </ul> 
-         </div>  
-        </div>
-       </div>
-</block>
-<block name="right">
-	<div class="main"> 
-    <div class="box"> 
+<block name="main">
      <div class="p_header"> 
       <h3 class="modname">我的金币</h3>
       <div class="tab"> 
@@ -72,9 +39,9 @@
        </table> 
       </div>
      </div> 
-    </div> 
-   </div>
+     
 </block>
-<include file="Public/foot" />
+
 <block name="myjs">
+
 </block>

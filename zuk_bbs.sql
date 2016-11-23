@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-11-22 21:36:56
+Date: 2016-11-23 15:21:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -251,8 +251,8 @@ INSERT INTO `zuk_auth_rule` VALUES ('20', '18', '', '商品管理', '', '1', '1'
 INSERT INTO `zuk_auth_rule` VALUES ('21', '0', '', '链接管理', 'menu-icon fa fa-link', '1', '1', '', '1', '21', '');
 INSERT INTO `zuk_auth_rule` VALUES ('22', '21', 'Link/index', '友链管理', '', '1', '1', '', '1', '22', '');
 INSERT INTO `zuk_auth_rule` VALUES ('23', '21', 'Link/add', '新增友链', '', '1', '1', '', '1', '23', '');
-INSERT INTO `zuk_auth_rule` VALUES ('24', '21', '', '广告管理', '', '1', '1', '', '1', '24', '');
-INSERT INTO `zuk_auth_rule` VALUES ('25', '21', '', '标签管理', '', '1', '1', '', '1', '25', null);
+INSERT INTO `zuk_auth_rule` VALUES ('24', '21', 'Read/index', '推荐阅读', '', '1', '1', '', '1', '24', '');
+INSERT INTO `zuk_auth_rule` VALUES ('25', '21', 'Read/add', '新增推荐阅读', '', '1', '1', '', '1', '25', '');
 INSERT INTO `zuk_auth_rule` VALUES ('26', '0', '', '系统设置', 'menu-icon fa fa-cog', '1', '1', '', '1', '26', '');
 INSERT INTO `zuk_auth_rule` VALUES ('27', '26', 'Menu/index', '菜单管理', '', '1', '1', '', '1', '27', '');
 INSERT INTO `zuk_auth_rule` VALUES ('29', '26', 'Menu/add', '新增菜单', '', '1', '1', '', '1', '29', '');
@@ -431,11 +431,10 @@ CREATE TABLE `zuk_home_favorite` (
 -- ----------------------------
 DROP TABLE IF EXISTS `zuk_home_friends`;
 CREATE TABLE `zuk_home_friends` (
-  `uid` mediumint(8) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `uid` mediumint(8) NOT NULL COMMENT '用户id',
   `fuid` mediumint(8) NOT NULL DEFAULT '0' COMMENT '用户好友id',
   `fusername` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT '好友名',
-  `dateline` int(10) NOT NULL DEFAULT '0' COMMENT '加好友时间',
-  PRIMARY KEY (`uid`)
+  `dateline` int(10) NOT NULL DEFAULT '0' COMMENT '加好友时间'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -530,7 +529,7 @@ CREATE TABLE `zuk_log` (
   `ip` varchar(16) NOT NULL,
   `log` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=865 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=868 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zuk_log
@@ -1399,6 +1398,9 @@ INSERT INTO `zuk_log` VALUES ('861', 'admin', '1479797756', '127.0.0.1', '修改
 INSERT INTO `zuk_log` VALUES ('862', 'admin', '1479797769', '127.0.0.1', '修改焦点图，ID：4');
 INSERT INTO `zuk_log` VALUES ('863', 'admin', '1479807511', '127.0.0.1', '修改个人资料');
 INSERT INTO `zuk_log` VALUES ('864', 'admin', '1479807548', '127.0.0.1', '修改个人资料');
+INSERT INTO `zuk_log` VALUES ('865', 'admin', '1479867228', '127.0.0.1', '修改个人资料');
+INSERT INTO `zuk_log` VALUES ('866', 'admin', '1479867287', '127.0.0.1', '编辑菜单，ID：24');
+INSERT INTO `zuk_log` VALUES ('867', 'admin', '1479867317', '127.0.0.1', '编辑菜单，ID：25');
 
 -- ----------------------------
 -- Table structure for zuk_member
@@ -1423,7 +1425,7 @@ CREATE TABLE `zuk_member` (
 -- ----------------------------
 -- Records of zuk_member
 -- ----------------------------
-INSERT INTO `zuk_member` VALUES ('1', 'admin', '乱世浮华丿流年', '/Uploads/head/2016/11/22/58343d3ed2349.jpg', '1', '805550800', '13053237223', '239126037', 'shineky7@163.com', '66d6a1c8748025462128dc75bf5ae8d1', '1479131236', '0');
+INSERT INTO `zuk_member` VALUES ('1', 'admin', '乱世浮华丿流年', '/Uploads/head/2016/11/23/5834fb5bab927.jpg', '1', '805478400', '13053237223', '239126037', 'shineky7@163.com', '66d6a1c8748025462128dc75bf5ae8d1', '1479131236', '0');
 INSERT INTO `zuk_member` VALUES ('17', 'sky1111', '牛逼', '/Uploads/head/2016/11/16/582587856e249.jpg', '0', '-28800', '', '', '', '66d6a1c8748025462128dc75bf5ae8d1', '1478854557', '0');
 INSERT INTO `zuk_member` VALUES ('18', 'admin1', '牛逼', null, '0', null, '15665370632', null, null, '66d6a1c8748025462128dc75bf5ae8d1', '1479694655', '0');
 INSERT INTO `zuk_member` VALUES ('19', 'zuk_807080', null, null, '0', null, null, null, 'shineky7@sina.cn', 'c13c252b4d57b200e5e6f0a58e8427b9', '1479798734', '0');

@@ -297,6 +297,10 @@ class SectionController extends ComController
             }
             $this->assign('reply', $newarrs);
 
+            // 查询帖子被收藏数
+            $countcollection = M('home_favorite')->where(array('tid'=>$arr['aid']))->count();
+            $this->assign('countcollection', $countcollection);
+
         } else {
             $errormessage = '抱歉，指定的帖子不存在或已被删除或正在被审核';
             $this->assign('errormessage', $errormessage);

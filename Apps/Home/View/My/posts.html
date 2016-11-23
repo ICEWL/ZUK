@@ -1,0 +1,102 @@
+<!-- 帖子 -->
+
+<include file="Public/head" />
+
+<block name="mycss">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css">
+  <!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo_old.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_2_home_spacecp.css" /> -->
+</block>
+
+<div class="breadcrumbs content"> 
+   <a href="<{:U('Home/Index/index')}>">ZUK社区</a>
+   <em>»</em>个人中心
+   <em>»</em><a href="">帖子</a> 
+</div>
+
+<div class="content" id="space_info">
+   
+    <div class="sidebar">
+        <div class="box p_nav"> 
+            <h3>我的</h3> 
+            <div class="p_navs"> 
+                <ul> 
+                    <li class="<if condition=" $ANAME eq 'posts' ">a</if>"> 
+                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/posts')}>">帖子</a>
+                    </li> 
+                    <li class="<if condition=" $ANAME eq 'collection' ">a</if>"> 
+                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/collection')}>">收藏</a> 
+                    </li> 
+                    <li class="<if condition=" $ANAME eq 'friends' ">a</if>"> 
+                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/friends')}>">好友</a> 
+                    </li> 
+                    <li class="<if condition=" $ANAME eq 'mygold' ">a</if>"> 
+                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygold')}>">金币</a> 
+                    </li> 
+                    <li class="<if condition=" $ANAME eq 'mygrade' ">a</if>"> 
+                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygrade')}>">等级</a> 
+                    </li> 
+                </ul> 
+            </div> 
+        </div>
+    </div><!--./sidebar-->
+
+<div class="main">
+
+        <div class="box">
+
+        <block name="main">
+            <div class="p_header"> 
+                <h3 class="modname">我的帖子</h3> 
+                <div class="tab"> 
+                    <ul> 
+                        <li class="a"> <a href="">主题<span></span></a> </li> 
+                        <li> <a href="">回复<span></span></a> </li> 
+                    </ul> 
+                </div> 
+            </div>
+
+            <div class="p_viewlist"> 
+                <div class="tab"> 
+                    <ul> 
+                        <li><a href="">全部</a></li> 
+                        <li><a href="">已发表</a></li> 
+                        <li><a href="">待审核</a></li> 
+                        <li class="p_viewlist_tabli">
+                            <select name="forumlist" id="forum_list" onchange="viewforumthread(this.value);" style="width: 150px; word-wrap: normal;background: #f1f1f1; color: #6f6f6f; border-color: #e6e6e6;"> 
+                                <option value="0">选择版块</option> 
+                            </select>
+                        </li>
+                    </ul> 
+                </div>
+
+                <form method="post" autocomplete="off" name="delform" id="delform" action="home.php?mod=space&amp;do=thread&amp;view=all&amp;order=dateline" onsubmit="showDialog('确定要删除选中的主题吗？', 'confirm', '', '$(\'delform\').submit();'); return false;">
+
+                    <input type="hidden" name="formhash" value="c8a069ed"> 
+                    <input type="hidden" name="delthread" value="true">
+
+                    <div class="p_timeline p_timeline_thread"> 
+                        <ul>
+                            <li><i><span></span></i><em>2016-11-10<br><a href="">新手社区</a></em> 
+                                <div class="p_viewlist_title p_timeline_title"> 
+                                    <a href="" target="_blank">2016年11月10日签到帖</a> 
+                                    <div class="right"> 
+                                        回复 0 次 <span class="pipe">,</span>浏览 1 次 
+                                    </div>
+                                </div> 
+                            </li> 
+                        </ul> 
+                    </div> 
+                </form>
+
+            </div> 
+        </block>
+
+    </div>
+</div>
+
+</div><!--#/space_info-->
+
+<include file="Public/foot" />
+
+<block name="myjs"></block>

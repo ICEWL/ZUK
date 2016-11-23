@@ -3,10 +3,10 @@ namespace Home\Controller;
 
 class MyController extends ComController 
 {
-    public function post()
+    public function posts()
     {
 
-        $this->display('post');
+        $this->display('posts');
     }
 
 
