@@ -317,8 +317,8 @@ class SectionController extends ComController
     public function fast() 
     {   
 
-        // var_dump($_POST);
-        // die;
+        var_dump($_POST);
+        die;
 
         $aid = I('post.aid');
         $today = M('article')->field('mid')->where("aid = $aid")->select();

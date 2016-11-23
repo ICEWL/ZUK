@@ -34,7 +34,11 @@ class PersonalController extends ComController
     public function address()
     {
 
+
         $this->display('address');
+
+
+
     }
 
     public function modifypass()
@@ -117,5 +121,50 @@ class PersonalController extends ComController
 
         $this->success('恭喜，修改成功！');
     }
+
+
+
+    public function phonea()
+    {
+         if ($_SESSION['verifysl'] != $_POST['verifysl'] ){
+            $this->error('手机验证码输入错误',$this->site_url,3);
+            session_destroy();
+        }
+       // var_dump($_POST);
+            $data['phone'] =$_POST['phone'];   
+            $uid=$_SESSION['uid'];
+            $Model = M('member');
+            $user = $Model->data($data)->where("uid=$uid")->save();
+            // var_dump($Model);
+            if ($user) {
+                $this->success('恭喜，绑定成功！');
+            }else{
+                $this->error('绑定失败了！');
+            }
+ 
+    }
+
+
+     public function phoneb()
+    {       
+        if ($_SESSION['verifysl'] != $_POST['verifysl'] ){
+            $this->error('手机验证码输入错误',$this->site_url,3);
+            session_destroy();
+        }
+       // var_dump($_POST);
+            $data['phone'] ="";   
+            $uid=$_SESSION['uid'];
+            $Model = M('member');
+           $user =  $Model->data($data)->where("uid=$uid")->save();
+            // var_dump($Model);
+            if ($user) {
+                $this->success('恭喜，解绑成功！');
+            }else{
+                $this->error('解绑失败了！');
+            }
+
+    }
+
+
 
 }
