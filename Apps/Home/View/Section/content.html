@@ -81,9 +81,31 @@
                                 </script>
 
                                 <span class="cutline"></span>
-                                <a href="javascript:void(0);" class="k_favorite" id="$arr['aid']">
+         <!--                        <a href="" class="k_favorite" id="$arr['aid']">
                                     <span class=""></span><{$countcollection}>人收藏
-                                </a>
+                                </a> -->
+                                <a class="k_favorite z" id="<{$arr.aid}>" href="javascript:void(0);" style="position: absolute;left: 835px;"><span><{$countcollection}></span>人收藏</a>
+
+
+                            <script>
+                                $(".z").on('click',function(){
+                                var Oa=$(this);
+                                var id=Oa.attr('id');//获取id属性
+                                var vl=Oa.find("span").text();
+                                    vl=parseInt(vl)+1;
+                                $.post('<{:U('zan')}>',{aid:id},function(data){
+                                  console.log(data.status);
+                                    if (data.status == 1) { 
+                                        alert('感谢您的支持,已收藏！');//模拟异步数据加1
+                                        Oa.find("span").text(vl);//页面元素加1
+                                    } else {
+                                        alert('您已经收藏了,不要重复哦！');
+                                    }
+                                },'json'); 
+                            })
+                            </script>
+  
+
                             </div> 
                         </div> 
                     </div> 

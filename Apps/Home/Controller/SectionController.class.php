@@ -405,4 +405,39 @@ class SectionController extends ComController
 
     }
 
+
+    // 收藏按钮
+    public function zan(){
+        $tid=isset($_POST['aid'])?intval(trim($_POST['aid'])):0;
+        $data['tid'] = $tid;
+        $data['uid']=I('session.uid');
+        $uid = $_SESSION['uid'];
+        $data['dateline'] = time(); 
+
+ 
+        $flag = M("home_favorite")->where(array('tid'=>$tid,'uid'=>$uid))->find();
+    
+        if(!$flag){       
+            M("home_favorite")->data($data)->add();
+            $data['info'] = "ok";
+            $data['status'] = 1;
+            $this->ajaxReturn($data);
+            exit();
+        }else{
+            $data['info'] = "fail";
+            $data['status'] = 0;
+            $this->ajaxReturn($data);
+            exit();     
+             }
+    }
+
+
+
+
+
+
+
+
+
+
 }
