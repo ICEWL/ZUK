@@ -9,7 +9,12 @@
     <div class="breadcrumbs content"> 
         <a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
         <em>&raquo;</em>
-        <a href="<{:U('Home/Space/dynamic',array('mid'=>$muser['uid']))}>"><{$muser['user']}>的个人主页</a>
+        <a href="<{:U('Home/Space/dynamic',array('mid'=>$muser['uid']))}>">
+        <if condition="$muser.uname eq '' "><{$muser.user}>
+        <else /> <{$muser.uname}>
+        </if>
+        的个人主页
+        </a>
     </div>
 
 
@@ -26,17 +31,19 @@
                 <if condition="$userlist neq ''">
                     <div class="p_timeline"> 
                         <ul>
+                            <volist name="userlist" id="val">
                             <li> 
                                 <i><span></span></i>
-                                <em><span title="2016-11-16 18:19">1&nbsp;小时前</span></em> 
+                                <em><span title="<{$val.dateline|date="Y-m-d H:i:s",###}>"><{$val.dateline|date="Y-m-d H:i:s",###}></span></em> 
                                 <div class="p_timeline_title"> 
                                     <div class="p_quote">
-                                        很抱歉给您带来了不便，您的问题我已经了解
+                                        <{$val.message}>
                                     </div> 
                                     来自 
-                                    <a href="" target="_blank">警告5次就永久封号，是这样吗！</a> 
+                                    <a href="<{:U('Section/content',array('aid'=>$val['tid']))}>" target="_blank"><{$val.title}></a> 
                                 </div> 
-                            </li> 
+                            </li>
+                            </volist> 
                         </ul> 
                     </div>
                 <else />
@@ -56,7 +63,11 @@
 
                 <div class="p_s_avatar">
                     <img src="__ROOT__<{$muser.head}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" />
-                    <p><strong><{$muser.user}></strong></p> 
+                    <p><strong>
+                        <if condition="$muser.uname eq '' "><{$muser.user}>
+                        <else /> <{$muser.uname}>
+                        </if>
+                    </strong></p> 
                     <p><font color="#000000">实习版主</font></p> 
                 </div> 
 

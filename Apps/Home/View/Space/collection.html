@@ -7,21 +7,21 @@
         <h3 class="modname">收藏</h3> 
     </div>
     
-    <empty name="ctlist">
+    <empty name="favoritelist">
         <div class="time_prompt nomyhomelog  graytopborder"></div>
     <else />
         <div class="p_threadlist"> 
             <ul>
-            <volist name="postslist" id="val">
+            <volist name="favoritelist" id="val">
                 <li> 
                     <em>
-                        <span title="<{$val['t']|date="Y-m-d H:i:s",###}>">
-                            <{$val['t']|date="Y-m-d H:i:s",###}>
+                        <span title="<{$val['dateline']|date="Y-m-d H:i:s",###}>">
+                            <{$val['dateline']|date="Y-m-d H:i:s",###}>
                         </span><br />
-                        <a href="<{:U('Section/theme',array('cgid'=>$val['sid'],'sid'=>$val['pid']))}>" class="color1" target="_blank"><{$val['name']}></a>
+                        <a href="<{:U('Section/themes',array('cgid'=>$val['sid'],'sid'=>$val['pid']))}>" class="color1" target="_blank"><{$val['name']}></a>
                     </em>
-                    <a href="<{:U('Section/content',array('aid'=>$val['aid']))}>" class="font16 lh50" target="_blank">
-                    <{$val['title']}>
+                    <a href="<{:U('Section/content',array('aid'=>$val['tid']))}>" class="font16 lh50" target="_blank">
+                    <{$val['favtitle']}>
                     </a> 
                 </li>
             </volist>

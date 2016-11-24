@@ -1,7 +1,6 @@
 <extend name="Index/index" />
 
 <block name="main">
-
     <div class="breadcrumbs content"> 
         <a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
         <em>&raquo;</em>
@@ -43,7 +42,7 @@
                     <volist name="read" id="val">
                         <li>
                             <a href="<{$val['url']}>"  target="_blank" title="<{$val['title']}>">
-                                <img src="<{$val['pic']}>" alt="<{$val['title']}>" height="100" width="228">
+                                <img src="__ROOT__<{$val['pic']}>" alt="<{$val['title']}>" height="100" width="228">
                             </a>
                         </li>
                     </volist>

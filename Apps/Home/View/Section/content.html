@@ -81,19 +81,17 @@
                                 </script>
 
                                 <span class="cutline"></span>
-         <!--                        <a href="" class="k_favorite" id="$arr['aid']">
-                                    <span class=""></span><{$countcollection}>人收藏
-                                </a> -->
-                                <a class="k_favorite z" id="<{$arr.aid}>" href="javascript:void(0);" style="position: absolute;left: 835px;"><span><{$countcollection}></span>人收藏</a>
+                                 <a class="k_favorite z" ti="<{$arr.title}>" id="<{$arr.aid}>" href="javascript:void(0);" style="position: absolute;left: 835px;"><span><{$countcollection}></span>人收藏</a>
 
 
                             <script>
                                 $(".z").on('click',function(){
                                 var Oa=$(this);
                                 var id=Oa.attr('id');//获取id属性
+                                var ti = Oa.attr('ti');
                                 var vl=Oa.find("span").text();
                                     vl=parseInt(vl)+1;
-                                $.post('<{:U('zan')}>',{aid:id},function(data){
+                                $.post('<{:U('zan')}>',{aid:id,title:ti},function(data){
                                   console.log(data.status);
                                     if (data.status == 1) { 
                                         alert('感谢您的支持,已收藏！');//模拟异步数据加1
@@ -104,15 +102,17 @@
                                 },'json'); 
                             })
                             </script>
-  
-
                             </div> 
                         </div> 
                     </div> 
 
                 </div>
                 <form method="post" autocomplete="off" id="vfastpostform" action="<{:U('Home/Section/fast')}>" > 
-                    <div id="viewthread_fastreply"> 
+                    <div id="viewthread_fastreply" 
+                        <if condition="$user.uid eq ''">
+                          style="display: none;"
+                        </if>
+                    > 
                         <div class="viewthread_fastreply" id="vfastposttb"> 
                             <div class="viewthread_fastreplybutton">
                                 <button type="submit" name="replysubmit" id="vreplysubmit" >快速回复</button>
@@ -240,31 +240,54 @@
       </div>
      </div> 
     </div> 
-
+    
     <div id="f_pst" class="box"> 
-     <form method="post"  id="fastpostform" action="<{:U('Home/Section/fast')}>" onsubmit="return fastpostvalidate(this)"> 
+     <form method="post"  id="fastpostform" action="<{:U('Home/Section/fast')}>" onsubmit="return fastpostvalidate(this)">
+
+     <if condition="$user.uid eq ''">
+    <div class="viewthread_pst">
+        <div class="viewthread_reply">
+        <span id="fastpostreturn"></span>
+        <div class="cl">
+        <div id="fastsmiliesdiv" class="y dn"><div id="fastsmiliesdiv_data"><div id="fastsmilies"></div></div></div><div class="hasfsl" id="fastposteditor">
+        <div class="tedt mtn">
+
+        <div class="area">
+        <div class="pt hm">
+        需要登陆后才可进行回复 <a href="<{:U('Home/Login/index')}>" onclick="showWindow('login', this.href)" class="bluecolor">登录</a> 
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div id="seccheck_fastpost">
+        </div>
+        </div>
+    <else/> 
       <div class="viewthread_pst"> 
- <!-- 输入框样式效果 -->
-<script src="__PUBLIC__/emoj/jquery.js"></script>
-<script src="__PUBLIC__/emoj/myemojiPl.js"></script>
-<link rel="stylesheet" href="__PUBLIC__/emoj/myemojiPl.css">
-          <div class="Main">     
-        <div class="Input_Box">     
-          <div contenteditable="true" class="Input_text" name="message"></div>
-          <input type="hidden" name="message" id="message">
-          <input type="hidden" name="aid" value=<{$_GET['aid']}> />                      
-          <div class="Input_Foot">
-            <a class="imgBtn" href="javascript:void(0);">'◡'</a>
-            <button type="submit" class="GoStyle" style="float: right"><a class="postBtn">确定</a> </button>
-          </div>     
-        </div> 
-        <div class="faceDiv">
-          <section class="emoji_container">
-          </section>
-          <section class="emoji_tab"></section>
-        </div>    
-    </div> 
+           <!-- 输入框样式效果 -->
+          <script src="__PUBLIC__/emoj/jquery.js"></script>
+          <script src="__PUBLIC__/emoj/myemojiPl.js"></script>
+          <link rel="stylesheet" href="__PUBLIC__/emoj/myemojiPl.css">
+                    <div class="Main">     
+                  <div class="Input_Box">     
+                    <div contenteditable="true" class="Input_text" name="message"></div>
+                    <input type="hidden" name="message" id="message">
+                    <input type="hidden" name="aid" value=<{$_GET['aid']}> />                      
+                    <div class="Input_Foot">
+                      <a class="imgBtn" href="javascript:void(0);">'◡'</a>
+                      <button type="submit" class="GoStyle" style="float: right"><a class="postBtn">确定</a> </button>
+                    </div>     
+                  </div> 
+                  <div class="faceDiv">
+                    <section class="emoji_container">
+                    </section>
+                    <section class="emoji_tab"></section>
+                  </div>    
+              </div> 
       </div> 
+      </if>
      </form> 
     </div> 
    </div>

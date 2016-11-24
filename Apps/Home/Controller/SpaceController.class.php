@@ -25,8 +25,12 @@ class SpaceController extends ComController
         if ($muser) {
             $this->assign('muser', $muser);
         } else{
-            $this->error('404 NOT FOUND');
+            $errormessage = '抱歉，您指定的用户空间不存在';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/notfound');
+            die;
         }
+
 
         // 主题数
         $userposts = M('article')->where(array('mid' => $uid))->count();
@@ -36,18 +40,53 @@ class SpaceController extends ComController
         $userfavorite = M('home_favorite')->where(array('uid' => $uid))->count();
         $usertotal['userfavorite'] = $userfavorite;
 
+        // 回复帖子数
+        $userreply = M('home_comment')->where(array('uid' => $uid))->count();
+        $usertotal['userreply'] = $userreply;
+
         // 好友数
         $userfriends = M('home_friends')->where(array('uid' => $uid))->count();
         $usertotal['userfriends'] =$userfriends;
 
+        // 积分
+        $usercredit = M('user_credit')->field('credit')->where(array('uid' => $uid))->select();
+        $usertotal['usercredit'] = $usercredit['0']['credit'];
+
         $this->assign('usertotal', $usertotal);
+
     }
     
-    public function dynamic()
+    public function dynamic($p = 1)
     {   
-        // 查询用户动态
-        $userlist = '';
-        $this->assign('userlist', $userlist);   
+
+        $home_comment = M('home_comment');
+
+        $prefix = C('DB_PREFIX');  //获取表前缀
+
+        $pagesize = 5;  //每页数量
+        $offset = $pagesize * ($p - 1);  //计算记录偏移量
+        $p = intval($p) > 0 ? $p : 1;
+
+        $mid = I('get.mid/d');
+        $where = "{$prefix}home_comment.uid = $mid ";
+
+        $orderby = "t desc";  //默认按照时间降序
+
+        $count = $home_comment->where($where)->count();
+
+        $userlist = $home_comment->field("{$prefix}home_comment.*,{$prefix}article.title")
+                            ->where($where)
+                            ->order($orderby)
+                            ->join("{$prefix}article on {$prefix}home_comment.tid = {$prefix}article.aid", 'left')
+                            ->limit($offset . ',' . $pagesize)
+                            ->select();
+
+        $page = new \Think\Page($count, $pagesize);
+        $page = $page->show();
+        $this->assign('page', $page);
+
+        
+        $this->assign('userlist', $userlist);  
 
         $this->display('dynamic');
     }
@@ -88,8 +127,38 @@ class SpaceController extends ComController
     }
 
 
-    public function collecion()
+    public function collection($p = 1)
     {
+
+        $home_favorite = M('home_favorite');
+
+        $prefix = C('DB_PREFIX');  //获取表前缀
+
+        $pagesize = 8;  //每页数量
+        $offset = $pagesize * ($p - 1);  //计算记录偏移量
+        $p = intval($p) > 0 ? $p : 1;
+
+        $mid = I('get.mid/d');
+        $where = "{$prefix}home_favorite.uid = $mid ";
+
+        $orderby = "t desc";  //默认按照时间降序
+
+        $count = $home_favorite->where($where)->count();
+
+        $favoritelist = $home_favorite->field("{$prefix}home_favorite.*,{$prefix}article.sid,{$prefix}category.name,{$prefix}category.pid")
+                            ->where($where)
+                            ->order($orderby)
+                            ->join("{$prefix}article on {$prefix}home_favorite.tid = {$prefix}article.aid", 'left')
+                            ->join("{$prefix}category on {$prefix}article.sid = {$prefix}category.id", 'left')
+                            ->limit($offset . ',' . $pagesize)
+                            ->select();
+
+        $page = new \Think\Page($count, $pagesize);
+        $page = $page->show();
+
+        $this->assign('favoritelist', $favoritelist);
+        $this->assign('page', $page);
+
 
         $this->display('collection');
     }
@@ -97,7 +166,6 @@ class SpaceController extends ComController
 
     public function information()
     {
-
         $this->display('information');
     }
 

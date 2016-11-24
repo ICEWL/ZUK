@@ -10,17 +10,20 @@ class IntegralController extends ComController
     * 构造方法
     * 自动加载uid,初始化uid条件
     */
-   public function _initialize()
-   {
-      $this -> uid = $this -> check_login();
-      $this -> where['uid'] = $this->uid;
-   }
- 
+
    /**
     * 签到获得积分方法
     */
    public function sign_in()
-   {
+   {  
+      $flag = $this->check_login();
+      if (!$flag) {
+         $errormessage = '请登录以后进行签到！';
+         $this->assign('errormessage', $errormessage);
+         $this->display('Public/error');
+         die;
+      }
+      $uid = I('session.uid');
       // var_dump($_SESSION['uid']);
       $get_integral = 20; //签到赠送积分
       $get_added_integral = 500; //连续签到N天额外赠送积分
@@ -38,17 +41,17 @@ class IntegralController extends ComController
       //**************************************************************
       //先验证今天有没有签到过
       $Model = M('user_sign_in');
-      $record_count = $Model -> where(array('uid'=>$this->uid,'create_time'=>array('EGT',$start_time))) -> count();
+      $record_count = $Model -> where(array('uid'=>$uid,'create_time'=>array('EGT',$start_time))) -> count();
       if($record_count)
          $this -> error('老司机别贪心今日已经签到了');
       //**************************************************************
       //准备好插入数据
       $data = array(
-         'uid' => $this -> uid,
+         'uid' => $uid,
          'sign_in_year' => $year, //年
          'sign_in_month' => $month,//月
          'sign_in_day' => $day,//日
-         'username' => $_SESSION['uid'],
+         'username' => $uid,
          'get_integral' => $get_integral, //默认签到获得积分
          'create_time' => time(),
       );
@@ -57,7 +60,7 @@ class IntegralController extends ComController
       //**************************************************************
       //查询昨天的签到纪录
       $where = array(
-         'uid' => $this -> uid,
+         'uid' => $uid,
          'sign_in_year' => $yesterday_year,
          'sign_in_month' => $yesterday_month,
          'sign_in_day' => $yesterday_day,

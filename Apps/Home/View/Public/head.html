@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
-<html xmlns:wb="http://open.weibo.com/wb">
 <html lang="cn">
 <head>
 	<meta charset="UTF-8">
 	<title><{$Think.CONFIG.title}></title>
 	<meta name="keywords" content="<{$Think.CONFIG.keywords}>" />
 	<meta name="description" content="<{$Think.CONFIG.description}>" />
-
+	
 	<!-- 全局 -->
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_2_common.css" />
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style.css">
@@ -87,13 +85,13 @@
 										</a>
 									</li>
 									<li>
-										<a href="<{:U('My/friend')}>" target="_blank">
+										<a href="<{:U('My/friends')}>" target="_blank">
 											<span class="grid_list_num friendNum"><{$user['countufriends']}></span>好友
 										</a>
 									</li>
 									<li>
-										<a href="<{:U('My/posts')}>" target="_blank">
-											<span class="grid_list_num extcredits5">50</span>金币
+										<a href="<{:U('My/credit')}>" target="_blank">
+											<span class="grid_list_num extcredits5"><{$user['countcredit']}></span>积分
 										</a>
 									</li>
 								</ul>
@@ -146,15 +144,15 @@
 		
 		<!-- 搜索——start -->
 		<div class="fm_search">
-			<form id="scbar_form" method="post"  onsubmit="#" action="#" target="_blank">
-				<div class="forum_search">
+			<form id="scbar_form" method="post"  onsubmit="#" action="<{:U('Search/index')}>" target="_blank">
+				<div class="forum_search" style="width: 210px;">
 					<ul>
 						<li class="scbarbutton">
 							<button type="submit">搜索</button>
 						</li>
-						<li class="scbartype">
+						<!-- <li class="scbartype">
 							<a href="#" >帖子</a>
-						</li>
+						</li> -->
 						<li class="scbarbox">
 							<input type="text" name="srchtxt" id="scbar_txt" placeholder="请输入搜索内容" />
 						</li>

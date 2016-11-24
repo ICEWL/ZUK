@@ -189,7 +189,10 @@ class SectionController extends ComController
         $sid = isset($_GET['sid']) ? $_GET['sid'] : '';
         $cgname = M('category')->where(array('id'=>$sid,'pid'=>'0'))->select();
         if (empty($cgname)) {
-            $this->error('404 NOT FOUND');
+            $errormessage = '抱歉，指定的版块不存在';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/notfound');
+            die;
         }
         $this->assign('cgname', $cgname['0']);
 
@@ -215,6 +218,13 @@ class SectionController extends ComController
     // 发帖
     public function posts()
     {   
+        $flag = $this->check_login();
+        if (!$flag) {
+            $errormessage = '没有权限在该版块发帖';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/error');
+            die;
+        }
 
         if (I('post.content')==null) {
            $this->error("发帖失败,内容不能为空");
@@ -360,6 +370,13 @@ class SectionController extends ComController
     // 快速评论
     public function fast() 
     {   
+        $flag = $this->check_login();
+        if (!$flag) {
+            $errormessage = '没有权限发布回复！';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/error');
+            die;
+        }
 
         $aid = I('post.aid');
         $today = M('article')->field('mid')->where("aid = $aid")->select();
@@ -383,7 +400,13 @@ class SectionController extends ComController
     // 回复
     public function fasta() 
     {   
-  
+        $flag = $this->check_login();
+        if (!$flag) {
+            $errormessage = '没有权限发布评论！';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/error');
+            die;
+        }
         $prefix = C('DB_PREFIX');
         $uid = I('post.uid');
         $tid = I('post.tid');
@@ -408,11 +431,22 @@ class SectionController extends ComController
 
     // 收藏按钮
     public function zan(){
+
+        $flag = $this->check_login();
+        if (!$flag) {
+            $errormessage = '不能收藏哦！';
+            $this->assign('errormessage', $errormessage);
+            $this->display('Public/error');
+            die;
+        }
+
+
         $tid=isset($_POST['aid'])?intval(trim($_POST['aid'])):0;
         $data['tid'] = $tid;
         $data['uid']=I('session.uid');
         $uid = $_SESSION['uid'];
         $data['dateline'] = time(); 
+        $data['favtitle'] = $_POST['title']; 
 
  
         $flag = M("home_favorite")->where(array('tid'=>$tid,'uid'=>$uid))->find();
@@ -430,13 +464,6 @@ class SectionController extends ComController
             exit();     
              }
     }
-
-
-
-
-
-
-
 
 
 

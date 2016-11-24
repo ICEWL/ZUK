@@ -41,6 +41,10 @@ class ComController extends BaseController
             // 统计用户好友数
             $countufriends = M('home_friends')->where(array('uid' => $UID))->count();
             $user['countufriends'] =$countufriends;
+
+            // 查询用户积分
+            $countcredit = M('user_credit')->field('credit')->where(array('uid' => $UID))->select();
+            $user['countcredit'] = $countcredit['0']['credit'];
         }
         $this->assign('user', $user);
 

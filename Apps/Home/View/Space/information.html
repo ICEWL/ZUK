@@ -14,15 +14,27 @@
        </div> 
        <div class="p_s_stat"> 
         <ul> 
-         <li class="p_s_stat_title h50"><strong class="redcolor font16 lh50 ">Sidney</strong></li> 
-         <li class="p_s_stat_title"><em>管辖版块：</em><a href="/chat/" target="_blank">联想畅谈</a> &nbsp;</li> 
-         <li><em>UID：</em>232801</li>
-         <li><em>性别：</em>保密</li> 
-         <li><em>积分：</em>57045</li> 
-         <li><em>主题：</em>382</li> 
-         <li><em>回帖：</em>70392</li> 
-         <li><em>好友：</em>320</li> 
-         <li><em>收藏：</em>52</li> 
+         <li class="p_s_stat_title h50">
+          <strong class="redcolor font16 lh50 ">
+            <if condition="$muser.uname eq '' "><{$muser.user}>
+            <else /> <{$muser.uname}>
+            </if>
+          </strong>
+        </li> 
+         <!-- <li class="p_s_stat_title"><em>管辖版块：</em><a href="/chat/" target="_blank">联想畅谈</a> &nbsp;</li>  -->
+         <li><em>UID：</em><{$muser.uid}></li>
+         <li>
+          <em>性别：</em>
+          <if condition="$muser.sex eq 0"> 保密
+          <elseif condition="$muser.sex eq 1"/> 男
+          <else /> 女
+          </if>
+         </li> 
+         <li><em>积分：</em><{$usertotal['usercredit']}></li> 
+         <li><em>主题：</em><{$usertotal['userposts']}></li> 
+         <li><em>回帖：</em><{$usertotal['userreply']}></li> 
+         <li><em>好友：</em><{$usertotal['userfriends']}></li> 
+         <li><em>收藏：</em><{$usertotal['userfavorite']}></li> 
         </ul> 
        </div> 
        <div class="p_s_page_mode"> 
@@ -30,7 +42,7 @@
         <div class="page_mode_01"></div> 
        </div> 
       </div> 
-      <div class="p_s_list"> 
+      <!-- <div class="p_s_list"> 
        <div class="p_s_title">
         <h3>荣誉勋章</h3>
        </div> 
@@ -88,7 +100,7 @@
         <div class="page_mode"></div>
         <div class="page_mode_01"></div> 
        </div> 
-      </div> 
+      </div>  -->
 
       <div class="p_s_list"> 
        <div class="p_s_title">
@@ -96,11 +108,11 @@
        </div> 
        <div class="p_s_stat p_s_stat_twolist"> 
         <ul> 
-         <li><em>在线时间：</em>1924 小时</li> 
-         <li><em>注册时间：</em>2016-6-27 10:33</li> 
-         <li><em>最后访问：</em>2016-11-16 19:53</li> 
-         <li><em>上次活动时间：</em>2016-11-16 18:09</li> 
-         <li><em>上次发表时间：</em>2016-11-16 18:19</li> 
+         <!-- <li><em>在线时间：</em>1924 小时</li>  -->
+         <li><em>注册时间：</em><{$muser['t']|date="Y-m-d H:i:s",###}></li> 
+         <!-- <li><em>最后访问：</em>2016-11-16 19:53</li>  -->
+         <!-- <li><em>上次活动时间：</em>2016-11-16 18:09</li>  -->
+         <!-- <li><em>上次发表时间：</em>2016-11-16 18:19</li>  -->
         </ul> 
        </div> 
        <div class="p_s_page_mode"> 

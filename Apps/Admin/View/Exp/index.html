@@ -1,0 +1,51 @@
+<extend name="Index/index" />
+
+<block name="main">
+	
+    <div class="page-content">
+        <div class="row">
+            <div class="col-xs-4">
+            	<h3>规则参考</h3>
+                <table class="table table-hover table-bordered">
+					<tr><th>积分</th><th>对应头衔</th></tr>
+					<tr><td>0~500</td><td>新手</td></tr>
+					<tr><td>501~1000</td><td>入门</td></tr>
+					<tr><td>1001~5000</td><td>初级</td></tr>
+					<tr><td>5001~50000</td><td>中级</td></tr>
+					<tr><td>50001~100000</td><td>高级</td></tr>
+					<tr><td>100001~200000</td><td>高手</td></tr>
+					<tr><td>200001~500000</td><td>顾问</td></tr>
+					<tr><td>500001~1000000</td><td>侠客</td></tr>
+					<tr><td>1000001以上</td><td>精灵</td></tr>
+				</table>
+            </div><!-- /.col -->
+            <div class="col-xs-6">
+            	<h3>规则设置</h3>
+                <form class="form-horizontal" method="post" role="form" action="<{:U('update')}>">
+					
+                  <h5>积分(用" | "区分)：</h5>
+				  <div class="form-group">
+				    <div class="col-sm-10">
+				      <input type="text" name="jf" class="form-control" id="" value="<{$j_arr.min}>">
+				    </div>
+				  </div>
+				  
+				  <h5>对应头衔(用" | "区分)：</h5>
+				  <div class="form-group">
+				    <div class="col-sm-10">
+				      <input type="text" name="tx" class="form-control" id="" value="<{$j_arr.honor}>">
+				    </div>
+				  </div>
+
+				  <button type="submit" class="btn btn-default">设置</button>
+
+				</form>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
+
+</block>
+
+<block name="myjs">
+
+</block>
