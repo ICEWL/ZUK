@@ -45,6 +45,37 @@ class ComController extends BaseController
             // 查询用户积分
             $countcredit = M('user_credit')->field('credit')->where(array('uid' => $UID))->select();
             $user['countcredit'] = $countcredit['0']['credit'];
+
+            // 查询用户头衔
+            $score = M('score')->order('jid asc')->select();
+
+            foreach ($score as $k => $v) {
+                $min[] = $v['min'];
+                $honor[] = $v['honor'];
+            }
+
+            $rank = $countcredit['0']['credit'];
+
+            if ($rank >= $min['0'] and $rank <= $min['1']) {
+                $user['score'] = $honor['0'];
+            }elseif ($rank > $min['1'] and $rank <= $min['2']) {
+                $user['score'] = $honor['1'];
+            }elseif ($rank > $min['2'] and $rank <= $min['3']) {
+                $user['score'] = $honor['2'];
+            }elseif ($rank > $min['3'] and $rank <= $min['4']) {
+                $user['score'] = $honor['3'];
+            }elseif ($rank > $min['4'] and $rank <= $min['5']) {
+                $user['score'] = $honor['4'];
+            }elseif ($rank > $min['5'] and $rank <= $min['6']) {
+                $user['score'] = $honor['5'];
+            }elseif ($rank > $min['6'] and $rank <= $min['7']) {
+                $user['score'] = $honor['6'];
+            }elseif ($rank > $min['7'] and $rank <= $min['8']) {
+                $user['score'] = $honor['7'];
+            }else{
+                $user['score'] = $honor['8'];
+            }
+            
         }
         $this->assign('user', $user);
 

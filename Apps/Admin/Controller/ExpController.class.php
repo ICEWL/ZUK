@@ -51,18 +51,16 @@ class ExpController extends ComController
 			}
 		}
 
-		var_dump($arr);
-
 	    foreach ($arr as $k => $v) {
-	    	if ($k < 9) {
-	    		$score = M('score')->where(array("jid" => $v['jid']))->data($v)->save();
-	    	}
+	    	$score = M('score')->where(array("jid" => $v['jid']))->data($v)->save();
 	    }
-	    
+
 	    if ($score) {
     		$this->success('设置成功！');
-	    }
-    	
+	    }else{
+            $this->error('设置失败！');
+        }
+
     }
     
 }
