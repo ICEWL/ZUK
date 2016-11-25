@@ -45,7 +45,7 @@
         <span title="2016-11-16 22:00">昨天&nbsp;22:00</span>
        </div> 
        <div class="p_pm_list_avt"> 
-        <a href="" target="_blank"><img src="http://uc.bbs.zuk.cn/data/avatar/000/29/81/63_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
+        <a href="" target="_blank"><img src="" /></a> 
        </div> 
       </div> 
      </div>
@@ -57,38 +57,31 @@
         <span title="2016-11-17 13:37">半小时前</span>
        </div> 
        <div class="p_pm_list_avt" id="bottom"> 
-        <a href="" target="_blank"><img src="http://uc.bbs.zuk.cn/data/avatar/000/29/89/17_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a> 
+        <a href="" target="_blank"><img src=""  /></a> 
        </div> 
       </div> 
      </div>
      <div id="pm_append" style="display: none"></div> 
     </div> 
     <a name="last"></a>
-    <div id="pm_ul_post" class="p25"> 
-     <form method="post"  action="" > 
-      <div class="tedt graybg"> 
-       <div class="area "> 
-        <textarea rows="3" cols="40" name="message" class="pt" id="replymessage" ></textarea> 
-       </div> 
+  
+    <div id="pm_ul_post" class="p25">
+  <form id="pmform" name="pmform" method="post" autocomplete="off" action="<{:U('Addfriends/sends')}>">
+    <div class="tedt graybg">
+      <div class="area ">
+        <textarea rows="3" cols="40" name="note" class="pt" id="replymessage" ></textarea>
+      </div>
 
-       <!-- 表情 -->
-       <div class="bar">
-        <div class="fpd"> 
-         <a href="javascript:;" class="fsml" id="replysml" onclick="showMenu({'ctrlid':this.id,'evt':'click','layer':2});return false;">Smilies</a> 
-         <script type="text/javascript" reload="1">smilies_show('replysmiliesdiv', 8, 'reply');</script> 
-        </div>
-       </div> 
-      </div> 
-      <!-- 表情结束 -->
-
-
-      <div class="mtm right mbw"> 
-       <button type="submit" name="pmsubmit" id="pmsubmit" class="greensmallbutton" value="true">
-       	<strong>发送</strong>
-       </button> 
-      </div> 
-     </form> 
-    </div> 
+    </div>
+    <div class="mtm right mbw">
+    <button type="submit"  id="pmsubmit" class="greensmallbutton" >
+      <strong>发送</strong></button>
+    <span id="pmforum_return"></span>
+    </div>
+      <input type="hidden" name="type" value="friend">
+      <input type="hidden" name="uid" value="<{:I('get.mid')}>">
+  </form>
+</div>
    </div> 
   </div>
 </div>

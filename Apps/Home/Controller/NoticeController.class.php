@@ -11,8 +11,14 @@ class NoticeController extends ComController
 
 
         public function send()
-    {
+    {   
+        // var_dump($_SESSION);
 
+        // var_dump($_GET);
+        $uid = I('session.uid');
+        $falg = M('home_notification')->where("$uid = uid")->select();
+        $this->assign('falg',$falg);
+   
         $this->display('send');
     }
 
@@ -26,8 +32,7 @@ class NoticeController extends ComController
 
         public function mypost()
     {
-        // var_dump($_SESSION);
-        // var_dump($_POST);
+
         // 加好友消息
         $uid = I('session.uid');
         $myp = M('home_notification')->where("$uid = uid")->select();
