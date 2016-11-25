@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : WAMP
+Source Server         : zuk
 Source Server Version : 50711
 Source Host           : localhost:3306
 Source Database       : zuk_bbs
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-11-24 21:55:56
+Date: 2016-11-25 16:47:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -521,13 +521,14 @@ CREATE TABLE `zuk_home_favorite` (
   `favtitle` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT '标题',
   `dateline` int(10) NOT NULL DEFAULT '0' COMMENT '收藏时间',
   PRIMARY KEY (`favid`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of zuk_home_favorite
 -- ----------------------------
 INSERT INTO `zuk_home_favorite` VALUES ('1', '1', '130', '1', '1479645003');
 INSERT INTO `zuk_home_favorite` VALUES ('2', '1', '127', '测试测试测试测试测试测试测试', '1479995528');
+INSERT INTO `zuk_home_favorite` VALUES ('3', '1', '5', '【LR.Team】TWRP-3.0.2-Z1专版中文优化完美版1028更新', '1480054517');
 
 -- ----------------------------
 -- Table structure for zuk_home_friends
@@ -545,27 +546,25 @@ CREATE TABLE `zuk_home_friends` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for zuk_home_gold
+-- Table structure for zuk_home_notification
 -- ----------------------------
-DROP TABLE IF EXISTS `zuk_home_gold`;
-CREATE TABLE `zuk_home_gold` (
-  `goid` mediumint(8) NOT NULL AUTO_INCREMENT COMMENT '用户id',
-  `ugold` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '10' COMMENT '金币数量',
-  `goldloga` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `goldlogb` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `goldlogc` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `goldlogd` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `goldloge` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `goldlogf` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `goldlogg` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `goldlogh` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`goid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `zuk_home_notification`;
+CREATE TABLE `zuk_home_notification` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `uid` mediumint(8) NOT NULL COMMENT '通知的用户',
+  `type` varchar(20) CHARACTER SET utf8 NOT NULL COMMENT 'friend好友消息   doing系统消息    post回复   addf加好友',
+  `new` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1为新的消息   0为已读的消息',
+  `authorid` mediumint(8) NOT NULL COMMENT '发送通知的用户id',
+  `author` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT '用户名',
+  `note` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '通知的内容',
+  `dateline` int(10) NOT NULL COMMENT '时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
--- Records of zuk_home_gold
+-- Records of zuk_home_notification
 -- ----------------------------
-INSERT INTO `zuk_home_gold` VALUES ('1', '10', '', null, null, null, null, null, null, null);
+INSERT INTO `zuk_home_notification` VALUES ('19', '1', 'adf', '1', '17', '牛逼', '11', '1480063294');
 
 -- ----------------------------
 -- Table structure for zuk_index_category
@@ -1520,7 +1519,7 @@ CREATE TABLE `zuk_member` (
 INSERT INTO `zuk_member` VALUES ('1', 'admin', '乱世浮华丿流年', '/Uploads/head/2016/11/23/5834fb5bab927.jpg', '1', '-28800', '13053237223', '991248204', 'shineky7@sina.cn', '66d6a1c8748025462128dc75bf5ae8d1', '1479131236', '0');
 INSERT INTO `zuk_member` VALUES ('17', 'sky1111', '牛逼', '/Uploads/head/2016/11/16/582587856e249.jpg', '0', '-28800', '', '', '', '66d6a1c8748025462128dc75bf5ae8d1', '1478854557', '0');
 INSERT INTO `zuk_member` VALUES ('18', 'admin1', '牛逼', null, '0', null, '15665370632', null, null, '66d6a1c8748025462128dc75bf5ae8d1', '1479694655', '0');
-INSERT INTO `zuk_member` VALUES ('19', 'zuk_807080', null, null, '0', null, null, null, 'shineky7@sina.cn', 'c13c252b4d57b200e5e6f0a58e8427b9', '1479798734', '0');
+INSERT INTO `zuk_member` VALUES ('19', 'zuk_807080', '气温气温', null, '0', null, null, null, 'shineky7@sina.cn', 'c13c252b4d57b200e5e6f0a58e8427b9', '1479798734', '0');
 
 -- ----------------------------
 -- Table structure for zuk_read
@@ -1621,7 +1620,7 @@ CREATE TABLE `zuk_user_credit` (
 -- ----------------------------
 -- Records of zuk_user_credit
 -- ----------------------------
-INSERT INTO `zuk_user_credit` VALUES ('1', '55');
+INSERT INTO `zuk_user_credit` VALUES ('1', '751111111');
 
 -- ----------------------------
 -- Table structure for zuk_user_email
@@ -1658,11 +1657,11 @@ CREATE TABLE `zuk_user_sign_in` (
   `get_integral` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '签到获取积分',
   `sign_in_con_days` int(10) DEFAULT '1' COMMENT '连续签到天数',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Records of zuk_user_sign_in
 -- ----------------------------
 INSERT INTO `zuk_user_sign_in` VALUES ('22', '1', '1', '1479987042', '2016', '11', '24', '20', '1');
 INSERT INTO `zuk_user_sign_in` VALUES ('23', '0', '1', '1479992824', '2016', '11', '24', '20', '1');
-SET FOREIGN_KEY_CHECKS=1;
+INSERT INTO `zuk_user_sign_in` VALUES ('24', '1', '1', '1480035724', '2016', '11', '25', '20', '2');

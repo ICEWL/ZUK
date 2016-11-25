@@ -96,13 +96,13 @@
         <table> 
          <tbody> 
           <tr> 
-           <th valign="top" width="60" class="avt"> <a href=""> <img src="" onerror="" /> </a> </th> 
-           <td valign="top">添加 <strong>离火</strong> 为好友，附言:<br /> 
+           <th valign="top" width="60" class="avt"> <a href=""> <img src="__ROOT__<{$muser.head}>" onerror="" /> </a> </th> 
+           <td valign="top">添加 <strong><{$muser.uname}></strong> 为好友，附言:<br /> 
             <input type="text" name="note" value="" size="35" class="px" /> 
             <input type="hidden" name="uid" value="<{$muser.uid}>" />
             <input type="hidden" name="mid" value="<{$muser.uname}>" />
             <input type="hidden" name="type" value="adf" />
-            <p class="mtn xg1">(附言为可选，离火 会看到这条附言)</p> </td> 
+            <p class="mtn xg1">(附言为可选，<{$muser.uname}> 会看到这条附言)</p> </td> 
           </tr> 
          </tbody> 
         </table> 

@@ -1,6 +1,9 @@
 <!-- 我的帖子 -->
 <extend name="Notice/news" />
 <block name="mainaa">
+<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/alert/css/example.css"> -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/alert/css/sweet-alert.css">
+<script src="__PUBLIC__/alert/js/sweet-alert.min.js"></script>
 	 <div class="content" id="space_info"> 
    <div class="sidebar">
     <div class="box p_nav"> 
@@ -8,11 +11,14 @@
      <div class="p_navs"> 
       <ul> 
        <li> 
-        <div class="r_arrow"></div><a href="<{:U("Home/Notice/news")}>"><i></i>消息</a> </li> 
+        <div class="r_arrow">1</div> <span class="graysmallbox">1</span><a href="<{:U("Home/Notice/news")}>"><i></i>消息</a>
+        </li> 
        <li> 
-        <div class="r_arrow"></div><a href="<{:U("Home/Notice/message")}>"><i></i>系统消息</a> </li>
+        <div class="r_arrow"></div> <span class="graysmallbox">1</span><a href="<{:U("Home/Notice/message")}>"><i></i>系统消息</a>
+        </li>
         <li class="a"> 
-        <div class="r_arrow"></div><a href="<{:U("Home/Notice/mypost")}>"><i></i>我的帖子</a> </li> 
+        <div class="r_arrow"></div><span class="graysmallbox">1</span><a href="<{:U("Home/Notice/mypost")}>"><i></i>新的好友</a> 
+    	</li> 
       </ul> 
      </div> 
     </div> 
@@ -23,50 +29,70 @@
 	<div class="main">
 		<div class="box">
 			<div class="p_header">
-				<h3 class="modname">我的帖子</h3>
-				<div class="tab">
-					<ul>
-						<li class="a"><a href="">被回复 <span></span></a></li>
-						<li><a href="">@我的 <span></span></a></li>
-					</ul>
-				</div>
+				<h3 class="modname">新的好友</h3>
 			</div>
 			<div class="p_timeline p_notice">
 				<ul>
-					<li class=""  notice="749938">
-						<i><span></span></i>
-						<em><span title="2016-11-14 17:37">前天&nbsp;17:37</span></em>
-						<div class="p_timeline_title" style="">
-							<p>您的主题 
-								<a href="" target="_blank">1111111111111111111111111111111111111111</a> 被 
-								<a href="">Sidney</a> 删除 
-								<div class="quote">
-									<blockquote>恶意灌水</blockquote>
-								</div>
-							</p>
-						</div>
-					</li>
-					<li class=""  notice="749938">
-						<i><span></span></i>
-						<em><span title="2016-11-14 17:37">前天&nbsp;17:37</span></em>
-						<div class="p_timeline_title" style="">
-							<p>您的主题 
-								<a href="" target="_blank">1111111111111111111111111111111111111111</a> 被 
-								<a href="">Sidney</a> 删除 
-								<div class="quote">
-									<blockquote>恶意灌水</blockquote>
-								</div>
-							</p>
-						</div>
-					</li>
+					<!-- 加好友申请 -->
+				<volist name="myp" id="myps">
+					<li class="" id="pendingFriend_298917" notice="761736">
+						<i><span></span>
+					</i>
+					<em><span title="<{$myps.dateline|date="Y-m-d H:i:s",###}>"><{$myps.dateline|date="Y-m-d H:i:s",###}>&nbsp;</span></em>
+					<div class="p_timeline_title" style="color:#000;font-weight:bold;">
+						<p>
+							<a href=""><{$myps.author}></a> 
+							请求加您为好友，附言：<{$myps.note}>&nbsp;&nbsp;
+							<a  class="xw1" id="afr_298917" href="javascript:delayURL('<{:U('Addfriends/notic',array('id'=>$myps['id']))}>',2000);" style="text-decoration:underline;color:red;">批准申请
+							</a>
+						</p>
+					</div>
+				</li>
+			</volist>
+
+			<!-- 加好友同意后日志 -->
+			<volist name="friend" id="friends">
+				<li class="" id="pendingFriend_225702" notice="758514">
+					<i><span></span></i>
+					<em><span title="<{$friends.dateline|date="Y-m-d H:i:s",###}>"><{$friends.dateline|date="Y-m-d H:i:s",###}></span></em>
+					<div class="p_timeline_title" style="">
+					<p><a href=""><{$friends.fusername}></a> 和您成为了好友</p>
+					</div>
+				</li>
+			</volist>
+
 				</ul>
-			</div>
+		</div>
 		</div>
 		</div>
 </div>
+
+
+
+
+
+
 </block>
 
 
 <block name="myjs">
 
+<script>
+document.querySelector('div.p_timeline_title p a.xw1').onclick = function(){
+	swal({
+		title: "恭喜你,成功加为好友",
+		text: "2秒后自动关闭",
+		imageUrl: '__PUBLIC__/qwhome/images/goods_1_2.png',
+		showConfirmButton: false,
+		reverseButtons:true,
+	});
+};
+
+</script>
+
+<script type="text/javascript">
+ function delayURL(url,time){
+ setTimeout("top.location.href = '" + url + "'",time);
+ }
+</script>
 </block>

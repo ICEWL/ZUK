@@ -24,12 +24,7 @@ class MyController extends ComController
     }
 
 
-     public function mygold()
-    {
-
-        $this->display('mygold');
-    }
-
+   
          public function record()
     {
 
