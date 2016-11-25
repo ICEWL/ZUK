@@ -24,7 +24,15 @@
 
             <div class="forum_top_info"> 
                 <div class="right">
-                    版主: <a href="" class="notabs" c="1">静爱与静界</a>
+                    <volist name="bmuser" id="vv">
+                        <if condition=" $user.uid eq $vv['uid'] ">
+                            <a href="<{:U('/Home/Cgmanage/index',array('sid'=>$arr['id']))}>" style="color: red;">
+                                版主管理&nbsp;&nbsp;&nbsp;&nbsp;
+                            </a>
+                        </if>
+                        版主：
+                        <a href="<{:U('Space/dynamic',array('mid'=>$vv['uid']))}>" class="notabs" c="1"><{$vv.username}></a>&nbsp;&nbsp;
+                    </volist>
                 </div>
                 今日: <{$todayposts}><span class="pipe">|</span>主题: <{$totalpost}>
             </div> 

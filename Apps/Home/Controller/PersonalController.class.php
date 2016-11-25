@@ -71,10 +71,12 @@ class PersonalController extends ComController
             }
         }
 
-        
-        $head = I('post.head', '', 'strip_tags');
+        $head = isset($_POST['head']) ? $_POST['head'] : false;
+
         if ($head <> '') {
             $data['head'] = $head;
+        }else{
+            $data['head'] = $user['head'];
         }
 
         $sex = isset($_POST['gender']) ? intval($_POST['gender']) : false;
@@ -83,6 +85,8 @@ class PersonalController extends ComController
         }
 
         $birthday = isset($_POST['birthday']) ? strtotime($_POST['birthday']) : false;
+
+        // var_dump($birthday);die;
 
         if ($birthday) {
             $data['birthday'] = $birthday;

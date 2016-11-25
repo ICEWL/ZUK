@@ -1,15 +1,15 @@
-<extend name="Index/index" />
+<!-- 版主管理 -->
+
+<include file="Public/head" />
 
 <block name="mycss">
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css">
 </block>
 
-<block name="main">
-
-
 <div class="breadcrumbs content"> 
    <a href="<{:U('Home/Index/index')}>">ZUK社区</a>
-   <em>»</em>共搜到XX条记录
+   <em>»</em>版主管理
+   <em>»</em><a href="">帖子管理</a> 
 </div>
 
 <div class="content" id="space_info">
@@ -18,7 +18,26 @@
 
             <div class="p_header"></div>
 
-            
+            <div class="p_viewlist" style="margin: 0 14px;"> 
+                <div class="tab"> 
+                    <ul> 
+                        <li class="
+                            <if condition="(I('get.status') eq '0') OR (I('get.status') eq '')">
+                                a
+                            </if>
+                        ">
+                            <a href="<{:U('index',array('sid'=>$sid,'status'=>0))}>">已发表</a>
+                        </li> 
+                        <li class="
+                            <if condition="I('get.status') eq '1'">
+                                a
+                            </if>
+                        ">
+                            <a href="<{:U('index',array('sid'=>$sid,'status'=>1))}>">待审核</a>
+                        </li> 
+                    </ul> 
+                </div>
+            </div>
 
             <div class="p_threadlist"> 
               <form method="post" autocomplete="off" name="delform" id="delform" action="<{:U('update')}>" > 
@@ -44,7 +63,16 @@
                         </a> 
                         </li> 
                     </volist>
-                        
+                        <li class="p_threadlist_last"> 
+                            <if condition="I('get.status') eq '1'">
+                                <button type="submit" name="delsubmit" value="true" class="graysmallbutton">审核所选</button> 
+                            <else />
+                                <button type="submit" name="delsubmit" value="false" class="graysmallbutton">取审所选</button> 
+                            </if>      
+                            <label for="chkall" onclick="checkall(this.form, 'aids')">
+                                <input type="checkbox" name="chkall" id="chkall">全选
+                            </label> 
+                        </li> 
                    </ul> 
               </form> 
             </div>
@@ -54,8 +82,6 @@
 
 </div><!--#/space_info-->
 
-</block>
+<include file="Public/foot" />
 
-<block name="myjs">
-
-</block>
+<block name="myjs"></block>

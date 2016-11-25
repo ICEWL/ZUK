@@ -105,6 +105,10 @@ class SectionController extends ComController
         // 查询当前版块信息
         $arr = M('category')->where("id = $sid")->select();
 
+        // 查询当前版块版主信息
+        $bmuser = M('moderator')->where(array("cgid" => $sid))->select();
+        $this->assign('bmuser', $bmuser);
+
         if ($arr) {
 
             // 获取当前版块子版块信息
