@@ -87,7 +87,7 @@ class AddfriendsController extends ComController
         // var_dump($_GET);
         // var_dump($_SESSION);
         $authorid = I("session.uid");
-        $uida = I('session.uid');
+        $uida = I('post.uid');
         $name = M('member')->field("uname")->where("uid = $authorid")->select();
         // var_dump($name);
         $data['uid'] = I('session.uid');
