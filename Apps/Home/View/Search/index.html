@@ -1,4 +1,4 @@
-<extend name="Index/index" />
+
 
 <block name="mycss">
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css">
@@ -9,53 +9,43 @@
 
 <div class="breadcrumbs content"> 
    <a href="<{:U('Home/Index/index')}>">ZUK社区</a>
-   <em>»</em>共搜到XX条记录
+   <em>»</em>共搜到　<{$count}>　条记录
 </div>
 
 <div class="content" id="space_info">
 
-        <div class="box">
+    <div class="box">
 
-            <div class="p_header"></div>
+        <div class="p_header"></div>
 
-            
-
-            <div class="p_threadlist"> 
-              <form method="post" autocomplete="off" name="delform" id="delform" action="<{:U('update')}>" > 
-                    <!-- <input type="hidden" name="formhash" value="c8a069ed">  -->
-                    <!-- <input type="hidden" name="delfavorite" value="true">  -->
-                    <ul>
-                    <volist name="lists" id="val">
-                        <li> 
-                         <div class="p_threadlist_right">
-                            <input type="checkbox" name="aids[]" value="<{$val['aid']}>">
-                         </div> 
-                         <em><span><{$val['t']|date="Y-m-d H:i:s",###}></span></em> 
-                         [<if condition="$val.status eq '1'">
-                                <span style="color: red">待审</span>
-                            <else/>
-                                <span style="color: blue">已审</span>
-                        </if>]　
-                         <span class="color1"><{$val.name}></span>　
-                         <a href="
-                            <{:U('Section/content',array('aid'=>$val['aid']))}>
-                         " target="_blank">
-                            <{$val['title']}>
-                        </a> 
-                        </li> 
-                    </volist>
-                        
-                   </ul> 
-              </form> 
-            </div>
+        <div class="p_threadlist"> 
+            <ul>
+            <volist name="list" id="val">
+                <li> 
+                 <em><span><{$val['t']|date="Y-m-d H:i:s",###}></span></em>
+                 <a href="
+                    <{:U('Space/dynamic',array('mid'=>$val['mid']))}>
+                 " target="_blank">
+                    <{$val['user']}>
+                </a>-
+                 <span class="color1"><{$val.name}></span>　
+                 <a href="
+                    <{:U('Section/content',array('aid'=>$val['aid']))}>
+                 " target="_blank">
+                    <{$val['title']}>
+                </a>
+                <div class="right"> 
+                    回复 <{$val['total']}> 次 <span class="pipe">,</span>浏览 <{$val['n']}> 次 
+                </div>  
+                </li> 
+            </volist>
+           </ul> 
         </div>
 
-        <div class="pg"><{$page}></div>
+    </div>
+
+    <div class="pg"><{$page}></div>
 
 </div><!--#/space_info-->
-
-</block>
-
-<block name="myjs">
 
 </block>

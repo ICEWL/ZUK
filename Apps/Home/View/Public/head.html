@@ -144,21 +144,41 @@
 		
 		<!-- 搜索——start -->
 		<div class="fm_search">
-			<form id="scbar_form" method="post"  onsubmit="#" action="<{:U('Search/index')}>" target="_blank">
+			<form id="scbar_form" onsubmit="#" target="_blank">
 				<div class="forum_search" style="width: 210px;">
 					<ul>
 						<li class="scbarbutton">
 							<button type="submit">搜索</button>
 						</li>
-						<!-- <li class="scbartype">
-							<a href="#" >帖子</a>
-						</li> -->
 						<li class="scbarbox">
-							<input type="text" name="srchtxt" id="scbar_txt" placeholder="请输入搜索内容" />
+							<input type="text" name="keyword"  placeholder="请输入搜索内容" id="keyword" onkeyup="lookup(this.value)" <!-- onblur="fill()" -->>
 						</li>
 					</ul>
 				</div>
 			</form>
+
+			<script>
+				function lookup(keyword){
+					if(keyword.length == 0){
+						$('#suggest').hide();
+						$('#index').css('display','block'); 
+					}else{
+						$.post("<{:U('Search/index')}>",{keyword:keyword},function(data){
+							if(data.length>0){
+								$('#suggest').show();
+								$('#autolist').html(data);
+								$('#index').css('display','none'); 
+							}
+						});
+
+					}
+				}
+				// function fill(thisValue){
+				// 	$('#keyword').val(thisValue);
+				// 	setTimeout("$('#suggest').hide()",200);
+				// }
+			</script>
+
 		</div>
 		<!-- 搜索——end -->
 

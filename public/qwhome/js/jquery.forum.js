@@ -371,7 +371,7 @@ jQuery(function($) {
 		});
 	}
 	
-	$.getScript("/public/qwhome/js/fn.slide.js", function(){
+	$.getScript("/Public/qwhome/js/fn.slide.js", function(){
 	   $('._slide').slide();
 	   $('._mmslide').slide({display:'._mmslidepic',pointer:'._mmslidetit'});
 	   $('._appslide').slide({display:'._appslidelist',pointer:'._appslidetit',speed:0});
