@@ -32,4 +32,25 @@ return array(
 
 	
 	'SHOW_PAGE_TRACE' =>true,  					// 显示页面Trace信息
+
+
+				'THINK_EMAIL' => array(
+
+				'SMTP_HOST' => 'smtp.163.com', //SMTP服务器
+
+				'SMTP_PORT' => '465', //SMTP服务器端口
+
+				'SMTP_USER' => 'yleigg@163.com', //SMTP服务器用户名
+
+				'SMTP_PASS' => 's1371845833', //SMTP服务器密码
+
+				'FROM_EMAIL' => 'yleigg@163.com', //发件人EMAIL
+
+				'FROM_NAME' => '我是炫酷的管理员', //发件人名称
+
+				'REPLY_EMAIL' => 'yleigg@163.com', //回复EMAIL（留空则为发件人EMAIL）
+
+				'REPLY_NAME' => 'Timothy', //回复名称（留空则为发件人名称）
+
+				),
 );

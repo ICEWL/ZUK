@@ -10,6 +10,7 @@
  **/
 
 namespace Home\Controller;
+use Org\Sms\Smtp;
 
 class RegController extends ComController 
 {
@@ -91,6 +92,18 @@ class RegController extends ComController
             $data['user'] = $user;
             $uid = M('member')->data($data)->add();
 
+            // 加入积分表
+
+            $datass['uid'] = $uid;
+            $datass['credit'] = '200';
+            M('user_credit')->data($datass)->add();
+
+
+            // 分类
+            $datas['uid'] = $uid;
+            $datas['group_id'] = '9';
+            M('auth_group_access')->data($datas)->add();
+
         if($uid>0){            
             
                $this->success("注册成功！",U('Home/Login/index'));                
@@ -106,17 +119,7 @@ class RegController extends ComController
     public function insert_s()
     {
       
-         // var_dump($_SESSION);
-        $verify = I('param.verify','');  
-        if(!$this->check_verify($verify)){
-            $this->error("亲，验证码输错了哦！",$this->site_url,3);  
-        } 
-        //实例化Model对象
-        // $user = M("member");
 
-        // $_POST['addtime'] = time(); 
-        // $user->create();
-        // $user->password = md5($_POST['password']);
 
         $num=rand(100000,999999);
         // var_dump($num);die;
@@ -130,7 +133,7 @@ class RegController extends ComController
         }
         $data['email'] = isset($_POST['email']) ? trim($_POST['email']) : '';
         $data['user'] = isset($_POST['email']) ? trim($_POST['email']) : '';
-
+        $email = isset($_POST['email']) ? trim($_POST['email']) : '';
         $data['t'] = time();
             if ($user == '') {
                 $this->error('邮箱不能为空！');
@@ -141,19 +144,32 @@ class RegController extends ComController
             if (M('member')->where("user='$user'")->count()) {
                 $this->error('邮箱已被占用！');
             }
-            // $data['user'] = $user;
+            $data['user'] = $user;
             $uid = M('member')->data($data)->add();
 
+             // 加入积分表
+            $datass['uid'] = $uid;
+            $datass['credit'] = '200';
+            M('user_credit')->data($datass)->add();
 
 
-        if($uid>0){            
+            // 分类
+            $datas['uid'] = $uid;
+            $datas['group_id'] = '9';
+            M('auth_group_access')->data($datas)->add();
+
             
-               $this->success("注册成功！",U('Home/Login/index'));                
+
+            // 发送邮件
+            think_send_mail($_POST['email'], $_POST['email'], $subject = '欢迎你加入zuk大社区!',$_POST['email'], $attachment = null);         
+        if($uid>0){   
+            $this->success("注册成功！",U('Home/Login/index'));                  
         }else{
             $this->error("注册失败,原因:".$user->getError());
         }
             
     }
+
 
 
 
