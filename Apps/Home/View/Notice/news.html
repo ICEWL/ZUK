@@ -1,74 +1,84 @@
 <!-- 消息 -->
-  <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_2_home_space.css" />
+<block name="mycss">
+<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_2_home_space.css" /> -->
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css" />  
   <!-- demo -->
   <link href="__PUBLIC__/demo/css/style.css" rel="stylesheet" type="text/css"/>
   <link href="__PUBLIC__/demo/css/demo.css" rel="stylesheet" type="text/css"/>
+</block>
 <include file="Public/head" />
 
- <div class="breadcrumbs content"> 
-   <a href="">联想手机社区</a>
-   <em>&raquo;</em>
-   <a href="">通知</a>
-   <em>&raquo;</em>消息 
-  </div> 
+<div id="index">
 
-<block name="mainaa">
- <div class="content" id="space_info"> 
-   <div class="sidebar">
-    <div class="box p_nav"> 
-     <h3>通知</h3> 
-     <div class="p_navs"> 
-     <ul> 
-       <li> 
-        <div class="r_arrow">1</div> <span class="graysmallbox">1</span><a href="<{:U("Home/Notice/news")}>"><i></i>消息</a>
-        </li> 
-       <li> 
-        <div class="r_arrow"></div> <span class="graysmallbox">1</span><a href="<{:U("Home/Notice/message")}>"><i></i>系统消息</a>
-        </li>
-        <li class="a"> 
-        <div class="r_arrow"></div><span class="graysmallbox">1</span><a href="<{:U("Home/Notice/mypost")}>"><i></i>新的好友</a> 
-      </li> 
-      </ul> 
-     </div> 
+    <div class="breadcrumbs content"> 
+        <a href="<{:U('Home/Index/index')}>" title="首页">ZUK社区</a>
+        <em>&raquo;</em>
+        <a href="">通知</a>
     </div> 
-   </div> 
-  
-</block>
 
-<block name="mainaas">
-	 <div class="main"> 
-    <div class="box"> 
-     <div class="p_header"> 
-      <div class="p_header_button">
-       <a href="<{:U("Notice/send")}>" class="greensmallbutton">写消息</a>
-      </div>
-      <h3 class="modname">消息</h3>
-     </div> 
-     <form id="deletepmform" action="" method="post" autocomplete="off" name="deletepmform"> 
-      <div class="p_threadlist"> 
-       <dl id="pmlist_24957" class=""> 
-        <table width="100%"> 
-         <tbody> 
-          <tr> 
-           <td class="p_timeline_list_avt"> <a href="" target="_blank"><img src="picture/17_avatar_small.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'" /></a> </td> 
-           <td class="p_pm_tousername"> ZUK946486<p><span title="2016-11-16 22:00">半小时前</span></p> </td> 
-           <th class="p_pm_lastsummary"> 11111<a href="" id="pmlist_24957_a"></a> </th> 
-           <td class="p_pm_time"><small class="graysmallbox">1 条对话</small></td> 
-          </tr> 
-         </tbody> 
-        </table> 
-       </dl> 
-      </div> 
-     </form> 
-   
-    </div> 
-   </div> 
-  </div>
-</block>
+    <div class="content" id="space_info">
+
+        <div class="sidebar">
+            <div class="box p_nav"> 
+                <h3>通知</h3> 
+                <div class="p_navs"> 
+                    <ul> 
+                        <li class="<if condition=" $ANAME eq 'news' ">a</if>">
+                            <div class="r_arrow"></div> 
+                            <span class="graysmallbox"><{$new['fri']}></span>
+                            <a href="<{:U("Home/Notice/news")}>"><i></i>好友消息</a>
+                        </li> 
+                        <li class="<if condition=" $ANAME eq 'message' ">a</if>">
+                            <div class="r_arrow"></div> 
+                            <span class="graysmallbox"><{$new['admin']}></span>
+                            <a href="<{:U("Home/Notice/message")}>"><i></i>系统消息</a>
+                        </li>
+                        <li class="<if condition=" $ANAME eq 'mypost' ">a</if>">
+                            <div class="r_arrow"></div>
+                            <span class="graysmallbox"><{$new['new']}></span>
+                            <a href="<{:U("Home/Notice/mypost")}>"><i></i>新的好友</a> 
+                        </li> 
+                    </ul> 
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="main"> 
+            <div class="box"> 
+                <block name="main">
+                    
+                    <div class="p_header"> 
+                        <div class="p_header_button">
+                            <a href="<{:U("Notice/send")}>" class="greensmallbutton">写消息</a>
+                        </div>
+                        <h3 class="modname">消息</h3>
+                    </div> 
+                    <!-- <div class="time_prompt graytopborder">
+                        暂时没有提醒内容
+                    </div> -->
+                    <form id="deletepmform" action="" method="post" autocomplete="off" name="deletepmform"> 
+                        <div class="p_threadlist"> 
+                            <dl id="pmlist_24957" class=""> 
+                            <table width="100%"> 
+                                <tr> 
+                                    <td class="p_timeline_list_avt"> <a href="" target="_blank"><img src="picture/17_avatar_small.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'" /></a> </td> 
+                                    <td class="p_pm_tousername"> ZUK946486<p><span title="2016-11-16 22:00">半小时前</span></p> </td> 
+                                    <th class="p_pm_lastsummary"> 11111<a href="" id="pmlist_24957_a"></a> </th> 
+                                    <td class="p_pm_time"><small class="graysmallbox">1 条对话</small></td> 
+                                </tr> 
+
+                            </table>
+                            </dl> 
+                            
+                        </div> 
+                    </form> 
+                </block>
+            </div> 
+        </div> 
+    </div>
+
+</div>
 
 <include file="Public/foot" />
 
-<block name="myjs">
-
-</block>
+<block name="myjs"></block>

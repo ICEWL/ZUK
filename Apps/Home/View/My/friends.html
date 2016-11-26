@@ -3,28 +3,38 @@
 <extend name="My/posts" />
 
 <block name="main"> 
-     <div class="p_header"> 
-      <h3 class="modname">我的好友</h3> 
-     </div> 
-     <div class="p_threadlist_m"> 
-      <ul>
-       <li id="friend_298917_li"> 
-        <div class="p_threadlist_avatar"> 
-         <a href="" c="1"><img src="picture/17_avatar_small.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'"></a> 
-        </div> 
-        <div class="p_threadlist_c"> 
-         <i class="title_line"></i> 
-         <a href="" class="font22">ZUK946486</a> 
-         <p>幼儿园</p> 
-        </div> 
-        <div class="p_threadlist_stat"> 
-        </div> 
-        <div class="p_threadlist_get"> 
-         <a href="" id="a_sendpm_298917" onclick="showWindow('showMsgBox', this.href, 'get', 0)" title="发送消息" class="greensmallblankbutton">发消息</a>
-         <a href="" onclick="showWindow(this.id, this.href, 'get', 0);" title="删除" class="whitesmallbutton">解除关系</a> 
-        </div> </li> 
-      </ul> 
-     </div> 
+    <div class="p_header"> 
+        <h3 class="modname">我的好友</h3> 
+    </div> 
+    <div class="p_threadlist_m"> 
+        <empty name="friendslist">
+            <div class="time_prompt nomyfriend graytopborder"></div>
+        <else />
+        <ul>
+        <volist name="friendslist" id="val">
+            <li id="friend"> 
+                <div class="p_threadlist_avatar"> 
+                    <a href="
+                    <{:U('Space/dynamic',array('mid'=>$val['fuid']))}>
+                    " c="1"><img src="__ROOT__<{$val.head}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'"></a> 
+                </div> 
+                <div class="p_threadlist_c"> 
+                    <i class="title_line"></i> 
+                    <a href="
+                    <{:U('Space/dynamic',array('mid'=>$val['fuid']))}>
+                    " class="font22"><{$val.fusername}></a> 
+                    <!-- <p>幼儿园</p>  -->
+                </div> 
+                <div class="p_threadlist_stat"> </div> 
+                <div class="p_threadlist_get"> 
+                    <a href="<{:U('Notice/send',array('mid'=>$val['fuid']))}>" id="a_sendpm_201392" class="bluesmallbutton"  title="发消息">发消息</a>
+                    <a href="<{:U('remove',array('fid'=>$val['fuid']))}>" title="删除" class="whitesmallbutton">解除关系</a> 
+                </div> 
+            </li>
+        </volist>
+        </ul>
+        </empty> 
+    </div> 
 </block>
 
 <block name="myjs">

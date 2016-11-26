@@ -31,7 +31,6 @@ class SpaceController extends ComController
             die;
         }
 
-
         // 主题数
         $userposts = M('article')->where(array('mid' => $uid))->count();
         $usertotal['userposts'] = $userposts;
@@ -51,6 +50,36 @@ class SpaceController extends ComController
         // 积分
         $usercredit = M('user_credit')->field('credit')->where(array('uid' => $uid))->select();
         $usertotal['usercredit'] = $usercredit['0']['credit'];
+
+        // 查询用户头衔
+        $score = M('score')->order('jid asc')->select();
+
+        foreach ($score as $k => $v) {
+            $min[] = $v['min'];
+            $honor[] = $v['honor'];
+        }
+
+        $rank = $usertotal['usercredit'];
+
+        if ($rank >= $min['0'] and $rank <= $min['1']) {
+            $usertotal['usercore'] = $honor['0'];
+        }elseif ($rank > $min['1'] and $rank <= $min['2']) {
+            $usertotal['usercore'] = $honor['1'];
+        }elseif ($rank > $min['2'] and $rank <= $min['3']) {
+            $usertotal['usercore'] = $honor['2'];
+        }elseif ($rank > $min['3'] and $rank <= $min['4']) {
+            $usertotal['usercore'] = $honor['3'];
+        }elseif ($rank > $min['4'] and $rank <= $min['5']) {
+            $usertotal['usercore'] = $honor['4'];
+        }elseif ($rank > $min['5'] and $rank <= $min['6']) {
+            $usertotal['usercore'] = $honor['5'];
+        }elseif ($rank > $min['6'] and $rank <= $min['7']) {
+            $usertotal['usercore'] = $honor['6'];
+        }elseif ($rank > $min['7'] and $rank <= $min['8']) {
+            $usertotal['usercore'] = $honor['7'];
+        }else{
+            $usertotal['usercore'] = $honor['8'];
+        }
 
         $this->assign('usertotal', $usertotal);
 
@@ -165,12 +194,23 @@ class SpaceController extends ComController
 
 
     public function information()
-    {
+    {  
+
         $this->display('information');
     }
 
     public function friends()
-    {
+    {   
+
+        $mid = I('get.mid/d');
+        $prefix = C('DB_PREFIX');  //获取表前缀
+        $friend = M('home_friends');
+        $friendslist = $friend->field("{$prefix}home_friends.*,{$prefix}member.head")
+                            ->where(array("{$prefix}home_friends.uid" => $mid))
+                            ->join("{$prefix}member on {$prefix}home_friends.fuid = {$prefix}member.uid", 'left')
+                            ->select();
+
+        $this->assign('friendslist', $friendslist);
 
         $this->display('friends');
     }

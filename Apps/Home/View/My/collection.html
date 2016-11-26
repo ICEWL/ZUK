@@ -4,41 +4,34 @@
 
 <block name="main">
 
-     <div class="p_header">
-      <h3 class="modname">帖子收藏记录</h3>
-     </div> 
-     <div class="p_threadlist"> 
-      <form method="post" autocomplete="off" name="delform" id="delform" action="" onsubmit="showDialog('确定要删除选中的收藏吗？', 'confirm', '', '$(\'delform\').submit();'); return false;"> 
-       <input type="hidden" name="formhash" value="c8a069ed"> 
-       <input type="hidden" name="delfavorite" value="true"> 
-       <ul>
-          <li> 
-             <div class="p_threadlist_right">
-                <input type="checkbox" name="favorite[]" value="60947" vid="338074">
-             </div> 
-             <em><span title="2016-11-14 17:28">前天&nbsp;17:28</span></em> 
-             <a href="" target="_blank">【主题合集】大鱼海棠or阴阳师，优质古风你更粉哪个？</a> 
-         </li> 
-          <li> 
-             <div class="p_threadlist_right">
-                <input type="checkbox" name="favorite[]" value="60947" vid="338074">
-             </div> 
-             <em><span title="2016-11-14 17:28">前天&nbsp;17:28</span></em> 
-             <a href="" target="_blank">【主题合集】大鱼海棠or阴阳师，优质古风你更粉哪个？</a> 
-         </li>
-         <li> 
-             <div class="p_threadlist_right">
-                <input type="checkbox" name="favorite[]" value="60947" vid="338074">
-             </div> 
-             <em><span title="2016-11-14 17:28">前天&nbsp;17:28</span></em> 
-             <a href="" target="_blank">【主题合集】大鱼海棠or阴阳师，优质古风你更粉哪个？</a> 
-         </li>
-          <li class="p_threadlist_last"> 
-            <button type="submit" name="delsubmit" value="true" class="graysmallbutton">删除选中</button> <label for="chkall" onclick="checkall(this.form, 'favorite')"><input type="checkbox" name="chkall" id="chkall">全选</label> 
-          </li> 
-       </ul> 
-      </form> 
-     </div> 
+    <div class="p_header">
+        <h3 class="modname">我的收藏</h3>
+    </div>
+
+    <div class="p_threadlist"> 
+        <form method="post" autocomplete="off" name="delform" id="delform" action="<{:U('delFavorite')}>" >
+            <empty name="favoritelist">
+                <div class="time_prompt graytopborder nomyfavorite"></div>
+            <else />
+            <ul>
+                <volist name="favoritelist" id="val">
+                <li> 
+                    <div class="p_threadlist_right">
+                        <input type="checkbox" name="favorite[]" value="<{$val['favid']}>">
+                    </div> 
+                    <em><span title="<{$val['dateline']|date="Y-m-d H:i:s",###}>"><{$val['dateline']|date="Y-m-d H:i:s",###}></span></em> 
+                    <a href="<{:U('Section/content',array('aid'=>$val['tid']))}>" target="_blank"><{$val['favtitle']}></a> 
+                </li>
+                </volist>
+
+                <li class="p_threadlist_last"> 
+                    <button type="submit" name="delsubmit" value="true" class="graysmallbutton">删除选中</button> 
+                    <label for="chkall" onclick="checkall(this.form, 'favorite')"><input type="checkbox" name="chkall" id="chkall">全选</label> 
+                </li>
+            </ul>
+            </empty> 
+        </form> 
+    </div> 
 
 </block>
 

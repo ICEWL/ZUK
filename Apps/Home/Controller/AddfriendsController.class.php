@@ -16,14 +16,11 @@ class AddfriendsController extends ComController
 	        die;
 	        }
 
-        // var_dump($_POST);
-        // var_dump($_SESSION);
         $uid = $_SESSION['uid'];
        	$uuid = I('post.uid');
         $name = M('member')->field("uname")->where("uid = $uid")->select();
         $uname = array_column($name,'uname');
-        // var_dump($uid);
-        // var_dump($uuid);
+
         $data['dateline'] = time();       
         $data['note'] = I('post.note');
         $data['type'] = I('post.type');
@@ -34,7 +31,7 @@ class AddfriendsController extends ComController
         if($uid == $uuid){
             $this->error("自己不能加自己为好友");
         }
-        // var_dump($id);
+
         if($id == null){            
         $addfriends = M('home_notification')->data($data)->add();
             $this->success("已申请，等待对方同意！");                
@@ -48,10 +45,9 @@ class AddfriendsController extends ComController
 
     public function notic()
     {
-        // var_dump($_SESSION);
-        // var_dump($_GET);
+
         $id = I('get.id');
-        // var_dump($id);
+
         $uid = I('session.uid');
 
         $names = M('home_notification')->field("author,uid,authorid")->where("id = $id")->select();//查询好友名字
@@ -70,10 +66,7 @@ class AddfriendsController extends ComController
         $datas['dateline'] = time();
 
 
-        // var_dump($name);
 
-        // var_dump($uid);
-        // var_dump($names);
         M('home_friends')->data($data)->add();
         M('home_friends')->data($datas)->add();
         $addid = M("home_notification")->where("id = $id")->delete();
@@ -83,17 +76,19 @@ class AddfriendsController extends ComController
 
     public function sends()
     {
-        // var_dump($_POST);
-        // var_dump($_GET);
-        // var_dump($_SESSION);
+
         $authorid = I("session.uid");
-        $uida = I('post.uid');
+
+
+        $uida = I('session.uaid');
+
+
         $name = M('member')->field("uname")->where("uid = $authorid")->select();
-        // var_dump($name);
-        $data['uid'] = I('session.uid');
+
+        $data['uid'] = $uida;
         $data['type'] = I('post.type');
         $data['note'] = I('post.note');
-        // var_dump(I('post.note'));die;
+
         $data['author'] = $name[0]['uname'];
         $data['authorid'] = $authorid;
         $data['dateline'] = time();
@@ -104,11 +99,6 @@ class AddfriendsController extends ComController
         M('home_notification')->data($data)->add();
         $this->redirect("Notice/send");
     }
-
-
-
-
-
 
 
     

@@ -7,48 +7,38 @@
         <h3 class="modname">Ta有 <span class="greencolor"><{$user['countufriends']}></span> 位好友</h3>
     </div>
 
-    <empty name="postslist">
+    <empty name="friendslist">
         <div class="time_prompt nomyfriend graytopborder"></div>
     <else />
-
-
         <div class="p_threadlist_m">
-	<ul>
-		<li>
-		<div class="p_threadlist_avatar"><a href="" target="_blank" c="1"><img src="picture/24_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" /></a></div>
-		<div class="p_threadlist_c">
-		<i class="title_line"></i><a href="" title="ZUK819088" class="font22" target="_blank">ZUK819088</a>
-		 <p>学前班</p>
+			<ul>
+			<volist name="friendslist" id="val">
+				<li>
+					<div class="p_threadlist_avatar">
+						<a href="
+							<{:U('Space/dynamic',array('mid'=>$val['fuid']))}>
+						" target="_blank" c="1">
+							<img src="__ROOT__<{$val.head}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" />
+						</a>
+					</div>
+					<div class="p_threadlist_c">
+						<i class="title_line"></i>
+						<a href="
+							<{:U('Space/dynamic',array('mid'=>$val['fuid']))}>
+						" title="<{$val.fusername}>" class="font22" target="_blank"><{$val.fusername}></a>
+						<!-- <p>大学生</p> -->
+					</div>
+					<!-- <div class="p_threadlist_stat">
+						<a  href="" target="_blank">主题：212</a><span>/</span>
+						<a href="" target="_blank">回帖：2117</a>
+					</div> -->
+					<div class="p_threadlist_get">
+						<a href="" id="a_friend_1" onclick="showWindow('friend_1', this.href, 'get', 0)" title="加为好友" class="greensmallblankbutton">+ 好友</a>
+					</div>
+				</li>
+			</volist>
+			</ul>
 		</div>
-	<div class="p_threadlist_stat">
-	<a  href="" target="_blank">主题：5</a><span>/</span><a href="/space.php?uid=257424" target="_blank">回帖：26</a>
-	</div>
-	<div class="p_threadlist_get">
-	<a href="" id="a_friend_0" onclick="showWindow('friend_0', this.href, 'get', 0)" title="加为好友" class="greensmallblankbutton">+ 好友</a></div>
-	</li>
-	<li>
-		<div class="p_threadlist_avatar">
-			<a href="" target="_blank" c="1">
-				<img src="picture/87_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_middle.gif'" />
-			</a>
-		</div>
-		<div class="p_threadlist_c">
-			<i class="title_line"></i>
-			<a href="" title="如梦" class="font22" target="_blank">如梦</a>
-			 <p>大学生</p>
-		</div>
-		<div class="p_threadlist_stat">
-			<a  href="" target="_blank">主题：212</a><span>/</span>
-			<a href="" target="_blank">回帖：2117</a>
-		</div>
-		<div class="p_threadlist_get">
-			<a href="" id="a_friend_1" onclick="showWindow('friend_1', this.href, 'get', 0)" title="加为好友" class="greensmallblankbutton">+ 好友</a>
-		</div>
-	</li>
-
-</ul>
-</div>
-        
     </empty>
 
 </block>

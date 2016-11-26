@@ -247,7 +247,10 @@ class SectionController extends ComController
         $data['t'] = time();       
         if(I('post.content')!=null){            
             $cid = M('article')->data($data)->add();
-            $this->success("发帖成功！",U('themes',array('sid'=>$pid)));                
+            $jf = M('user_credit')->where(array('uid'=>$data['mid']))->select();
+            $jf['credit'] = $jf['0']['credit']+20;
+            M('user_credit')->data($jf)->where("uid=$data[mid]")->save();
+            $this->success("发帖成功,+20积分！",U('themes',array('sid'=>$pid)));                
         }else{
             $this->error("发帖失败,内容不能为空");
         }
@@ -257,8 +260,11 @@ class SectionController extends ComController
     public function content($p = 1)
     {   
         $aid = I('get.aid/d') ? I('get.aid/d') : '0';
-        $arr = M('article')->where("aid = $aid")->select();
 
+        // 点击量
+        M('article')->where(array('aid' => $aid))->setInc('n');
+
+        $arr = M('article')->where("aid = $aid")->select();
         if ($arr) {
 
             // 查询帖子详情
@@ -393,7 +399,10 @@ class SectionController extends ComController
         $data['dateline'] = time();       
         if(I('post.message')!=null){            
                 $cid = M('home_comment')->data($data)->add();
-               $this->success("回复成功！",U('content',array('aid'=>$aid)));                
+                $jf = M('user_credit')->where(array('uid'=>$data['uid']))->select();
+                $jf['credit'] = $jf['0']['credit']+5;
+                M('user_credit')->data($jf)->where("uid=$data[uid]")->save();
+                $this->success("回复成功，+ 5积分！",U('content',array('aid'=>$aid)));                
         }else{
             $this->error("回复失败,内容不能为空");
         }

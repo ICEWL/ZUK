@@ -60,7 +60,7 @@
 				<div class="fm_dibavatar js_dibavatar">
 
 					<a  href="<{:U('Space/dynamic',array('mid'=>$user['uid']))}>" target="_blank" title=""><{$user.uname}></a>
-					( <em><a href="<{:U('Space/credit')}>" class="colorlink"><{$user.score}></a></em> )
+					( <em><a href="<{:U('My/mygrade')}>" class="colorlink"><{$user.score}></a></em> )
 
 					<div class="flu_grid js_grid">
 
@@ -111,10 +111,12 @@
 
 					<span class="pipe">|</span>
 					<a href="<{:U('Home/Notice/news')}>">通知
-						<div class="promptdot redsmallbox">1</div>
+						<notempty name="news">
+							<div class="promptdot redsmallbox"><{$news}></div>
+						</notempty>
 					</a>
 
-					<div class="flu_grid js_grid">
+					<!-- <div class="flu_grid js_grid">
 
 						<div class="grid_stat flu_grid_c">
 							<div class="grid_list">
@@ -136,7 +138,7 @@
 						<div class="flu_grid_f">
 							<a href="/home.php?mod=spacecp&amp;ac=pm" class="greensmallbutton">给好友发私信</a>
 						</div>
-					</div>
+					</div> -->
 				</div>
 
 			</div>
@@ -144,7 +146,7 @@
 		
 		<!-- 搜索——start -->
 		<div class="fm_search">
-			<form id="scbar_form" onsubmit="#" target="_blank">
+			<form id="scbar_form" onsubmit="#">
 				<div class="forum_search" style="width: 210px;">
 					<ul>
 						<li class="scbarbutton">
@@ -190,3 +192,9 @@
 <!-- _______________________________________________________ -->
 
 <body>
+
+<div class="content" id="suggest" style="display:none;">
+    <div id="autolist">
+        
+    </div>
+</div>

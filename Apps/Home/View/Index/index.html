@@ -1,15 +1,9 @@
 ﻿<include file="Public/head"/>
 
-<div class="content" id="suggest" style="display:none;">
-    <div id="autolist">
-        
-    </div>
-</div>
+<div id="index">
 
 <block name="main">
-
-<div class="content" id="index">
-
+    <div class="content">
     <!-- content_left-start -->
     <div class="main">
         
@@ -147,9 +141,9 @@
             <div class="grid_stat myinfo_stat">
                 <div class="grid_list">
                     <ul>
-                        <li><a href="" target="_blank"><span class="grid_list_num">17</span>今日任务</a></li>
-                        <li><a href="" target="_blank"><span class="grid_list_num">0</span>我的勋章</a></li>
-                        <li><em style="border-right:none;"><span class="grid_list_num"><font class="greencolor">1</font></span>签到天数</em></li>
+                        <li><a href=""><span class="grid_list_num">0</span>今日任务</a></li>
+                        <li><a href=""><span class="grid_list_num">0</span>我的勋章</a></li>
+                        <li><em style="border-right:none;"><span class="grid_list_num"><font class="greencolor"><{$sign}></font></span>签到天数</em></li>
                     </ul>
                 </div>
             </div>
@@ -159,18 +153,18 @@
                     <ul class="_flslidelist">
 
                         <li>
-                            <h4 class="bluecolor">社区金币</h4>
+                            <h4 class="bluecolor">社区积分</h4>
                             <p class="bluecolor">
                                 <span>
                                     <i class="left_line bluebg"></i>截止目前，我拥有 
-                                    <a href="" class="bluecolor" target="_blank">5</a> 枚金币
+                                    <a href="" class="bluecolor"><{$rank}></a> 积分
                                     <i class="right_line bluebg"></i>
                                 </span>
                             </p>
                             <p>
-                                <a href="" class="whitesmallbutton color2" target="_blank">看看能做啥<em>»</em></a>
+                                <a href="" class="whitesmallbutton color2">看看能做啥<em>»</em></a>
                                 <small class="pipe"></small>
-                                <a href="" class="whitesmallbutton color2" target="_blank">金币全攻略<em>»</em></a>
+                                <a href="" class="whitesmallbutton color2">积分全攻略<em>»</em></a>
                             </p>
                         </li>
 
@@ -179,14 +173,14 @@
                             <p class="bluecolor">
                                 <span>
                                     <i class="left_line bluebg"></i>截止目前，我认证了 
-                                    <a href="" class="bluecolor" target="_blank">0</a> 款产品
+                                    <a href="" class="bluecolor">0</a> 款产品
                                     <i class="right_line bluebg"></i>
                                 </span>
                             </p>
                             <p>
-                                <a href="" class="whitesmallbutton color2" target="_blank">立刻认证<em>»</em></a>
+                                <a href="" class="whitesmallbutton color2">立刻认证<em>»</em></a>
                                 <small class="pipe"></small>
-                                <a href="" class="whitesmallbutton color2" target="_blank">购买产品<em>»</em></a>
+                                <a href="" class="whitesmallbutton color2">购买产品<em>»</em></a>
                             </p>
                         </li>
                     </ul>
@@ -202,11 +196,11 @@
     <include file="Public/sidebar"/>
 
     </div><!--./sidebar-->
-
 </div>
+
 <include file="Public/link"/>
 </block>
-
+</div>
 
 
 <include file="Public/foot"/>

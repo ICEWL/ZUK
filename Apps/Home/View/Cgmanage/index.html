@@ -2,6 +2,8 @@
 
 <include file="Public/head" />
 
+<div id="index">
+
 <block name="mycss">
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css">
 </block>
@@ -41,8 +43,6 @@
 
             <div class="p_threadlist"> 
               <form method="post" autocomplete="off" name="delform" id="delform" action="<{:U('update')}>" > 
-                    <!-- <input type="hidden" name="formhash" value="c8a069ed">  -->
-                    <!-- <input type="hidden" name="delfavorite" value="true">  -->
                     <ul>
                     <volist name="lists" id="val">
                         <li> 
@@ -81,6 +81,8 @@
         <div class="pg"><{$page}></div>
 
 </div><!--#/space_info-->
+
+</div>
 
 <include file="Public/foot" />
 

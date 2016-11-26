@@ -46,8 +46,13 @@ class ComController extends BaseController
             $countcredit = M('user_credit')->field('credit')->where(array('uid' => $UID))->select();
             $user['countcredit'] = $countcredit['0']['credit'];
 
+            // 查询用户通知
+            $news = M('home_notification')->where(array('uid' => $UID,'new' => 1))->count();
+            $this->assign('news',$news);
+
             // 查询用户头衔
             $score = M('score')->order('jid asc')->select();
+            $this->assign('score', $score);
 
             foreach ($score as $k => $v) {
                 $min[] = $v['min'];
@@ -55,6 +60,7 @@ class ComController extends BaseController
             }
 
             $rank = $countcredit['0']['credit'];
+            $this->assign('rank', $rank);
 
             if ($rank >= $min['0'] and $rank <= $min['1']) {
                 $user['score'] = $honor['0'];
@@ -78,6 +84,7 @@ class ComController extends BaseController
             
         }
         $this->assign('user', $user);
+        
 
         // 推荐阅读
         $read = M('read')->limit(3)->order('o asc')->select();

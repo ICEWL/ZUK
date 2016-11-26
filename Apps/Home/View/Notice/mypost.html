@@ -1,78 +1,53 @@
-<!-- 我的帖子 -->
+<!-- 新的好友 -->
 <extend name="Notice/news" />
-<block name="mainaa">
-<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/alert/css/example.css"> -->
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/alert/css/sweet-alert.css">
-<script src="__PUBLIC__/alert/js/sweet-alert.min.js"></script>
-	 <div class="content" id="space_info"> 
-   <div class="sidebar">
-    <div class="box p_nav"> 
-     <h3>通知</h3> 
-     <div class="p_navs"> 
-      <ul> 
-       <li> 
-        <div class="r_arrow">1</div> <span class="graysmallbox">1</span><a href="<{:U("Home/Notice/news")}>"><i></i>消息</a>
-        </li> 
-       <li> 
-        <div class="r_arrow"></div> <span class="graysmallbox">1</span><a href="<{:U("Home/Notice/message")}>"><i></i>系统消息</a>
-        </li>
-        <li class="a"> 
-        <div class="r_arrow"></div><span class="graysmallbox">1</span><a href="<{:U("Home/Notice/mypost")}>"><i></i>新的好友</a> 
-    	</li> 
-      </ul> 
-     </div> 
-    </div> 
-   </div> 
-</block>
 
-<block name="mainaas">
-	<div class="main">
-		<div class="box">
-			<div class="p_header">
-				<h3 class="modname">新的好友</h3>
-			</div>
-			<div class="p_timeline p_notice">
-				<ul>
-					<!-- 加好友申请 -->
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/alert/css/sweet-alert.css">
+	<script src="__PUBLIC__/alert/js/sweet-alert.min.js"></script>
+
+	<block name="main">
+
+		<div class="p_header">
+			<h3 class="modname">新的好友</h3>
+		</div>
+
+		<empty name="friend">
+	        <div class="time_prompt graytopborder">
+	            暂时没有提醒内容
+	        </div>
+	    <else />
+		<div class="p_timeline p_notice">
+			<ul>
+				<!-- 加好友申请 -->
 				<volist name="myp" id="myps">
 					<li class="" id="pendingFriend_298917" notice="761736">
-						<i><span></span>
-					</i>
-					<em><span title="<{$myps.dateline|date="Y-m-d H:i:s",###}>"><{$myps.dateline|date="Y-m-d H:i:s",###}>&nbsp;</span></em>
-					<div class="p_timeline_title" style="color:#000;font-weight:bold;">
-						<p>
-							<a href=""><{$myps.author}></a> 
-							请求加您为好友，附言：<{$myps.note}>&nbsp;&nbsp;
-							<a  class="xw1" id="afr_298917" href="javascript:delayURL('<{:U('Addfriends/notic',array('id'=>$myps['id']))}>',2000);" style="text-decoration:underline;color:red;">批准申请
-							</a>
-						</p>
-					</div>
-				</li>
-			</volist>
+						<i><span></span></i>
+						<em><span title="<{$myps.dateline|date="Y-m-d H:i:s",###}>"><{$myps.dateline|date="Y-m-d H:i:s",###}>&nbsp;</span></em>
+						<div class="p_timeline_title" style="color:#000;font-weight:bold;">
+							<p>
+								<a href=""><{$myps.author}></a> 
+								请求加您为好友，附言：<{$myps.note}>&nbsp;&nbsp;
+								<a  class="xw1" id="afr_298917" href="javascript:delayURL('<{:U('Addfriends/notic',array('id'=>$myps['id']))}>',2000);" style="text-decoration:underline;color:red;">批准申请
+								</a>
+							</p>
+						</div>
+					</li>
+				</volist>
 
-			<!-- 加好友同意后日志 -->
-			<volist name="friend" id="friends">
-				<li class="" id="pendingFriend_225702" notice="758514">
-					<i><span></span></i>
-					<em><span title="<{$friends.dateline|date="Y-m-d H:i:s",###}>"><{$friends.dateline|date="Y-m-d H:i:s",###}></span></em>
-					<div class="p_timeline_title" style="">
-					<p><a href=""><{$friends.fusername}></a> 和您成为了好友</p>
-					</div>
-				</li>
-			</volist>
-
-				</ul>
+				<!-- 加好友同意后日志 -->
+				<volist name="friend" id="friends">
+					<li class="" id="pendingFriend_225702" notice="758514">
+						<i><span></span></i>
+						<em><span title="<{$friends.dateline|date="Y-m-d H:i:s",###}>"><{$friends.dateline|date="Y-m-d H:i:s",###}></span></em>
+						<div class="p_timeline_title" style="">
+						<p><a href=""><{$friends.fusername}></a> 和您成为了好友</p>
+						</div>
+					</li>
+				</volist>
+			</ul>
 		</div>
-		</div>
-		</div>
-</div>
+		</empty>
 
-
-
-
-
-
-</block>
+	</block>
 
 
 <block name="myjs">

@@ -1,5 +1,7 @@
 <include file="Public/head"/>
 
+<div id="index">
+
 <block name="mycss">
 
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css" />
@@ -12,11 +14,9 @@
         <a href="<{:U('Home/Space/dynamic',array('mid'=>$muser['uid']))}>">
         <if condition="$muser.uname eq '' "><{$muser.user}>
         <else /> <{$muser.uname}>
-        </if>
-        的个人主页
+        </if>的个人主页
         </a>
     </div>
-
 
 <div class="content" id="space_info">
         
@@ -28,7 +28,9 @@
                     <h3 class="modname">个人动态</h3> 
                 </div>
 
-                <if condition="$userlist neq ''">
+                <empty name="userlist">
+                    <div class="time_prompt nomyhomelog  graytopborder"></div>
+                <else />
                     <div class="p_timeline"> 
                         <ul>
                             <volist name="userlist" id="val">
@@ -46,9 +48,7 @@
                             </volist> 
                         </ul> 
                     </div>
-                <else />
-                    <div class="time_prompt nomyhomelog  graytopborder"></div>
-                </if>
+                </empty>
 
             </block>
 
@@ -68,23 +68,19 @@
                         <else /> <{$muser.uname}>
                         </if>
                     </strong></p> 
-                    <p><font color="#000000">实习版主</font></p> 
+                    <p><font color="#000000"><{$usertotal['usercore']}></font></p> 
                 </div> 
 
                 <div class="p_s_info"> 
                     <div class="viewthread_author_act"> 
-                  <a href="<{:U('Notice/send',array('mid'=>$muser['uid']))}>" id="a_sendpm_201392" class="bluesmallbutton"  title="发消息">发消息</a>
-                                               <a  id="Button1" type="button" value="点击弹出层" onclick="ShowDiv('MyDiv','fade')" class="greensmallbutton">
-                            加为好友
+                        <a href="<{:U('Notice/send',array('mid'=>$muser['uid']))}>" id="a_sendpm_201392" class="bluesmallbutton"  title="发消息">发消息</a>
+                        <a  id="Button1" type="button" value="点击弹出层" onclick="ShowDiv('MyDiv','fade')" class="greensmallbutton">加为好友
                         </a> 
                     </div> 
                 </div> 
-
-
                     <!-- 加好友验证 -->
                     <div id="MyDiv" class="white_content">
                    
-
   <table cellpadding="0" cellspacing="0" class="fwin"> 
    <tbody> 
     <tr> 
@@ -110,7 +106,6 @@
     </tr> 
    </tbody> 
   </table>
-
 
                     </div>
                     <!-- 加好友验证 end-->
@@ -154,6 +149,8 @@
         </div><!--./sidebar-->
 
     </div><!--#/space_info-->
+    
+</div>
 
 <include file="Public/foot"/>
 

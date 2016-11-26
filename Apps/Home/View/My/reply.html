@@ -1,0 +1,46 @@
+<!-- 回复 -->
+
+<extend name="My/posts" />
+
+<block name="main">
+
+    <div class="p_header">
+        <h3 class="modname">我的回复</h3>
+    </div>
+
+    <div class="p_timeline"> 
+        <form method="post" autocomplete="off" name="delform" id="delform" action="<{:U('delReply')}>" >
+            <empty name="replylist">
+                <div class="time_prompt nomyhomelog  graytopborder"></div>
+            <else />
+            <ul>
+                <volist name="replylist" id="val">
+                    <li> 
+                        <i><span></span></i>
+                        <em><span title="<{$val.dateline|date="Y-m-d H:i:s",###}>"><{$val.dateline|date="Y-m-d H:i:s",###}></span></em> 
+                        <div class="p_timeline_title"> 
+                            <div class="p_quote">
+                                <{$val.message}>
+                            </div> 
+                            来自 
+                            <a href="<{:U('Section/content',array('aid'=>$val['tid']))}>" target="_blank"><{$val.title}></a> 
+                        </div> 
+                        <div class="p_threadlist_right">
+                            <input type="checkbox" name="replys[]" value="<{$val['cid']}>">
+                        </div>
+                    </li>
+                </volist>
+            </ul>
+            <li class="p_threadlist_last"> 
+                    <button type="submit" name="delsubmit" value="true" class="graysmallbutton">删除选中</button> 
+                    <label for="chkall" onclick="checkall(this.form, 'replys')"><input type="checkbox" name="chkall" id="chkall">全选</label> 
+                </li>
+            </empty> 
+        </form> 
+    </div> 
+
+</block>
+
+<block name="myjs">
+
+</block>

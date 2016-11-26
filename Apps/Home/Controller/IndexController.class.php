@@ -20,7 +20,7 @@ class IndexController extends ComController
         $article = M('article');
 
         $prefix = C('DB_PREFIX');  //获取表前缀
-        $pagesize = 15;  //每页数量
+        $pagesize = 10;  //每页数量
         $offset = $pagesize * ($p - 1);  //计算记录偏移量
         $p = intval($p) > 0 ? $p : 1;
         $sid = isset($_GET['sid']) ? $_GET['sid'] : '';  //GET获取版块ID
@@ -73,6 +73,12 @@ class IndexController extends ComController
         // 友情链接
         $links = M('links')->order('o asc')->select();
         $this->assign('links', $links);
+
+        // 连续签到天数
+        $uid = I('session.uid/d');
+        $sign = M('user_sign_in')->field('sign_in_con_days')->where(array('uid' => $uid))->order('create_time desc')->limit(1)->select();
+        $sign = $sign['0']['sign_in_con_days'];
+        $this->assign('sign', $sign);
         
         $this->display();
 

@@ -4,74 +4,40 @@
 
 <block name="main">
 
-     <div class="p_header"> 
-      <h3 class="modname">用户等级</h3>
-      <div class="tab"> 
-       <ul> 
-        <li class="y showmenu" id="gmy" onmouseover="showMenu(this.id)"><a href="/home.php?mod=spacecp&amp;ac=usergroup">我的用户等级<span></span></a></li> 
-        <li class="y a showmenu" id="gupgrade" onmouseover="showMenu(this.id)"><a>晋级用户等级<span></span></a></li> 
-        <li class="y showmenu" id="guser" onmouseover="showMenu(this.id)"><a>普通用户等级<span></span></a></li> 
-        <li class="y showmenu" id="gadmin" onmouseover="showMenu(this.id)"><a>站点管理组<span></span></a></li> 
-       </ul> 
-      </div>
-     </div> 
-     <link rel="stylesheet" type="text/css" href="css/pinfo_old.css" /> 
-     <div class="minh mlr25 graytopborder">
-      <div class="p-main-aticle"> 
-       <div class="grayborder graybg" style="padding: 12px 20px;">
-        <strong class="redcolor">用户等级</strong> = 
-        <strong class="greencolor">经验值</strong> = 发帖数 + 贡献 - 抢楼回帖 （
-        <em class="color4"> 5 = 2 + 0 - 0 </em>）
-       </div> 
-       <div class="p-conlist"> 
-
-
-
-
- 
-        <div id="gmy_menu" class="p_pop" style="display:none">
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup">幼儿园</a>
-        </div> 
-        <div id="gupgrade_menu" class="p_pop" style="display:none">
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=9">限制会员</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=10">幼儿园</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=11" class="xi1">学前班</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=12">小学生</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=13">初中生</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=14">高中生</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=15">大学生</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=21">硕士生</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=22">博士生</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=23">博士后</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=24">院士</a>
-        </div> 
-        <div id="guser_menu" class="p_pop" style="display:none">
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=4">禁止发言</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=5">禁止访问</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=6">禁止 IP</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=7">游客</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=8">等待验证会员</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=20">QQ游客</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=34">ZUK首席执行官</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=49">乐商店官方运营</a>
-        </div> 
-        <div id="gadmin_menu" class="p_pop" style="display:none">
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=1">管理员</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=2">社区锦衣卫</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=3">社区版主</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=29">解惑游侠</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=38">社区运营团队</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=42">实习版主</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=44">ZUK工程师</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=46">ZUK产品经理</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=47">联想集团副总裁</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=48">趣摄阁正使</a>
-         <a href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=53">主题匠师</a>
-        </div> 
-       </div> 
-      </div> 
-     </div> 
+    <div class="p_header"> 
+        <h3 class="modname">我的积分</h3>
     </div> 
+
+    <div class="minh mlr25 graytopborder">
+        <div class="p-main-aticle"> 
+
+            <div class="grayborder graybg" style="padding: 12px 20px;">
+                <strong class="redcolor">头衔</strong> = 
+                <strong class="greencolor">积分</strong> = 注册积分 + 发帖积分 + 回帖积分    （
+                <em class="color4"> 125 = 100 + 20 + 5 </em>）
+            </div>
+            <br>
+            <div class="p-conlist"> 
+                <div id="gupgrade_menu" class="p_pop">
+                    <ul>
+                        <volist name="score" id="val">
+                        <li>
+                            <a href="" 
+                            <if condition="$user['score'] eq $val['honor']">
+                                style="color: red"
+                            </if>
+                            >
+                            [<{$val['jid']}>]　<{$val['honor']}>　><{$val['min']}>
+                            </a>
+                        </li>
+                        </volist>
+                    </ul>
+                
+                </div> 
+            </div>
+
+        </div> 
+     </div> 
 
 </block>
 

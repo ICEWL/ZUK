@@ -2,16 +2,15 @@
 
 <include file="Public/head" />
 
+<div id="index">
+    
 <block name="mycss">
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo.css">
-  <!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/pinfo_old.css"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/qwhome/css/style_2_home_spacecp.css" /> -->
 </block>
 
 <div class="breadcrumbs content"> 
    <a href="<{:U('Home/Index/index')}>">ZUK社区</a>
    <em>»</em>个人中心
-   <em>»</em><a href="">帖子</a> 
 </div>
 
 <div class="content" id="space_info">
@@ -24,17 +23,17 @@
                     <li class="<if condition=" $ANAME eq 'posts' ">a</if>"> 
                         <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/posts')}>">帖子</a>
                     </li> 
+                    <li class="<if condition=" $ANAME eq 'reply' ">a</if>"> 
+                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/reply')}>">回复</a>
+                    </li> 
                     <li class="<if condition=" $ANAME eq 'collection' ">a</if>"> 
                         <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/collection')}>">收藏</a> 
                     </li> 
                     <li class="<if condition=" $ANAME eq 'friends' ">a</if>"> 
                         <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/friends')}>">好友</a> 
                     </li> 
-                    <li class="<if condition=" $ANAME eq 'mygold' ">a</if>"> 
-                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygold')}>">金币</a> 
-                    </li> 
                     <li class="<if condition=" $ANAME eq 'mygrade' ">a</if>"> 
-                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygrade')}>">等级</a> 
+                        <div class="r_arrow"></div><i></i><a href="<{:U('Home/My/mygrade')}>">积分</a> 
                     </li> 
                 </ul> 
             </div> 
@@ -48,54 +47,70 @@
         <block name="main">
             <div class="p_header"> 
                 <h3 class="modname">我的帖子</h3> 
-                <div class="tab"> 
-                    <ul> 
-                        <li class="a"> <a href="">主题<span></span></a> </li> 
-                        <li> <a href="">回复<span></span></a> </li> 
-                    </ul> 
-                </div> 
             </div>
 
-            <div class="p_viewlist"> 
+            <div class="p_viewlist" style="margin: 0 14px;"> 
                 <div class="tab"> 
                     <ul> 
-                        <li><a href="">全部</a></li> 
-                        <li><a href="">已发表</a></li> 
-                        <li><a href="">待审核</a></li> 
-                        <li class="p_viewlist_tabli">
-                            <select name="forumlist" id="forum_list" onchange="viewforumthread(this.value);" style="width: 150px; word-wrap: normal;background: #f1f1f1; color: #6f6f6f; border-color: #e6e6e6;"> 
-                                <option value="0">选择版块</option> 
-                            </select>
-                        </li>
+                        <li class="
+                            <if condition="(I('get.status') eq '0') OR (I('get.status') eq '')">
+                                a
+                            </if>
+                        ">
+                            <a href="<{:U('posts',array('sid'=>$sid,'status'=>0))}>">已发表</a>
+                        </li> 
+                        <li class="
+                            <if condition="I('get.status') eq '1'">
+                                a
+                            </if>
+                        ">
+                            <a href="<{:U('posts',array('sid'=>$sid,'status'=>1))}>">待审核</a>
+                        </li> 
                     </ul> 
                 </div>
+            </div>
 
-                <form method="post" autocomplete="off" name="delform" id="delform" action="home.php?mod=space&amp;do=thread&amp;view=all&amp;order=dateline" onsubmit="showDialog('确定要删除选中的主题吗？', 'confirm', '', '$(\'delform\').submit();'); return false;">
+            <div class="p_threadlist"> 
+              <form method="post" autocomplete="off" name="delform" id="delform" action="<{:U('delPosts')}>" >
+                <empty name="postslist">
+                    <div class="time_prompt graytopborder nomythread"></div>
+                <else />
+                    <ul>
+                    <volist name="postslist" id="val">
+                        <li> 
+                         <div class="p_threadlist_right">
+                            <input type="checkbox" name="aids[]" value="<{$val['aid']}>">
+                         </div> 
+                         <em><span><{$val['t']|date="Y-m-d H:i:s",###}></span></em> 
+                         <a href="
+                            <{:U('Section/themes',array('cgid'=>$val['sid'],'sid'=>$val['pid']))}>
+                         " class="color1">【<{$val.name}>】</a>　
+                         <a href="
+                            <{:U('Section/content',array('aid'=>$val['aid']))}>
+                         " target="_blank">
+                            <{$val['title']}>
+                        </a> 
+                        </li> 
+                    </volist>
+                        <li class="p_threadlist_last"> 
+                            <button type="submit" name="delsubmit" value="true" class="graysmallbutton">删除所选</button> 
+                            <label for="chkall" onclick="checkall(this.form, 'aids')">
+                                <input type="checkbox" name="chkall" id="chkall">全选
+                            </label> 
+                        </li> 
+                    </ul> 
+                </empty>   
+              </form> 
+            </div>
 
-                    <input type="hidden" name="formhash" value="c8a069ed"> 
-                    <input type="hidden" name="delthread" value="true">
-
-                    <div class="p_timeline p_timeline_thread"> 
-                        <ul>
-                            <li><i><span></span></i><em>2016-11-10<br><a href="">新手社区</a></em> 
-                                <div class="p_viewlist_title p_timeline_title"> 
-                                    <a href="" target="_blank">2016年11月10日签到帖</a> 
-                                    <div class="right"> 
-                                        回复 0 次 <span class="pipe">,</span>浏览 1 次 
-                                    </div>
-                                </div> 
-                            </li> 
-                        </ul> 
-                    </div> 
-                </form>
-
-            </div> 
         </block>
-
     </div>
+    <div class="pg"><{$page}></div>
 </div>
 
 </div><!--#/space_info-->
+
+</div>
 
 <include file="Public/foot" />
 
