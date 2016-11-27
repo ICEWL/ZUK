@@ -62,10 +62,10 @@
 
                             <div class="panel-collapse collapse in" id="collapseOne">
                                 <div id="officialnews" class="panel-body">
-                                    <p>PHP版本：<?php echo PHP_VERSION ?>，MySQL版本：<{$mysql}></p>
-                                    <p>服务器：<?php echo php_uname('s');?></p>
-                                    <p>PHP运行方式：<?php echo php_sapi_name();?></p>
-                                    <p>服务器IP：<?php echo GetHostByName($_SERVER['SERVER_NAME']);?></p>
+                                    <p>当前帖子总数：<{$airCount}>个帖子</p>
+                                    <p>当前用户总数：<{$userCount}>个用户</p>
+                                    <p>封禁用户：<{$nuserCount}>个用户</p>
+                                    <p>已绑定手机用户：<{$phoneCount}>个用户</p>
                                 </div>
                             </div>
                         </div>
@@ -79,17 +79,19 @@
                                         <i class="ace-icon fa fa-angle-down bigger-110"
                                            data-icon-hide="ace-icon fa fa-angle-down"
                                            data-icon-show="ace-icon fa fa-angle-right"></i>
-                                        &nbsp;站点信息
+                                        &nbsp;最近新增用户
                                     </a>
                                 </h4>
                             </div>
 
                             <div class="panel-collapse collapse in" id="Facebook">
                                 <div class="panel-body">
-                                    <p>PHP版本：<?php echo PHP_VERSION ?>，MySQL版本：<{$mysql}></p>
-                                    <p>服务器：<?php echo php_uname('s');?></p>
-                                    <p>PHP运行方式：<?php echo php_sapi_name();?></p>
-                                    <p>服务器IP：<?php echo GetHostByName($_SERVER['SERVER_NAME']);?></p>
+                                   
+                                        <volist name="newpost" id="new">
+                                            <p><{$new.uname}>&nbsp;&nbsp;&nbsp;<{$new.t|date="Y-m-d H:i:s",###}></p>
+      
+
+                                        </volist>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +140,7 @@
 <include file="Public/footerjs"/>
 
 <block name="myjs">
-
+    
 </block>
 
 </html>

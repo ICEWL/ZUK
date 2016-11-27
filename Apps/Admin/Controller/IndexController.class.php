@@ -33,6 +33,31 @@ class IndexController extends ComController
 
         $this->assign('mysql', $mysql[0]['mysql']);
         $this->assign('nav', array('', '', ''));//导航
+
+        $newpost = M("member")->order('t desc')->limit(4)->select();
+        $this->assign('newpost', $newpost);
+
+        // 获取用户数：
+        $userCount = M('member')->count();
+        $this->assign('userCount', $userCount);
+
+        // 获取封禁用户数：
+        $nuserCount = M('member')->where('status = "1"')->count();
+        $this->assign('nuserCount', $nuserCount);
+
+
+        // 获取帖子数：
+        $airCount = M('article')->count();
+        $this->assign('airCount', $airCount);
+
+        //获取手机绑定用户
+        $phoneCount = M('member')->where('phone != ""')->count();
+        $this->assign('phoneCount', $phoneCount);
+
+       
         $this->display();
     }
+
+
+
 }
