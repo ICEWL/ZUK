@@ -16,6 +16,13 @@ use Think\Auth;
 class ComController extends BaseController
 {
     
+    /* 空操作处理 */
+    public function _empty($name)
+    {
+        // echo '<h1>404 空操作</h1>';
+        $this->display('Public/404');
+    }
+    
     public $USER;
 
     public function _initialize()

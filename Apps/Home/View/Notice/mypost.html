@@ -10,7 +10,7 @@
 			<h3 class="modname">新的好友</h3>
 		</div>
 
-		<empty name="friend">
+		<if condition="($myp eq '') OR ($friend eq '')">
 	        <div class="time_prompt graytopborder">
 	            暂时没有提醒内容
 	        </div>
@@ -45,7 +45,7 @@
 				</volist>
 			</ul>
 		</div>
-		</empty>
+		</if>
 
 	</block>
 

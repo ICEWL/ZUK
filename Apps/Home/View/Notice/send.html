@@ -10,35 +10,36 @@
             <a href='<{:U("Home/Notice/news")}>' class="whitesmallbutton">返回列表</a>
         </div> 
         <h3 class="modname">与 
-            <a href="" class="colorlink">ZUK946486</a> 的消息记录 &nbsp;（<span id="membernum">2</span>）
+            <a href="
+            <{:U('Space/dynamic',array('mid'=>$muser['uid']))}>
+            " class="colorlink"><{$muser.uname}></a> 的消息记录 
         </h3> 
     </div> 
 
-    <div id="pm_ul" class="p_pm_list"> 
-        <div id="pmlist_54430" class="p_pm_say p_pm_isay"> 
-            <div class="p_pm_list_c">
-                11111
-                <div class="p_pm_list_arrow"></div> 
-                <div class="p_pm_list_c_time">
-                    <span title="2016-11-16 22:00">昨天&nbsp;22:00</span>
+    <div id="pm_ul" class="p_pm_list">
+
+        <volist name="falg" id="val"> 
+            <div id="" 
+                <if condition="$muser['uid'] eq $val['authorid']">
+                    class="p_pm_say p_pm_usay"
+                <else />
+                    class="p_pm_say p_pm_isay"
+                </if>
+            > 
+                <div class="p_pm_list_c">
+                    <{$val.note}>
+                    <div class="p_pm_list_arrow"></div> 
+                    <div class="p_pm_list_c_time">
+                        <span><{$val['dateline']|date="d日H:i",###}></span>
+                    </div> 
+                    <div class="p_pm_list_avt"> 
+                        <a href="">
+                            <img src="__ROOT__<{$val.head}>"  onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'" />
+                        </a> 
+                    </div> 
                 </div> 
-                <div class="p_pm_list_avt"> 
-                    <a href="" target="_blank"><img src="" /></a> 
-                </div> 
-            </div> 
-        </div>
-        <div id="pmlist_54473" class="p_pm_say p_pm_usay"> 
-            <div class="p_pm_list_c">
-                1234
-                <div class="p_pm_list_arrow"></div> 
-                <div class="p_pm_list_c_time">
-                    <span title="2016-11-17 13:37">半小时前</span>
-                </div> 
-                <div class="p_pm_list_avt" id="bottom"> 
-                    <a href="" target="_blank"><img src=""  /></a> 
-                </div> 
-            </div> 
-        </div>
+            </div>
+        </volist>
         <div id="pm_append" style="display: none"></div> 
     </div>
 

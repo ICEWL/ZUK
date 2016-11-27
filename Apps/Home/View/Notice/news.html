@@ -49,36 +49,63 @@
                     
                     <div class="p_header"> 
                         <div class="p_header_button">
-                            <a href="<{:U("Notice/send")}>" class="greensmallbutton">写消息</a>
+                            <a href="<{:U('Home/Space/friends',array('mid' => $uid))}>" class="greensmallbutton">写消息</a>
                         </div>
                         <h3 class="modname">消息</h3>
                     </div> 
-                    <!-- <div class="time_prompt graytopborder">
-                        暂时没有提醒内容
-                    </div> -->
-                    <form id="deletepmform" action="" method="post" autocomplete="off" name="deletepmform"> 
+                    <empty name="frinewslist">
+                        <div class="time_prompt graytopborder">
+                            暂时没有提醒内容
+                        </div>
+                    <else />
+                     
                         <div class="p_threadlist"> 
-                            <dl id="pmlist_24957" class=""> 
+                        <volist name="frinewslist" id="val">
+                            <form id="deletepmform" action="<{:U('Notice/send')}>" method="post" autocomplete="off" name="deletepmform">
+                            <dl class="">
+                            <input type="hidden" value="<{$val['authorid']}>" name="mid">
                             <table width="100%"> 
                                 <tr> 
-                                    <td class="p_timeline_list_avt"> <a href="" target="_blank"><img src="picture/17_avatar_small.jpg" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'" /></a> </td> 
-                                    <td class="p_pm_tousername"> ZUK946486<p><span title="2016-11-16 22:00">半小时前</span></p> </td> 
-                                    <th class="p_pm_lastsummary"> 11111<a href="" id="pmlist_24957_a"></a> </th> 
-                                    <td class="p_pm_time"><small class="graysmallbox">1 条对话</small></td> 
+                                    <td class="p_timeline_list_avt"> 
+                                        <a href="
+                                        <{:U('Space/dynamic',array('mid'=>$val['authorid']))}>
+                                        " target="_blank">
+                                            <img src="__ROOT__<{$val.head}>" onerror="this.onerror=null;this.src='http://uc.bbs.zuk.cn/images/noavatar_small.gif'" />
+                                        </a>
+                                    </td> 
+                                    <td class="p_pm_tousername"> 
+                                        <{$val.author}>
+                                        <p><span><{$val['dateline']|date="Y-m-d H:i:s",###}></span></p> 
+                                    </td> 
+                                    <th class="p_pm_lastsummary"> 
+                                        
+                                        <a href=""><button class="GoStyle" type="submit"><{$val.note}></button></a> 
+                                    </th> 
+                                    <!-- <td class="p_pm_time"><small class="graysmallbox">1 条对话</small></td>  -->
                                 </tr> 
-
                             </table>
-                            </dl> 
-                            
-                        </div> 
-                    </form> 
+                            </dl>
+                            </form>
+                        </volist> 
+                        </div>
+                    </empty>
                 </block>
             </div> 
         </div> 
     </div>
 
 </div>
-
+<style>
+    .GoStyle
+    {
+     
+         background-color: #FFFFFF;
+         border: 0px none;
+         cursor: hand;
+         font-family: "宋体";
+         font-size: 15px;
+    }
+</style>
 <include file="Public/foot" />
 
 <block name="myjs"></block>

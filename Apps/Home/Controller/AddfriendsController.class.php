@@ -100,7 +100,4 @@ class AddfriendsController extends ComController
         $this->redirect("Notice/send");
     }
 
-
-    
-
 }

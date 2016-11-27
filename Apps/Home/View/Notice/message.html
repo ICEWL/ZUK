@@ -7,21 +7,27 @@
     <div class="p_header"> 
         <h3 class="modname">系统消息</h3>
     </div>
-
-    <form id="deletepmform" action="" method="post" autocomplete="off" name="deletepmform"> 
-        <div class="p_threadlist"> 
+        <empty name="adminmessage">
+            <div class="time_prompt graytopborder">
+                暂时没有系统消息
+            </div>
+        <else />
+        <div class="p_threadlist">
+            <volist name="adminmessage" id="val">
             <dl id="pmlist_24957" class=""> 
                 <table width="100%"> 
                     <tr> 
-                        <td class="p_timeline_list_avt"> <a href="" target="_blank"><img src="picture/17_avatar_small.jpg" onerror="" /></a> </td> 
-                        <td class="p_pm_tousername"> ZUK946486<p><span title="2016-11-16 22:00">半小时前</span></p> </td> 
-                        <th class="p_pm_lastsummary"> 11111<a href="" id="pmlist_24957_a"></a> </th> 
-                        <td class="p_pm_time"><small class="graysmallbox">1 条对话</small></td> 
+                        <td class="p_timeline_list_avt"> <a href=""><img src="__PUBLIC__/pic/header_1.jpg" onerror="" /></a> </td> 
+                        <td class="p_pm_tousername"><{$val.author}><p><span><{$val.dateline|date="Y-m-d H:i:s",###}></span></p> </td> 
+                        <th class="p_pm_lastsummary"><{$val.note}><a href="" id="pmlist_24957_a"></a> </th> 
+                        <td class="p_pm_time"><small class="graysmallbox">忽略</small></td> 
                     </tr> 
                 </table> 
-            </dl> 
-        </div> 
-    </form>
+            </dl>  
+            </volist>
+        </div>
+        </empty>
+
 
 </block>
 

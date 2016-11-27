@@ -19,7 +19,7 @@ class ComController extends BaseController
     /* 空操作处理 */
     public function _empty($name)
     {
-        echo '<h1>404 空操作</h1>';
+        $this->error('404 NOT FOUND');
     }
 
     /* 存放session */

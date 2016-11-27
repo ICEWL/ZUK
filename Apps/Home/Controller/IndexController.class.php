@@ -78,6 +78,9 @@ class IndexController extends ComController
         $uid = I('session.uid/d');
         $sign = M('user_sign_in')->field('sign_in_con_days')->where(array('uid' => $uid))->order('create_time desc')->limit(1)->select();
         $sign = $sign['0']['sign_in_con_days'];
+        if ($sign == null) {
+            $sign = 0;
+        }
         $this->assign('sign', $sign);
         
         $this->display();
