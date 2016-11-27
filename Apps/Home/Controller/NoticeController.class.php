@@ -74,7 +74,7 @@ class NoticeController extends ComController
 
         // 加好友消息
         $uid = I('session.uid');
-        $myp = M('home_notification')->where("$uid = uid and type = adf")->select();
+        $myp = M('home_notification')->where("uid =$uid and type = 'adf'")->select();
         $this->assign('myp',$myp);
 
         //好友历史
