@@ -57,7 +57,44 @@
 
 <!-- top menu -->
 <div class="top-menu">
-	返回
+<style>
+a.demo {
+  text-transform: uppercase;
+  font-size: 136px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+[class^="link-"] {
+  display: inline-block;
+  margin: 2em
+}  
+.link-1 a.demo:before, .link-1 a.demo:after {
+  content: '';
+  border-bottom: solid 1px white;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+}
+ 
+.link-1 a.demo:before { left: 0; }
+.link-1 a.demo:after { right: 0; }   
+.link-1 a.demo:hover:before, .link-1 a.demo:hover:after {
+  width: 50%;
+}
+ 
+.link-1 a.demo:before, .link-1 a.demo:after {
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+} 
+</style>
+<!-- <button class="button"  name="Submit"  >返回上一页</button> -->
+<div class="link-1">
+  <a  class="demo" onclick="javascript:history.back(-1);">
+    <span class="thin">返回</span><span class="thick">上一页</span>
+  </a>
+</div> 
 </div>
 <!-- top menu -->
 

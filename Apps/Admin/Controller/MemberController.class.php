@@ -119,7 +119,7 @@ class MemberController extends ComController
             $this->error('参数错误！');
         }
 
-        $usergroup = M('auth_group')->field('id,title')->select();
+        $usergroup = M('auth_group')->field('id,title')->where("id != 10")->select();
         $this->assign('usergroup', $usergroup);
 
         $this->assign('member', $member);
@@ -132,6 +132,9 @@ class MemberController extends ComController
         if ($ajax == 'yes') {
             $uid = I('get.uid', 0, 'intval');
             $gid = I('get.gid', 0, 'intval');
+            if ($gid == 10) {
+                die('1');
+            }
             M('auth_group_access')->data(array('group_id' => $gid))->where("uid='$uid'")->save();
             die('1');
         }

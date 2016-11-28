@@ -89,6 +89,10 @@ class AddfriendsController extends ComController
         $data['type'] = I('post.type');
         $data['note'] = I('post.note');
 
+        if ($data['note'] == null) {
+            $this->error("不能给为空哦！");
+        }
+
         $data['author'] = $name[0]['uname'];
         $data['authorid'] = $authorid;
         $data['dateline'] = time();

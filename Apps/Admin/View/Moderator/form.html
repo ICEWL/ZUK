@@ -15,7 +15,7 @@
                     <div class="form-group">
                         <label class="col-sm-1 control-label no-padding-right" for="pid"> 所属版块 </label>
                         <div class="col-sm-9">
-                            <select id="pid" name="pid" class="col-xs-10 col-sm-5">
+                            <select id="pid" pid="pid" name="pid" class="col-xs-10 col-sm-5">
                                 <option value="0">所属版块</option>
                                 <volist name="cg" id="val">
                                     <option value="<{$val.id}>"><{$val.name}></option>
@@ -31,11 +31,22 @@
 
                     <div class="form-group">
                         <label class="col-sm-1 control-label no-padding-right" for="name"> 用户id </label>
-                        <div class="col-sm-9">
+                        <!-- <div class="col-sm-9">
                             <input type="text" name="uid" id="name" 
                                    class="col-xs-10 col-sm-5">
                             <span class="help-inline col-xs-12 col-sm-7">
                                 <span class="middle">用户ID不能为空。</span>
+                            </span>
+                        </div> -->
+                        <div class="col-sm-9">
+                            <select id="name" name="uid" class="col-xs-10 col-sm-5">
+                                <option value="0">用户名</option>
+                                <volist name="member" id="v">
+                                    <option value="<{$v.uid}>"><{$v.user}></option>
+                                </volist>
+                            </select>
+                            <span class="help-inline col-xs-12 col-sm-7">
+                                <span class="middle">选择用户。</span>
                             </span>
                         </div>
                     </div>
@@ -83,9 +94,22 @@
 
             $(".btn.btn-info.submit").click(function () {
                 var name = $("#name").val();
-                if (name == '') {
+                var pid = $("#pid").val();
+                if (pid == '0') {
                     bootbox.dialog({
-                        message: "抱歉，用户ID不能为空。",
+                        message: "抱歉，还没有选择版块哦。",
+                        buttons: {
+                            "success": {
+                                "label": "确定",
+                                "className": "btn-danger"
+                            }
+                        }
+                    });
+                    return false;
+                }
+                if (name == '0') {
+                    bootbox.dialog({
+                        message: "抱歉，还没有选择用户哦。",
                         buttons: {
                             "success": {
                                 "label": "确定",

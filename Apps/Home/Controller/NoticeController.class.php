@@ -112,6 +112,16 @@ class NoticeController extends ComController
         $this->display('message');
     }
 
+    public function change($ajax = '')
+    {
+        if ($ajax == 'yes') {
+            $id = I('get.id', 0, 'intval');
+            $data['new'] = '0';
+            M('home_notification')->where("id='$id'")->save($data);
+            die('1');
+        }
+    }
+
 
     public function mypost()
     {

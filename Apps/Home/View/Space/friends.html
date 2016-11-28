@@ -33,12 +33,94 @@
 						<a href="" target="_blank">回帖：2117</a>
 					</div> -->
 					<div class="p_threadlist_get">
-						<a href="" id="a_friend_1" onclick="showWindow('friend_1', this.href, 'get', 0)" title="加为好友" class="greensmallblankbutton">+ 好友</a>
+						<a type="button" value="点击弹出层" id="a_friend_1" onclick="ShowDiv('MyDiv','fade')" title="加为好友" class="greensmallblankbutton">+ 好友</a>
+						
 					</div>
 				</li>
 			</volist>
+			 <!-- 加好友验证 -->
+                    <div id="MyDiv" class="white_content">
+                   
+  <table cellpadding="0" cellspacing="0" class="fwin"> 
+   <tbody> 
+    <tr> 
+     <td class="m_c" id="fwin_content_a_friend" fwin="a_friend"> <h3 class="flb" id="fctrl_a_friend" style="cursor: move;"> <em id="return_a_friend" fwin="a_friend">加为好友</em> <span> <a href="javascript:;" onclick="CloseDiv('MyDiv','fade')" class="flbc" title="关闭">关闭</a> </span></h3> 
+      <form method="post" id="addform_40728" action="<{:U('Addfriends/addfriends')}>"> 
+       <div class="c"> 
+        <table> 
+         <tbody> 
+          <tr> 
+           <th valign="top" width="60" class="avt"> <a href=""> <img src="__ROOT__<{$muser.head}>" onerror="" /> </a> </th> 
+           <td valign="top">添加 <strong><{$muser.uname}></strong> 为好友，附言:<br /> 
+            <input type="text" name="note" value="" size="35" class="px" /> 
+            <input type="hidden" name="uid" value="<{$muser.uid}>" />
+            <input type="hidden" name="mid" value="<{$muser.uname}>" />
+            <input type="hidden" name="type" value="adf" />
+            <p class="mtn xg1">(附言为可选，<{$muser.uname}> 会看到这条附言)</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+       <p class="o pns"> <button type="submit" class="bluesmallbutton" fwin="a_friend"><strong>确定</strong></button> </p> 
+      </form> </td> 
+    </tr> 
+   </tbody> 
+  </table>
+
+                    </div>
+                    <!-- 加好友验证 end-->
 			</ul>
 		</div>
     </empty>
 
 </block>
+
+
+
+<style>
+.black_overlay{
+display: none;
+position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 100%;
+background-color: black;
+z-index:1001;
+-moz-opacity: 0.8;
+opacity:.80;
+filter: alpha(opacity=80);
+}
+.white_content {
+display: none;
+position: absolute;
+top: 40%;
+left: 40%;
+    width: 394px;
+    height: 228px;
+border: 1px solid black;
+background-color: white;
+z-index:1002;
+overflow: auto;
+}
+
+</style>
+<script type="text/javascript">
+
+
+//弹出隐藏层
+function ShowDiv(show_div,bg_div){
+document.getElementById(show_div).style.display='block';
+document.getElementById(bg_div).style.display='block' ;
+var bgdiv = document.getElementById(bg_div);
+bgdiv.style.width = document.body.scrollWidth;
+// bgdiv.style.height = $(document).height();
+$("#"+bg_div).height($(document).height());
+};
+//关闭弹出层
+function CloseDiv(show_div,bg_div)
+{
+document.getElementById(show_div).style.display='none';
+document.getElementById(bg_div).style.display='none';
+};
+</script>

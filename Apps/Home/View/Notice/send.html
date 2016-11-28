@@ -49,7 +49,7 @@
         <form id="pmform" name="pmform" method="post" autocomplete="off" action="<{:U('Addfriends/sends')}>">
             <div class="tedt graybg">
                 <div class="area ">
-                    <textarea rows="3" cols="40" name="note" class="pt" id="replymessage" ></textarea>
+                    <textarea rows="3" cols="40" name="note" id="note" class="pt" id="replymessage" ></textarea>
                 </div>
             </div>
             <div class="mtm right mbw">
@@ -65,4 +65,21 @@
 
 </block>
 
-<block name="myjs"></block>
+<block name="myjs">
+    <script>
+    // $("#pmsubmit").click(function () {
+    //     var note = $("#note").val();
+    //     if (note == '') {
+    //         alert('消息内容不能为空！');
+    //     }
+    //     $('#pmform').submit();
+    // })
+    // $("#note").each(function(){  
+    //       if($(this).val()=="")  
+    //       {  
+    //           alert("文本框不能为空");
+    //           return false;
+    //       }  
+    //  });
+    </script>
+</block>

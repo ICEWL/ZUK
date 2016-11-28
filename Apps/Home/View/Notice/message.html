@@ -18,9 +18,15 @@
                 <table width="100%"> 
                     <tr> 
                         <td class="p_timeline_list_avt"> <a href=""><img src="__PUBLIC__/pic/header_1.jpg" onerror="" /></a> </td> 
-                        <td class="p_pm_tousername"><{$val.author}><p><span><{$val.dateline|date="Y-m-d H:i:s",###}></span></p> </td> 
+                        <td class="p_pm_tousername"><{$val.author}><p><span><{$val.dateline|date="Y-m-d H:i:s",###}></span></p> </td>
                         <th class="p_pm_lastsummary"><{$val.note}><a href="" id="pmlist_24957_a"></a> </th> 
-                        <td class="p_pm_time"><small class="graysmallbox">忽略</small></td> 
+                        <td class="p_pm_time">
+                            <small uid="<{$val.id}>" class="graysmallbox">
+                            <if condition="$val.new eq 1 ">忽略
+                            <else /> 已查看
+                            </if>
+                            </small>
+                        </td> 
                     </tr> 
                 </table> 
             </dl>  
@@ -32,5 +38,15 @@
 </block>
 
 <block name="myjs">
-
+    <script>
+        $(".graysmallbox").click(function () {
+                var ob = $(this);
+                var id = ob.attr('uid');
+                $.get("<{:U('change')}>?ajax=yes&id=" + id, function (data) {
+                    // var text = ob.find("option:selected").text();
+                    // ob.parent().find(".group").removeClass('hide').html(text);
+                    // ob.addClass('hide');
+                });
+            })
+    </script>
 </block>
